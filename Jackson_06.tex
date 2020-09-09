@@ -1,0 +1,140 @@
+\chapter{Jackson -- Maxwell Equations, Conservation Laws}
+\label{jackson_06} 
+
+\section{Maxwell Equations}
+
+\begin{equation}
+\begin{aligned}
+\div{\vb{B}} &= 0\\
+\curl{\vb{E}} + \frac{1}{c} \pdv{\vb{B}}{t} &= 0\\
+\div{\vb{E}} &= 4 \pi \rho\\
+\curl{\vb{B}} &= \frac{4 \pi}{c} \vb{J} + \frac{1}{c} \pdv{\vb{E}}{t}
+\end{aligned}
+\label{eq:maxwell}
+\end{equation}
+
+
+\section{Potentials}
+
+$\vb{B}$ has a vanishing divergence, therefore a vector field $\vb{A}$ exists such that
+
+\begin{equation}
+\vb{B} = \curl{\vb{A}}
+\label{eq:Adef}
+\end{equation}
+
+Substituting \ref{eq:Adef} in the second of Maxwell equations one gets
+
+\begin{equation*}
+\curl{\vb{E}} + \frac{1}{c} \pdv{\curl{\vb{A}}}{t} = 0
+\end{equation*}
+
+whence 
+
+\begin{equation}
+\curl{ \left( \vb{E} + \frac{1}{c} \pdv{\vb{A}}{t} \right)} = 0
+\end{equation}
+
+The expression enclosed in parentheses in the above equation implies that a scalar field $\phi$ exists such that 
+
+\begin{equation}
+\vb{E} + \frac{1}{c} \pdv{\vb{A}}{t} = - \grad{\phi}
+\label{eq:phidef}
+\end{equation}
+
+
+Using the last equation in \ref{eq:maxwell} and a known theorem of vector calculus
+
+\begin{align*}
+\curl{\vb{B}} &= \curl{(\curl{\vb{A}})} \\
+&= \grad{(\div{\vb{A}})} - \laplacian{\vb{A}} \\
+&= \frac{4 \pi}{c} \vb{J} + \frac{1}{c} \pdv{\vb{E}}{t}
+\end{align*}
+
+while from \ref{eq:phidef}
+
+\begin{align*}
+\frac{1}{c} \pdv{\vb{E}}{t} = - \frac{1}{c} \pdv{\grad{\phi}}{t} - \frac{1}{c^2} \pdv[2]{\vb{A}}{t}  
+\end{align*}
+
+therefore
+
+\begin{align*}
+\grad{(\div{\vb{A}})} - \laplacian{\vb{A}} &= \frac{4 \pi}{c} \vb{J} + \frac{1}{c} \pdv{\vb{E}}{t} \\
+&= \frac{4 \pi}{c} \vb{J} - \frac{1}{c} \pdv{\grad{\phi}}{t} - \frac{1}{c^2} \pdv[2]{\vb{A}}{t}  
+\end{align*}
+
+With the goal of arriving at two independent equations for $\phi$ and $\vb{A}$ we put the equation for $\vb{A}$ in the following form 
+
+\begin{equation}
+\begin{aligned}
+\laplacian{\vb{A}} - \frac{1}{c^2} \pdv[2]{\vb{A}}{t} &= - \frac{4 \pi}{c} \vb{J} \\
+&+ \grad{\left( \div{\vb{A}} + \frac{1}{c} \pdv{\phi}{t} \right)}
+\label{eq:uglyA}
+\end{aligned}
+\end{equation}
+
+Turning to the scalar potential $\phi$ and combining the third equation in \ref{eq:maxwell} with \ref{eq:phidef} we obtain 
+
+\begin{equation}
+\begin{aligned}
+\div{\vb{E}} &=   4 \pi \rho \\
+&= - \laplacian{\phi} - \frac{1}{c} \pdv{\div{\vb{A}}}{t}
+\label{eq:uglyPhi}
+\end{aligned}
+\end{equation}
+
+\section{Gauge transformations}
+Equations \ref{eq:uglyA} and \ref{eq:uglyPhi} are interdependent: one cannot be solved without the other having been solved. They stem from equations \ref{eq:Adef} and \ref{eq:phidef}, where potentials were introduced (respectively $\vb{A}$ and $\phi$) to yield fields $\vb{B}$ and $\vb{E}$ that by construction satisfy two of the four Maxwell equations \ref{eq:maxwell} (the homogeneous ones). 
+However, the equations \ref{eq:Adef} and \ref{eq:phidef} do not uniquely determine the potentials. Indeed, if 
+$\vb{A}$ and $\phi$ satisfy the equations, the same is true of the potentials $\vb{A}'$ and $\phi'$ obtained with the following transformation
+
+\begin{equation}
+\begin{aligned}
+\vb{A}  &\longrightarrow \: \vb{A}' = \vb{A} + \grad{\lambda(\vb{r}, t)} \\   
+\phi    &\longrightarrow \: \phi' = \phi - \frac{1}{c} \pdv{\lambda(\vb{r}, t)}{t}   
+\label{eq:gaugexform}
+\end{aligned}
+\end{equation}
+
+where $\lambda(\vb{r}, t)$ is any scalar function of position and time.
+
+\subsection{Lorenz gauge}
+
+Imposing the following constraint (\textit{Lorenz gauge}) on the potentials $\phi$ and $\vb{A}$
+
+\begin{equation}
+\div{\vb{A}} + \frac{1}{c} \pdv{\phi}{t} = 0
+\label{eq:lorenzgauge} % Yes this is from Lorenz, not from the other (Lorentz)
+\end{equation}
+
+amounts to apply the transformation \ref{eq:gaugexform} with $\lambda(\vb{r}, t)$ satisfying the following equation: 
+
+\begin{align*}
+\laplacian{\lambda} - \frac{1}{c^2} \pdv[2]{\lambda}{t} = \div{\vb{A}} + \frac{1}{c} \pdv{\phi}{t}
+\end{align*}
+
+
+As a result, one obtains two independent \textit{wave equations} governing the dynamics of $\phi$ and $\vb{A}$, where the \textit{source fields} $\rho$ and $\vb{J}$ appear in the respective inhomogeneous terms: 
+
+
+\begin{equation}
+\laplacian{\phi} - \frac{1}{c^2} \pdv[2]{\phi}{t} = - 4 \pi \rho
+\label{eq:PhiWave}
+\end{equation}
+
+\begin{equation}
+\laplacian{\vb{A}} - \frac{1}{c^2} \pdv[2]{\vb{A}}{t} = - \frac{4 \pi}{c} \vb{J} 
+\label{eq:AWave}
+\end{equation}
+
+
+\subsection{Coulomb gauge}
+
+ 
+
+ 
+
+
+
+

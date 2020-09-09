@@ -1,0 +1,129 @@
+%%%%%%%%%%%%%%%%%%%% book.tex %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[english, 11pt]{book}
+
+\usepackage{babel}
+% choose options for [] as required from the list
+% in the Reference Guide, Sect. 2.2
+
+\usepackage{makeidx}         % allows index generation
+\usepackage{graphicx}        % standard LaTeX graphics tool
+                             % when including figure files
+\usepackage{multicol}        % used for the two-column index
+\usepackage[bottom]{footmisc}% places footnotes at page bottom
+% etc.
+% see the list of further useful packages
+% in the Reference Guide, Sects. 2.3, 3.1-3.3
+\usepackage[normalem]{ulem}
+
+\usepackage[shortlabels]{enumitem}	% to be able to resume enumerated lists
+
+\usepackage{amsmath}	% To be able to slash
+\usepackage{amsfonts}	% To be able to use \mathbb ... 
+\usepackage{amssymb}	% To be able to use \nmid ... 
+\usepackage{amsthm}		% \qed, \qedhere
+\usepackage{slashed}	% any character (dirac)
+% Physics package 
+% https://tex.stackexchange.com/questions/38978/how-can-i-manually-install-a-latex-package-debian-ubuntu-linux
+\usepackage{physics}	
+
+% Force chapter numbering to restart within each part
+\makeatletter
+%\@addtoreset{chapter}{part}
+\makeatletter
+
+% These ONLY NEEDED for All-IN-ONE (using \part )
+% Make the part number appear as a prefix to chapter number
+%\renewcommand{\thechapter}{\thepart.\arabic{chapter}}% Prefix chapter with part number
+
+% These ONLY NEEDED for All-IN-ONE (using \part )
+% Adjust toc formatting for the larger space needed to include the part number to chapter and section!
+% See https://tex.stackexchange.com/questions/175656/table-of-contents-include-part-number-for-chapters-entries 
+%\usepackage{etoolbox}
+%\makeatletter
+%\patchcmd{\l@chapter}{1.5em}{2em}{}{}% Increase number width for chapter
+%\renewcommand{\l@section}{\bprot@dottedtocline{1}{2em}{2.7em}}% Increase number width and indent for section
+%\makeatother
+
+\makeindex             % used for the subject index
+                       % please use the style svind.ist with
+                       % your makeindex program
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\newcommand{\quotes}[1]{``#1''}
+\newcommand{\sfT}{$\mathsf{T}$}
+\newcommand{\udT}{\rotatebox[origin=c]{180}{$\mathsf{T}$}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+\author{Marcello Vitaletti}
+\title{Notes on Classical Electrodynamics\\
+{\small }}
+\maketitle
+
+\frontmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\include{dedic}
+
+\tableofcontents
+\mainmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{Plan}	
+
+\include{Felsager_01}	 % Felsager - Geometry, Particles and Fields
+%\include{Felsager_02}	 % Felsager - Geometry, Particles and Fields
+
+\include{Jackson_06}	% J.D. Jackson -- Classical Electrodynamics, 2nd Edition
+%\include{Jackson_07}	 % J.D. Jackson -- Classical Electrodynamics, 2nd Edition
+
+%\include{Jackson_11}	 % J.D. Jackson -- Classical Electrodynamics, 3rd Edition
+%\include{Jackson_12}	 % J.D. Jackson -- Classical Electrodynamics, 3rd Edition
+
+%\include{Franklin_02}	 % J. Franklin -- Advanced Mechanics and General Relativity
+%\include{Franklin_03}	 % J. Franklin -- Advanced Mechanics and General Relativity
+%\include{Franklin_04}	 % J. Franklin -- Advanced Mechanics and General Relativity
+%\include{Franklin_05}	 % J. Franklin -- Advanced Mechanics and General Relativity
+%\include{Franklin_06}	 % J. Franklin -- Advanced Mechanics and General Relativity
+
+%\include{Landau_01}	 % L.D. Landau, E.M. Lifshitz -- Teoria dei Campi
+%\include{Landau_02}	 % L.D. Landau, E.M. Lifshitz -- Teoria dei Campi
+
+%\include{Jackson_13}	 % J.D. Jackson -- Classical Electrodynamics, 3rd Edition
+%\include{Jackson_14}	 % J.D. Jackson -- Classical Electrodynamics, 3rd Edition
+%\include{Jackson_15}	 % J.D. Jackson -- Classical Electrodynamics, 3rd Edition
+%\include{Jackson_16}	 % J.D. Jackson -- Classical Electrodynamics, 3rd Edition
+
+%\include{MTWheeler_02}	 % C.W. Misner, K.S. Thorne, J.A. Wheeler -- Gravitation
+%\include{MTWheeler_03}	 % C.W. Misner, K.S. Thorne, J.A. Wheeler -- Gravitation
+%\include{MTWheeler_04}	 % C.W. Misner, K.S. Thorne, J.A. Wheeler -- Gravitation
+
+%\include{Landau_03}	 % L.D. Landau, E.M. Lifshitz -- Teoria dei Campi
+%\include{Landau_04}	 % L.D. Landau, E.M. Lifshitz -- Teoria dei Campi
+%\include{Landau_05}	 % L.D. Landau, E.M. Lifshitz -- Teoria dei Campi
+%\include{Landau_06}	 % L.D. Landau, E.M. Lifshitz -- Teoria dei Campi
+%\include{Landau_07}	 % L.D. Landau, E.M. Lifshitz -- Teoria dei Campi
+%\include{Landau_08}	 % L.D. Landau, E.M. Lifshitz -- Teoria dei Campi
+%\include{Landau_09}	 % L.D. Landau, E.M. Lifshitz -- Teoria dei Campi
+
+
+
+
+
+\backmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{referenc}
+\printindex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
+
+
+
+
+
