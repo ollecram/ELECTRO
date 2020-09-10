@@ -9,7 +9,7 @@ The two fundamental quantities of the electromagnetic field are the field streng
 \vb{E}(\vb{r}, t); \:\:\: \vb{B}(\vb{r}, t)
 \end{equation*}
 
-$\vb{E}$ is an ordinary (i.e. \textit{polar}) vector field, and as such it can be defined before any choice of a reference system. Instead, $\vb{B}$ is an \textit{axial} vector field and thus it can only be specified with respect to a given reference system. Reference systems can be separated in two non-intersecting classes (a.k.a \textit{orientations}), according to the sign (positive or negative) of the determinant associated to the transformation between two such systems. 
+$\vb{E}$ is an ordinary (i.e. \textit{polar}) vector field, and as such it can be defined before any choice of a reference system. Instead, $\vb{B}$ is an \textit{axial} vector field and thus it can only be specified with respect to a given reference system. Reference systems can be separated in two \textit{equivalence} classes (a.k.a \textit{orientations}), according to the sign (positive or negative) of the determinant associated to the transformation between two such systems. 
 
 Both polar and axial vectors transform in the same way under spatial \textit{rotations} (a rotation connects two systems with the same orientation). Different behaviors arise when dealing with a \textit{reflection} of the three coordinate axes. This one connects two systems with opposite orientations. Polar vectors are not affected at all by this transformation while any axial vector turns into its opposite.
 
@@ -20,7 +20,7 @@ A large set of experimental data can be interpreted as the manifestation of the 
 \label{eq:Lorentzforce1}
 \end{equation}
 
-It should be noted that $\vb{v} \cross \vb{B}$ is an ordinary (\textit{polar}) vector because $\vb{B}$ is an axial vector and $\vb{v}$ an ordinary vector. 
+It should be noted that $\vb{v} \cross \vb{B}$ is an ordinary (\textit{polar}) vector because $\vb{B}$ is an axial vector and $\vb{v}$ is an ordinary vector. 
 
 According to special relativity the particle's motion obeys the following equations 
 
@@ -52,7 +52,7 @@ where $\rho = \rho(\vb{r}, t)$ is the \textit{charge}  density, $\vb{J} = \rho \
 \label{eq:vcalc}
 \begin{align}
 \vb{A} \cross \vb{B} &= - \vb{B} \cross \vb{A} \label{eq:vcalc_a}\\
-\vb{A} \vdot (\vb{B} \cross \vb{C}) &= (\vb{A} \cross (\vb{B}) \vdot \vb{C}) \label{eq:vcalc_b}\\
+\vb{A} \vdot (\vb{B} \cross \vb{C}) &= (\vb{A} \cross \vb{B}) \vdot \vb{C}) \label{eq:vcalc_b}\\
 \vb{A} \cross (\vb{B} \cross \vb{C}) &= \vb{B} (\vb{A} \vdot \vb{C}) - (\vb{A} \vdot \vb{B})\vb{C} \label{eq:vcalc_c}\\
 (\vb{A} \cross \vb{B}) \cross \vb{C} &= (\vb{A} \vdot \vb{C}) \vb{B} - \vb{A} (\vb{B} \vdot \vb{C}) \label{eq:vcalc_d}\\
 \div{(\grad{\phi})} &= \laplacian{\phi} \label{eq:vcalc_e}\\
@@ -113,10 +113,79 @@ The continuity equation \ref{eq:continuity} just links, via the Gauss' theorem, 
 \frac{\mathrm{d} \, Q(t)}{\mathrm{d} \, t}  = \int\limits_{\Omega} \pdv{\rho}{t} \; \mathrm{d}V = - \int\limits_{S}\vb{J} \vdot \vu{n} \; \mathrm{d}A 
 \end{equation*}
 
-thereby expressing the law of \textit{local conservation} of charge. 
+This result is equivalent to the assertion that a decrease[increase] of the total charge in the control volume $V$ by an amount $\mathrm{d}Q$ does always occur if and only if an equal amount of charge flows across the boundary toward the exterior[interior] of the control volume during the same amount of time. 
 
-Further assumptions are needed in order to establish a \textit{global conservation} law for the charge. A typical approach often presented in books starts by considering a finite volume yet large enough to enclose the whole universe and so that currents vanish at at the boundaries.
+In short, electric charge is not created nor destroyed by electromagnetic processes. 
 
 \section{Gauge Potentials in Electromagnetism}
 
+Identities \ref{eq:vcalc_f} and \ref{eq:vcalc_g} from vector calculus can be exploited to express the fields $\vb{E}$ and $\vb{B}$ in terms of a \textit{scalar} field $\phi$ and a \textit{vector} field $\vb{A}$, thus causing the \textit{homogeneous} Maxwell equations \ref{eq:maxwell_divB} and \ref{eq:maxwell_rotE} to be automatically satisfied. 
 
+Indeed, by equating $\vb{B}$ to the curl of a \textit{vector} field $\vb{A}$ the divergence of $\vb{B}$ does necessarily vanish, as required by \ref{eq:maxwell_divB}:
+
+\begin{equation}
+\vb{B} = \curl{\vb{A}} \:\: \longrightarrow \:\: \div{\vb{B}} = \div{(\curl{\vb{A}})} = 0 \label{eq:Bdef}
+\end{equation}
+   
+Once $\vb{B}$ satisfies \ref{eq:Bdef}, the companion Maxwell equation \ref{eq:maxwell_rotE} reads:
+
+\begin{equation*}
+\curl{\vb{E}} + \frac{1}{c} \pdv{\vb{B}}{t} = \curl{\left( \vb{E} + \frac{1}{c} \pdv{\vb{A}}{t} \right)} = 0 
+\end{equation*}
+ 
+Therefore, by equating the argument of the curl operator in the above equation to the \textit{gradient} of a \textit{scalar} field $\phi$ the Maxwell equation  \ref{eq:maxwell_rotE} is automatically satisfied:
+
+\begin{equation}
+\left( \vb{E} + \frac{1}{c} \pdv{\vb{A}}{t} \right) = - \grad{\phi} \:\: \longrightarrow \:\: \curl{\vb{E}} + \frac{1}{c} \pdv{\vb{B}}{t} = - \curl{(\grad{\phi})} = \vb{0} \label{eq:Edef}
+\end{equation}
+
+What we have demonstrated so far is that the fields can be conveniently expressed in terms of the potentials $\phi$ and $\vb{A}$ as follows
+
+\begin{subequations}
+\label{eq:potentials_1}
+\begin{align}
+\vb{B} &= \curl{\vb{A}} \label{eq:potentials_11} \\
+\vb{E} &= - \grad{\phi} - \frac{1}{c} \pdv{\vb{A}}{t} \label{eq:potentials_12} 
+\end{align}
+\end{subequations}
+
+It is important to note that the equations \ref{eq:potentials_1} do not restrict the range of admissible solutions to the Maxwell equations \ref{eq:Maxwell}\footnote{We are aassuming, without demonstration, that any vector field with zero divergence is the curl of some vector potential and one with zero curl is the gradient of some scalar potential.}. 
+
+By substituting the equations \ref{eq:potentials_1} in the two \textit{inhomogeneous} Maxwell equations \ref{eq:maxwell_divE} and \ref{eq:maxwell_rotB} we get the potential dependency from \textit{sources}: 
+
+\begin{align*}
+- \div{\vb{E}} &= - 4 \pi \rho \\
+			&= \laplacian{\phi} + \frac{1}{c} \pdv{\div{\vb{A}}}{t} \\
+- \curl{\vb{B}} &= - \curl{(\curl{\vb{A}})} \\
+			&= \laplacian{\vb{A}} - \grad{(\div{\vb{A})}} \\
+			&= - \frac{4 \pi}{c} \vb{J} - \frac{1}{c} \pdv{\vb{E}}{t} \\
+			&= - \frac{4 \pi}{c} \vb{J} + \frac{1}{c} \pdv{}{t} \left( \grad{\phi} + \frac{1}{c} \pdv{\vb{A}}{t}   \right)	
+\end{align*}
+
+Terms in the above equations can be rearranged to give 
+\begin{align*}
+\Box \, \phi &= \laplacian{\phi} - \frac{1}{c^2} \pdv[2]{\phi}{t} \\
+			&= - 4 \pi \rho - \frac{1}{c} \pdv{\div{\vb{A}}}{t} - \frac{1}{c^2} \pdv[2]{\phi}{t} \\
+			&= - 4 \pi \rho - \frac{1}{c} \pdv{}{t} \left( \div{\vb{A}} + \frac{1}{c} \pdv{\phi}{t}  \right) \\
+\Box \, \vb{A} &= \laplacian{\vb{A}} - \frac{1}{c^2} \pdv[2]{\vb{A}}{t} \\
+			&= - \frac{4 \pi}{c} \vb{J} + \frac{1}{c} \pdv{}{t} \left( \grad{\phi} + \frac{1}{c} \pdv{\vb{A}}{t}   \right) + \grad{(\div{\vb{A})}} - \frac{1}{c^2} \pdv[2]{\vb{A}}{t} \\
+			&= - \frac{4 \pi}{c} \vb{J} + \frac{1}{c} \pdv{}{t} \left( \grad{\phi} \right) + \grad{(\div{\vb{A})}} \\
+			&= - \frac{4 \pi}{c} \vb{J} + \grad{\left( \div{\vb{A}} + \frac{1}{c} \pdv{\phi}{t}  \right)}
+\end{align*}
+
+The above tour de force is summarized in the following two equations:
+ 
+\begin{subequations}
+\label{eq:potentials_2}
+\begin{align} 
+\Box \, \phi &= - 4 \pi \rho - \frac{1}{c} \pdv{}{t} \left( \div{\vb{A}} + \frac{1}{c} \pdv{\phi}{t}  \right)
+\label{eq:potentials_21} \\
+\Box \, \vb{A} &= - \frac{4 \pi}{c} \vb{J} + \grad{\left( \div{\vb{A}} + \frac{1}{c} \pdv{\phi}{t}  \right)}
+\label{eq:potentials_22} 
+\end{align}
+\end{subequations}
+
+The term appearing between parentheses causes an unwanted coupling of the two equations. Fortunately, we have still freedom left in the choice of potentials to get rid of this term. Indeed...
+
+
+ 
