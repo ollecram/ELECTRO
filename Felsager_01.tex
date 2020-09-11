@@ -113,12 +113,12 @@ The continuity equation \ref{eq:continuity} just links, via the Gauss' theorem, 
 \frac{\mathrm{d} \, Q(t)}{\mathrm{d} \, t}  = \int\limits_{\Omega} \pdv{\rho}{t} \; \mathrm{d}V = - \int\limits_{S}\vb{J} \vdot \vu{n} \; \mathrm{d}A 
 \end{equation*}
 
-This result is equivalent to the assertion that a decrease[increase] of the total charge in the control volume $V$ by an amount $\mathrm{d}Q$ does always occur if and only if an equal amount of charge flows across the boundary toward the exterior[interior] of the control volume during the same amount of time. 
+This result is equivalent to the assertion that a decrease[increase] of the total charge in the control volume $V$ by an amount $\mathrm{d}Q$ does always occur with an equal amount of charge flowing across the boundary toward the exterior[interior] of the control volume during the same interval of time. 
 
 In short, electric charge is not created nor destroyed by electromagnetic processes. 
 
 \section{Gauge Potentials in Electromagnetism}
-
+S
 Identities \ref{eq:vcalc_f} and \ref{eq:vcalc_g} from vector calculus can be exploited to express the fields $\vb{E}$ and $\vb{B}$ in terms of a \textit{scalar} field $\phi$ and a \textit{vector} field $\vb{A}$, thus causing the \textit{homogeneous} Maxwell equations \ref{eq:maxwell_divB} and \ref{eq:maxwell_rotE} to be automatically satisfied. 
 
 Indeed, by equating $\vb{B}$ to the curl of a \textit{vector} field $\vb{A}$ the divergence of $\vb{B}$ does necessarily vanish, as required by \ref{eq:maxwell_divB}:
@@ -149,7 +149,7 @@ What we have demonstrated so far is that the fields can be conveniently expresse
 \end{align}
 \end{subequations}
 
-It is important to note that the equations \ref{eq:potentials_1} do not restrict the range of admissible solutions to the Maxwell equations \ref{eq:Maxwell}\footnote{We are aassuming, without demonstration, that any vector field with zero divergence is the curl of some vector potential and one with zero curl is the gradient of some scalar potential.}. 
+It is important to note that the equations \ref{eq:potentials_1} do not restrict the range of admissible solutions to the Maxwell equations \ref{eq:Maxwell}\footnote{See below for a demonstration that a) any vector field with zero divergence is the curl of some vector potential and b) one with zero curl is the gradient of some scalar potential.}. 
 
 By substituting the equations \ref{eq:potentials_1} in the two \textit{inhomogeneous} Maxwell equations \ref{eq:maxwell_divE} and \ref{eq:maxwell_rotB} we get the potential dependency from \textit{sources}: 
 
@@ -180,12 +180,70 @@ The above tour de force is summarized in the following two equations:
 \begin{align} 
 \Box \, \phi &= - 4 \pi \rho - \frac{1}{c} \pdv{}{t} \left( \div{\vb{A}} + \frac{1}{c} \pdv{\phi}{t}  \right)
 \label{eq:potentials_21} \\
-\Box \, \vb{A} &= - \frac{4 \pi}{c} \vb{J} + \grad{\left( \div{\vb{A}} + \frac{1}{c} \pdv{\phi}{t}  \right)}
+\Box \, \vb{A} &= - \frac{4 \pi}{c} \vb{J} + \:\:\grad{\left( \div{\vb{A}} + \frac{1}{c} \pdv{\phi}{t}  \right)}
 \label{eq:potentials_22} 
 \end{align}
 \end{subequations}
 
-The term appearing between parentheses causes an unwanted coupling of the two equations. Fortunately, we have still freedom left in the choice of potentials to get rid of this term. Indeed...
+The term appearing between parentheses causes an unwanted coupling of the two equations, yet there is some freedom left in the choice of potentials to get rid of this term. Indeed, let $\phi$ and $\vb{A}$ be solutions of \ref{eq:potentials_2} and let $\vb{B}$ and $\vb{E}$ be the field strenghts obtained via \ref{eq:potentials_1}
+
+\begin{align*}
+\vb{B} &= \curl{\vb{A}} \\
+\vb{E} &= - \grad{\phi} - \frac{1}{c} \pdv{\vb{A}}{t} 
+\end{align*}
+
+The following transformation, where $\rchi(\vb{r}, t)$ is an arbitrary scalar field
+
+\begin{equation}
+\begin{aligned}
+\phi & \longrightarrow \phi' = \phi - \frac{1}{c} \pdv{\rchi}{t} \\
+\vb{A} & \longrightarrow \vb{A}' = \vb{A} + \grad{\rchi}
+\end{aligned}
+\label{eq:f01_gaugexform}
+\end{equation}
+
+has the property of leaving the \textit{field strengths}  $\vb{B}$ and $\vb{E}$ unchanged:
+
+\begin{align*}
+\vb{B}' &= \curl{\vb{A}'} = \curl{(\vb{A} + \grad{\rchi})} &= \vb{B} \\    
+\vb{E}' &= - \grad{\phi'} - \frac{1}{c} \pdv{\vb{A}'}{t} =  \ldots  &= \vb{E}
+\end{align*}
+
+As a further step, we show that a suitable choice of the scalar field $\rchi$ exists for which the coupling term 
+
+\begin{equation*}
+K(\phi, \vb{A}) \equiv \left( \div{\vb{A}} + \frac{1}{c} \pdv{\phi}{t}  \right)
+\end{equation*}
+
+in \ref{eq:potentials_2} is identically zero. Indeed, the transformation \ref{eq:f01_gaugexform} causes the coupling term to change by minus the D'Alembertian of $\rchi$: 
+
+\begin{align*}
+K(\phi', \vb{A}') = K(\phi, \vb{A}) + \Box \rchi
+\end{align*}
+
+Lastly, requiring $K(\phi', \vb{A}')$ to vanish, implies the scalar field $\rchi$ to obey the following PDE
+
+\begin{equation}
+\Box \rchi = - K(\phi, \vb{A})
+\end{equation}
+
+It should be clear that one never needs to solve the above PDE: the whole point in the preceding discussion was to demonstrate that for any pair of potentials $(\phi, \vb{A})$ satisfying the equations \ref{eq:potentials_2} there is a corresponding pair $(\phi', \vb{A}')$ that produces identical field strenghts $\vb{B}$ and $\vb{E}$ and that can be obtained by solving the simpler, uncoupled system
+
+\begin{equation}
+\begin{aligned}
+\Box \;\phi &= - 4\pi\rho \\
+\Box \vb{A} &= - \frac{4 \pi}{c} \vb{J}
+\end{aligned}
+\label{eq:f01_uncoupled}
+\end{equation}
+
+ 
+
+
+
+
+
+
 
 
  
