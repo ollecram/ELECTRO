@@ -374,6 +374,76 @@ A similar result holds for the flux of $\vb{E}$ -- due to Gauss theorem -- only 
 
 The whole point of this analysis is that having tied the field $\vb{B}$ to the vector potential $\vb{A}$ it appears not possible to accomodate \textit{magnetic monopoles} (point sources of the magnetic field) into the electromagnetic theory. 
 
+\section{Vector Potential of a Solenoid}
+
+It is a well known result of magnetostatic that a steady uniform current running along the surface of a long cylinder\footnote{A cylinder whose length $L$ is much greater than its diameter $D$.} along a direction orthogonal to its axis, generates a constant magnetic field $\vb{B}_o$ within the cylinder, oriented along the axis. The greater the cylinder aspect ratio ($L/D$) the smaller are disuniformities within the cylinder and the strenght of the field outside of it.
+
+Here we want to find a vector potential $\vb{A}$ generating the field $\vb{B}_o$, assuming the cylinder axis to run along $\hat{\vb{k}}$, so that 
+
+\begin{equation*}
+\vb{B}  = B_o \hat{\vb{k}} = (0, 0, B_o)
+\end{equation*}
+
+The following expression, represents a field \textit{circulating} around the cylinder axis
+\begin{equation*}
+\begin{aligned}
+\vb{B} \cross \vb{r} &= B_o \; \hat{\vb{k}} \cross \vb{r} \\
+					 &= B_o \; \hat{\vb{k}} \cross \left( x \hat{\vb{i}} + y \hat{\vb{j}} + z \hat{\vb{k}} \right) \\
+                     &= B_o \left( x \hat{\vb{k}} \cross \hat{\vb{i}} + y \hat{\vb{k}} \cross \hat{\vb{j}} \right) \\
+                     &= B_o \; (-y  \hat{\vb{i}},\, x \hat{\vb{j}},\, 0 \hat{\vb{k}})
+\end{aligned}                     
+\end{equation*}
+
+
+while its \textit{curl} only differs from $\vb{B}$ by a factor of two:
+
+\begin{equation*}
+\begin{aligned}
+\curl{\left( \vb{B} \cross \vb{r} \right) } &= B_o \; \curl{\left( \hat{\vb{k}} \cross \vb{r} \right)} \\
+											&= B_o \; \curl{(-y  \hat{\vb{i}},\, x \hat{\vb{j}},\, 0 \hat{\vb{k}})} \\
+                                            &= 2 B_o \hat{\vb{k}}
+\end{aligned}                     
+\end{equation*}
+
+A tentative choice for the vector potential to reproduce the constant field $B_o \hat{\vb{k}}$ inside the cylinder is thus
+
+\begin{equation}
+\vb{A} = \frac{B_o}{2} \; \hat{\vb{k}} \cross \vb{r}
+\label{eq:solenoid_A_inside}
+\end{equation}
+
+The above expression for $\vb{A}$ yelds a uniform field $B_o \hat{\vb{k}}$  through the whole space, so while it is correct for $\norm{\vb{r}} \le a$ -- where $a$ is the cylinder \textit{radius} -- it fails to give the correct field outside the cylinder, where the magnetic field is null. A possible correction is suggested by Stokes theorem when applied to computing the flux of $\vb{B}$ across a disk of radius $r$ centered on the cylinder axis and orthogonal to it. 
+
+Indeed, the potential \ref{eq:solenoid_A_inside} is consistent with Stokes theorem for $\norm{\vb{r}} \le a$, because\footnote{
+In cylindrical coordinates, $x = r cos \phi$, $y = r sin \phi$, therefore $dx = -r sin \phi d\phi = -y d\phi$ and $dy = r cos \phi d\phi = x d\phi$. Therefore, $d\vb{r} = (dx, dy) = (-y, x) d\phi = (\hat{\vb{k}} \cross \vb{r})d\phi$. When computing line integrals involving $\vb{A} \vdot d\vb{r}$ we can thus replace the expression $( \hat{\vb{k}} \cross \vb{r}) \vdot d\vb{r}$ with $r^2 d\phi$.   
+As a result, 
+\begin{equation*}
+\begin{aligned}
+\oint_{\Gamma} \vb{A} \vdot d\vb{r} &= \frac{B_o}{2} \oint_{\Gamma} (\hat{\vb{k}} \cross \vb{r}) \vdot d\vb{r} \\
+&= \frac{B_o r^2}{2} \oint_{\Gamma} d\phi \\
+&= \pi r^2 B_o 
+\end{aligned}                     
+\end{equation*}
+}	%end of footnote
+
+\begin{equation}
+\begin{aligned}
+\Phi(r) &= \int\limits_{S} \vb{B}_o \vdot \vu{n} \; \mathrm{d}A \\
+&= \pi r^2 B_{o} \\
+&= \oint_{\Gamma} \vb{A} \vdot d\vb{r}
+\end{aligned}
+\label{eq:solenoid_Flux_inside} 
+\end{equation}
+
+We observe that the lenght of the curve $\Gamma$ in the line integral of equation \ref{eq:solenoid_Flux_inside} is proportional to $r$, therefore $\norm{\vb{A}}$ must reach its maximum for $\norm{\vb{r}} = a$ and behave like $1/r$ in order for the line integral to remain constant for $\norm{\vb{r}} \geq a$. 
+
+
+
+
+
+
+
+  
 
 
 
