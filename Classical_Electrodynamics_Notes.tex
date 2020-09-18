@@ -27,23 +27,20 @@
 % https://tex.stackexchange.com/questions/38978/how-can-i-manually-install-a-latex-package-debian-ubuntu-linux
 \usepackage{physics}	
 
+% The following to generate Griffiths' script-r symbol does not work well for bold & hat
+%\usepackage{calligra}
+%\DeclareMathAlphabet{\mathcalligra}{T1}{calligra}{m}{n}
+%\DeclareFontShape{T1}{calligra}{m}{n}{<->s*[2.2]callig15}{}
+
+% https://tex.stackexchange.com/questions/438275/how-adjust-hat-r-from-griffiths-davids-book
+\usepackage{scalerel}
+\usepackage{stix2}
+
 % Force chapter numbering to restart within each part
 \makeatletter
 %\@addtoreset{chapter}{part}
 \makeatletter
 
-% These ONLY NEEDED for All-IN-ONE (using \part )
-% Make the part number appear as a prefix to chapter number
-%\renewcommand{\thechapter}{\thepart.\arabic{chapter}}% Prefix chapter with part number
-
-% These ONLY NEEDED for All-IN-ONE (using \part )
-% Adjust toc formatting for the larger space needed to include the part number to chapter and section!
-% See https://tex.stackexchange.com/questions/175656/table-of-contents-include-part-number-for-chapters-entries 
-%\usepackage{etoolbox}
-%\makeatletter
-%\patchcmd{\l@chapter}{1.5em}{2em}{}{}% Increase number width for chapter
-%\renewcommand{\l@section}{\bprot@dottedtocline{1}{2em}{2.7em}}% Increase number width and indent for section
-%\makeatother
 
 \makeindex             % used for the subject index
                        % please use the style svind.ist with
@@ -66,6 +63,17 @@
 \DeclareRobustCommand{\rchi}{{\mathpalette\irchi\relax}}
 \newcommand{\irchi}[2]{\raisebox{\depth}{$#1\chi$}} % inner command, used by \rchi
 
+% The following to generate Griffiths' script-r symbol does not work well for bold & hat
+% \newcommand{\scripty}[1]{\ensuremath{\mathcalligra{#1}}}
+
+% https://tex.stackexchange.com/questions/438275/how-adjust-hat-r-from-griffiths-davids-book
+%----------------------------------------------------------------------------------------
+%   r Griffiths, curls and fonts from mt2pro[lite]->pro
+%----------------------------------------------------------------------------------------
+\def\rcurs{\mathscr{r}}
+\def\brcurs{\mathbfscr{r}}
+\def\hrcurs{\hat{\brcurs}}
+
 \author{Marcello Vitaletti}
 \title{Notes on Classical Electrodynamics\\
 {\small }}
@@ -77,12 +85,25 @@
 
 \tableofcontents
 \mainmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\include{Plan}	
+%\include{Plan}	
 
-\include{Felsager_01}	 % Felsager - Geometry, Particles and Fields
-%\include{Felsager_02}	 % Felsager - Geometry, Particles and Fields
+%\include{Felsager_01}	 % Felsager  - Electromagnetism
 
-\include{Jackson_06}	% J.D. Jackson -- Classical Electrodynamics, 2nd Edition
+\include{Griffiths_00}	 % Griffiths - Electrodynamics / Vector Analysis
+\include{Griffiths_01}	 % Griffiths - Electrodynamics / Electrostatics
+%\include{Griffiths_02}	 % Griffiths - Electrodynamics / Potentials
+%\include{Griffiths_03}	 % Griffiths - Electrodynamics / Electric Fields in Matter
+%\include{Griffiths_04}	 % Griffiths - Electrodynamics / Magnetostatics
+%\include{Griffiths_05}	 % Griffiths - Electrodynamics / Magnetic Fields in Matter
+%\include{Griffiths_06}	 % Griffiths - Electrodynamics / Electrodynamics
+%\include{Griffiths_07}	 % Griffiths - Electrodynamics / Conservation Laws
+%\include{Griffiths_08}	 % Griffiths - Electrodynamics / Electromagnetic Waves
+%\include{Griffiths_09}	 % Griffiths - Electrodynamics / Radiation
+%\include{Griffiths_10}	 % Griffiths - Electrodynamics / Electrodynamics and Relativity
+%\include{Griffiths_11}	 % Griffiths - Electrodynamics / Potentials and Fields
+%\include{Griffiths_12}	 % Griffiths - Electrodynamics / Helmoltz Theorem
+
+%\include{Jackson_06}	% J.D. Jackson -- Classical Electrodynamics, 2nd Edition
 %\include{Jackson_07}	 % J.D. Jackson -- Classical Electrodynamics, 2nd Edition
 
 %\include{Jackson_11}	 % J.D. Jackson -- Classical Electrodynamics, 3rd Edition
