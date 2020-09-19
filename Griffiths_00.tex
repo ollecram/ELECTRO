@@ -1,5 +1,5 @@
 \chapter{Griffiths -- Vector Analysis}
-\label{Griffiths_00} 
+\label{ch:Griffiths_00} 
 
 \section{Vector Algebra}
 For the sake of fixing notation, let $\{\vu{i}, \vu{j}, \vu{k}\}$ be an \textit{orthonormal} basis of unit vectors in three-dimensional space, and the following a list of all possible scalar products of basis vectors. 
@@ -57,7 +57,7 @@ A useful mnemonic expression equivalent to \ref{eq:cross_product} is the \textit
 \begin{equation*}
 \mqty| \vu{i} &  \vu{j} &  \vu{k} \\ 
 A_x & A_y & A_z \\
-B_x & B_y & B_z|
+B_x & B_y &z|
 \end{equation*}
 
 
@@ -156,7 +156,7 @@ is a unit vector pointing radially outward. Following Griffiths, the \textbf{inf
 d\vb{l} = dx \, \vu{i} + dy \, \vu{j} + dz \, \vu{k} 
 \end{equation}
 
-Problems in electrodynamics frequently involve two points, typically a \textbf{source point}, $\vb{r}'$ and a \textbf{field point} $\vb{r}$ at which one needs to calculate the effect of the source. Following Griffiths we reserve the special symbol $\brcurs$ to denote the \textbf{separation vector} from the source point to the field point:
+Problems in electrodynamics frequently involve two points, typically a \textbf{source point}, $\vb{r}'$ and a \textbf{field point} $\vb{r}$ at which one needs to calculate the effect of the source. We use the symbol $\brcurs$ to denote the \textbf{separation vector} from the source point to the field point:
 
 \begin{equation}
 \begin{aligned}
@@ -164,11 +164,72 @@ Problems in electrodynamics frequently involve two points, typically a \textbf{s
 \rcurs &= \abs{\brcurs} = \abs{\vb{r} - {\vb{r}}'} \\
 \hrcurs &= \frac{\brcurs}{\rcurs}
 \end{aligned}
+\label{eq:separation_vector}
 \end{equation}
 
 
 \section{How Vectors Transform}
+For a more general mathematical treatment of this topic see Chapter \ref{ch:Cattaneo_01}. 
+
+Let two cartesian (orthonormal) reference frames in two dimensions, $\mathcal{F}$ and $\mathcal{F}'$, share a common origin $\mathcal{O}$. Let $\vu{i}, \vu{j}$ be unit vectors forming a basis of $\mathcal{F}$ and $\vu{i}', \vu{j}'$ some that form a basis of $\mathcal{F}'$. 
+
+Let $\mathcal{F}'$ be rotated by the angle $\phi$ --around the origin-- with respect to $\mathcal{F}$, so that
+\begin{equation*}
+\vu{i} \vdot \vu{i}' = \cos(\phi) = \vu{j} \vdot \vu{j}' 
+\end{equation*}
+   
+The components of $\vb{A}$ with respect to the two frames are:
+
+\begin{equation*}
+\begin{aligned}
+A &= A_x \;\vu{i}\;  + A_y \; \vu{j}\\
+A &= A_x'\,\vu{i}'\, + A_y'\,\vu{j}'
+\end{aligned}
+\end{equation*}
+
+If $\theta$ is the angle between $\vu{i}$ and $\vb{A}$, the angle between $\vu{j}$ and $\vb{A}$ is $\pi/2 - \theta$, therefore, 
+
+\begin{equation*}
+\begin{aligned}
+A_x &= A \cos(\theta) \\
+A_y &= A \sin(\theta) = A \cos(\pi/2 - \theta)
+\end{aligned}
+\end{equation*}
+
+The angle that $\vb{A}$ forms with the axis $\vu{i}'$ of the primed frame is clearly $\theta - \phi$, therefore\footnote{Here we use the trigonometric identities $\sin(a \pm b) = \sin(a)\cos(b) \pm \cos(a)\sin(b)$ and  $\cos(a \pm b) = \cos(a)\cos(b) \mp \sin(a)\sin(b)$.}
+
+\begin{equation*}
+\begin{aligned}
+A_x' &= A \cos(\theta') = A \cos(\theta - \phi) = A [\cos(\theta)\cos(\phi) + \sin(\theta)\sin(\phi)] \\
+A_y' &= A \sin(\theta')\, = A \sin(\theta - \phi)\, = A [\sin(\theta)\cos(\phi) - \cos(\theta)\sin(\phi)] 
+\end{aligned}
+\end{equation*}
  
+Substituting $A_x = A \cos(\theta)$ and $A_y = A \sin(\theta)$ in the above equations we obtain the law for transforming components to the rotated frame, namely
+
+\begin{equation*}
+\begin{aligned}
+A_x' &= A_x \cos(\phi) + A_y \sin(\phi) \\
+A_y' &= A_y \cos(\phi) - A_x \sin(\phi) 
+\end{aligned}
+\end{equation*}
+
+In matrix notation:
+
+\begin{equation}
+\mqty[ A_x' \\
+A_y'] = 
+\mqty|  \cos(\phi) &  \sin(\phi) \\ 
+- \sin(\phi) &  \cos(\phi) |
+\mqty[ A_x \\
+A_y]
+\label{2d_vector_transform}
+\end{equation}
+
+As expected, the matrix reduces to the identity in the limit of small $\phi$. The inverse transform is clearly obtained by changing $\phi$ into $-\phi$, thus inverting the sign of the off-diagonal terms in the above matrix. 
+
+
+
 
 
 

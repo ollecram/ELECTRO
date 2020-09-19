@@ -27,15 +27,6 @@
 % https://tex.stackexchange.com/questions/38978/how-can-i-manually-install-a-latex-package-debian-ubuntu-linux
 \usepackage{physics}	
 
-% The following to generate Griffiths' script-r symbol does not work well for bold & hat
-%\usepackage{calligra}
-%\DeclareMathAlphabet{\mathcalligra}{T1}{calligra}{m}{n}
-%\DeclareFontShape{T1}{calligra}{m}{n}{<->s*[2.2]callig15}{}
-
-% https://tex.stackexchange.com/questions/438275/how-adjust-hat-r-from-griffiths-davids-book
-\usepackage{scalerel}
-\usepackage{stix2}
-
 % Force chapter numbering to restart within each part
 \makeatletter
 %\@addtoreset{chapter}{part}
@@ -63,16 +54,13 @@
 \DeclareRobustCommand{\rchi}{{\mathpalette\irchi\relax}}
 \newcommand{\irchi}[2]{\raisebox{\depth}{$#1\chi$}} % inner command, used by \rchi
 
-% The following to generate Griffiths' script-r symbol does not work well for bold & hat
-% \newcommand{\scripty}[1]{\ensuremath{\mathcalligra{#1}}}
-
-% https://tex.stackexchange.com/questions/438275/how-adjust-hat-r-from-griffiths-davids-book
 %----------------------------------------------------------------------------------------
 %   r Griffiths, curls and fonts from mt2pro[lite]->pro
 %----------------------------------------------------------------------------------------
-\def\rcurs{\mathscr{r}}
-\def\brcurs{\mathbfscr{r}}
-\def\hrcurs{\hat{\brcurs}}
+\def\rcurs{s}
+\def\brcurs{\vb{\rcurs}}
+\def\hrcurs{\vu{\rcurs}}
+
 
 \author{Marcello Vitaletti}
 \title{Notes on Classical Electrodynamics\\
@@ -87,10 +75,10 @@
 \mainmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\include{Plan}	
 
-%\include{Felsager_01}	 % Felsager  - Electromagnetism
-
-\include{Griffiths_00}	 % Griffiths - Electrodynamics / Vector Analysis
-\include{Griffiths_01}	 % Griffiths - Electrodynamics / Electrostatics
+%\include{Felsager_01}   % Felsager  - Electromagnetism
+\include{Cattaneo_01}   % Cattaneo  - Teoria Einsteniana della Gravitazione
+\include{Griffiths_00}  % Griffiths - Electrodynamics / Vector Analysis
+%\include{Griffiths_01}  % Griffiths - Electrodynamics / Electrostatics
 %\include{Griffiths_02}	 % Griffiths - Electrodynamics / Potentials
 %\include{Griffiths_03}	 % Griffiths - Electrodynamics / Electric Fields in Matter
 %\include{Griffiths_04}	 % Griffiths - Electrodynamics / Magnetostatics
@@ -103,17 +91,17 @@
 %\include{Griffiths_11}	 % Griffiths - Electrodynamics / Potentials and Fields
 %\include{Griffiths_12}	 % Griffiths - Electrodynamics / Helmoltz Theorem
 
-%\include{Jackson_06}	% J.D. Jackson -- Classical Electrodynamics, 2nd Edition
-%\include{Jackson_07}	 % J.D. Jackson -- Classical Electrodynamics, 2nd Edition
+%\include{Jackson_06}    % J.D. Jackson -- Classical Electrodynamics, 2nd Edition
+%\include{Jackson_07}    % J.D. Jackson -- Classical Electrodynamics, 2nd Edition
 
-%\include{Jackson_11}	 % J.D. Jackson -- Classical Electrodynamics, 3rd Edition
-%\include{Jackson_12}	 % J.D. Jackson -- Classical Electrodynamics, 3rd Edition
+%\include{Jackson_11}    % J.D. Jackson -- Classical Electrodynamics, 3rd Edition
+%\include{Jackson_12}    % J.D. Jackson -- Classical Electrodynamics, 3rd Edition
 
-%\include{Franklin_02}	 % J. Franklin -- Advanced Mechanics and General Relativity
-%\include{Franklin_03}	 % J. Franklin -- Advanced Mechanics and General Relativity
-%\include{Franklin_04}	 % J. Franklin -- Advanced Mechanics and General Relativity
-%\include{Franklin_05}	 % J. Franklin -- Advanced Mechanics and General Relativity
-%\include{Franklin_06}	 % J. Franklin -- Advanced Mechanics and General Relativity
+%\include{Franklin_02}   % J. Franklin -- Advanced Mechanics and General Relativity
+%\include{Franklin_03}   % J. Franklin -- Advanced Mechanics and General Relativity
+%\include{Franklin_04}   % J. Franklin -- Advanced Mechanics and General Relativity
+%\include{Franklin_05}   % J. Franklin -- Advanced Mechanics and General Relativity
+%\include{Franklin_06}   % J. Franklin -- Advanced Mechanics and General Relativity
 
 %\include{Landau_01}	 % L.D. Landau, E.M. Lifshitz -- Teoria dei Campi
 %\include{Landau_02}	 % L.D. Landau, E.M. Lifshitz -- Teoria dei Campi
