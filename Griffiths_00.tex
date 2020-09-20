@@ -174,16 +174,17 @@ For a more general mathematical treatment of this topic see Chapter \ref{ch:Catt
 Let two cartesian (orthonormal) reference frames in two dimensions, $\mathcal{F}$ and $\mathcal{F}'$, share a common origin $\mathcal{O}$. Let $\vu{i}, \vu{j}$ be unit vectors forming a basis of $\mathcal{F}$ and $\vu{i}', \vu{j}'$ some that form a basis of $\mathcal{F}'$. 
 
 Let $\mathcal{F}'$ be rotated by the angle $\phi$ --around the origin-- with respect to $\mathcal{F}$, so that
-\begin{equation*}
+\begin{equation}
 \vu{i} \vdot \vu{i}' = \cos(\phi) = \vu{j} \vdot \vu{j}' 
-\end{equation*}
+\label{eq:cosphi_products}
+\end{equation}
    
 The components of $\vb{A}$ with respect to the two frames are:
 
 \begin{equation*}
 \begin{aligned}
-A &= A_x \;\vu{i}\;  + A_y \; \vu{j}\\
-A &= A_x'\,\vu{i}'\, + A_y'\,\vu{j}'
+\vb{A} &= A_x \;\vu{i}\;  + A_y \; \vu{j}\\
+\vb{A} &= A_x'\,\vu{i}'\, + A_y'\,\vu{j}'
 \end{aligned}
 \end{equation*}
 
@@ -223,12 +224,82 @@ A_y'] =
 - \sin(\phi) &  \cos(\phi) |
 \mqty[ A_x \\
 A_y]
-\label{2d_vector_transform}
+\label{eq:2d_vector_transform}
 \end{equation}
 
 As expected, the matrix reduces to the identity in the limit of small $\phi$. The inverse transform is clearly obtained by changing $\phi$ into $-\phi$, thus inverting the sign of the off-diagonal terms in the above matrix. 
 
+There is another way to derive \ref{eq:2d_vector_transform} that can be generalized to any number of dimensions. It is often presented by geometric figures with rectangular triangles to prove how the unit basis vectors $\vu{i}$ and $\vu{j}$ decompose in the rotated basis $\vu{i}'$ and $\vu{j}'$. But there is hardly a need of a figure, as  equation \ref{eq:cosphi_products} already contains half of the story.  Indeed $\vu{i}$'s decomposition as well as $\vu{j}$'s must reduce to the identity for $\phi=0$ and the sum of the two coefficients squared must be $1$. With these prescriptions\footnote{The positive sign of both the $\cos(\phi)$ terms is dictated by the need to recover the identity transformation in the limit $\phi \rightarrow 0$ . The signs of the $\sin(\phi)$ terms are determined by the relative position of $\vu{i}$ with respect to $\vu{i}'$ (lower $\vu{j}'$) and that of $\vu{j}$ with respect to $\vu{j}'$ (higher $\vu{i}'$).} 
 
+\begin{equation}
+\begin{aligned}
+\vu{i} &= \cos(\phi) \vu{i}' - \sin(\phi) \vu{j}' \\
+\vu{j} &= \sin(\phi) \vu{i}' + \cos(\phi) \vu{j}'
+\end{aligned}
+\label{eq:2d_basis_transform}
+\end{equation}
+
+and the transformation \ref{eq:2d_vector_transform} is now re-obtained from \ref{eq:2d_basis_transform}
+
+\begin{equation*}
+\begin{aligned}
+\vb{A}  &= A_x \vu{i} + A_y \vu{j}\\
+		&= A_x (\cos(\phi) \vu{i}' - \sin(\phi) \vu{j}') \\
+		&+ A_y (\sin(\phi) \vu{i}' + \cos(\phi) \vu{j}') \\
+		&= (A_x \cos(\phi) + A_y \sin(\phi)) \vu{i}' \\
+		&+ (A_y \cos(\phi) - A_x \sin(\phi)) \vu{j}'
+\end{aligned}
+\end{equation*}
+ 
+Generalization starts by casting \ref{eq:2d_basis_transform} into a new form, that can be readily extended to three or more dimensions. For instance, in three dimensions: 
+
+\begin{equation*}
+\begin{aligned}
+\vu{i} &= \;(\vu{i} \vdot \vu{i}')\, \vu{i}' + \;(\vu{i} \vdot \vu{j}')\, \vu{j}' + \;(\vu{i} \vdot \vu{k}')\, \vu{k}'\\
+\vu{j} &= \;(\vu{j} \vdot \vu{i}')\, \vu{i}' + \;(\vu{j} \vdot \vu{j}')\, \vu{j}' + \;(\vu{j} \vdot \vu{k}')\, \vu{k}'\\
+\vu{k} &=   (\vu{k} \vdot \vu{i}')\, \vu{i}' +   (\vu{k} \vdot \vu{j}')\, \vu{j}' +   (\vu{k} \vdot \vu{k}')\, \vu{k}'
+\end{aligned}
+\end{equation*}
+
+and finally, in a more general, dimension-independent matrix notation: 
+
+\begin{equation}
+\mqty[\vu{e_1} \\ \vu{e_2} \\ \vu{e_3}] = \mqty|  
+\vu{e_1} \vdot \vu{e_1}' & \vu{e_1} \vdot \vu{e_2}' & \vu{e_1} \vdot \vu{e_3}' \\
+\vu{e_2} \vdot \vu{e_1}' & \vu{e_2} \vdot \vu{e_2}' & \vu{e_2} \vdot \vu{e_3}' \\
+\vu{e_3} \vdot \vu{e_1}' & \vu{e_3} \vdot \vu{e_2}' & \vu{e_3} \vdot \vu{e_3}' |
+\mqty[\vu{e_1}' \\ \vu{e_2}' \\ \vu{e_3}']
+= S \mqty[\vu{e_1}' \\ \vu{e_2}' \\ \vu{e_3}']
+\label{eq:3d_basis_transform}
+\end{equation}
+
+The matrix $S$, whose $S_{i,j}$ component equals the scalar product $\vu{e_i} \vdot \vu{e_j}'$ transforms the primed (rotated) unit basis vectors into the unprimed ones, therefore it is the three-dimensional analogue of \ref{eq:2d_basis_transform}. Now a closer inspection at \ref{eq:2d_vector_transform} shows that the \textit{transpose} of $S$ is the matrix that transforms vector \textit{components} from the unprimed to the primed basis, therefore
+
+\begin{equation}
+\mqty[A_1' \\ A_2' \\ A_3'] = S^T \mqty[A_1 \\ A_2 \\ A_3] = \mqty|
+\vu{e_1} \vdot \vu{e_1}' & \vu{e_2} \vdot \vu{e_1}' & \vu{e_3} \vdot \vu{e_1}' \\
+\vu{e_1} \vdot \vu{e_2}' & \vu{e_2} \vdot \vu{e_2}' & \vu{e_3} \vdot \vu{e_2}' \\
+\vu{e_1} \vdot \vu{e_3}' & \vu{e_2} \vdot \vu{e_3}' & \vu{e_3} \vdot \vu{e_3}  |
+\mqty[\vu{e_1}' \\ \vu{e_2}' \\ \vu{e_3}']
+\label{eq:3d_components_transform}
+\end{equation}
+
+\subsection{Euler Angles}
+We saw that \textit{one} parameter -- the $\phi$ angle -- is needed to define the transformation between two orthonormal reference systems with a common origin $\mathcal{O}$ in 2D space. In 3D space the analogous transformation generally depends on \textit{three} parameters, as it will be evident from the construction of one such transformation. In the following we use lower and capital letters to distinguish axes of the two systems, and we assume the latter to have the same \textit{orientation}, namely 
+
+\begin{equation*}
+(\vu{i} \cross \vu{j}) \vdot \vu{k} = (\vu{I} \cross \vu{J}) \vdot \vu{K} = 1 
+\end{equation*}
+
+Even without a figure we can agree that the two planes respectively orthogonal to $\vu{k}$ and $\vu{K}$ are either the same plane or they intersect at a line passing through the origin, the so-called \textit{line of nodes}. We do not discuss the first case $\vu{k} = \pm \vu{K}$ since we already know how to handle a 2D transformation, so let $\theta = \acos(\vu{k} \vdot \vu{K})$ be the not null angle formed by the two axes. The full transformation is thus defined as the \textit{product} of three 2D rotations, each one leaving one axis unchanged, to be performed in the following order:
+\begin{enumerate}
+\item Around $\vu{k}$ by the angle $\phi$ formed by the axis $\vu{i}$ with the line of nodes.  
+\item Around the line of nodes by the angle $\theta$ so that $\vu{k}$ goes onto $\vu{K}$.
+\item Around $\vu{K}$ by the angle $\psi$ so that the line of nodes goes onto $\vu{I}$.
+\end{enumerate}
+
+
+ 
 
 
 
