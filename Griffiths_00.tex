@@ -229,7 +229,7 @@ A_y]
 
 As expected, the matrix reduces to the identity in the limit of small $\phi$. The inverse transform is clearly obtained by changing $\phi$ into $-\phi$, thus inverting the sign of the off-diagonal terms in the above matrix. 
 
-There is another way to derive \ref{eq:2d_vector_transform} that can be generalized to any number of dimensions. It is often presented by geometric figures with rectangular triangles to prove how the unit basis vectors $\vu{i}$ and $\vu{j}$ decompose in the rotated basis $\vu{i}'$ and $\vu{j}'$. But there is hardly a need of a figure, as  equation \ref{eq:cosphi_products} already contains half of the story.  Indeed $\vu{i}$'s decomposition as well as $\vu{j}$'s must reduce to the identity for $\phi=0$ and the sum of the two coefficients squared must be $1$. With these prescriptions\footnote{The positive sign of both the $\cos(\phi)$ terms is dictated by the need to recover the identity transformation in the limit $\phi \rightarrow 0$ . The signs of the $\sin(\phi)$ terms are determined by the relative position of $\vu{i}$ with respect to $\vu{i}'$ (lower $\vu{j}'$) and that of $\vu{j}$ with respect to $\vu{j}'$ (higher $\vu{i}'$).} 
+There is another way to derive \ref{eq:2d_vector_transform} that can be generalized to any number of dimensions. It is often presented by geometric figures with rectangular triangles to prove how the unit basis vectors $\vu{i}$ and $\vu{j}$ decompose in the rotated basis $\vu{i}'$ and $\vu{j}'$. But there is hardly the need of a figure, as  equation \ref{eq:cosphi_products} already contains half of the story.  Indeed $\vu{i}$'s decomposition as well as $\vu{j}$'s must reduce to the identity for $\phi=0$ and the sum of the two coefficients squared must be $1$. With these prescriptions\footnote{The positive sign of both the $\cos(\phi)$ terms is dictated by the need to recover the identity transformation in the limit $\phi \rightarrow 0$ . The signs of the $\sin(\phi)$ terms are determined by the relative position of $\vu{i}$ with respect to $\vu{i}'$ (lower $\vu{j}'$) and that of $\vu{j}$ with respect to $\vu{j}'$ (higher $\vu{i}'$).} 
 
 \begin{equation}
 \begin{aligned}
@@ -276,7 +276,7 @@ and finally, in a more general, dimension-independent matrix notation:
 The matrix $S$, whose $S_{i,j}$ component equals the scalar product $\vu{e_i} \vdot \vu{e_j}'$ transforms the primed (rotated) unit basis vectors into the unprimed ones, therefore it is the three-dimensional analogue of \ref{eq:2d_basis_transform}. Now a closer inspection at \ref{eq:2d_vector_transform} shows that the \textit{transpose} of $S$ is the matrix that transforms vector \textit{components} from the unprimed to the primed basis, therefore
 
 \begin{equation}
-\mqty[A_1' \\ A_2' \\ A_3'] = S^T \mqty[A_1 \\ A_2 \\ A_3] = \mqty|
+\mqty[A_1' \\ A_2' \\ A_3'] = S^\top \mqty[A_1 \\ A_2 \\ A_3] = \mqty|
 \vu{e_1} \vdot \vu{e_1}' & \vu{e_2} \vdot \vu{e_1}' & \vu{e_3} \vdot \vu{e_1}' \\
 \vu{e_1} \vdot \vu{e_2}' & \vu{e_2} \vdot \vu{e_2}' & \vu{e_3} \vdot \vu{e_2}' \\
 \vu{e_1} \vdot \vu{e_3}' & \vu{e_2} \vdot \vu{e_3}' & \vu{e_3} \vdot \vu{e_3}  |
@@ -284,22 +284,76 @@ The matrix $S$, whose $S_{i,j}$ component equals the scalar product $\vu{e_i} \v
 \label{eq:3d_components_transform}
 \end{equation}
 
+Matrices like $S$ and $S^\top$, respectively defined in \ref{eq:3d_basis_transform} and \ref{eq:3d_components_transform}, are said to be \textit{orthogonal} due to their special properties. 
+Indeed each matrix \textit{row} and each matrix \textit{column} represents the components of a unit vector of one orthonormal basis with respect to another orthonormal basis, so the norm of each row and of each column must be $1$. In $n$ dimensions this amounts to $2n$ constraints, so the total number of independent parameters is $n^2-2n$. Moreover, $S$ and $S^\top$ are each other's \textit{inverse}:
+\begin{equation}
+S S^\top = \mqty|
+\vu{e_1} \vdot \vu{e_1} & \vu{e_2} \vdot \vu{e_1}  & \vu{e_3} \vdot \vu{e_1} \\  
+\vu{e_1} \vdot \vu{e_2} & \vu{e_2} \vdot \vu{e_2}  & \vu{e_3} \vdot \vu{e_2} \\  
+\vu{e_1} \vdot \vu{e_3} & \vu{e_2} \vdot \vu{e_3}  & \vu{e_3} \vdot \vu{e_3} |  = S^\top S
+= \mqty|
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 | = I 
+\label{eq:3d_ortho_matrices}
+\end{equation}
+
+
 \subsection{Euler Angles}
-We saw that \textit{one} parameter -- the $\phi$ angle -- is needed to define the transformation between two orthonormal reference systems with a common origin $\mathcal{O}$ in 2D space. In 3D space the analogous transformation generally depends on \textit{three} parameters, as it will be evident from the construction of one such transformation. In the following we use lower and capital letters to distinguish axes of the two systems, and we assume the latter to have the same \textit{orientation}, namely 
+We saw that \textit{one} parameter -- the $\phi$ angle -- is needed to define the transformation between two orthonormal reference systems with a common origin $\mathcal{O}$ in 2D space. In 3D space the analogous transformation generally depends on \textit{three} parameters, as it will be evident from the construction of one such transformation and from an already cited general property of orthogonal matrices. 
+In the following we use lower and capital letters to distinguish axes of the two systems, and we assume the latter to have the same \textit{orientation}, namely 
 
 \begin{equation*}
 (\vu{i} \cross \vu{j}) \vdot \vu{k} = (\vu{I} \cross \vu{J}) \vdot \vu{K} = 1 
 \end{equation*}
 
-Even without a figure we can agree that the two planes respectively orthogonal to $\vu{k}$ and $\vu{K}$ are either the same plane or they intersect at a line passing through the origin, the so-called \textit{line of nodes}. We do not discuss the first case $\vu{k} = \pm \vu{K}$ since we already know how to handle a 2D transformation, so let $\theta = \acos(\vu{k} \vdot \vu{K})$ be the not null angle formed by the two axes. The full transformation is thus defined as the \textit{product} of three 2D rotations, each one leaving one axis unchanged, to be performed in the following order:
+Even without a figure we can agree that the two planes respectively orthogonal to $\vu{k}$ and $\vu{K}$ are either the same plane or they intersect at a line passing through the origin, the so-called \textit{line of nodes}. We do not discuss the first case ($\vu{k} = \pm \vu{K}$) as we already know how to handle 2D transformations, so let $\theta = \acos(\vu{k} \vdot \vu{K})$ be the angle (not null) formed by the two axes. The full transformation is thus defined as the \textit{product} of three 2D rotations, each one leaving one axis unchanged, to be performed in the following order:
 \begin{enumerate}
 \item Around $\vu{k}$ by the angle $\phi$ formed by the axis $\vu{i}$ with the line of nodes.  
 \item Around the line of nodes by the angle $\theta$ so that $\vu{k}$ goes onto $\vu{K}$.
 \item Around $\vu{K}$ by the angle $\psi$ so that the line of nodes goes onto $\vu{I}$.
 \end{enumerate}
 
+$\phi$, $\theta$ and $\psi$ are called the \textit{Euler angles}. 
 
- 
+Let denote as $R_\phi$, $R_\theta$ and $R_\psi$ the matrices associated to the transformation from unprimed to primed coordinates under the above rotations. Each matrix has the form given in \ref{eq:2d_vector_transform} for the transformation of coordinates under a 2D rotation. Adaptation to the 3D context amonts to ensure that points located on the rotation axis be unaffected. With these prescriptions
+the transformation matrix is the product $R(\phi, \theta, \psi) = R_\psi R_\theta R_\phi$ where
+
+\begin{equation}
+R_\phi = \mqty| 
+\cos(\phi) &  \sin(\phi) & 0 \\
+-\sin(\phi) & \cos(\phi) & 0 \\
+0 & 0 & 1 | 
+\end{equation}
+
+\begin{equation}
+R_\theta = \mqty|
+1 & 0 & 0 \\ 
+0 & \cos(\theta) &  \sin(\theta) \\
+0 &-\sin(\theta) & \cos(\theta) | 
+\end{equation}
+  
+\begin{equation}
+R_\psi = \mqty| 
+\cos(\psi) &  \sin(\psi) & 0 \\
+-\sin(\psi) & \cos(\psi) & 0 \\
+0 & 0 & 1 | 
+\end{equation}
+
+Therefore 
+
+\begin{equation}
+\begin{aligned}
+& R(\phi, \theta, \psi) = R_\psi \mqty| 
+\cos(\phi) & \sin(\phi) & 0 \\
+-\sin(\phi)\cos(\theta) & \cos(\phi)\cos(\theta) & \sin(\theta)\\
+\sin(\phi)\sin(\theta) & -\cos(\phi)\sin(\theta) & \cos(\theta) | = \\
+& \mqty|
+\cos{\phi}\cos{\theta} - \sin{\phi}\sin{\theta}\cos{\psi} & \cos{\phi}\sin{\theta} - \sin{\phi}\cos{\theta}\cos{\psi} & \sin{\phi} \sin{\psi}\\
+\cos{\phi}\sin{\theta}\cos{\psi} - \sin{\phi}\cos{\theta} & \cos{\phi}\cos{\theta}\cos{\psi} -\sin{\phi}\sin{\theta} & \cos{\phi} \sin{\psi}\\
+\sin{\theta} \sin{\psi} & -\cos{\theta}\sin{\psi} & \cos{\psi} |
+\end{aligned}
+\end{equation}
 
 
 
