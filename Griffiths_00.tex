@@ -436,10 +436,11 @@ The transformation of the basis vectors as in \ref{eq:2d_basis_transform} implie
 
 It turns out (see equation \ref{eq:2d_vector_transform}) that the corresponding transformation of vector \textit{components} from the original basis to the rotated one is carried out by the following matrix  
 
-\begin{equation*}
+\begin{equation}
 A(\phi) = \mqty| \cos(\phi) & \sin(\phi) \\
--\sin(\phi) & \cos(\phi)| 
-\end{equation*}  
+-\sin(\phi) & \cos(\phi)|
+\label{eq:rotphi} 
+\end{equation}  
 
 whereby a vector $\vb{r}$ takes components $(x', y')$ in the rotated basis and these can be obtained from the unprimed components $(x, y)$ that $\vb{r}$ takes in the original basis by multiplication with the matrix $A(\phi)$: 
 
@@ -470,11 +471,49 @@ which nicely reduce to
 \end{equation}  
 \qed
 
- 
+\subsection{Divergence}
+For a given vector field $\vb{v}(\vb{r})$ the following notation 
 
+\begin{equation}
+\begin{aligned}
+\div{\vb{v}} &= \left( \vu{i} \pdv{}{x} + \vu{j} \pdv{}{y} + \vu{k} \pdv{}{z} \right) 
+                      \vdot \left( v_x\, \vu{i} + v_y\, \vu{j} + v_z\, \vu{k} \right) \\
+             &= \pdv{v_x}{x} + \pdv{v_y}{y} + \pdv{v_z}{z}				
+\end{aligned}
+\label{eq:divergence}
+\end{equation}
 
+is used to denote the \textit{divergence} of the vector field.
 
+\subsubsection*{Problem 17}
+In two dimensions, show that the divergence transforms as a \textit{scalar} under rotations. \\
 
+Using \ref{eq:2d_vector_transform}
 
+\begin{equation*}
+\mqty[ \vb{v}_{x'} \\ \vb{v}_{y'}] = A(\phi) \mqty[ \vb{v}_{x} \\ \vb{v}_{y}] 
+\end{equation*}  
 
+where $A(\phi)$ is given in \ref{eq:rotphi}. Therefore
+
+\begin{align*} 
+\pdv{\vb{v}_{x'}}{x'} &= \pdv{\vb{v}_{x'}}{x} \pdv{x}{x'} + \pdv{\vb{v}_{x'}}{y} \pdv{y}{x'}    \\
+&= \cos \phi \pdv{(\vb{v}_{x} \cos \phi + \vb{v}_{y} \sin \phi)}{x} + \sin \phi \pdv{(\vb{v}_{x} \cos \phi + \vb{v}_{y} \sin \phi)}{y} \\
+\pdv{\vb{v}_{y'}}{y'} &= \pdv{\vb{v}_{y'}}{x} \pdv{x}{y'} + \pdv{\vb{v}_{y'}}{y} \pdv{y}{y'}	\\
+&= -\sin \phi \pdv{(\vb{v}_{y} \cos \phi - \vb{v}_{x} \sin \phi)}{x} + \cos \phi \pdv{(\vb{v}_{y} \cos \phi - \vb{v}_{x} \sin \phi)}{y}
+\end{align*}
+
+Rearranging terms in the above expressions
+
+\begin{align*} 
+\pdv{\vb{v}_{x'}}{x'} &= \pdv{\vb{v}_x}{x} C^2 + \pdv{\vb{v}_y}{y} S^2 + \pdv{\vb{v}_y}{x} S C + \pdv{\vb{v}_x}{y} S C \\
+\pdv{\vb{v}_{y'}}{y'} &= \pdv{\vb{v}_x}{x} S^2 + \pdv{\vb{v}_y}{y} C^2 - \pdv{\vb{v}_y}{x} S C - \pdv{\vb{v}_x}{y} S C \\
+\end{align*}
+
+(where $C = \cos(\phi)$, $S = \sin(\phi)$) one finally obtains 
+
+\begin{equation}
+\pdv{\vb{v}_{x'}}{x'} +  \pdv{\vb{v}_{y'}}{y'} = \pdv{\vb{v}_{x}}{x} + \pdv{\vb{v}_{y}}{y}
+\end{equation}
+\qed
 
