@@ -169,8 +169,6 @@ Problems in electrodynamics frequently involve two points, typically a \textbf{s
 
 
 \section{How Vectors Transform}
-For a more general mathematical treatment of this topic see Chapter \ref{ch:Cattaneo_01}. 
-
 Let two cartesian (orthonormal) reference frames in two dimensions, $\mathcal{F}$ and $\mathcal{F}'$, share a common origin $\mathcal{O}$. Let $\vu{i}, \vu{j}$ be unit vectors forming a basis of $\mathcal{F}$ and $\vu{i}', \vu{j}'$ some that form a basis of $\mathcal{F}'$. 
 
 Let $\mathcal{F}'$ be rotated by the angle $\phi$ --around the origin-- with respect to $\mathcal{F}$, so that
@@ -179,7 +177,7 @@ Let $\mathcal{F}'$ be rotated by the angle $\phi$ --around the origin-- with res
 \label{eq:cosphi_products}
 \end{equation}
    
-The components of $\vb{A}$ with respect to the two frames are:
+The components of a vector $\vb{A}$ with respect to the two frames are:
 
 \begin{equation*}
 \begin{aligned}
@@ -273,7 +271,7 @@ and finally, in a more general, dimension-independent matrix notation:
 \label{eq:3d_basis_transform}
 \end{equation}
 
-The matrix $S$, whose $S_{i,j}$ component equals the scalar product $\vu{e_i} \vdot \vu{e_j}'$ transforms the primed (rotated) unit basis vectors into the unprimed ones, therefore it is the three-dimensional analogue of \ref{eq:2d_basis_transform}. Now a closer inspection at \ref{eq:2d_vector_transform} shows that the \textit{transpose} of $S$ is the matrix that transforms vector \textit{components} from the unprimed to the primed basis, therefore
+The matrix $S$, whose $S_{i,j}$ component equals the scalar product $\vu{e_i} \vdot \vu{e_j}'$ transforms the primed (rotated) unit basis vectors into the unprimed ones, therefore it is the three-dimensional analogue of \ref{eq:2d_basis_transform}. Now a closer inspection at \ref{eq:2d_vector_transform} shows that the it is the \textit{transpose} of $S$ the matrix that transforms vector \textit{components} from the unprimed to the primed basis, therefore
 
 \begin{equation}
 \mqty[A_1' \\ A_2' \\ A_3'] = S^\top \mqty[A_1 \\ A_2 \\ A_3] = \mqty|
@@ -298,6 +296,7 @@ S S^\top = \mqty|
 \label{eq:3d_ortho_matrices}
 \end{equation}
 
+In summary, the \textit{matrices} respectively transforming the \textit{basis vectors} (\ref{eq:3d_basis_transform}) and vector \textit{components} (\ref{eq:3d_components_transform}) are simply related by \textit{transposition}. This is a direct consequence --and one of the advantages-- of working with \textit{orthonormal bases}. For transformations connecting two \textit{general bases} --where one is (or both are) not orthonormal-- the analogue of matrix $S$ --let call it $R$ --  has the same structure, although the matrix element $R_{lm} = \vb{e}_l \vdot \vb{e}_m$ is the dot product of basis vectors of arbitrary norm, whence $R$ is generally not an orthogonal matrix. In such general context, the analogue of $S^\top$ is clearly\footnote{This fact agrees with the intuitive notion that \quotes{a rotation of the basis causes an opposite rotation of vector components}.} $R^{-1}$, the \textit{inverse} of $R$. 
 
 \subsection{Euler Angles}
 We saw that \textit{one} parameter -- the $\phi$ angle -- is needed to define the transformation between two orthonormal reference systems with a common origin $\mathcal{O}$ in 2D space. In 3D space the analogous transformation generally depends on \textit{three} parameters, as it will be evident from the construction of one such transformation and from an already cited general property of orthogonal matrices. 
@@ -354,6 +353,126 @@ Therefore
 \sin{\theta} \sin{\psi} & -\cos{\theta}\sin{\psi} & \cos{\psi} |
 \end{aligned}
 \end{equation}
+
+The determinant $\det(R(\phi, \theta, \psi))$ is equal to $1$.  
+As a reminder, if $R$ is assumed to be the matrix transforming the \textit{basis} vectors, then $R^\top$ is the matrix transforming vector \textit{components} across the two bases (and viceversa).  
+
+\section{Differential Calculus}
+\subsection{Gradient}
+Given $T(x, y, z)$ a scalar function of several variables the \textit{linear} part of the function increment at a given point $(x, y, z)$ is given by
+\begin{equation}
+\begin{aligned}
+d T &= \pdv{T}{x} dx + \pdv{T}{y} dy + \pdv{T}{z} dz \\
+    &= \left( \pdv{T}{x} \vu{i} + \pdv{T}{y} \vu{j} + \pdv{T}{z} \vu{k}  \right) \vdot (dx \vu{i} + dy \vu{j} + dz \vu{k}) \\
+    &= \grad{T} \vdot d\vb{l}
+\end{aligned}
+\label{eq:gradient}
+\end{equation}
+
+where 
+
+\begin{equation}
+\grad{T} = \pdv{T}{x} \vu{i} + \pdv{T}{y} \vu{j} + \pdv{T}{z} \vu{k} 
+\end{equation}
+
+is the \textit{gradient} of $T$. 
+
+The geometrical meaning of the gradient becomes clear by rewriting the dot product in \ref{eq:gradient} as
+
+\begin{equation}
+dT = \grad{T} \vdot d\vb{l} = \abs{\grad{T}} \abs{d\vb{l}} \cos \theta
+\end{equation}
+
+where $\theta$ is the angle between $\grad{T}$ and $d\vb{l}$. With fixed $\abs{d\vb{l}}$ the maximum of $dT$ then occurs when $\theta = 0$, therefore:
+
+\textit{The gradient $\grad{T}$ points in the direction of maximum increase of the function $T$, while $\abs{\grad{T}}$ is the rate of increase along this maximal direction.}
+
+The condition $\grad{T} = \vb{0}$ defines a \textit{stationary point}. It could be a maximum (a summit), a minimum (a valley), a saddle point (a pass) or a \quotes{shoulder}. 
+ 
+\subsubsection*{Example}
+Let $r \equiv \abs{\vb{r}} = \sqrt{x^2 + y^2 + z^2}$, be the \textit{magnitude} of the \textit{position} vector. Compute the gradient of different powers of $r$. 
+
+\begin{align*} 
+\grad{r} &= \frac{\vb{r}}{r} = \hat{\vb{r}} \\
+\grad{r^2} &= 2 r \grad{r} = 2r \vu{r} = 2 \vb{r} \\
+\grad{\left( \frac{1}{r} \right)} &= - \frac{1}{r^2} \grad{r} = - \frac{\hat{\vb{r}}}{r^2} = - \frac{\vb{r}}{r^3} 
+\end{align*}
+
+\begin{equation} 
+\grad(r^n) = n r^{n-1} \grad{r} =  n r^{n-1} \vu{r} =  n r^{n-2} \vb{r}
+\label{eq:grad_r_powers}
+\end{equation}
+
+\subsubsection*{Problem 13}
+Let $s \equiv \abs{\vb{r} - \vb{r}'}$, be the \textit{magnitude} of the \textit{separation} vector from a \textit{fixed} point $\vb{r}'$ to the point $\vb{r}$. Show that
+\begin{enumerate}[a)]
+\item $\grad(s^2) = 2 \vb{s}$ 
+\item $\grad(1/s) = - \vu{s}/s^2$ 
+\item What is the general formula for $\grad(s^n)$?
+\end{enumerate}
+
+We note that $\vb{r}'$ is a constant term in the evaluation of derivatives, therefore
+the gradient of powers of $s$ have the form \ref{eq:grad_r_powers}, therefore  
+
+\begin{enumerate}[a)]
+\item
+\begin{equation*}
+\grad(s^2) = 2s \vu{s} = 2 \vb{s}
+\end{equation*}
+\item
+\begin{equation*}
+\grad(1/s) = - \frac{\vu{s}}{s^2}
+\end{equation*}
+\item
+\begin{equation}
+\grad(s^n) = n s^{n-1} \grad{s} = n s^{n-1} \vu{s} 
+\end{equation}
+\end{enumerate}
+
+\subsubsection*{Problem 14}
+Suppose that $f$ is a function of two variables only. Show that $\grad f$ transforms as a vector under rotations. \\
+
+The transformation of the basis vectors as in \ref{eq:2d_basis_transform} implies that the \textit{primed} basis is obtained by a rotation about the origin of the \textit{unprimed} basis by an angle $\phi$. 
+
+It turns out (see equation \ref{eq:2d_vector_transform}) that the corresponding transformation of vector \textit{components} from the original basis to the rotated one is carried out by the following matrix  
+
+\begin{equation*}
+A(\phi) = \mqty| \cos(\phi) & \sin(\phi) \\
+-\sin(\phi) & \cos(\phi)| 
+\end{equation*}  
+
+whereby a vector $\vb{r}$ takes components $(x', y')$ in the rotated basis and these can be obtained from the unprimed components $(x, y)$ that $\vb{r}$ takes in the original basis by multiplication with the matrix $A(\phi)$: 
+
+\begin{equation*}
+\mqty[ x' \\ y'] = A(\phi) \mqty[ x \\ y] 
+\end{equation*}  
+
+In the following we need to transform from the primed to the original, which can be done with the inverse of $A(\phi)$, that happens to be just $A(-\phi)$
+
+\begin{equation*}
+\mqty[ x \\ y] = A(-\phi) \mqty[ x' \\ y'] 
+\end{equation*}  
+
+Indeed, in order to obtain the gradient in the primed system, we use the following derivatives:
+
+\begin{align*} 
+\pdv{f}{x'} &= \pdv{f}{x} \pdv{x}{x'}    + \pdv{f}{y} \pdv{y}{x'}    \\
+		    &= \pdv{f}{x} A(-\phi)_{1,1} + \pdv{f}{y} A(-\phi)_{2,1} \\
+\pdv{f}{y'} &= \pdv{f}{x} \pdv{x}{y'}    + \pdv{f}{y} \pdv{y}{y'}    \\
+		    &= \pdv{f}{x} A(-\phi)_{1,2} + \pdv{f}{y} A(-\phi)_{2,2}
+\end{align*}
+
+which nicely reduce to 
+
+\begin{equation}
+\grad'\, f = (A(-\phi))^\top \grad\, f = A(\phi) \grad\, f
+\label{eq:grad_transform}
+\end{equation}  
+\qed
+
+ 
+
+
 
 
 
