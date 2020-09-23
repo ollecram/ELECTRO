@@ -485,6 +485,32 @@ For a given vector field $\vb{v}(\vb{r})$ the following notation
 
 is used to denote the \textit{divergence} of the vector field.
 
+\subsubsection*{Problem 16}
+Compute the divergence of the vector function
+\begin{equation*}
+\vb{v} \frac{\vu{r}}{r^2}
+\end{equation*}  
+The answer may surprise you... can you explain that?
+
+First we reproduce here a key finding about \textit{radial fields} also exposed in chapter \ref{ch:Felsager_01}. Let $\vb{v}$ be a vector field depending on the magnitude $r$ of the position vector $\vb{r} = r \vu{r}$.
+
+\begin{equation*}
+\vb{v}(\vb{r}) = f(r) \hat{\vb{r}} 
+\end{equation*}
+
+where $f$ is any derivable scalar function. It turns out that
+
+\begin{equation}
+\begin{aligned} 
+\div{\vb{A}} \equiv \div{\left[ f(r) \, \vu{r} \right]} 
+&= \frac{2 \, f}{r} + f' = \frac{1}{r^2} \pdv{\left( r^2 f \right) }{r}
+\end{aligned}
+\end{equation}
+
+where the last expression coincides with the known formula for the contribution of the radial term to the divergence when the field components are given in \textit{spherical coordinates}. For a radial field whose intensity is proportional to $1/r^2$ this expression is identically zero everywhere except at the origin $r=0$ where the expression becomes undefined. 
+
+This is consistent with the fact that the \textit{inverse square law} causes the \textit{flux} of the field $\vb{v}$ over the surface of any volume to vanish iff the latter does not include the origin. On the contrary, the flux over the surface of any volume enclosing the origin has the constant value $4 \pi$, suggesting to define the divergence as $4 \pi \delta^3(\vb{r})$ where $\delta^3$ is the Dirac distribution.   
+
 \subsubsection*{Problem 17}
 In two dimensions, show that the divergence transforms as a \textit{scalar} under rotations. \\
 
@@ -516,4 +542,135 @@ Rearranging terms in the above expressions
 \pdv{\vb{v}_{x'}}{x'} +  \pdv{\vb{v}_{y'}}{y'} = \pdv{\vb{v}_{x}}{x} + \pdv{\vb{v}_{y}}{y}
 \end{equation}
 \qed
+
+
+\subsection{Curl}
+
+The curl of a vector field $\vb{v}(\vb{r})$ is defined as follows
+
+\begin{equation}
+\begin{aligned}
+\grad \cross \vb{v} &= \mqty|
+\vu{i} & \vu{j} & \vu{k} \\
+\partial_x & \partial_y & \partial_z \\
+\vb{v}_x & \vb{v}_y & \vb{v}_z &  | \\
+&= \vu{i} \left( \pdv{\vb{v}_z}{y} - \pdv{\vb{v}_y}{z}  \right)
+ + \vu{j} \left( \pdv{\vb{v}_x}{z} - \pdv{\vb{v}_z}{x}  \right) 
+ + \vu{k} \left( \pdv{\vb{v}_y}{x} - \pdv{\vb{v}_x}{y}  \right) 
+\end{aligned}
+\end{equation}  
+
+\subsubsection*{Example}
+Let $\vb{V}$ be a vector field \quotes{rotating} around the $\vu{k}$ axis of a cartesian frame, with a magnitude equal to $r^n$, where $r$ is the distance from the axis $\vu{k}$, namely
+
+\begin{equation}
+\vb{V} = r^n (\vu{k} \cross \vu{r})
+\label{eq:curl_example_field}
+\end{equation}  
+
+We compute the curl of $\vb{V}$ by making use of the general identity
+
+\begin{equation}
+\curl{(f \vb{A})} = f (\curl{\vb{A}}) - \vb{A} \cross (\grad{f})
+\label{eq:product_curl}
+\end{equation} 
+
+whereby 
+
+\begin{equation*}
+\curl{\vb{V}} = r^n (\curl{(\vu{k} \cross \vu{r})}) - \vb{V} \cross (\grad{r^n})
+\end{equation*}
+
+The unit vectors defining $\vb{V}$ are, making their components explicit    
+\begin{align*}
+\vu{k} &= \;0\, \vu{i}\; + \;0\, \vu{j}\; + \;1\, \vu{k}		\\ 
+\vu{r} &= \frac{x }{\sqrt{x^2 + y^2}}\, \vu{i} + \frac{y}{\sqrt{x^2 + y^2}}\, \vu{j} \\
+\vu{k} \cross \vu{r} &= -\frac{y}{\sqrt{x^2 + y^2}}\, \vu{i} + \frac{x}{\sqrt{x^2 + y^2}}\, \vu{j}
+\end{align*} 
+
+whence 
+
+\begin{equation}
+\begin{aligned}
+\curl{(\vu{k} \cross \vu{r})} &= \vu{k} \left[ \partial_x \left( \frac{x}{\sqrt{x^2 + y^2}} \right) 
+                                            +  \partial_y \left( \frac{y}{\sqrt{x^2 + y^2}} \right) \right] \\
+                              &= \vu{k} \left[ \frac{2}{\sqrt{x^2 + y^2}} - \frac{x^2 + y^2}{(x^2 + y^2)^{3/2}} \right] \\
+                              &= \frac{\vu{k}}{r}
+\end{aligned} 
+\end{equation}
+
+Now recalling \ref{eq:grad_r_powers} and making again use of \ref{eq:product_curl}  
+
+\begin{equation*}
+\begin{aligned}
+\grad (r^n) &= n r^{n-1} \vu{r} \\
+\vb{V} \cross \grad (r^n) &= n r^{n-1} (\vb{V} \cross \vu{r})
+                          &= n r^{2n-1} [(\vu{k} \cross \vu{r})  \cross \vu{r}] 
+                          &= \vb{0}
+\end{aligned} 
+\end{equation*}
+
+Putting it all together 
+
+\begin{equation}
+\begin{aligned}
+\curl{\vb{V}} &= \curl{r^n (\vu{k} \cross \vu{r})} \\
+              &= r^n (\curl{(\vu{k} \cross \vu{r})}) \\
+              &= r^{n-1} \vu{k}
+\end{aligned}
+\label{eq:curl_example_value}
+\end{equation}
+
+We see from \ref{eq:curl_example_field} that a field $\vb{V}$ given by \ref{eq:curl_example_field} produces a curl directed along the axis $\vu{k}$ whose intensity is equal to $r^{n-1}$. 
+
+To check the corretness of this result we examine the \textit{line integral}
+
+\begin{equation*}
+\oint_{\Gamma} \vb{V} \vdot d\vb{l} = \oint_{\Gamma} r^n (\vu{k} \cross \vu{r}) \vdot d\vb{l}  
+\end{equation*}
+  
+This integral is easy to evaluate when $\Gamma$ is a \textit{circle} of radius $R$ lying in a plane orthogonal to $\vu{k}$ and centered in the origin, because in that case 
+\begin{itemize}
+\item $\vu{k} \cross \vu{r}$ is a unit vector \textit{parallel} to $d\vb{l}$, and
+\item $r$ takes the fixed value $R$ and that can be moved outside of the integral.
+\end{itemize}
+
+therefore 
+\begin{equation}
+\begin{aligned}
+\oint_{\Gamma} \vb{V} \vdot d\vb{l} &= R^n \oint_{\Gamma} d\vb{l} \\
+                                    &= R^n \int_0^{2\pi} R d\phi 
+                                    &= 2\pi R^{n+1} 
+\end{aligned}
+\label{eq:field_circolation}
+\end{equation}
+
+According to Stokes theorem, the same result must be obtained by computing the flux of $\curl{\vb{V}}$ across any surface bounded by the circle $\Gamma$. Using \ref{eq:curl_example_value} we thus evaluate the \textit{surface integral}\footnote{The surface $\Sigma$ being the \textit{disc} bounded by the circle $\Gamma$ in the integral of \ref{eq:field_circolation}.}
+
+\begin{equation}
+\begin{aligned}
+\int_{\Sigma} (\curl{\vb{V}}) \vdot d\vb{a} 
+	&= \int_{\Sigma} r^{n-1}\, \vu{k} \vdot d\vb{a} \\
+	&= \int_{\Sigma} r^{n-1}\, d a \\
+	&= \int_0^R dr \int_0^{2 \pi}  r^{n-1} (r d\phi) \\
+	&= 2\pi \int_0^R r^n dr \\
+	&= 2\pi \frac{R^{n+1}}{n+1}
+\end{aligned}
+\label{eq:rotation_flux}
+\end{equation}
+
+So, we have a \textbf{discrepancy between \ref{eq:field_circolation} and \ref{eq:rotation_flux} by a factor of $(n+1)$ that must be resolved!}
+
+\subsubsection*{Problem 20}
+Construct a vector field (different from a constant field) that has zero divergence and zero curl everywhere.
+
+$\curl{(\grad{\phi})} = \vb{0}$ suggests to take $\vb{V} = \grad{\phi}$. The requirement of zero divergence then implies 
+\begin{equation*}
+\begin{aligned}
+\div{\vb{V}} &= \div{(\grad{\phi})} \\
+             &= \laplacian{\phi} = 0 
+\end{aligned}
+\end{equation*}
+
+Therefore, any scalar \textit{field} $\phi$, solution of the \textit{homogeneous} Laplace equation would do. 
 
