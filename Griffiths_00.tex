@@ -96,9 +96,10 @@ The vector triple product can be simplified by the $\vb{BAC}\mathbf{-}\vb{CAB}$ 
 
 Note that 
 
-\begin{equation*}
+\begin{equation}
 (\vb{A} \cross \vb{B}) \cross \vb{C} = - \vb{C} \cross (\vb{A} \cross \vb{B}) = \vb{B} (\vb{A} \vdot \vb{C}) - \vb{A} (\vb{B} \vdot \vb{C})
-\end{equation*}
+\label{eq:vector_triple_product_2}
+\end{equation}
 
 so changing the grouping yields a different vector, namely
 
@@ -577,11 +578,12 @@ We compute the curl of $\vb{V}$ by making use of the general identity
 
 whereby 
 
-\begin{equation*}
-\curl{\vb{V}} = r^n (\curl{(\vu{k} \cross \vu{r})}) - \vb{V} \cross (\grad{r^n})
-\end{equation*}
+\begin{equation}
+\curl{\vb{V}} = r^n (\curl{(\vu{k} \cross \vu{r})}) - (\vu{k} \cross \vu{r}) \cross (\grad{r^n})
+\label{eq:rotV}
+\end{equation}
 
-The unit vectors defining $\vb{V}$ are, making their components explicit    
+Making components explicit, the unit vectors defining $\vb{V}$ are     
 \begin{align*}
 \vu{k} &= \;0\, \vu{i}\; + \;0\, \vu{j}\; + \;1\, \vu{k}		\\ 
 \vu{r} &= \frac{x }{\sqrt{x^2 + y^2}}\, \vu{i} + \frac{y}{\sqrt{x^2 + y^2}}\, \vu{j} \\
@@ -599,14 +601,19 @@ whence
 \end{aligned} 
 \end{equation}
 
-Now recalling \ref{eq:grad_r_powers} and making again use of \ref{eq:product_curl}  
+Using formula \ref{eq:vector_triple_product_2} for the triple vector product\footnote{In this case it is sufficient to consider the result of combining mutually orthogonal unit vectors with the cross product.} 
+
+\begin{equation*}
+(\vu{k} \cross \vu{r}) \cross \vu{r} = -\vu{k} 
+\end{equation*}
+
+Now recalling \ref{eq:grad_r_powers}  
 
 \begin{equation*}
 \begin{aligned}
 \grad (r^n) &= n r^{n-1} \vu{r} \\
-\vb{V} \cross \grad (r^n) &= n r^{n-1} (\vb{V} \cross \vu{r})
-                          &= n r^{2n-1} [(\vu{k} \cross \vu{r})  \cross \vu{r}] 
-                          &= \vb{0}
+(\vu{k} \cross \vu{r}) \cross \grad (r^n) &= n r^{n-1} (\vu{k} \cross \vu{r}) \cross \vu{r} \\
+                                          &= - n r^{n-1} \vu{k} 
 \end{aligned} 
 \end{equation*}
 
@@ -614,16 +621,16 @@ Putting it all together
 
 \begin{equation}
 \begin{aligned}
-\curl{\vb{V}} &= \curl{r^n (\vu{k} \cross \vu{r})} \\
-              &= r^n (\curl{(\vu{k} \cross \vu{r})}) \\
-              &= r^{n-1} \vu{k}
+\curl{\vb{V}} &= r^n \curl{(\vu{k} \cross \vu{r})} - (\vu{k} \cross \vu{r}) \cross (\grad{r^n}) \\
+              &= r^n \frac{\vu{k}}{r} + n r^{n-1} \vu{k}\\
+              &= (n+1) r^{n-1} \vu{k} 
 \end{aligned}
 \label{eq:curl_example_value}
 \end{equation}
 
-We see from \ref{eq:curl_example_field} that a field $\vb{V}$ given by \ref{eq:curl_example_field} produces a curl directed along the axis $\vu{k}$ whose intensity is equal to $r^{n-1}$. 
+We see from \ref{eq:curl_example_value} that a field $\vb{V}$ given by \ref{eq:curl_example_field} produces a curl directed along the axis $\vu{k}$ whose intensity is proportional to $r^{n-1}$. 
 
-To check the corretness of this result we examine the \textit{line integral}
+To check the correctness of this result we examine the \textit{line integral}
 
 \begin{equation*}
 \oint_{\Gamma} \vb{V} \vdot d\vb{l} = \oint_{\Gamma} r^n (\vu{k} \cross \vu{r}) \vdot d\vb{l}  
@@ -638,31 +645,69 @@ This integral is easy to evaluate when $\Gamma$ is a \textit{circle} of radius $
 therefore 
 \begin{equation}
 \begin{aligned}
-\oint_{\Gamma} \vb{V} \vdot d\vb{l} &= R^n \oint_{\Gamma} d\vb{l} \\
+\oint_{\Gamma} \vb{V} \vdot d\vb{l} &= R^n \oint_{\Gamma} dl \\
                                     &= R^n \int_0^{2\pi} R d\phi 
                                     &= 2\pi R^{n+1} 
 \end{aligned}
 \label{eq:field_circolation}
 \end{equation}
+As expected\footnote{The curve total length is proportional to $R$, so integrating a function inversely proportional to $R$ yelds a result that does not depend on $R$}, the line integral evaluates to a constant ($2\pi$) for $n=-1$ when 
 
-According to Stokes theorem, the same result must be obtained by computing the flux of $\curl{\vb{V}}$ across any surface bounded by the circle $\Gamma$. Using \ref{eq:curl_example_value} we thus evaluate the \textit{surface integral}\footnote{The surface $\Sigma$ being the \textit{disc} bounded by the circle $\Gamma$ in the integral of \ref{eq:field_circolation}.}
+\begin{equation}
+\vb{V} = \frac{\vu{k} \cross \vu{r}}{r} \\
+\label{eq:constant_circolation_power}
+\end{equation}
+
+According to Stokes theorem, the same value of the line integral \ref{eq:field_circolation} must also be obtained when computing the flux of $\curl{\vb{V}}$ across any surface bounded by the circle $\Gamma$. Using \ref{eq:curl_example_value} we thus evaluate the \textit{surface integral}\footnote{The surface $\Sigma$ being the \textit{disc} bounded by the circle $\Gamma$ in the integral of \ref{eq:field_circolation}.}
 
 \begin{equation}
 \begin{aligned}
 \int_{\Sigma} (\curl{\vb{V}}) \vdot d\vb{a} 
-	&= \int_{\Sigma} r^{n-1}\, \vu{k} \vdot d\vb{a} \\
-	&= \int_{\Sigma} r^{n-1}\, d a \\
-	&= \int_0^R dr \int_0^{2 \pi}  r^{n-1} (r d\phi) \\
-	&= 2\pi \int_0^R r^n dr \\
-	&= 2\pi \frac{R^{n+1}}{n+1}
+	&= 2\pi (n+1) \int_{\Sigma} r^{n-1}\, \vu{k} \vdot d\vb{a} \\
+	&= 2\pi (n+1) \int_{\Sigma} r^{n-1}\, d a \\
+	&= 2\pi (n+1) \int_0^R r^{n-1} dr \int_0^{2 \pi}  (r d\phi) \\
+	&= 2\pi (n+1) \int_0^R r^n dr
 \end{aligned}
-\label{eq:rotation_flux}
+\label{eq:rotation_flux_integral}
 \end{equation}
 
-So, we have a \textbf{discrepancy between \ref{eq:field_circolation} and \ref{eq:rotation_flux} by a factor of $(n+1)$ that must be resolved!}
+Depending on $n$, the \textit{primitive} of the last integral in the above equation evaluates to different analytic expressions (see Dwight 81.9 and 82.1)
+
+\begin{equation}
+\begin{aligned}
+\int r^n dr &=  \frac{R^{n+1}}{n+1}\:\:\:\:\:\: [n \neq -1] \\
+	        &=  \log(\abs{r})\:\:\:\:           [n = -1]       
+\end{aligned}
+\label{eq:rotation_flux_primitives}
+\end{equation}
+
+We see in \ref{eq:rotation_flux_primitives} that the $\log$  primitive, the one applicable for $n = -1$, is  undefined at $r=0$ while the other is undefined at $r=0$ when $n < -1$, therefore:\\
+
+\textit{No primitive is defined at $r=0$ for $n < 0$}. \\ 
+
+A definite expression for the \textit{flux} is available for $n \geq 0$, namely 
+\begin{equation}
+n \geq 0 \: \longrightarrow \: \int_{\Sigma} (\curl{\vb{V}}) \vdot d\vb{a} = 2\pi R^{n+1} 
+\label{eq:flux}
+\end{equation}
+
+and it is identical to \ref{eq:field_circolation}, the one previously obtained from \textit{circulation}. 
+
+\subsubsection*{***}
+Let focus on the vector field of \ref{eq:curl_example_field} with $n = -1$. In this case equation \ref{eq:curl_example_value} yields a $0/0$ undetermined form for $\curl{\vb{V}}$ at $r=0$. If we exclude the origin, thereby restricting attention on the region $r > 0$, equation \ref{eq:curl_example_value} says that $\curl{\vb{V}}$ is identically zero in that region. 
+
+All this is consistent with findings related to any annular region delimited by two concentring circles centered on the axis $\vu{k}$. In that region any circle yields the same circulation ($2\pi$), thereby implying\footnote{Making a radial cut that connects the two circles, a circuit embracing the whole annular region travels the two circles in opposite directions.} that the flux of $\curl{\vb{V}}$ over the region is zero.
+
+When $n = -1$ replacing \ref{eq:curl_example_value} with the following expression for $\curl{\vb{V}}$ 
+\begin{equation}
+\curl{\vb{V}} = \curl{ \left( \frac{\vu{k} \cross \vu{r}}{r} \right) } = 2\pi \delta(r) \vu{k}
+\label{eq:flux}
+\end{equation}
+
+makes the computed flux agree with circulation! 
 
 \subsubsection*{Problem 20}
-Construct a vector field (different from a constant field) that has zero divergence and zero curl everywhere.
+Construct a non trivial vector field with zero divergence and zero curl everywhere.
 
 $\curl{(\grad{\phi})} = \vb{0}$ suggests to take $\vb{V} = \grad{\phi}$. The requirement of zero divergence then implies 
 \begin{equation*}
