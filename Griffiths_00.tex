@@ -855,8 +855,117 @@ There are \textit{five} types of \textit{second} derivatives that can be obtaine
 \item Curl of curl: $\curl (\curl \vb{V}) = \grad (\div \vb{V}) - \laplacian(\vb{V})$
 \end{enumerate}
 
-The last of the above formulas also provides a coordinates independent definition of the \textit{Laplacian} operator $\laplacian$: 
+The term $\laplacian (\vb{V})$ in the last formula is the \textit{Laplacian} of a vector\footnote{A vector each of whose components is the Laplacian of the corresponding component in the original vector.}. The following geometric expression derives directly from the same formula: 
 
 \begin{equation*}
 \laplacian \vb{V} \equiv \grad (\div \vb{V}) - \curl (\curl \vb{V})
 \end{equation*}
+
+In conclusion, the \textit{Laplacian} and the \textit{gradient-of-divergence} are the only two kinds of second derivatives.
+
+\section{Integral Calculus}
+\subsection{Line, Surface and Volume Integrals}
+
+\begin{enumerate}[(a)]
+\item \textbf{Line Integrals}\\
+A line integral involves a vector field $\vb{v}$ and a portion of a prescribed \textit{path} (a curve) from a point $\vb{a}$ to a point $\vb{b}$. Each infinitesimal path element $\dd\vb{l}$ contributes to the integral with the scalar product $\vb{v} \vdot \dd\vb{l}$. This integral is denoted by the expression
+\begin{equation*}
+\int_{\vb{a}}^{\vb{b}} \vb{v} \vdot \dd\vb{l}
+\end{equation*}
+
+When the path is a closed curve $\Gamma$ and the integral is extended to include contributions from the whole of it, the integral is denoted with a different symbol, namely
+\begin{equation*}
+\oint_{\Gamma} \vb{v} \vdot \dd\vb{l}
+\end{equation*}
+
+In general, a line integral between two points depends on the path. A field $\vb{v}$ whose line integral is path independent, being only determined by the end points, is called a \textit{conservative field}\footnote{For any such field $\vb{v}$ a scalar field $\phi$ exists such that $\vb{v} = \grad \phi$.}.
+ 
+\item \textbf{Surface Integrals}\\
+A surface integral involves a vector field $\vb{v}$ and a prescribed \textit{surface} $\Sigma$. Each infinitesimal patch element $\dd\vb{a}$ is a vector whose direction is orthogonal to the surface and whose norm equals the element area. Each element contributes to the integral with the scalar product $\vb{v} \vdot \dd\vb{a}$. This integral is denoted by the expression
+\begin{equation*}
+\int_{\Sigma} \vb{v} \vdot \dd\vb{a}
+\end{equation*}
+
+If $\vb{v}$ represents the \textit{flow} of a fluid (mass per unit area per unit time) the integral represents the total \textit{flux} (mass per unit time), which explains the alternative name \textit{flux} given to the surface integral.  
+
+Of course there are \textit{two} directions orthogonal to any surface, therefore one needs some convention to assign a definite sign to a surface integral. For a \textit{closed} surface any patch element is assumed to be \textit{outwardly oriented}. By this convention, $\vb{v}$ would positively contribute to the integral at surface elements where it is pointing outside the volume enclosed by the surface. When extended to a closed surface the integral is denoted with the symbol 
+\begin{equation*}
+\oint_{\Sigma} \vb{v} \vdot \dd\vb{a}
+\end{equation*}
+
+Its value represents the flux (total quantity per unit time) leaving the enclosed volume.
+
+When the surface is not closed, we consider integrals covering the portion of a surface delimited by a \textit{closed curve} $\Gamma$. For a given closed curve $\Gamma$ there are of course infinite surfaces containing that curve, and the flux of a field $\vb{v}$ will generally be different over different surfaces. 
+
+There are special fields $\vb{v}$ whose flux if fully determined by the curve $\Gamma$, whereby they keep the same value when evaluated over different surfaces bounded by that curve\footnote{For any such field $\vb{v}$ a vector field $\vb{A}$ exists such that $\vb{v} = \curl \vb{A}$.}. 
+
+\item \textbf{Volume Integrals}
+A volume integral involves a \textit{scalar} field $\rho$ and a region of space $\mathcal{V}$. Each infinitesimal volume element $\dd\tau$ contributes to the integral with with $\rho \dd\tau$. This integral is denoted by the expression
+\begin{equation*}
+\int_{\mathcal{V}} \rho \dd\tau
+\end{equation*}
+
+It is also possible to define the volume integral of a \textit{vector} field $\vb{v}$ 
+
+\begin{align*}
+\int_{\mathcal{V}} \vb{v} \dd\tau &\equiv  \int_{\mathcal{V}} (\vb{v}_x \vu{i} + \vb{v}_y \vu{j} + \vb{v}_z \vu{k}) \dd\tau \\
+                                  &\equiv  \vu{i}\; \int_{\mathcal{V}} \vb{v}_x \dd\tau\:\; +
+                                           \vu{j}\; \int_{\mathcal{V}} \vb{v}_y \dd\tau\:\; + 
+                                           \vu{k}\; \int_{\mathcal{V}} \vb{v}_z \dd\tau                                 
+\end{align*}
+
+\end{enumerate}
+
+
+\subsection{The Fundamental Theorem of Calculus}
+
+Let $f(x)$ be a function of one variable. The fundamental theorem of calculus says: 
+
+\begin{equation*}
+\int_{a}^{b} \dv{f}{x} \dd x = f(b) - f(a)
+\end{equation*}
+
+The theorem is a true assertion which relates the integral of a \textit{derivative} over some \textit{region} to the values of the \textit{function} at the \textit{boundary} of that region (the end points, in this case). In vector calculus we have identified three kinds of derivatives: \textit{gradients}, \textit{divergences}, and \textit{curls} and it turns out that each of these has its own kind of \quotes{fundamental theorem}.
+
+\subsection{The Fundamental Theorem for Gradients}
+
+\begin{equation}
+\int_{\vb{a}}^{\vb{b}} (\grad T) \vdot \dd\vb{l} = T(\vb{b}) - T(\vb{a})
+\end{equation}
+
+Note that the right-hand side makes no reference to the \textit{path} connecting the end points. 
+This means \textit{gradients} have the special property that their line integrals are path independent:
+
+
+\subsubsection*{Corollary 1}
+$\int_{\vb{a}}^{\vb{b}} (\grad T) \vdot \dd\vb{l}$ is independent of the path taken from $\vb{a}$ to $\vb{b}$.
+
+\subsubsection*{Corollary 2}
+$\oint (\grad T) \vdot \dd\vb{l} = 0$ since the end points are identical, hence $T(\vb{b}) - T(\vb{a}) = 0$.
+
+\subsection{The Fundamental Theorem for Divergences}
+This theorem also goes by the name of \textbf{Gauss's theorem}. It relates the \textit{flux} of a vector field over a closed surface $\Sigma$ to the volume integral of its divergence over the enclosed region $\mathcal{V}$.
+
+\begin{equation}
+\int_{\mathcal{V}} (\div \vb{v}) \dd\tau = \oint_{\Sigma} \vb{v} \vdot \dd\vb{a}
+\end{equation}
+
+The geometrical interpretation of this theorem is that any vector field with a well-defined divergence describes the flow of a \textit{conserved quantity}, whereby the net balance of its \textit{flux} across a closed surface is equal to the volume integral of $\div \vb{v}$, the latter defining the amount per unit volume of that conserved quantity entering the region at any given point.   
+
+\subsection{The Fundamental Theorem for Curls}
+This theorem also goes by the name of \textbf{Stokes' theorem}. It relates the \textit{circulation} of a vector field over a closed curve $\Gamma$ to the surface integral of its curl over any surface bounded by $\Gamma$.
+
+\begin{equation}
+\int_{\Sigma} (\curl \vb{v}) \vdot \dd\vb{a} = \oint_{\Gamma} \vb{v} \vdot \dd\vb{l}
+\end{equation}
+
+Note that the right-hand side makes no reference to the \textit{surface} bounded by the curve $\Gamma$. 
+This means \textit{curls} have the special property that their flux only depends on the surface \textit{boundary}:
+
+
+\subsubsection*{Corollary 1}
+$\oint \vb{v} \vdot \dd\vb{l}$ depends only on the boundary curve, not on the particular surface.
+
+\subsubsection*{Corollary 2}
+$\oint (\curl \vb{v}) \vdot \dd\vb{a} = 0$ on any closed surface, since the boundary line shrinks to a point, hence the right-hand side must vanish.
+
