@@ -719,3 +719,144 @@ $\curl{(\grad{\phi})} = \vb{0}$ suggests to take $\vb{V} = \grad{\phi}$. The req
 
 Therefore, any scalar \textit{field} $\phi$, solution of the \textit{homogeneous} Laplace equation would do. 
 
+\subsection{Product Rules}
+
+\textbf{Ordinary} derivatives are \textit{linear} in their argument, namely\footnote{In this section $k$ is a \textit{scalar}, while $f$ and $g$ are \textit{scalar functions}.}
+
+\begin{equation*}
+\begin{aligned}
+\dv{x} (f + g) &= \dv{f}{x} + \dv{g}{x} \\
+\dv{x}(kf)     &= k \dv{f}{x}
+\end{aligned}
+\end{equation*}
+
+\textbf{Vector} derivatives operate on \textit{fields}\footnote{\textit{Scalar field} means \quotes{\textit{function} whose range is the set of points of a certain region of three-dimensional space}. \textit{Vector field}  means \quotes{$3$ \textit{functions} whose range is the set of points of a certain region of three-dimensional space}.}
+
+\begin{equation*}
+\begin{aligned}
+\grad (f + g) &= \grad{f} + \grad{g} \\
+\div (\vb{A} + \vb{B}) &= \div \vb{A} + \div \vb{B} \\
+\curl (\vb{A} + \vb{B}) &= \curl \vb{A} + \curl \vb{B} \\
+\end{aligned}
+\end{equation*}
+
+\begin{equation*}
+\begin{aligned}
+\grad (kf) &= k \grad{f} \\
+\div (k \vb{A}) &= k \div \vb{A} \\
+\curl (k\vb{A}) &= k \curl \vb{A} \\
+\end{aligned}
+\end{equation*}
+
+\textbf{Ordinary} derivatives of \textit{products} and \textit{quotients} obey the following rules 
+
+\begin{equation*}
+\begin{aligned}
+\dv{x} (fg) &= f \dv{g}{x} + g \dv{f}{x} \\ \\
+\dv{x}\left(\frac{f}{g}\right) &= \frac{1}{g^2}\left(g \dv{f}{x} - f \dv{g}{x}\right)
+\end{aligned}
+\end{equation*}
+
+Among \textbf{vector} derivatives 
+\begin{itemize}
+\item Divergence ($\div{}$), and
+\item Curl ($\curl{}$)
+\end{itemize}
+operate of \textit{vector} fields, while
+\begin{itemize}
+\item Gradient ($\grad{}$)
+\end{itemize}
+operates on \textit{scalar} fields.
+
+Products that produce a \textit{scalar} field are 
+\begin{itemize}
+\item $fg \:\:\:$ (product of two scalar functions),
+\item $A \vdot B$ (dot product of two vector fields).
+\end{itemize}
+
+while those producing a vector field are  
+\begin{itemize}
+\item $f \vb{A}\:\:\:$ (scalar times vector),
+\item $A \cross B$     (cross product of two vector fields).
+\end{itemize}
+
+Accordingly, there are \textit{six} product rules, two for each operator. \\
+
+\begin{enumerate}[(i)]
+\item
+\begin{equation*}
+\grad(fg) = f \grad g + g \grad f
+\end{equation*}
+\item
+\begin{equation*}
+\grad(\vb{A} \vdot \vb{B}) = \vb{A} \cross (\curl \vb{B}) + \vb{B} \cross (\curl \vb{A}) + (\vb{A} \vdot \grad) \vb{B} + (\vb{B} \vdot \grad) \vb{A} 
+\end{equation*}
+\item
+\begin{equation*}
+\div(f \vb{A}) = f \div (\vb{A}) + \vb{A} \vdot (\grad f)
+\end{equation*}
+\item
+\begin{equation*}
+\div(\vb{A} \cross \vb{B}) = \vb{B} \vdot (\curl{\vb{A}}) - \vb{A} \vdot (\curl{\vb{B}})
+\end{equation*}
+\item
+\begin{equation*}
+\curl(f \vb{A}) = f (\curl \vb{A}) - \vb{A} \cross (\grad f)
+\end{equation*}
+\item
+\begin{equation*}
+\curl(\vb{A} \cross \vb{B}) = (\vb{B} \vdot \grad) \vb{A} - (\vb{A} \vdot \grad) \vb{B} + \vb{A} (\div{\vb{B}})  - \vb{B} (\div{\vb{A}}) 
+\end{equation*}
+\end{enumerate}
+
+There is also one \textit{quotient rule} for each operator
+\begin{enumerate}[(i)]
+\item
+\begin{equation*}
+\grad \left( \frac{f}{g}\right) = \frac{g \grad f - f \grad g}{g^2}
+\end{equation*}
+\item
+\begin{equation*}
+\div \left( \frac{\vb{A}}{g}\right) = \frac{g (\div \vb{A}) - \vb{A} \vdot (\grad g)}{g^2}
+\end{equation*}
+\item
+\begin{equation*}
+\curl \left( \frac{\vb{A}}{g}\right) = \frac{g (\curl \vb{A}) - \vb{A} \cross (\grad g)}{g^2}
+\end{equation*}
+\end{enumerate}
+
+\subsubsection*{Problem 22}
+What does $(\vb{A} \vdot \grad) \vb{B}$ mean?
+
+Let $\vb{A} = A_x \vu{i} + A_y \vu{j} + A_z \vu{k}$, $\vb{B} = B_x \vu{i} + B_y \vu{j} + B_z \vu{k}$, so that 
+
+\begin{align*}
+(\vb{A} \vdot \grad) &= (\vu{i} A_x + \vu{j} A_y + \vu{k} A_z ) \vdot (\vu{i} \partial_x + \vu{j} \partial_y + \vu{k} \partial_z) \\ 
+                     &= (A_x \partial_x + A_y \partial_y + A_z \partial_z)
+\end{align*}
+whence  
+\begin{align*}
+(\vb{A} \vdot \grad) \vb{B} &= \vu{i} (A_x \partial_x + A_y \partial_y + A_z \partial_z) B_x \\
+							&+ \vu{j} (A_x \partial_x + A_y \partial_y + A_z \partial_z) B_y \\
+							&+ \vu{k} (A_x \partial_x + A_y \partial_y + A_z \partial_z) B_z \\
+							&= [\vb{A} \vdot \grad(B_x)]\, \vu{i}  + [\vb{A} \vdot \grad(B_y)]\, \vu{j} + [\vb{A} \vdot \grad(B_z)]\, \vu{k}
+\end{align*}
+
+
+\subsection{Second Derivatives}
+
+There are \textit{five} types of \textit{second} derivatives that can be obtained by combining the \textit{gradient},  \textit{divergence}, and \textit{curl}:\\
+
+\begin{enumerate}[(i)]
+\item Divergence of gradient: $\div (\grad S) = (\partial_x^2 + \partial_y^2 + \partial_z^2) S \equiv \laplacian S$ 
+\item Curl of gradient: $\curl (\grad S) = \vb{0}$ 
+\item Gradient of divergence: $\grad (\div \vb{V})$
+\item Divergence of curl: $\div (\curl \vb{V}) = 0$
+\item Curl of curl: $\curl (\curl \vb{V}) = \grad (\div \vb{V}) - \laplacian(\vb{V})$
+\end{enumerate}
+
+The last of the above formulas also provides a coordinates independent definition of the \textit{Laplacian} operator $\laplacian$: 
+
+\begin{equation*}
+\laplacian \vb{V} \equiv \grad (\div \vb{V}) - \curl (\curl \vb{V})
+\end{equation*}
