@@ -730,7 +730,7 @@ Therefore, any scalar \textit{field} $\phi$, solution of the \textit{homogeneous
 \end{aligned}
 \end{equation*}
 
-\textbf{Vector} derivatives operate on \textit{fields}\footnote{\textit{Scalar field} means \quotes{\textit{function} whose range is the set of points of a certain region of three-dimensional space}. \textit{Vector field}  means \quotes{$3$ \textit{functions} whose range is the set of points of a certain region of three-dimensional space}.}
+\textbf{Vector} derivatives operate on \textit{fields}\footnote{\textit{Scalar field} means \quotes{\textit{function} whose domain is the set of points of a certain region of three-dimensional space}. \textit{Vector field}  means \quotes{$3$ \textit{functions} whose domain is the set of points of a certain region of three-dimensional space}.}
 
 \begin{equation*}
 \begin{aligned}
@@ -780,50 +780,42 @@ while those producing a vector field are
 \item $A \cross B$     (cross product of two vector fields).
 \end{itemize}
 
-Accordingly, there are \textit{six} product rules, two for each operator. \\
+Accordingly, there are six \textit{product rules}, two for each operator:
 
-\begin{enumerate}[(i)]
-\item
-\begin{equation*}
-\grad(fg) = f \grad g + g \grad f
-\end{equation*}
-\item
-\begin{equation*}
-\grad(\vb{A} \vdot \vb{B}) = \vb{A} \cross (\curl \vb{B}) + \vb{B} \cross (\curl \vb{A}) + (\vb{A} \vdot \grad) \vb{B} + (\vb{B} \vdot \grad) \vb{A} 
-\end{equation*}
-\item
-\begin{equation*}
-\div(f \vb{A}) = f \div (\vb{A}) + \vb{A} \vdot (\grad f)
-\end{equation*}
-\item
-\begin{equation*}
-\div(\vb{A} \cross \vb{B}) = \vb{B} \vdot (\curl{\vb{A}}) - \vb{A} \vdot (\curl{\vb{B}})
-\end{equation*}
-\item
-\begin{equation*}
-\curl(f \vb{A}) = f (\curl \vb{A}) - \vb{A} \cross (\grad f)
-\end{equation*}
-\item
-\begin{equation*}
-\curl(\vb{A} \cross \vb{B}) = (\vb{B} \vdot \grad) \vb{A} - (\vb{A} \vdot \grad) \vb{B} + \vb{A} (\div{\vb{B}})  - \vb{B} (\div{\vb{A}}) 
-\end{equation*}
-\end{enumerate}
+\begin{subequations}
+\label{eq:product_rules_gradient}
+\begin{align}
+\grad(fg) &= f \grad g + g \grad f \\
+\grad(\vb{A} \vdot \vb{B}) &= \vb{A} \cross (\curl \vb{B}) + \vb{B} \cross (\curl \vb{A}) + (\vb{A} \vdot \grad) \vb{B} + (\vb{B} \vdot \grad) \vb{A} 
+\end{align}
+\end{subequations}
 
-There is also one \textit{quotient rule} for each operator
-\begin{enumerate}[(i)]
-\item
-\begin{equation*}
-\grad \left( \frac{f}{g}\right) = \frac{g \grad f - f \grad g}{g^2}
-\end{equation*}
-\item
-\begin{equation*}
-\div \left( \frac{\vb{A}}{g}\right) = \frac{g (\div \vb{A}) - \vb{A} \vdot (\grad g)}{g^2}
-\end{equation*}
-\item
-\begin{equation*}
-\curl \left( \frac{\vb{A}}{g}\right) = \frac{g (\curl \vb{A}) - \vb{A} \cross (\grad g)}{g^2}
-\end{equation*}
-\end{enumerate}
+\begin{subequations}
+\label{eq:product_rules_divergence}
+\begin{align}
+\div(f \vb{A}) &= f (\div \vb{A}) + \vb{A} \vdot (\grad f) \\
+\div(\vb{A} \cross \vb{B}) &= \vb{B} \vdot (\curl{\vb{A}}) - \vb{A} \vdot (\curl{\vb{B}})
+\end{align}
+\end{subequations}
+
+\begin{subequations}
+\label{eq:product_rules_curl}
+\begin{align}
+\curl(f \vb{A}) &= f (\curl \vb{A}) - \vb{A} \cross (\grad f) \\
+\curl(\vb{A} \cross \vb{B}) &= (\vb{B} \vdot \grad) \vb{A} - (\vb{A} \vdot \grad) \vb{B} + \vb{A} (\div{\vb{B}})  - \vb{B} (\div{\vb{A}})
+\end{align}
+\end{subequations}
+
+There is also one \textit{quotient rule} for each operator:
+
+\begin{subequations}
+\label{eq:quotient_rules}
+\begin{align}
+\grad \left( \frac{f}{g}\right) &= \frac{g \grad f - f \grad g}{g^2} \\
+\div \left( \frac{\vb{A}}{g}\right) &= \frac{g (\div \vb{A}) - \vb{A} \vdot (\grad g)}{g^2}\\
+\curl \left( \frac{\vb{A}}{g}\right) &= \frac{g (\curl \vb{A}) - \vb{A} \cross (\grad g)}{g^2}
+\end{align}
+\end{subequations}
 
 \subsubsection*{Problem 22}
 What does $(\vb{A} \vdot \grad) \vb{B}$ mean?
@@ -921,9 +913,10 @@ It is also possible to define the volume integral of a \textit{vector} field $\v
 
 Let $f(x)$ be a function of one variable. The fundamental theorem of calculus says: 
 
-\begin{equation*}
+\begin{equation}
 \int_{a}^{b} \dv{f}{x} \dd x = f(b) - f(a)
-\end{equation*}
+\label{eq:fundamental_theorem_of_calculus}
+\end{equation}
 
 The theorem is a true assertion which relates the integral of a \textit{derivative} over some \textit{region} to the values of the \textit{function} at the \textit{boundary} of that region (the end points, in this case). In vector calculus we have identified three kinds of derivatives: \textit{gradients}, \textit{divergences}, and \textit{curls} and it turns out that each of these has its own kind of \quotes{fundamental theorem}.
 
@@ -931,6 +924,7 @@ The theorem is a true assertion which relates the integral of a \textit{derivati
 
 \begin{equation}
 \int_{\vb{a}}^{\vb{b}} (\grad T) \vdot \dd\vb{l} = T(\vb{b}) - T(\vb{a})
+\label{eq:fundamental_theorem_for_gradient}
 \end{equation}
 
 Note that the right-hand side makes no reference to the \textit{path} connecting the end points. 
@@ -948,20 +942,21 @@ This theorem also goes by the name of \textbf{Gauss's theorem}. It relates the \
 
 \begin{equation}
 \int_{\mathcal{V}} (\div \vb{v}) \dd\tau = \oint_{\Sigma} \vb{v} \vdot \dd\vb{a}
+\label{eq:fundamental_theorem_for_divergence}
 \end{equation}
 
-The geometrical interpretation of this theorem is that any vector field with a well-defined divergence describes the flow of a \textit{conserved quantity}, whereby the net balance of its \textit{flux} across a closed surface is equal to the volume integral of $\div \vb{v}$, the latter defining the amount per unit volume of that conserved quantity entering the region at any given point.   
+One geometrical interpretation of this theorem is that any vector field with a well-defined divergence describes the flow of a \textit{conserved quantity}, whereby the net balance of its \textit{flux} across a closed surface is equal to the volume integral of $\div \vb{v}$, where the latter defines, at any given point, the amount per unit volume of that quantity entering into the region, at that point, in a unit of time.   
 
 \subsection{The Fundamental Theorem for Curls}
 This theorem also goes by the name of \textbf{Stokes' theorem}. It relates the \textit{circulation} of a vector field over a closed curve $\Gamma$ to the surface integral of its curl over any surface bounded by $\Gamma$.
 
 \begin{equation}
 \int_{\Sigma} (\curl \vb{v}) \vdot \dd\vb{a} = \oint_{\Gamma} \vb{v} \vdot \dd\vb{l}
+\label{eq:fundamental_theorem_for_curl}
 \end{equation}
 
 Note that the right-hand side makes no reference to the \textit{surface} bounded by the curve $\Gamma$. 
 This means \textit{curls} have the special property that their flux only depends on the surface \textit{boundary}:
-
 
 \subsubsection*{Corollary 1}
 $\oint \vb{v} \vdot \dd\vb{l}$ depends only on the boundary curve, not on the particular surface.
@@ -969,3 +964,110 @@ $\oint \vb{v} \vdot \dd\vb{l}$ depends only on the boundary curve, not on the pa
 \subsubsection*{Corollary 2}
 $\oint (\curl \vb{v}) \vdot \dd\vb{a} = 0$ on any closed surface, since the boundary line shrinks to a point, hence the right-hand side must vanish.
 
+\subsection{Integration by Parts}
+The technique known as \textit{integration by parts} exploits the product rule for derivatives:
+
+\begin{equation*}
+\dv{x} (fg) = f \dv{g}{x} + g \dv{f}{x}
+\end{equation*}
+ 
+Integrating both sides and invoking the fundamental theorem of calculus (\ref{eq:fundamental_theorem_of_calculus}) one obtains
+
+\begin{equation*}
+\int_a^b \dv{x} (fg) \dd{x} = \eval{fg}_a^b = \int_a^b f \dv{g}{x} \dd{x} + \int_a^b g \dv{f}{x} \dd{x}
+\end{equation*}
+
+or
+
+\begin{equation}
+\int_a^b f \dv{g}{x} \dd{x} = \eval{fg}_a^b - \int_a^b g \dv{f}{x} \dd{x}
+\label{eq:integration_by_parts}
+\end{equation}
+
+Formula \ref{eq:integration_by_parts} applies when under the integral is the product of one function ($f$) and the \textit{derivative} of another ($g$). It says that you can \textit{transfer the derivative from $g$ to $f$} at the cost of a minus sign and a boundary term.
+
+\subsubsection{Example 12}
+
+Evaluate the integral
+
+\begin{align*}
+I = \int_0^{\infty} x e^{-x} \dd{x}                         
+\end{align*}
+
+The exponential can be expressed as a derivative:
+\begin{equation*}
+e^{-x} = \dv{(-e^{-x})}{x}
+\end{equation*}
+
+therefore
+
+\begin{align*}
+I = \int_0^{\infty} x \dv{(-e^{-x})}{x} &=  \int_0^{\infty} e^{-x} \dd{x} - \eval{x e^{-x}}_0^{\infty}\\
+                                        &=  \int_0^{\infty} e^{-x} \dd{x} \\
+                                        &=  - \eval{e^{-x}}_0^{\infty} = 1                                                  
+\end{align*}
+\qed
+
+The same approach can be used when the expression under the integral involves a differential operator (gradient, divergence or curl) and that expression is one of the two terms arising when the operator is applied to a product. 
+
+
+For \textbf{gradients}, \ref{eq:fundamental_theorem_for_gradient} and the first of \ref{eq:product_rules_gradient} imply 
+
+\begin{equation}
+\begin{aligned}
+\int_a^b (f \grad g) \vdot \dd{\vb{l}} &= \int_a^b (\grad (fg) - g \grad f) \vdot \dd{\vb{l}} \\   
+                                       &= \eval{fg}_a^b - \int_a^b g \grad f \vdot \dd{\vb{l}}
+\end{aligned}
+\label{eq:grad_integration_by_parts}
+\end{equation}
+
+
+For \textbf{divergences}, \ref{eq:fundamental_theorem_for_divergence} and the first of \ref{eq:product_rules_divergence} imply 
+
+\begin{align*}
+\int_{\mathcal{V}} \div(f \vb{A}) \dd{\tau} &= \int_{\Sigma} f \vb{A} \vdot \dd{\vb{a}} \\
+										    &= \int_{\mathcal{V}}  f (\div \vb{A}) \dd{\tau} + \int_{\mathcal{V}} \vb{A} \vdot (\grad f) \dd{\tau} 
+\end{align*}
+
+whence 
+
+\begin{equation}
+\int_{\mathcal{V}}  f (\div \vb{A}) \dd{\tau} = \int_{\Sigma} f \vb{A} \vdot \dd{\vb{a}} - \int_{\mathcal{V}} \vb{A} \vdot (\grad f) \dd{\tau} 
+\label{eq:div_integration_by_parts}
+\end{equation}
+
+
+For \textbf{curls}, \ref{eq:fundamental_theorem_for_curl} and the first of \ref{eq:product_rules_curl} imply 
+
+\begin{align*}
+\int_{\Sigma} \curl(f \vb{A}) \dd{\vb{a}} &=  \oint_{\Gamma} f \vb{A} \vdot \dd{\vb{l}}  \\
+										  &= \int_{\Sigma} f  (\curl \vb{A}) \dd{\vb{a}} - \int_{\Sigma} [\vb{A} \cross (\grad f)] \vdot \dd{\vb{a}} 
+\end{align*}
+
+whence 
+
+\begin{equation}
+\int_{\Sigma} f  (\curl \vb{A}) \dd{\vb{a}} = \oint_{\Gamma} f \vb{A} \vdot \dd{\vb{l}} + \int_{\Sigma} [\vb{A} \cross (\grad f)] \vdot \dd{\vb{a}}  
+\label{eq:curl_integration_by_parts}
+\end{equation}
+  
+\section{Curvilinear Coordinates}
+
+\subsection{Spherical Coordinates}
+
+\subsection{Cylindrical Coordinates}
+
+  
+\section{The Dirac Delta Function}
+
+\subsection{The Divergence of $\vu{r}/r^2$}
+
+\subsection{The Three-Dimensional Delta Function}
+    
+
+\section{The Theory of Vector Fields}
+
+\subsection{The Helmoltz Theorem}
+
+\subsection{Potentials}
+        
