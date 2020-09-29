@@ -170,6 +170,7 @@ Problems in electrodynamics frequently involve two points, typically a \textbf{s
 
 
 \section{How Vectors Transform}
+\label{sec:how_vectors_transform}
 Let two cartesian (orthonormal) reference frames in two dimensions, $\mathcal{F}$ and $\mathcal{F}'$, share a common origin $\mathcal{O}$. Let $\vu{i}, \vu{j}$ be unit vectors forming a basis of $\mathcal{F}$ and $\vu{i}', \vu{j}'$ some that form a basis of $\mathcal{F}'$. 
 
 Let $\mathcal{F}'$ be rotated by the angle $\phi$ --around the origin-- with respect to $\mathcal{F}$, so that
@@ -228,7 +229,7 @@ A_y]
 
 As expected, the matrix reduces to the identity in the limit of small $\phi$. The inverse transform is clearly obtained by changing $\phi$ into $-\phi$, thus inverting the sign of the off-diagonal terms in the above matrix. 
 
-There is another way to derive \ref{eq:2d_vector_transform} that can be generalized to any number of dimensions. It is often presented by geometric figures with rectangular triangles to prove how the unit basis vectors $\vu{i}$ and $\vu{j}$ decompose in the rotated basis $\vu{i}'$ and $\vu{j}'$. But there is hardly the need of a figure, as  equation \ref{eq:cosphi_products} already contains half of the story.  Indeed $\vu{i}$'s decomposition as well as $\vu{j}$'s must reduce to the identity for $\phi=0$ and the sum of the two coefficients squared must be $1$. With these prescriptions\footnote{The positive sign of both the $\cos(\phi)$ terms is dictated by the need to recover the identity transformation in the limit $\phi \rightarrow 0$ . The signs of the $\sin(\phi)$ terms are determined by the relative position of $\vu{i}$ with respect to $\vu{i}'$ (lower $\vu{j}'$) and that of $\vu{j}$ with respect to $\vu{j}'$ (higher $\vu{i}'$).} 
+There is another way to derive \ref{eq:2d_vector_transform} that can be generalized to any number of dimensions. It is often presented by geometric figures with rectangular triangles to prove how the unit basis vectors $\vu{i}$ and $\vu{j}$ decompose in the rotated basis $\vu{i}'$ and $\vu{j}'$. But there is hardly the need of a figure, as  equation \ref{eq:cosphi_products} already contains half of the story.  Indeed $\vu{i}$'s decomposition as well as $\vu{j}$'s must reduce to the identity for $\phi=0$ and the sum of the two coefficients squared must be $1$. With these prescriptions\footnote{The positive sign of both the $\cos(\phi)$ terms is dictated by the need to recover the identity transformation in the limit $\phi \rightarrow 0$ . The signs of the $\sin(\phi)$ terms are determined -- assuming $\phi$ to be \textit{counter-clockwise} -- by the relative position of $\vu{i}$ with respect to $\vu{i}'$ (negative $\vu{j}'$ component) and that of $\vu{j}$ with respect to $\vu{j}'$ (positive $\vu{i}'$ component).} 
 
 \begin{equation}
 \begin{aligned}
@@ -272,7 +273,7 @@ and finally, in a more general, dimension-independent matrix notation:
 \label{eq:3d_basis_transform}
 \end{equation}
 
-The matrix $S$, whose $S_{i,j}$ component equals the scalar product $\vu{e_i} \vdot \vu{e_j}'$ transforms the primed (rotated) unit basis vectors into the unprimed ones, therefore it is the three-dimensional analogue of \ref{eq:2d_basis_transform}. Now a closer inspection at \ref{eq:2d_vector_transform} shows that the it is the \textit{transpose} of $S$ the matrix that transforms vector \textit{components} from the unprimed to the primed basis, therefore
+The matrix $S$, whose $S_{i,j}$ component equals the scalar product $\vu{e_i} \vdot \vu{e_j}'$ transforms the primed (rotated) unit basis vectors into the unprimed ones, therefore it is the three-dimensional analogue of \ref{eq:2d_basis_transform}. A comparison of the latter with \ref{eq:2d_vector_transform}  shows that the matrix $S$ transforming the \textit{components} of a vector from the unprimed to the primed basis, is actually identical to the \textit{transpose} of the matrix transforming the \textit{vectors} of the primed basis into the \textit{vectors} of the unprimed one. 
 
 \begin{equation}
 \mqty[A_1' \\ A_2' \\ A_3'] = S^\top \mqty[A_1 \\ A_2 \\ A_3] = \mqty|
@@ -1052,11 +1053,121 @@ whence
 \end{equation}
   
 \section{Curvilinear Coordinates}
+A characteristic of the so called \textit{curvilinear} coordinates is that they are referred to \textit{different bases} of unit vectors $\vb{e}_1$, $\vb{e}_2$, $\vb{e}_3$ at different \textit{points} of the space region of interest. In spite of the apparent complication, this may be a convenient choice when dealing with fields that exhibit a certain symmetry. Apart from requirements of continuity and differentiability, the most general field $\vb{v}$ may take on arbitrarily different values at different points $\vb{r}_1 \neq \vb{r}_2$.  By contrast, we call \textit{spherically symmetric} a vector field whose representative vector at any point is only a function of its distance $r = \abs{\vb{r}}$ from the origin. Therefore, while in the general case $\vb{v}$ can be thought of as a vector function of vector argument ($\:\:\vb{v} = \vb{f}(\vb{r})\:\:$) a spherically symmetric field is actually a vector function of the scalar argument $r$   ($\:\:\vb{v} = \vb{f}(r)\:\:$). 
+
+The most widely used curvilinear coordinates are the  \textit{spherical} and \textit{cylindrical}. Their basis (at any given point in space) is a triple of \textit{orthonormal} vectors. Here as in \cite{Griffiths_4th} we obtain formulas for differential operators by transformations from curvilinear to Cartesian coordinates. A more detailed geometric treatment of curvilinear coordinates is provided in \cite{BudakFomin_1973}.  
+
+We recall what already exposed in section \ref{sec:how_vectors_transform} about the transformation of vectors with respect to different \textit{orthogonal} bases, namely an \textit{unprimed basis} $\vu{e}_1, \vu{e}_2, \vu{e}_3$ and a \textit{primed basis} ${\vu{e}_1}',{\vu{e}_2}', {\vu{e}_3}'$. There we found that given $S$ the matrix expressing each \textit{vector} of the \textit{unprimed basis} as a linear combination of vectors of the  \textit{primed basis}, then $S^{-1}=S^{\top}$ does express the \textit{components} of a vector in the primed basis as linear combinations of its components in the unprimed basis. Because of the difference in transformation behaviour between vector components and basis vectors, \textit{vectors} are said to be \textbf{contravariant}.
+
+There are other geometrical objects -- of which the \textit{gradient} of a scalar field is the prototype -- whose components actually transform in a change of basis like the basis vectors, and not like the components of a vector. These objects are called \textit{forms} and for their transformation behaviour are said to be \textbf{covariant}.\footnote{From more general treatments it is known that for each vector space it is possible to define a \textit{dual space}: a vector space whose elements are \textit{forms} i.e. linear functions of one or more vectors. Like vectors, forms can be expressed as linear combinations with respect to a \textit{dual basis}. If the vector space admits a scalar product, it is possible to establish an \textit{isomorphism} between vectors and forms. In that case one may use the same symbol to denote both the vector and the form, although the components of each with respect to the corresponding basis are generally different. The universally adopted convention to avoid the ambiguity is to denote the \textit{contravariant} components with respect to a basis with an \textit{upper index} and the \textit{covariant} components with respect to the dual basis with a \textit{lower index}. 
+When adopting an orthonormal basis the contravariant and covariant components of a vector/form have identical numerical values. This fact does not imply that the one between vectors and forms is a somewhat pedantic distinction: it is not, as their components transform in a radically different way in a change of basis, even when the two bases involved are both orthonormal!}
 
 \subsection{Spherical Coordinates}
+Spherical coordinates can be defined with respect to a Cartesian frame $\vu{i}$, $\vu{j}$, $\vu{k}$ by specifying, for each \textbf{point in space}
+\begin{itemize}
+\item the \textit{norm} $r = \sqrt{x^2 + y^2 + z^2}$ of the radius vector $\vb{r}$; 
+\item the \textit{polar} angle $\theta$ formed by $\vb{r}$ with the $\vu{k}$ axis;
+\item the \textit{azimuthal} angle $\phi$ between the $\vu{i}$ axis and the projection of $\vb{r}$ onto the plane spanned by $\vu{i}$ and $\vu{j}$.
+\end{itemize}
+$\theta$ takes values in the range $[0, pi]$, $\phi$ in the interval $[0, 2\pi]$.
+
+The following set of equations provides the Cartesian coordinates $(x, y, z)$ of a point in space that may be alternatively specified by its spherical coordinates $(r, \theta, \phi)$ 
+
+\begin{equation}
+\label{eq:spherical_to_cartesian}
+\begin{aligned}
+x &= r \sin (\theta) \cos (\phi) \\
+y &= r \sin (\theta) \sin (\phi) \\
+z &= r \cos (\theta)
+\end{aligned}
+\end{equation}
+
+The inverse transformation is 
+\begin{equation}
+\label{eq:cartesian_to_spherical}
+\begin{aligned}
+r      &= \sqrt{x^2 + y^2 + z^2} \\
+\theta &= \arccos (\frac{z}{\sqrt{x^2 + y^2 + z^2}}) \\
+\phi   &= \arctan (\frac{y}{x})
+\end{aligned}
+\end{equation}
+
+Equations \ref{eq:spherical_to_cartesian} and \ref{eq:cartesian_to_spherical} is all we need to relate the coordinates of a \textit{point} in the two systems.
+
+For \textit{vectors}, at each space point $\vb{r}_o$ identified by spherical coordinates $r_o, \theta_o, \phi_o$ we adopt a distinct, orthonormal frame (a basis) consisting of
+\begin{itemize}
+\item $\vu{r}$, parallel to the vector $\vb{r}_o$,
+\item $\vu{\theta}$, tangent to the curve $\vb{r}(r_o, \theta, \phi_o)$, and 
+\item $\vu{\phi}$, tangent to the curve $\vb{r}(r_o, \theta_o, \phi)$.
+\end{itemize}
+
+This is all well and natural, but how do we get an explicit expression of the basis vectors $\vu{r}\,, \vu{\theta}\,, \vu{\phi}$ associated to a space point $\vb{r}$?   
+
+The best strategy is to start by expanding the Cartesian basis vectors $\vu{i}, \vu{j}, \vu{k}$ in terms of the $\vu{r}\,, \vu{\theta}\,, \vu{\phi}$, then to obtain the latter in terms of the former by the inverse transformation. The first step is helped by two preliminary considerations:    
+\begin{itemize}
+\item For $\theta=0$, the cartesian axes $\vu{k}$ and $\vu{i}$ coincide with the \textit{radial} spherical axis $\vu{r}$ and the \textit{polar} spherical axis $\vu{\theta}$, respectively, so that $\vu{\phi}$ must also coincide with $\vu{j}$. 
+\item The ordered triple $\vu{k}, \vu{i}, \vu{j}$ is right-handed as it does the ordered triple $\vu{r}\,, \vu{\theta}\,, \vu{\phi}$, and the two are actually one and the same thing for $\theta=0$. 
+\end{itemize}
+
+Computing derivatives of the Cartesian coordinates $z, x, y$ (in that order) from $r, \theta, \phi$ we obtain:
+
+\begin{equation}
+\label{eq:not_orthogonal_matrix}
+\mqty[dz \\ dx \\ dy] = \mqty|
+\cos(\theta) & -r \sin(\theta) \\
+\sin(\theta)\cos(\phi) & r \cos(\theta)\cos(\phi) & -r \sin(\theta)\sin(\phi) \\
+\sin(\theta)\sin(\phi) & r \cos(\theta)\sin(\phi) & +r \sin(\theta)\cos(\phi)
+| \:  \mqty[dr \\ d\theta \\ d\phi]
+\end{equation}
+
+The matrix in the above equation resembles very much the transformation between two orthonormal bases, except for the factors $r$ and $r\sin(\theta)$ multiplying all elements in the second and third column, respectively. 
+If we transfer those factors to the right-hand side we obtain 
+
+\begin{equation}
+\label{eq:orthomatrix}
+\mqty[dz \\ dx \\ dy] = \mqty|
+\cos(\theta) & -\sin(\theta) \\
+\sin(\theta)\cos(\phi) & \cos(\theta)\cos(\phi) & -\sin(\phi) \\
+\sin(\theta)\sin(\phi) & \cos(\theta)\sin(\phi) & +\cos(\phi)
+| \:  \mqty[dr \\ r d\theta \\ r \sin(\theta)d\phi]
+\end{equation}
+
+The transformation matrix appearing in \ref{eq:orthomatrix} is \textit{orthogonal} with unit determinant, therefore it is a good candidate to relate the two orthonormal bases $\vu{k}, \vu{i}, \vu{j}$ and $\vu{r}\,, \vu{\theta}\,, \vu{\phi}$, but of course its \textit{transpose} is a good candidate as well. In order to decide between the two, we must determine whether \ref{eq:orthomatrix} defines the \textit{covariant} transformation of coordinates between \textit{forms} or the \textit{contravariant} transformation of coordinates between \textit{vectors}. 
+
+Common wisdom suggests that being arrived at \ref{eq:orthomatrix} by taking derivatives, the same matrix also performs the transformation from $\vu{r}\,, \vu{\theta}\,, \vu{\phi}$ to $\vu{k}, \vu{i}, \vu{j}$\footnote{Let $S$ be the matrix in \ref{eq:orthomatrix}. If that is a transformation of a \textit{covariant form} from spherical to Cartesian coordinates, then the same matrix $S$ also performs the transformation of the spherical basis to the Cartesian basis, hence the vectors $\vu{r}\,, \vu{\theta}\,, \vu{\phi}$ of the spherical basis are obtained from the vectors $\vu{k}, \vu{i}, \vu{j}$ of the Cartesian basis by the \textit{inverse} of $S$ which, being $S$ an orthogonal matrix coincides with its \textit{transpose} $S^\top$. Alternatively, if \ref{eq:orthomatrix} had been the transformation of a \textit{contravariant vector} from spherical to Cartesian coordinates, there would be two transpositions to be taken, which is the same as no transposition.} therefore 
+
+
+\begin{equation}
+\label{eq:spherical_differentials_xform}
+\mqty[dr \\ r d\theta \\ r \sin(\theta)d\phi]  = \mqty|
+\cos(\theta) & \sin(\theta)\cos(\phi) & \sin(\theta)\sin(\phi) \\
+-\sin(\theta) & \cos(\theta)\cos(\phi) & \cos(\theta)\sin(\phi) \\
+0 &  -\sin(\phi) & \cos(\phi)
+| \:  \mqty[dz \\ dx \\ dy] 
+\end{equation}
+
+and 
+
+\begin{subequations}
+\label{eq:spherical_bases_xform}
+\begin{align}
+\mqty[\vu{r} \\ \vu{\theta} \\ \vu{\phi}]  = \mqty|
+\cos(\theta) & \sin(\theta)\cos(\phi) & \sin(\theta)\sin(\phi) \\
+-\sin(\theta) & \cos(\theta)\cos(\phi) & \cos(\theta)\sin(\phi) \\
+0 &  -\sin(\phi) & \cos(\phi)
+| \:  \mqty[\vu{k} \\ \vu{i} \\ \vu{j}] \\ 
+\mqty[\vu{r} \\ \vu{\theta} \\ \vu{\phi}]  = \mqty|
+\sin(\theta)\cos(\phi) & \sin(\theta)\sin(\phi) &  \cos(\theta) \\
+\cos(\theta)\cos(\phi) & \cos(\theta)\sin(\phi) & -\sin(\theta) \\
+-\sin(\phi) & \cos(\phi) & 0 
+| \:  \mqty[\vu{i} \\ \vu{j} \\ \vu{k} ]
+\end{align}
+\end{subequations}
+
+
 
 \subsection{Cylindrical Coordinates}
-
+The following equations provide the transformation from cylindrical to Cartesian coordinates: 
   
 \section{The Dirac Delta Function}
 
