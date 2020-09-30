@@ -1069,7 +1069,7 @@ Spherical coordinates can be defined with respect to a Cartesian frame $\vu{i}$,
 \item the \textit{polar} angle $\theta$ formed by $\vb{r}$ with the $\vu{k}$ axis;
 \item the \textit{azimuthal} angle $\phi$ between the $\vu{i}$ axis and the projection of $\vb{r}$ onto the plane spanned by $\vu{i}$ and $\vu{j}$.
 \end{itemize}
-$\theta$ takes values in the range $[0, \pi]$, $\phi$ takes values in the range $[0, 2\pi]$.
+$r$ ranges in $[0, \infty]$, $\theta$ in the interval $[0, \pi]$ and $\phi$ in the interval $[0, 2\pi]$.
 
 The following set of equations provides the Cartesian coordinates $(x, y, z)$ of a point in space as functions of its spherical coordinates $(r, \theta, \phi)$ 
 
@@ -1095,66 +1095,57 @@ r      &= \sqrt{x^2 + y^2 + z^2} \\
 Equations \ref{eq:spherical_to_cartesian} and \ref{eq:cartesian_to_spherical} relate the coordinates of a given \textit{point} in the two systems. Note that a single Cartesian triad $\vu{i}$, $\vu{j}$, $\vu{k}$ provides a basis defining both \textit{point coordinates} and \textit{vector components} everywhere. Instead, a distinct orthonormal triad is chosen as a basis for vectors at each space point $\vb{r}_o$. This \textit{local orthonormal basis} consists of
 \begin{itemize}
 \item $\vu{r}$, parallel to the vector $\vb{r}_o$,
-\item $\vu{\theta}$, tangent to the curve $\vb{r}(r_o, \theta, \phi_o)$, and 
-\item $\vu{\phi}$, tangent to the curve $\vb{r}(r_o, \theta_o, \phi)$.
+\item $\vu*{\theta}$, tangent to the curve $\vb{r}(r_o, \theta, \phi_o)$, and 
+\item $\vu*{\phi}$, tangent to the curve $\vb{r}(r_o, \theta_o, \phi)$.
 \end{itemize}
 
-This is all well and natural, but how do we get an explicit expression of the basis vectors $\vu{r}\,, \vu{\theta}\,, \vu{\phi}$ associated to a space point $\vb{r}$?   
+This is all well and natural, but how do we get an explicit expression of the basis vectors $\vu{r}\,, \vu*{\theta}\,, \vu*{\phi}$ associated to a space point $\vb{r}$?   
 
-The best strategy is to start by expanding the Cartesian basis vectors $\vu{i}, \vu{j}, \vu{k}$ in terms of the $\vu{r}\,, \vu{\theta}\,, \vu{\phi}$, then to obtain the latter in terms of the former by the inverse transformation. The first step is helped by two preliminary considerations:    
+The best strategy is to start by expanding the Cartesian basis vectors $\vu{i}, \vu{j}, \vu{k}$ in terms of the $\vu{r}\,, \vu*{\theta}\,, \vu*{\phi}$, then to obtain the latter in terms of the former by the inverse transformation. The first step is helped by two preliminary considerations:    
 \begin{itemize}
-\item For $\theta=0$, the cartesian axes $\vu{k}$ and $\vu{i}$ coincide with the \textit{radial} spherical axis $\vu{r}$ and the \textit{polar} spherical axis $\vu{\theta}$, respectively, so that $\vu{\phi}$ must also coincide with $\vu{j}$. 
-\item The ordered triple $\vu{k}, \vu{i}, \vu{j}$ is right-handed as it does the ordered triple $\vu{r}\,, \vu{\theta}\,, \vu{\phi}$, and the two are actually one and the same thing for $\theta=0$. 
+\item For $\theta=0$, the cartesian axes $\vu{k}$ and $\vu{i}$ coincide with the \textit{radial} spherical axis $\vu{r}$ and the \textit{polar} spherical axis $\vu*{\theta}$, respectively, so that $\vu*{\phi}$ must also coincide with $\vu{j}$. 
+\item The ordered triple $\vu{k}, \vu{i}, \vu{j}$ is right-handed as it does the ordered triple $\vu{r}\,, \vu*{\theta}\,, \vu*{\phi}$, and the two are actually one and the same thing for $\theta=0$. 
 \end{itemize}
 
-Computing derivatives of the Cartesian coordinates $z, x, y$ (in that order) from $r, \theta, \phi$ we obtain:
-
+Computing derivatives of the Cartesian coordinates $x, y, z$ from $r, \theta, \phi$ we obtain:
 \begin{equation}
 \label{eq:not_orthogonal_matrix}
-\mqty[dz \\ dx \\ dy] = \mqty|
-\cos(\theta) & -r \sin(\theta) \\
+\mqty[dx \\ dy \\ dz] = \mqty|
 \sin(\theta)\cos(\phi) & r \cos(\theta)\cos(\phi) & -r \sin(\theta)\sin(\phi) \\
-\sin(\theta)\sin(\phi) & r \cos(\theta)\sin(\phi) & +r \sin(\theta)\cos(\phi)
+\sin(\theta)\sin(\phi) & r \cos(\theta)\sin(\phi) & +r \sin(\theta)\cos(\phi) \\
+\cos(\theta) & -r \sin(\theta) &  0 
 | \:  \mqty[dr \\ d\theta \\ d\phi]
 \end{equation}
 
-The matrix in the above equation resembles very much the transformation between two orthonormal bases, except for the factors $r$ and $r\sin(\theta)$ multiplying all elements in the second and third column, respectively. 
+The matrix in the above equation resembles very much a transformation between two orthonormal bases, except for the factors $r$ and $r\sin(\theta)$ multiplying all elements in the second and third column, respectively. 
 If we transfer those factors to the right-hand side we obtain 
 
 \begin{equation}
 \label{eq:orthomatrix}
-\mqty[dz \\ dx \\ dy] = \mqty|
-\cos(\theta) & -\sin(\theta) \\
+\mqty[dx \\ dy \\ dz] = \mqty|
 \sin(\theta)\cos(\phi) & \cos(\theta)\cos(\phi) & -\sin(\phi) \\
-\sin(\theta)\sin(\phi) & \cos(\theta)\sin(\phi) & +\cos(\phi)
+\sin(\theta)\sin(\phi) & \cos(\theta)\sin(\phi) & +\cos(\phi) \\
+\cos(\theta) & -\sin(\theta) & 0 
 | \:  \mqty[dr \\ r d\theta \\ r \sin(\theta)d\phi]
 \end{equation}
 
-The transformation matrix appearing in \ref{eq:orthomatrix} is \textit{orthogonal} with unit determinant, therefore it is a good candidate to relate the two orthonormal bases $\vu{k}, \vu{i}, \vu{j}$ and $\vu{r}\,, \vu{\theta}\,, \vu{\phi}$, but of course its \textit{transpose} is a good candidate as well. In order to decide between the two, we must determine whether \ref{eq:orthomatrix} defines the \textit{covariant} transformation of coordinates between \textit{forms} or the \textit{contravariant} transformation of coordinates between \textit{vectors}. 
+The transformation matrix appearing in \ref{eq:orthomatrix} is \textit{orthogonal} with unit determinant, therefore it is a good candidate to relate the two orthonormal bases $\vu{i}, \vu{j}, \vu{k}$ and $\vu{r}\,, \vu*{\theta}\,, \vu*{\phi}$, but of course its \textit{transpose} is a good candidate as well. In order to decide between the two, we must determine whether \ref{eq:orthomatrix} defines the coordinates transformation of a \textit{form} (\textit{covariant}) or the coordinates transformation of a \textit{vector} (\textit{contravariant}). 
 
-Common wisdom suggests that being arrived at it by taking derivatives \ref{eq:orthomatrix} represents a \textit{covariant} transformation, whence the same matrix also performs the transformation from $\vu{r}\,, \vu{\theta}\,, \vu{\phi}$ to $\vu{k}, \vu{i}, \vu{j}$, therefore\footnote{Let $S$ be the matrix in \ref{eq:orthomatrix}. If that is a transformation of a \textit{covariant form} from spherical to Cartesian coordinates, then the same matrix $S$ also performs the transformation of the spherical basis to the Cartesian basis, hence the vectors $\vu{r}\,, \vu{\theta}\,, \vu{\phi}$ of the spherical basis are obtained from the vectors $\vu{k}, \vu{i}, \vu{j}$ of the Cartesian basis by the \textit{inverse} of $S$ which, being $S$ an orthogonal matrix coincides with its \textit{transpose} $S^\top$. Alternatively, if \ref{eq:orthomatrix} had been the transformation of coordinates (from spherical to Cartesian) of a \textit{contravariant vector}, there would be two transpositions to be taken, which amounts to no transposition.}  
-
-
-\begin{equation}
-\label{eq:spherical_differentials_xform}
-\mqty[dr \\ r d\theta \\ r \sin(\theta)d\phi]  = \mqty|
-\cos(\theta) & \sin(\theta)\cos(\phi) & \sin(\theta)\sin(\phi) \\
--\sin(\theta) & \cos(\theta)\cos(\phi) & \cos(\theta)\sin(\phi) \\
-0 &  -\sin(\phi) & \cos(\phi)
-| \:  \mqty[dz \\ dx \\ dy] 
-\end{equation}
-
-and 
+Common wisdom suggests that being arrived at it by taking derivatives \ref{eq:orthomatrix} represents a \textit{covariant} transformation, whence the same matrix also performs the transformation from $\vu{r}\,, \vu*{\theta}\,, \vu*{\phi}$ to $\vu{i}, \vu{j}, \vu{k}$, therefore
+\footnote{Let $S$ be the matrix in \ref{eq:orthomatrix}. If that is the (\textit{covariant}) transformation of a \textit{form} from spherical to Cartesian coordinates, then the same matrix $S$ also performs the transformation of the spherical basis to the Cartesian basis. The \textit{inverse} of $S$ (which being $S$ an orthogonal matrix coincides with its \textit{transpose} $S^\top$) would then transform the vectors $\vu{i}, \vu{j}, \vu{k}$ of the Cartesian basis into the vectors $\vu{r}\,, \vu*{\theta}\,, \vu*{\phi}$ of the spherical basis. Alternatively, if \ref{eq:orthomatrix} had been the (\textit{contravariant}) transformation of a \textit{vector} (from spherical to Cartesian), there would be two transpositions to be taken, which amounts to no transposition.
+}  
 
 \begin{subequations}
 \label{eq:spherical_bases_xform}
 \begin{align}
-\mqty[\vu{r} \\ \vu{\theta} \\ \vu{\phi}]  = \mqty|
-\cos(\theta) & \sin(\theta)\cos(\phi) & \sin(\theta)\sin(\phi) \\
--\sin(\theta) & \cos(\theta)\cos(\phi) & \cos(\theta)\sin(\phi) \\
-0 &  -\sin(\phi) & \cos(\phi)
-| \:  \mqty[\vu{k} \\ \vu{i} \\ \vu{j}] \\ 
-\mqty[\vu{r} \\ \vu{\theta} \\ \vu{\phi}]  = \mqty|
+\label{eq:spherical_bases_xform_a}
+\mqty[\vu{i} \\ \vu{j} \\ \vu{k} ] = \mqty|  
+\sin(\theta)\cos(\phi) & \cos(\theta)\cos(\phi) &  -\sin(\phi) \\
+\sin(\theta)\sin(\phi) & \cos(\theta)\sin(\phi) &   \cos(\phi) \\
+\cos(\theta) &  -\sin(\theta) & 0
+| \:  \mqty[\vu{r} \\ \vu*{\theta} \\ \vu*{\phi}] \\
+\label{eq:spherical_bases_xform_b}
+\mqty[\vu{r} \\ \vu*{\theta} \\ \vu*{\phi}]  = \mqty|
 \sin(\theta)\cos(\phi) & \sin(\theta)\sin(\phi) &  \cos(\theta) \\
 \cos(\theta)\cos(\phi) & \cos(\theta)\sin(\phi) & -\sin(\theta) \\
 -\sin(\phi) & \cos(\phi) & 0 
@@ -1162,7 +1153,38 @@ and
 \end{align}
 \end{subequations}
 
+\subsubsection{Infinitesimal displacement}
+Inverting equation \ref{eq:orthomatrix} we obtain 
 
+\begin{equation}
+\label{eq:spherical_differentials_xform}
+\mqty[dr \\ r d\theta \\ r \sin(\theta)d\phi]  = \mqty|
+\sin(\theta)\cos(\phi) & \sin(\theta)\sin(\phi) &  \cos(\theta) \\
+\cos(\theta)\cos(\phi) & \cos(\theta)\sin(\phi) & -\sin(\theta) \\
+-\sin(\phi) & \cos(\phi) & 0 
+| \:   \mqty[dx \\ dy \\ dz] 
+\end{equation}
+
+Vectors at the right and left side of \ref{eq:spherical_differentials_xform} must have equal norm, because the transformation is orthogonal. The infinitesimal displacement $\dd {l}$ from a given point $\vb{r}_o$ can be represented as 
+
+\begin{align*}
+\dd \vb{l} &= \dd{x} \vu{i} + \dd{y} \vu{j} + \dd{z} \vu{k} \\
+           &= \dd{r} \vu{r} + r \dd{\theta} \vu*{\theta} + r\sin(\theta)\dd{\phi} \vu*{\phi} 
+\end{align*}
+
+\subsubsection{Infinitesimal area}
+Infinitesimal area elements orthogonal to the spherical unit vectors are 
+\begin{align*}
+\dd \vb{a}_r  &= d {l}_{\theta} d {l}_{\phi} = r^2 \sin(\theta) d\theta d\phi \; \vu{r} \\
+\dd \vb{a}_{\theta}  &=  d {l}_r d {l}_{\phi} = r \sin(\theta) d\phi dr \; \vu*{\theta} \\
+\dd \vb{a}_{\phi}    &=  d {l}_r d {l}_{\theta} = r d\theta dr \; \vu*{\phi}
+\end{align*}
+
+\subsubsection{Infinitesimal volume}
+The infinitesimal volume at a given point is 
+\begin{equation*}
+\dd \tau  = d {l}_{r} d {l}_{\theta} d {l}_{\phi} = r^2 \sin(\theta) dr d\theta d\phi 
+\end{equation*}
 
 \subsection{Cylindrical Coordinates}
 The following equations provide the transformation from cylindrical to Cartesian coordinates: 
