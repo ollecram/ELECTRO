@@ -26,6 +26,7 @@
 % Physics package 
 % https://tex.stackexchange.com/questions/38978/how-can-i-manually-install-a-latex-package-debian-ubuntu-linux
 \usepackage{physics}	
+\usepackage[title,toc,page]{appendix}
 
 % Force chapter numbering to restart within each part
 \makeatletter
@@ -73,6 +74,8 @@
 
 \include{Plan}	
 \tableofcontents
+%\addappheadtotoc
+
 \mainmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \include{Griffiths_00}  % Griffiths - Electrodynamics / Vector Analysis
@@ -123,7 +126,8 @@
 %\include{Landau_08}	 % L.D. Landau, E.M. Lifshitz -- Teoria dei Campi
 %\include{Landau_09}	 % L.D. Landau, E.M. Lifshitz -- Teoria dei Campi
 
-
+\appendixpage
+\include{appendix_I_Tensors}
 
 
 
