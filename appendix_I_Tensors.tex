@@ -2,26 +2,164 @@
 \chapter{Tensors}
 \label{ch:Tensors} 
 
-\section{Vector Algebra}
-For the sake of fixing notation, let $\{\vu{i}, \vu{j}, \vu{k}\}$ be an \textit{orthonormal} basis of unit vectors in three-dimensional space, and the following a list of all possible scalar products of basis vectors. 
-  
-\begin{equation}
-\begin{aligned} 
-\vu{i}\vdot \vu{i} &= \vu{j} \vdot \vu{j} = \vu{k} \vdot \vu{k} = 1 \\ 
-\vu{i} \vdot \vu{j} &= \vu{j} \vdot \vu{k} = \vu{k} \vdot \vu{i} = 0 
-\label{eq:basis_dot_products}
-\end{aligned}
-\end{equation}
+\section{Change of basis}
+Let $\{\vb{e}_1, \ldots, \vb{e}_n \}$ and $\{{\vb{e}'}_1, \ldots, {\vb{e}'}_n \}$ be two distinct bases\footnote{A basis is a maximal set of linearly independent vectors. All bases have the same number of elements. This number defines the dimensionality of the vector space.} of an $n$-dimensional vector space $E$.  
+Let $A$ be the matrix whose element $A_{ij}$ is the coefficient of the primed basis vector ${\vb{e}'}_j$ in the linear expansion of the unprimed basis vector $\vb{e}_i$ with respect to the primed basis    
+\begin{align}
+\label{eq:unprimed_from_primed}
+\mqty[ \vb{e}_1 \\ \vdots \\ \vb{e}_i \\ \vdots \\ \vb{e}_n ] = \mqty|
+A_{11}  &  \ldots  & A_{1j}  &  \cdots  & A_{1n} \\
+\vdots  &  \cdots  & \vdots  &  \cdots  & \vdots \\
+A_{i1}  &  \cdots  & A_{ij}  &  \cdots  & A_{in} \\
+\vdots  &  \cdots  & \vdots  &  \cdots  & \vdots \\
+A_{n1}  &  \cdots  & A_{nj}  &  \cdots  & A_{nn} |
+\mqty[ {\vb{e}'}_1 \\ \vdots \\ {\vb{e}'}_j \\ \vdots \\ {\vb{e}'}_n ]  
+\end{align}
 
-For a \textit{right-handed} basis, the following is a list of all possible \textit{vector} products of basis vectors.
-  
-\begin{equation}
-\begin{aligned} 
-\vu{i} \cross \vu{i} &= \vu{j} \cross \vu{j} = \vu{k} \cross \vu{k} = 0 \\ 
-\vu{i} \cross \vu{j} &= \vu{k} = - \vu{j} \cross \vu{i}\\
-\vu{j} \cross \vu{k} &= \vu{i} = - \vu{k} \cross \vu{j}\\
-\vu{k} \cross \vu{i} &= \vu{j} = - \vu{i} \cross \vu{k}
-\label{eq:basis_vector_products}
-\end{aligned}
-\end{equation}
+The $i$-th \textit{row} of $A$ thus contains the coefficients of the linear expansion of $\vb{e}_i$ with respect to the primed basis. 
+
+The symmetric of \ref{eq:unprimed_from_primed} gives vectors of the primed basis as linear combinations of vectors of the unprimed basis. The matrix involved in that relation is the \textit{inverse} of $A$. Therefore
+
+\begin{subequations}
+\label{eq:twoway_basis_change}
+\begin{align}
+\vb{e}_i = A_{ij} {\vb{e}'}_j \\ 
+{\vb{e}'}_i = A_{ij}^{-1} \vb{e}_j
+\end{align}
+\end{subequations}
+
+In order to connect maximal sets of linearly independent vectors, the matrix $A$ must admit an \textit{inverse} hence it must be a \textit{regular} matrix, which is equivalent to require that its determinant must not be zero. 
+
+It is customary in applications to deal with \textit{orthogonal} bases, that is to say: bases whose elements are mutually orthogonal. For even greater convenience basis vectors may be chosen to be of \textit{unit norm}. 
+Unfortunately, assuming to only deal with orthogonal bases hides some key aspects of the general theory of tensors\footnote{Part of this theory holds even for vector spaces where \textit{orthogonality} is impossible to define, because they are not equipped with a \textit{scalar product}.}.   
+
+We will see that \textit{tensors} are a generalization of vectors and that most of their distinctive characteristics are associated to their behaviour with respect to a change of basis in the underlying vector spaces. The theory extends to finite dimensional vector spaces (heareafter FDVS) whose dimensionality $n$ can assume any finite value, however our strategy is to expose and motivate definitions with concrete examples, often presenting two-dimensional cases.
+
+\section{Bases in two dimensions}
+Here we propose two orthormal bases and two non-orthonormal bases in two dimensions and the transformation matrices connecting the two bases of each class.  
+
+\section{Orthonormal bases in two dimensions}
+In a two dimensional \textit{Euclidean}\footnote{A vector space equipped with a scalar product, in which therefore it is possible to define the \textit{length} of a vector and the \textit{angle} between two vectors.} vector space any two mutually orthogonal vectors of unit length provide a Cartesian basis. The transformation between any two Cartesian bases is defined by an \textit{orthogonal} $n \times n$ matrix whose columns and rows all have unit norm. In two dimensions the transformation is uniquely determined by a single parameter that we can always interpret as the \textit{angle} $\phi$ by which one basis is \textit{rotated} with respect to the other. 
+
+Here the unit vectors $\{\vu{i}, \vu{j}\}$ and $\{\vu{i}', \vu{j}'\}$ belong to the unprimed and primed orthonormal basis, respectively.  
+
+Simple geometric considerations lead to the following transformation matrices if we assume that the primed basis is obtained by a rotation of the unprimed basis by an angle $\phi$ which places the axis $\vu{i}'$ \textit{above} the axis $\vu{i}$ and the axis $\vu{j}'$ to the \textit{left} of the axis $\vu{j}$: 
+
+\begin{subequations}
+\label{eq:2D_orthobasis_change}
+\begin{align}
+\label{eq:2D_orthobasis_change_a}
+\mqty[ \vu{i}' \\ \vb{j}'] &= \mqty|
++\cos(\phi) & +\sin(\phi) \\
+-\sin(\phi) & +\cos(\phi) |
+\mqty[ \,\vu{i}\, \\ \,\vu{j}\,] \\
+\label{eq:2D_orthobasis_change_b}
+\mqty[ \,\vu{i}\, \\ \,\vu{j}\,] &= \mqty|
++\cos(\phi) & -\sin(\phi) \\
++\sin(\phi) & +\cos(\phi) |
+\mqty[ \vu{i}' \\ \vu{j}']
+\end{align}
+\end{subequations}
+
+In the following the rotation matrix of \ref{eq:2D_orthobasis_change_a} will be referred to as $R(\phi)$  while the rotation matrix of \ref{eq:2D_orthobasis_change_b} -- the inverse of the former -- will be referred to as $R(-\phi)$ or $R^{-1}(\phi)$.
+\section{General bases in two dimensions}
+Two exemplary non orthogonal bases in two dimensions are defined with respect to the orthonormal axes $\{\vu{i}, \vu{j}\}$ of a Cartesian basis, by the following equations, where $R(\phi)$ and $R^{-1}(\phi)$ are the rotation matrices of \ref{eq:2D_orthobasis_change_a} and \ref{eq:2D_orthobasis_change_b}, respectively. 
+
+\begin{subequations}
+\label{eq:2D_generalbases}
+\begin{align}
+\label{eq:2D_generalbasis_convergent}
+\mqty[ \;\vb{e}_1\, \\ \;\vb{e}_2\,] &= \mqty[R(\phi) & \vu{i}\; \\R^{-1}(\phi) & \vu{j}\;]  &= \mqty|
++\cos(\phi) & +\sin(\phi) \\
++\sin(\phi) & +\cos(\phi) |
+\mqty[ \,\vu{i}\, \\ \,\vu{j}\,] \\
+\label{eq:2D_generalbasis_divergent}
+\mqty[ \,{\vb{e}'}_1\, \\ \,{\vb{e}'}_2\,] &= \mqty[ R^{-1}(\phi) & \vu{i}\; \\ R(\phi) & \vu{j}\;]  &= \mqty|
++\cos(\phi) & -\sin(\phi) \\
+-\sin(\phi) & +\cos(\phi) |
+\mqty[ \,\vu{i}\, \\ \,\vu{j}\,]
+\end{align}
+\end{subequations}
+
+Assuming $\phi < \pi/4$, equations \ref{eq:2D_generalbases} have the following meaning:
+
+\textbf{Unprimed basis}
+\begin{itemize}
+\item For $\phi = 0$ the basis vectors $\{ \vb{e}_1, \, \vb{e}_2 \}$ coincide with $\{\vu{i}, \vu{j}\}$;
+\begin{itemize}
+\item $\vb{e}_1$ is placed at an angle $\phi$  above the axis $\vu{i}$;
+\item $\vb{e}_2$ is placed at an angle $\phi$  on the right of the axis $\vu{j}$;
+\item $\vb{e}_1$ and $\vb{e}_2$ \textit{converge}, i.e. make an angle $\theta = \pi/2 - 2 \phi < \pi/2$
+\end{itemize} 
+\end{itemize}
+
+\textbf{Primed basis}
+\begin{itemize}
+\item For $\phi = 0$ the basis vectors $\{ {\vb{e}'}_1, \, {\vb{e}'}_2 \}$ coincide with $\{\vu{i}, \vu{j}\}$;
+\begin{itemize}
+\item ${\vb{e}'}_1$ is placed at an angle $\phi$  below the axis $\vu{i}$;
+\item ${\vb{e}'}_2$ is placed at an angle $\phi$  on the left of the axis $\vu{j}$;
+\item ${\vb{e}'}_1$ and ${\vb{e}'}_2$ \textit{diverge}, i.e. make an angle $\theta = \pi/2 + 2 \phi > \pi/2$
+\end{itemize} 
+\end{itemize}
+
+Equations corresponding to \ref{eq:2D_orthobasis_change} for the transformation between the two non orthogonal bases defined in \ref{eq:2D_generalbases} are obtained by computing the inverse of the two matrices appearing in \ref{eq:2D_generalbasis_convergent} and\ref{eq:2D_generalbasis_divergent}, so that we get the coordinates of the Cartesian basis $\{\vu{i}, \vu{j}\}$ with respect to $\{ \vb{e}_1, \, \vb{e}_2 \}$ and $\{ {\vb{e}'}_1, \, {\vb{e}'}_2 \}$. These straightforward computations yield
+
+\begin{subequations}
+\label{eq:2D_generalbases_inverses}
+\begin{align}
+\label{eq:2D_convergentbasis_inverse}
+\mqty[ \,\vu{i}\, \\ \,\vu{j}\,] &= \frac{1}{(\cos^2(\phi) - \sin^2(\phi))} \mqty|
++\cos(\phi) & -\sin(\phi) \\
+-\sin(\phi) & +\cos(\phi) | 
+\mqty[ \;\vb{e}_1\, \\ \;\vb{e}_2\,] \\
+\label{eq:2D_divergentbasis_inverse}
+\mqty[ \,\vu{i}\, \\ \,\vu{j}\,] &= \frac{1}{(\cos^2(\phi) - \sin^2(\phi))} \mqty|
++\cos(\phi) & +\sin(\phi) \\
++\sin(\phi) & +\cos(\phi) | 
+\mqty[ \,{\vb{e}'}_1\, \\ \,{\vb{e}'}_2\,]
+\end{align}
+\end{subequations}
+
+As expected, the transformations \ref{eq:2D_generalbases_inverses} become undefined when $\phi = \pi/4$, because in that case the axes of the \textit{convergent} basis $\{ \vb{e}_1, \, \vb{e}_2 \}$ collapse onto the diagonal of the first quadrant. Substituting each identity in equation \ref{eq:2D_generalbases_inverses} in the corresponding identity of equation \ref{eq:2D_generalbases} we get 
+
+\begin{align*}
+\mqty[ \;\vb{e}_1\, \\ \;\vb{e}_2\,] &= \frac{1}{(\cos^2(\phi) - \sin^2(\phi))} \mqty|
++\cos(\phi) & +\sin(\phi) \\
++\sin(\phi) & +\cos(\phi) |  \mqty|
++\cos(\phi) & +\sin(\phi) \\
++\sin(\phi) & +\cos(\phi) | 
+\mqty[ \,{\vb{e}'}_1\, \\ \,{\vb{e}'}_2\,] \\
+\mqty[ \,{\vb{e}'}_1\, \\ \,{\vb{e}'}_2\,] &= \frac{1}{(\cos^2(\phi) - \sin^2(\phi))} \mqty|
++\cos(\phi) & -\sin(\phi) \\
+-\sin(\phi) & +\cos(\phi) |  \mqty|
++\cos(\phi) & -\sin(\phi) \\
+-\sin(\phi) & +\cos(\phi) | 
+\mqty[ \;\vb{e}_1\, \\ \;\vb{e}_2\,]
+\end{align*}
+
+Performing the product of the two matrices appearing in each one of the above equations we finally get 
+
+\begin{subequations}
+\label{eq:2D_generalbases_xform}
+\begin{align}
+\label{eq:2D_divergent_to_convergent}
+\mqty[ \;\vb{e}_1\, \\ \;\vb{e}_2\,] &= \frac{1}{(\cos^2(\phi) - \sin^2(\phi))} \mqty|
+1           & \:\:\:\:\sin(2\phi) \\
+\:\:\:\:\sin(2\phi) &           1 | 
+\mqty[ \,{\vb{e}'}_1\, \\ \,{\vb{e}'}_2\,] \\
+\label{eq:2D_convergent_to_divergent}
+\mqty[ \,{\vb{e}'}_1\, \\ \,{\vb{e}'}_2\,] &= \frac{1}{(\cos^2(\phi) - \sin^2(\phi))} \mqty|
+1           & -\sin(2\phi) \\
+-\sin(2\phi) &           1 | 
+\mqty[ \;\vb{e}_1\, \\ \;\vb{e}_2\,]
+\end{align}
+\end{subequations}
+
+ 
+
+
+
+
+
 
