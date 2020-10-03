@@ -33,12 +33,12 @@ In order to connect maximal sets of linearly independent vectors, the matrix $A$
 It is customary in applications to deal with \textit{orthogonal} bases, that is to say: bases whose elements are mutually orthogonal. For even greater convenience basis vectors may be chosen to be of \textit{unit norm}. 
 Unfortunately, assuming to only deal with orthogonal bases hides some key aspects of the general theory of tensors\footnote{Part of this theory holds even for vector spaces where \textit{orthogonality} is impossible to define, because they are not equipped with a \textit{scalar product}.}.   
 
-We will see that \textit{tensors} are a generalization of vectors and that most of their distinctive characteristics are associated to their behaviour with respect to a change of basis in the underlying vector spaces. The theory extends to finite dimensional vector spaces (heareafter FDVS) whose dimensionality $n$ can assume any finite value, however our strategy is to expose and motivate definitions with concrete examples, often presenting two-dimensional cases.
+We will see that \textit{tensors} are a generalization of vectors and that most of their distinctive characteristics are associated to their behaviour with respect to a change of basis in the underlying vector spaces. The theory extends to finite dimensional vector spaces (heareafter FDVS) whose dimensionality $n$ can assume any finite value. Our strategy is to expose and motivate definitions with concrete examples, often presenting two-dimensional cases.
 
-\section{Bases in two dimensions}
+\subsection{Bases in two dimensions}
 Here we propose two orthormal bases and two non-orthonormal bases in two dimensions and the transformation matrices connecting the two bases of each class.  
 
-\section{Orthonormal bases in two dimensions}
+\subsection{Orthonormal bases in two dimensions}
 In a two dimensional \textit{Euclidean}\footnote{A vector space equipped with a scalar product, in which therefore it is possible to define the \textit{length} of a vector and the \textit{angle} between two vectors.} vector space any two mutually orthogonal vectors of unit length provide a Cartesian basis. The transformation between any two Cartesian bases is defined by an \textit{orthogonal} $n \times n$ matrix whose columns and rows all have unit norm. In two dimensions the transformation is uniquely determined by a single parameter that we can always interpret as the \textit{angle} $\phi$ by which one basis is \textit{rotated} with respect to the other. 
 
 Here the unit vectors $\{\vu{i}, \vu{j}\}$ and $\{\vu{i}', \vu{j}'\}$ belong to the unprimed and primed orthonormal basis, respectively.  
@@ -62,7 +62,7 @@ Simple geometric considerations lead to the following transformation matrices if
 \end{subequations}
 
 In the following the rotation matrix of \ref{eq:2D_orthobasis_change_a} will be referred to as $R(\phi)$  while the rotation matrix of \ref{eq:2D_orthobasis_change_b} -- the inverse of the former -- will be referred to as $R(-\phi)$ or $R^{-1}(\phi)$.
-\section{General bases in two dimensions}
+\subsection{General bases in two dimensions}
 Two exemplary non orthogonal bases in two dimensions are defined with respect to the orthonormal axes $\{\vu{i}, \vu{j}\}$ of a Cartesian basis, by the following equations, where $R(\phi)$ and $R^{-1}(\phi)$ are the rotation matrices of \ref{eq:2D_orthobasis_change_a} and \ref{eq:2D_orthobasis_change_b}, respectively. 
 
 \begin{subequations}
@@ -121,7 +121,7 @@ Equations corresponding to \ref{eq:2D_orthobasis_change} for the transformation 
 \end{align}
 \end{subequations}
 
-As expected, the transformations \ref{eq:2D_generalbases_inverses} become undefined when $\phi = \pi/4$, because in that case the axes of the \textit{convergent} basis $\{ \vb{e}_1, \, \vb{e}_2 \}$ collapse onto the diagonal of the first quadrant. Substituting each identity in equation \ref{eq:2D_generalbases_inverses} in the corresponding identity of equation \ref{eq:2D_generalbases} we get 
+As expected, the transformations \ref{eq:2D_generalbases_inverses} become undefined when $\phi = \pi/4$, because in that case the axes of the \textit{convergent} basis $\{ \vb{e}_1, \, \vb{e}_2 \}$ collapse onto the diagonal of the first quadrant. Substituting each identity in equation \ref{eq:2D_generalbases_inverses} in the corresponding identity of equation \ref{eq:2D_generalbases} we get
 
 \begin{align*}
 \mqty[ \;\vb{e}_1\, \\ \;\vb{e}_2\,] &= \frac{1}{(\cos^2(\phi) - \sin^2(\phi))} \mqty|
@@ -138,7 +138,7 @@ As expected, the transformations \ref{eq:2D_generalbases_inverses} become undefi
 \mqty[ \;\vb{e}_1\, \\ \;\vb{e}_2\,]
 \end{align*}
 
-Performing the product of the two matrices appearing in each one of the above equations we finally get 
+Performing the product of the two matrices appearing in each one of the above equations we finally get\footnote{Making use of the trigonometric identity $\sin(A+B) =  \sin A \cos B + \cos A \sin B$.} 
 
 \begin{subequations}
 \label{eq:2D_generalbases_xform}
@@ -155,6 +155,36 @@ Performing the product of the two matrices appearing in each one of the above eq
 \mqty[ \;\vb{e}_1\, \\ \;\vb{e}_2\,]
 \end{align}
 \end{subequations}
+
+The matrices in equations \ref{eq:2D_divergent_to_convergent} and \ref{eq:2D_convergent_to_divergent} (including the scaling factor $(\cos^2(\phi) - \sin^2(\phi))$ that multiplies all their elements) are each other's \textit{inverse}. Indeed the product of the unscaled matrices yields $\cos^2(2\phi)$ which is the reciprocal of the scaling factor previously mentioned\footnote{See Dwight formula 403.22. $\cos 2A = \cos^2 A - \sin^2 A$}. 
+
+\subsection{Coordinates transformation for vectors}
+In the previous sections we have provided examples -- in two dimensions -- of a transformation between two orthonormal bases (equations \ref{eq:2D_orthobasis_change}) and of a transformation between bases that are not orthogonal (equations \ref{eq:2D_generalbases_xform}). In this section we examine how a vector's coordinates in a given basis relate to coordinates of the same vector in another basis. 
+
+Let unprimed symbols denote the coordinates of some vector $\vb{V}$ in a given (unprimed) basis and primed symbols for the coordinates of the same vector in another (primed) basis. For definitness, take the two orthonormal bases of example \ref{eq:2D_orthobasis_change}, so that 
+
+\begin{align*}
+\vb{V} &= x \;\vu{i}\; + y\; \vu{j}\; \\
+\vb{V} &= x' \vu{i}' + y' \vu{j}'  
+\end{align*} 
+
+In the first equation, replacing $\vu{i}$ and $\vu{j}$ by their expansion with respect to the primed basis (equation \ref{eq:2D_orthobasis_change_b}), and invoking the uniqueness of vector expansion with respect to that basis we get the formula expressing the primed coordinates as linear combinations of the unprimed coordinates. Starting the same process from the second equation and replacing $\vu{i}'$ and $\vu{j}'$ by their expansion with respect to the unprimed basis (equation \ref{eq:2D_orthobasis_change_a}) we get the unprimed coordinates as linear combinations of the primed coordinates. In matrix notations we arrive at the following transformations  
+
+\begin{subequations}
+\label{eq:2D_orthocoord_change}
+\begin{align}
+\label{eq:2D_orthocoord_change_a}
+\mqty[ x' \\ y'] &= \mqty|
++\cos(\phi) & +\sin(\phi) \\
+-\sin(\phi) & +\cos(\phi) |
+\mqty[ \,x\, \\ \,y\,] \\
+\label{eq:2D_orthocoord_change_b}
+\mqty[ \,x\, \\ \,y\,] &= \mqty|
++\cos(\phi) & -\sin(\phi) \\
++\sin(\phi) & +\cos(\phi) |
+\mqty[ x' \\ y']
+\end{align}
+\end{subequations} 
 
  
 
