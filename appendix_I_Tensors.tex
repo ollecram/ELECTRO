@@ -46,14 +46,14 @@ Here the unit vectors $\{\vu{i}, \vu{j}\}$ and $\{\vu{i}', \vu{j}'\}$ belong to 
 Simple geometric considerations lead to the following transformation matrices if we assume that the primed basis is obtained by a rotation of the unprimed basis by an angle $\phi$ which places the axis $\vu{i}'$ \textit{above} the axis $\vu{i}$ and the axis $\vu{j}'$ to the \textit{left} of the axis $\vu{j}$: 
 
 \begin{subequations}
-\label{eq:2D_orthobasis_change}
+\label{eq:2D_orthobasis_xform}
 \begin{align}
-\label{eq:2D_orthobasis_change_a}
+\label{eq:2D_orthobasis_xform_a}
 \mqty[ \vu{i}' \\ \vb{j}'] &= \mqty|
 +\cos(\phi) & +\sin(\phi) \\
 -\sin(\phi) & +\cos(\phi) |
 \mqty[ \,\vu{i}\, \\ \,\vu{j}\,] \\
-\label{eq:2D_orthobasis_change_b}
+\label{eq:2D_orthobasis_xform_b}
 \mqty[ \,\vu{i}\, \\ \,\vu{j}\,] &= \mqty|
 +\cos(\phi) & -\sin(\phi) \\
 +\sin(\phi) & +\cos(\phi) |
@@ -61,9 +61,9 @@ Simple geometric considerations lead to the following transformation matrices if
 \end{align}
 \end{subequations}
 
-In the following the rotation matrix of \ref{eq:2D_orthobasis_change_a} will be referred to as $R(\phi)$  while the rotation matrix of \ref{eq:2D_orthobasis_change_b} -- the inverse of the former -- will be referred to as $R(-\phi)$ or $R^{-1}(\phi)$.
+In the following the rotation matrix of \ref{eq:2D_orthobasis_xform_a} will be referred to as $R(\phi)$  while the rotation matrix of \ref{eq:2D_orthobasis_xform_b} -- the inverse of the former -- will be referred to as $R(-\phi)$ or $R^{-1}(\phi)$.
 \subsection{General bases in two dimensions}
-Two exemplary non orthogonal bases in two dimensions are defined with respect to the orthonormal axes $\{\vu{i}, \vu{j}\}$ of a Cartesian basis, by the following equations, where $R(\phi)$ and $R^{-1}(\phi)$ are the rotation matrices of \ref{eq:2D_orthobasis_change_a} and \ref{eq:2D_orthobasis_change_b}, respectively. 
+Two exemplary non orthogonal bases in two dimensions are defined with respect to the orthonormal axes $\{\vu{i}, \vu{j}\}$ of a Cartesian basis, by the following equations, where $R(\phi)$ and $R^{-1}(\phi)$ are the rotation matrices of \ref{eq:2D_orthobasis_xform_a} and \ref{eq:2D_orthobasis_xform_b}, respectively. 
 
 \begin{subequations}
 \label{eq:2D_generalbases}
@@ -103,7 +103,7 @@ Assuming $\phi < \pi/4$, equations \ref{eq:2D_generalbases} have the following m
 \end{itemize} 
 \end{itemize}
 
-Equations corresponding to \ref{eq:2D_orthobasis_change} for the transformation between the two non orthogonal bases defined in \ref{eq:2D_generalbases} are obtained by computing the inverse of the two matrices appearing in \ref{eq:2D_generalbasis_convergent} and\ref{eq:2D_generalbasis_divergent}, so that we get the coordinates of the Cartesian basis $\{\vu{i}, \vu{j}\}$ with respect to $\{ \vb{e}_1, \, \vb{e}_2 \}$ and $\{ {\vb{e}'}_1, \, {\vb{e}'}_2 \}$. These straightforward computations yield
+Equations corresponding to \ref{eq:2D_orthobasis_xform} for the transformation between the two non orthogonal bases defined in \ref{eq:2D_generalbases} are obtained by computing the inverse of the two matrices appearing in \ref{eq:2D_generalbasis_convergent} and\ref{eq:2D_generalbasis_divergent}, so that we get the coordinates of the Cartesian basis $\{\vu{i}, \vu{j}\}$ with respect to $\{ \vb{e}_1, \, \vb{e}_2 \}$ and $\{ {\vb{e}'}_1, \, {\vb{e}'}_2 \}$. These straightforward computations yield
 
 \begin{subequations}
 \label{eq:2D_generalbases_inverses}
@@ -124,18 +124,18 @@ Equations corresponding to \ref{eq:2D_orthobasis_change} for the transformation 
 As expected, the transformations \ref{eq:2D_generalbases_inverses} become undefined when $\phi = \pi/4$, because in that case the axes of the \textit{convergent} basis $\{ \vb{e}_1, \, \vb{e}_2 \}$ collapse onto the diagonal of the first quadrant. Substituting each identity in equation \ref{eq:2D_generalbases_inverses} in the corresponding identity of equation \ref{eq:2D_generalbases} we get
 
 \begin{align*}
+\mqty[ \,{\vb{e}'}_1\, \\ \,{\vb{e}'}_2\,] &= \frac{1}{(\cos^2(\phi) - \sin^2(\phi))} \mqty|
++\cos(\phi) & -\sin(\phi) \\
+-\sin(\phi) & +\cos(\phi) |  \mqty|
++\cos(\phi) & -\sin(\phi) \\
+-\sin(\phi) & +\cos(\phi) | 
+\mqty[ \;\vb{e}_1\, \\ \;\vb{e}_2\,] \\
 \mqty[ \;\vb{e}_1\, \\ \;\vb{e}_2\,] &= \frac{1}{(\cos^2(\phi) - \sin^2(\phi))} \mqty|
 +\cos(\phi) & +\sin(\phi) \\
 +\sin(\phi) & +\cos(\phi) |  \mqty|
 +\cos(\phi) & +\sin(\phi) \\
 +\sin(\phi) & +\cos(\phi) | 
 \mqty[ \,{\vb{e}'}_1\, \\ \,{\vb{e}'}_2\,] \\
-\mqty[ \,{\vb{e}'}_1\, \\ \,{\vb{e}'}_2\,] &= \frac{1}{(\cos^2(\phi) - \sin^2(\phi))} \mqty|
-+\cos(\phi) & -\sin(\phi) \\
--\sin(\phi) & +\cos(\phi) |  \mqty|
-+\cos(\phi) & -\sin(\phi) \\
--\sin(\phi) & +\cos(\phi) | 
-\mqty[ \;\vb{e}_1\, \\ \;\vb{e}_2\,]
 \end{align*}
 
 Performing the product of the two matrices appearing in each one of the above equations we finally get\footnote{Making use of the trigonometric identity $\sin(A+B) =  \sin A \cos B + \cos A \sin B$.} 
@@ -143,48 +143,61 @@ Performing the product of the two matrices appearing in each one of the above eq
 \begin{subequations}
 \label{eq:2D_generalbases_xform}
 \begin{align}
-\label{eq:2D_divergent_to_convergent}
-\mqty[ \;\vb{e}_1\, \\ \;\vb{e}_2\,] &= \frac{1}{(\cos^2(\phi) - \sin^2(\phi))} \mqty|
-1           & \:\:\:\:\sin(2\phi) \\
-\:\:\:\:\sin(2\phi) &           1 | 
-\mqty[ \,{\vb{e}'}_1\, \\ \,{\vb{e}'}_2\,] \\
 \label{eq:2D_convergent_to_divergent}
 \mqty[ \,{\vb{e}'}_1\, \\ \,{\vb{e}'}_2\,] &= \frac{1}{(\cos^2(\phi) - \sin^2(\phi))} \mqty|
 1           & -\sin(2\phi) \\
 -\sin(2\phi) &           1 | 
-\mqty[ \;\vb{e}_1\, \\ \;\vb{e}_2\,]
+\mqty[ \;\vb{e}_1\, \\ \;\vb{e}_2\,] \\
+\label{eq:2D_divergent_to_convergent}
+\mqty[ \;\vb{e}_1\, \\ \;\vb{e}_2\,] &= \frac{1}{(\cos^2(\phi) - \sin^2(\phi))} \mqty|
+1           & \:\:\:\:\sin(2\phi) \\
+\:\:\:\:\sin(2\phi) &           1 | 
+\mqty[ \,{\vb{e}'}_1\, \\ \,{\vb{e}'}_2\,] 
 \end{align}
 \end{subequations}
 
-The matrices in equations \ref{eq:2D_divergent_to_convergent} and \ref{eq:2D_convergent_to_divergent} (including the scaling factor $(\cos^2(\phi) - \sin^2(\phi))$ that multiplies all their elements) are each other's \textit{inverse}. Indeed the product of the unscaled matrices yields $\cos^2(2\phi)$ which is the reciprocal of the scaling factor previously mentioned\footnote{See Dwight formula 403.22. $\cos 2A = \cos^2 A - \sin^2 A$}. 
+The matrices in equations \ref{eq:2D_divergent_to_convergent} and \ref{eq:2D_convergent_to_divergent} (including the scaling factor $(\cos^2(\phi) - \sin^2(\phi))$ that multiplies all their elements) are each other's \textit{inverse}. Indeed the product of the unscaled matrices yields $\cos^2(2\phi)$ which is\footnote{See Dwight formula 403.22. $\cos 2A = \cos^2 A - \sin^2 A$} the \textit{squared reciprocal} of the scaling factor previously mentioned. 
 
 \subsection{Coordinates transformation for vectors}
-In the previous sections we have provided examples -- in two dimensions -- of a transformation between two orthonormal bases (equations \ref{eq:2D_orthobasis_change}) and of a transformation between bases that are not orthogonal (equations \ref{eq:2D_generalbases_xform}). In this section we examine how a vector's coordinates in a given basis relate to coordinates of the same vector in another basis. 
+In the previous sections we have provided examples -- in two dimensions -- of a transformation between two orthonormal bases (equations \ref{eq:2D_orthobasis_xform}) and of a transformation between bases that are not orthogonal (equations \ref{eq:2D_generalbases_xform}). In this section we examine how a vector's coordinates in a given basis relate to coordinates of the same vector in another basis. 
 
-Let unprimed symbols denote the coordinates of some vector $\vb{V}$ in a given (unprimed) basis and primed symbols for the coordinates of the same vector in another (primed) basis. For definitness, take the two orthonormal bases of example \ref{eq:2D_orthobasis_change}, so that 
+Let unprimed symbols denote the coordinates of some vector $\vb{V}$ in a given (unprimed) basis and primed symbols for the coordinates of the same vector in another (primed) basis. For definitness, take the two orthonormal bases of example \ref{eq:2D_orthobasis_xform}, so that 
 
 \begin{align*}
 \vb{V} &= x \;\vu{i}\; + y\; \vu{j}\; \\
 \vb{V} &= x' \vu{i}' + y' \vu{j}'  
 \end{align*} 
 
-In the first equation, replacing $\vu{i}$ and $\vu{j}$ by their expansion with respect to the primed basis (equation \ref{eq:2D_orthobasis_change_b}), and invoking the uniqueness of vector expansion with respect to that basis we get the formula expressing the primed coordinates as linear combinations of the unprimed coordinates. Starting the same process from the second equation and replacing $\vu{i}'$ and $\vu{j}'$ by their expansion with respect to the unprimed basis (equation \ref{eq:2D_orthobasis_change_a}) we get the unprimed coordinates as linear combinations of the primed coordinates. In matrix notations we arrive at the following transformations  
+Holding the second equation, and replacing $\vu{i}$ and $\vu{j}$ in the first equation by their expansion with respect to the primed basis (equation \ref{eq:2D_orthobasis_xform_b}), the uniqueness of vector expansion with respect to that basis implies that coefficients of the same basis vector in the two sides must be equal. By this path we arrive at a formula expressing the primed coordinates as linear combinations of the unprimed coordinates. 
+
+The same process can be repeated by holding the first equation, and replacing $\vu{i}'$ and $\vu{j}'$ in the second equation by their expansion with respect to the unprimed basis (equation \ref{eq:2D_orthobasis_xform_a}). By this path we get the unprimed coordinates as linear combinations of the primed coordinates. 
+
+In matrix notation we thus obtain the following transformation rules for coordinates:  
 
 \begin{subequations}
-\label{eq:2D_orthocoord_change}
+\label{eq:2D_orthocoord_xform}
 \begin{align}
-\label{eq:2D_orthocoord_change_a}
+\label{eq:2D_orthocoord_xform_a}
 \mqty[ x' \\ y'] &= \mqty|
 +\cos(\phi) & +\sin(\phi) \\
 -\sin(\phi) & +\cos(\phi) |
 \mqty[ \,x\, \\ \,y\,] \\
-\label{eq:2D_orthocoord_change_b}
+\label{eq:2D_orthocoord_xform_b}
 \mqty[ \,x\, \\ \,y\,] &= \mqty|
 +\cos(\phi) & -\sin(\phi) \\
 +\sin(\phi) & +\cos(\phi) |
 \mqty[ x' \\ y']
 \end{align}
 \end{subequations} 
+
+Not surprisingly, the matrices connecting the primed coordinates to the unprimed are the same that connect vectors of the primed basis to those of the unprimed basis. 
+
+Let now repeat the process with bases that are not orthogonal. For definitness, let us take the two bases of example \ref{eq:2D_generalbases_xform} and write down again the expansion of a vector $\vb{V}$ in the two bases  
+
+\begin{align*}
+\vb{V} &= x_1 \;\vb{e}_1\; + x_2\; \vb{e}_2\; \\
+\vb{V} &= {x'}_1 {\vb{e}'}_1 + {x'}_2 {\vb{e}'}_2  
+\end{align*} 
 
  
 
