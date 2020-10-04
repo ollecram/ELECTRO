@@ -18,7 +18,7 @@ A_{n1}  &  \cdots  & A_{nj}  &  \cdots  & A_{nn} |
 
 The $i$-th \textit{row} of $A$ thus contains the coefficients of the linear expansion of $\vb{e}_i$ with respect to the primed basis. 
 
-The symmetric of \ref{eq:unprimed_from_primed} gives vectors of the primed basis as linear combinations of vectors of the unprimed basis. The matrix involved in that relation is the \textit{inverse} of $A$. Therefore
+In order to connect maximal sets of linearly independent vectors, the matrix $A$ must admit an \textit{inverse} hence it must be a \textit{regular} matrix, which is equivalent to require that its determinant must not be zero. The symmetric of \ref{eq:unprimed_from_primed} gives vectors of the primed basis as linear combinations of vectors of the unprimed basis. The matrix involved in that relation is the \textit{inverse} of $A$. Therefore
 
 \begin{subequations}
 \label{eq:twoway_basis_change}
@@ -28,7 +28,7 @@ The symmetric of \ref{eq:unprimed_from_primed} gives vectors of the primed basis
 \end{align}
 \end{subequations}
 
-In order to connect maximal sets of linearly independent vectors, the matrix $A$ must admit an \textit{inverse} hence it must be a \textit{regular} matrix, which is equivalent to require that its determinant must not be zero. 
+
 
 It is customary in applications to deal with \textit{orthogonal} bases, that is to say: bases whose elements are mutually orthogonal. For even greater convenience basis vectors may be chosen to be of \textit{unit norm}. 
 Unfortunately, assuming to only deal with orthogonal bases hides some key aspects of the general theory of tensors\footnote{Part of this theory holds even for vector spaces where \textit{orthogonality} is impossible to define, because they are not equipped with a \textit{scalar product}.}.   
@@ -52,12 +52,12 @@ Simple geometric considerations lead to the following transformation matrices if
 \mqty[ \vu{i}' \\ \vb{j}'] &= \mqty|
 +\cos(\phi) & +\sin(\phi) \\
 -\sin(\phi) & +\cos(\phi) |
-\mqty[ \,\vu{i}\, \\ \,\vu{j}\,] \\
+\mqty[ \,\vu{i}\, \\ \,\vu{j}\,]  = \:\;R(\phi)\:\, \mqty[ \,\vu{i}\, \\ \,\vu{j}\,] \\
 \label{eq:2D_orthobasis_xform_b}
 \mqty[ \,\vu{i}\, \\ \,\vu{j}\,] &= \mqty|
 +\cos(\phi) & -\sin(\phi) \\
 +\sin(\phi) & +\cos(\phi) |
-\mqty[ \vu{i}' \\ \vu{j}']
+\mqty[ \vu{i}' \\ \vu{j}']  = R^{-1}(\phi) \mqty[ \vu{i}' \\ \vu{j}']
 \end{align}
 \end{subequations}
 
@@ -69,12 +69,12 @@ Two exemplary non orthogonal bases in two dimensions are defined with respect to
 \label{eq:2D_generalbases}
 \begin{align}
 \label{eq:2D_generalbasis_convergent}
-\mqty[ \;\vb{e}_1\, \\ \;\vb{e}_2\,] &= \mqty[R(\phi) & \vu{i}\; \\R^{-1}(\phi) & \vu{j}\;]  &= \mqty|
+\mqty[ \;\vb{e}_1\, \\ \;\vb{e}_2\,] &= \mqty[R(\phi) & \vu{i}\; \\R^{-1}(\phi) & \vu{j}\;]  = \mqty|
 +\cos(\phi) & +\sin(\phi) \\
 +\sin(\phi) & +\cos(\phi) |
 \mqty[ \,\vu{i}\, \\ \,\vu{j}\,] \\
 \label{eq:2D_generalbasis_divergent}
-\mqty[ \,{\vb{e}'}_1\, \\ \,{\vb{e}'}_2\,] &= \mqty[ R^{-1}(\phi) & \vu{i}\; \\ R(\phi) & \vu{j}\;]  &= \mqty|
+\mqty[ \,{\vb{e}'}_1\, \\ \,{\vb{e}'}_2\,] &= \mqty[ R^{-1}(\phi) & \vu{i}\; \\ R(\phi) & \vu{j}\;]  = \mqty|
 +\cos(\phi) & -\sin(\phi) \\
 -\sin(\phi) & +\cos(\phi) |
 \mqty[ \,\vu{i}\, \\ \,\vu{j}\,] 
@@ -158,6 +158,7 @@ Performing the product of the two matrices appearing in each one of the above eq
 \end{subequations}
 
 The matrices in equations \ref{eq:2D_divergent_to_convergent} and \ref{eq:2D_convergent_to_divergent} (including the scaling factor $1/\cos(2\phi)$ that multiplies all their elements) are each other's \textit{inverse}. Indeed the product of the unscaled matrices yields the identity matrix multiplied by $\cos^2(2\phi)$, which is the \textit{squared reciprocal} of the scaling factor. 
+In the following the matrix of \ref{eq:2D_convergent_to_divergent} will be denoted as $T(\phi)$  while the matrix of \ref{eq:2D_divergent_to_convergent} -- the inverse of the former -- will be denoted as $T(-\phi)$ or $T^{-1}(\phi)$.
 
 \subsection{Coordinates transformation for vectors}
 In the previous sections we have provided examples -- in two dimensions -- of a transformation between two orthonormal bases (equations \ref{eq:2D_orthobasis_xform}) and of a transformation between bases that are not orthogonal (equations \ref{eq:2D_generalbases_xform}). In this section we examine how a vector's coordinates in a given basis relate to coordinates of the same vector in another basis. In what follows, unprimed symbols denote the coordinates of some vector $\vb{V}$ in a given (unprimed) basis, while primed symbols denote the coordinates of the same vector in another (primed) basis. 
@@ -190,7 +191,7 @@ In matrix notation we thus obtain the following transformation rules for coordin
 \end{align}
 \end{subequations} 
 
-In this example, the matrices connecting the primed coordinates to the unprimed are the same (see the transformations  \ref{eq:2D_orthobasis_xform}) that connect vectors of the primed basis to those of the unprimed basis. The next example shows that this property does not generally hold for any pair of bases.
+The matrices connecting the primed coordinates to the unprimed are the same (see the transformations  \ref{eq:2D_orthobasis_xform}) that connect vectors of the primed basis to those of the unprimed basis. 
 
 \subsubsection{Example 2 -- Non orthogonal bases}
 We now compute the coordinate transformations between a different pair of bases. For definitness, let take the two bases of example \ref{eq:2D_generalbases_xform}, so that 
@@ -205,37 +206,20 @@ The same process can be repeated by holding the first equation, and replacing ${
 
 In matrix notation we thus obtain the following transformation rules for coordinates:   
 
-
-\begin{subequations}
-\label{eq:2D_orthocoord_xform}
-\begin{align}
-\label{eq:2D_orthocoord_xform_a}
-\mqty[ {x'}_1 \\ {x'}_2] &= \mqty|
-+\cos(\phi) & +\sin(\phi) \\
--\sin(\phi) & +\cos(\phi) |
-\mqty[ \,x_1\, \\ \,x_2\,] = \:\;R(\phi)\:\; \mqty[ \,x_1\, \\ \,x_2\,] \\
-\label{eq:2D_orthocoord_xform_b}
-\mqty[ \,x_1\, \\ \,x_2\,] &= \mqty|
-+\cos(\phi) & -\sin(\phi) \\
-+\sin(\phi) & +\cos(\phi) |
-\mqty[ {x'}_1 \\ {x'}_2] = R^{-1}(\phi) \mqty[ {x'}_1 \\ {x'}_2] 
-\end{align}
-\end{subequations} 
-
-
 \begin{subequations}
 \label{eq:2D_generalcoord_xform}
 \begin{align}
 \label{eq:2D_generalcoord_xform_a}
-\mqty[ \,{\vb{e}'}_1\, \\ \,{\vb{e}'}_2\,] &= \frac{1}{k} \mqty|
+\mqty[ {x'}_1 \\ {x'}_2] &= \frac{1}{\cos(2\phi)} \mqty|
 1           & -\sin(2\phi) \\
 -\sin(2\phi) &           1 | 
-\mqty[ \;\vb{e}_1\, \\ \;\vb{e}_2\,]  = \:\;T(\phi)\:\; \mqty[ \;\vb{e}_1\, \\ \;\vb{e}_2\,] \\
+\mqty[ \,x_1\, \\ \,x_2\,] = \:\;T(\phi)\:\, \mqty[ \,x_1\, \\ \,x_2\,] \\
 \label{eq:2D_generalcoord_xform_b}
-\mqty[ \;\vb{e}_1\, \\ \;\vb{e}_2\,] &= \frac{1}{k} \mqty|
+\mqty[ \,x_1\, \\ \,x_2\,] &= \frac{1}{\cos(2\phi)} \mqty|
 1           & \:\:\:\:\sin(2\phi) \\
 \:\:\:\:\sin(2\phi) &           1 | 
-\mqty[ \,{\vb{e}'}_1\, \\ \,{\vb{e}'}_2\,]  = T^{-1} (\phi) \mqty[ \,{\vb{e}'}_1\, \\ \,{\vb{e}'}_2\,]
+\mqty[ {x'}_1 \\ {x'}_2]  = T^{-1} (\phi) \mqty[ {x'}_1 \\ {x'}_2] 
 \end{align}
 \end{subequations}
 
+Again, the matrices connecting the primed coordinates to the unprimed are the same (see the transformations  \ref{eq:2D_generalbases_xform}) that connect vectors of the primed basis to those of the unprimed basis.
