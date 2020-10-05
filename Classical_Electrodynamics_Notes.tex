@@ -28,6 +28,11 @@
 \usepackage{physics}	
 \usepackage[title,toc,page]{appendix}
 
+% To put accents below letters
+\usepackage{accents}
+% To write two equations side by side
+\usepackage{multicol}
+
 % Force chapter numbering to restart within each part
 \makeatletter
 %\@addtoreset{chapter}{part}
@@ -51,6 +56,12 @@
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
+
+% To put accents below letters. Here \form{\theta} put a tilde below 
+\newcommand{\ut}[1]{\underaccent{\tilde}{#1}}
+\newcommand{\uh}[1]{\underaccent{\hat}{#1}}
+\newcommand{\form}[1]{\uh{#1}}
+
 
 \DeclareRobustCommand{\rchi}{{\mathpalette\irchi\relax}}
 \newcommand{\irchi}[2]{\raisebox{\depth}{$#1\chi$}} % inner command, used by \rchi

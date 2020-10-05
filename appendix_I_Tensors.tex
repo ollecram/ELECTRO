@@ -36,7 +36,7 @@ Unfortunately, assuming to only deal with orthogonal bases hides some key aspect
 We will see that \textit{tensors} are a generalization of vectors and that most of their distinctive characteristics are associated to their behaviour with respect to a change of basis in the underlying vector spaces. The theory extends to finite dimensional vector spaces (heareafter FDVS) whose dimensionality $n$ can assume any finite value. Our strategy is to expose and motivate definitions with concrete examples, often presenting two-dimensional cases.
 
 \subsection{Bases in two dimensions}
-Here we propose two orthormal bases and two non-orthonormal bases in two dimensions and the transformation matrices connecting the two bases of each class.  
+Here we propose a pair of orthonormal bases and a pair of non-orthonormal bases to study the matrices connecting the two bases in each pair.  
 
 \subsection{Orthonormal bases in two dimensions}
 In a two dimensional \textit{Euclidean}\footnote{A vector space equipped with a scalar product, in which therefore it is possible to define the \textit{length} of a vector and the \textit{angle} between two vectors.} vector space any two mutually orthogonal vectors of unit length provide a Cartesian basis. The transformation between any two Cartesian bases is defined by an \textit{orthogonal} $n \times n$ matrix whose columns and rows all have unit norm. In two dimensions the transformation is uniquely determined by a single parameter that we can always interpret as the \textit{angle} $\phi$ by which one basis is \textit{rotated} with respect to the other. 
@@ -63,47 +63,51 @@ Simple geometric considerations lead to the following transformation matrices if
 
 In the following the rotation matrix of \ref{eq:2D_orthobasis_xform_a} will be referred to as $R(\phi)$  while the rotation matrix of \ref{eq:2D_orthobasis_xform_b} -- the inverse of the former -- will be referred to as $R(-\phi)$ or $R^{-1}(\phi)$.
 \subsection{General bases in two dimensions}
-Two exemplary non orthogonal bases in two dimensions are defined with respect to the orthonormal axes $\{\vu{i}, \vu{j}\}$ of a Cartesian basis, by the following equations, where $R(\phi)$ and $R^{-1}(\phi)$ are the rotation matrices of \ref{eq:2D_orthobasis_xform_a} and \ref{eq:2D_orthobasis_xform_b}, respectively. 
+Two exemplary non orthogonal bases in two dimensions are defined with respect to the orthonormal axes $\{\vu{i}, \vu{j}\}$ of a Cartesian basis, by use of the rotation matrices $R(\phi)$ and $R(-\phi)$ whose coefficients are given in \ref{eq:2D_orthobasis_xform_a} and \ref{eq:2D_orthobasis_xform_b}, respectively. We start with two pairs of orthogonal vectors, each pair obtained by a rotation of the basis $\vu{i}, \vu{j}$:  
+\begin{align*}
+\mqty[\vu{i}^+ \\ \vu{j}^+] &= \,R(+\phi) \mqty[ \,\vu{i}\, \\ \,\vu{j}\,] = \mqty|
++\cos(\phi) & +\sin(\phi) \\
+-\sin(\phi) & +\cos(\phi) |
+\mqty[ \,\vu{i}\, \\ \,\vu{j}\,]   \\
+\mqty[\vu{i}^- \\ \vu{j}^-] &= \,R(-\phi) \mqty[ \,\vu{i}\, \\ \,\vu{j}\,] = \mqty|
++\cos(\phi) & -\sin(\phi) \\
++\sin(\phi) & +\cos(\phi) |
+\mqty[ \,\vu{i}\, \\ \,\vu{j}\,]  
+\end{align*}
 
+Now we define two non-orthogonal bases from the above four vectors:
 \begin{subequations}
 \label{eq:2D_generalbases}
 \begin{align}
 \label{eq:2D_generalbasis_convergent}
-\mqty[ \;\vb{e}_1\, \\ \;\vb{e}_2\,] &= \mqty[R(\phi) & \vu{i}\; \\R^{-1}(\phi) & \vu{j}\;]  = \mqty|
+\mqty[ \;\vb{e}_1\, \\ \;\vb{e}_2\,]       &= \mqty[\vu{i}^+ \\ \vu{j}^-]  = \mqty|
 +\cos(\phi) & +\sin(\phi) \\
 +\sin(\phi) & +\cos(\phi) |
 \mqty[ \,\vu{i}\, \\ \,\vu{j}\,] \\
 \label{eq:2D_generalbasis_divergent}
-\mqty[ \,{\vb{e}'}_1\, \\ \,{\vb{e}'}_2\,] &= \mqty[ R^{-1}(\phi) & \vu{i}\; \\ R(\phi) & \vu{j}\;]  = \mqty|
+\mqty[ \,{\vb{e}'}_1\, \\ \,{\vb{e}'}_2\,] &= \mqty[\vu{i}^- \\ \vu{j}^+] = \mqty|
 +\cos(\phi) & -\sin(\phi) \\
 -\sin(\phi) & +\cos(\phi) |
 \mqty[ \,\vu{i}\, \\ \,\vu{j}\,] 
 \end{align}
 \end{subequations}
 
-Assuming $\phi < \pi/4$, equations \ref{eq:2D_generalbases} have the following meaning:
+In the following we assume\footnote{The matrices in \ref{eq:2D_generalbases} have zero determinant, hence no inverse for $\phi=\pi/4$.} $\phi < \pi/4$. 
 
-\textbf{Unprimed basis}
-\begin{itemize}
-\item For $\phi = 0$ the basis vectors $\{ \vb{e}_1, \, \vb{e}_2 \}$ coincide with $\{\vu{i}, \vu{j}\}$;
+The basis vectors in \ref{eq:2D_generalbasis_convergent} are \textit{convergent}, indeed
 \begin{itemize}
 \item $\vb{e}_1$ is placed at an angle $\phi$  above the axis $\vu{i}$;
 \item $\vb{e}_2$ is placed at an angle $\phi$  on the right of the axis $\vu{j}$;
-\item $\vb{e}_1$ and $\vb{e}_2$ \textit{converge}, i.e. make an angle $\theta = \pi/2 - 2 \phi < \pi/2$
+\item $\vb{e}_1$ and $\vb{e}_2$ make an angle $\theta = \pi/2 - 2 \phi < \pi/2$
 \end{itemize} 
-\end{itemize}
-
-\textbf{Primed basis}
-\begin{itemize}
-\item For $\phi = 0$ the basis vectors $\{ {\vb{e}'}_1, \, {\vb{e}'}_2 \}$ coincide with $\{\vu{i}, \vu{j}\}$;
+The basis vectors in \ref{eq:2D_generalbasis_divergent} are \textit{divergent}, indeed
 \begin{itemize}
 \item ${\vb{e}'}_1$ is placed at an angle $\phi$  below the axis $\vu{i}$;
 \item ${\vb{e}'}_2$ is placed at an angle $\phi$  on the left of the axis $\vu{j}$;
-\item ${\vb{e}'}_1$ and ${\vb{e}'}_2$ \textit{diverge}, i.e. make an angle $\theta = \pi/2 + 2 \phi > \pi/2$
+\item ${\vb{e}'}_1$ and ${\vb{e}'}_2$ make an angle $\theta = \pi/2 + 2 \phi > \pi/2$
 \end{itemize} 
-\end{itemize}
 
-Equations corresponding to \ref{eq:2D_orthobasis_xform} for the transformation between the two non orthogonal bases defined in \ref{eq:2D_generalbases} are obtained by computing the inverse of the two matrices appearing in \ref{eq:2D_generalbasis_convergent} and\ref{eq:2D_generalbasis_divergent}, so that we get the coordinates of the Cartesian basis $\{\vu{i}, \vu{j}\}$ with respect to $\{ \vb{e}_1, \, \vb{e}_2 \}$ and $\{ {\vb{e}'}_1, \, {\vb{e}'}_2 \}$. These computations\footnote{Making use of trigonometric identity $\cos 2A = \cos^2 A - \sin^2 A$ (Dwight 403.22).} 
+In order to obtain the transformations between the primed and unprimed bases in \ref{eq:2D_generalbases} we need to compute the inverse of the matrices appearing in \ref{eq:2D_generalbasis_convergent} and\ref{eq:2D_generalbasis_divergent}, by which we can get the coordinates of the Cartesian basis $\{\vu{i}, \vu{j}\}$ with respect to $\{ \vb{e}_1, \, \vb{e}_2 \}$ and $\{ {\vb{e}'}_1, \, {\vb{e}'}_2 \}$. These computations\footnote{Making use of trigonometric identity $\cos 2A = \cos^2 A - \sin^2 A$ (Dwight 403.22).} 
 yield
 
 \begin{subequations}
@@ -122,7 +126,7 @@ yield
 \end{align}
 \end{subequations}
 
-As expected, the transformations \ref{eq:2D_generalbases_inverses} become undefined when $\phi = \pi/4$, because in that case the axes of the \textit{convergent} basis $\{ \vb{e}_1, \, \vb{e}_2 \}$ collapse onto the diagonal of the first quadrant. Substituting each identity in equation \ref{eq:2D_generalbases_inverses} in the corresponding identity of equation \ref{eq:2D_generalbases} we get
+As expected, the transformations \ref{eq:2D_generalbases_inverses} become undefined when $\phi = \pi/4$, because in that case the axes of the \textit{convergent} basis $\{ \vb{e}_1, \, \vb{e}_2 \}$ collapse onto the diagonal of the first quadrant while the axes of the \textit{divergent} basis $\{  {\vb{e}'}_1, \, {\vb{e}'}_2 \}$ collapse onto the diagonal of the third quadrant. Substituting each identity in equation \ref{eq:2D_generalbases_inverses} in the corresponding identity of equation \ref{eq:2D_generalbases} we get
 
 \begin{align*}
 \mqty[ \,{\vb{e}'}_1\, \\ \,{\vb{e}'}_2\,] &= \frac{1}{\cos(2\phi)} \mqty|
@@ -157,8 +161,8 @@ Performing the product of the two matrices appearing in each one of the above eq
 \end{align}
 \end{subequations}
 
-The matrices in equations \ref{eq:2D_divergent_to_convergent} and \ref{eq:2D_convergent_to_divergent} (including the scaling factor $1/\cos(2\phi)$ that multiplies all their elements) are each other's \textit{inverse}. Indeed the product of the unscaled matrices yields the identity matrix multiplied by $\cos^2(2\phi)$, which is the \textit{squared reciprocal} of the scaling factor. 
-In the following the matrix of \ref{eq:2D_convergent_to_divergent} will be denoted as $T(\phi)$  while the matrix of \ref{eq:2D_divergent_to_convergent} -- the inverse of the former -- will be denoted as $T(-\phi)$ or $T^{-1}(\phi)$.
+The matrices in equations \ref{eq:2D_convergent_to_divergent} and \ref{eq:2D_divergent_to_convergent} (including the scaling factor $1/\cos(2\phi)$ that multiplies all their elements) are each other's \textit{inverse}. Indeed the product of the unscaled matrices yields the identity matrix multiplied by $\cos^2(2\phi)$, which is the \textit{squared reciprocal} of the scaling factor. 
+In the following the matrix in \ref{eq:2D_convergent_to_divergent} will be denoted as $T(\phi)$  while the matrix in \ref{eq:2D_divergent_to_convergent} -- the inverse of the former -- will be denoted as $T(-\phi)$ or $T^{-1}(\phi)$.
 
 \subsection{Coordinates transformation for vectors}
 In the previous sections we have provided examples -- in two dimensions -- of a transformation between two orthonormal bases (equations \ref{eq:2D_orthobasis_xform}) and of a transformation between bases that are not orthogonal (equations \ref{eq:2D_generalbases_xform}). In this section we examine how a vector's coordinates in a given basis relate to coordinates of the same vector in another basis. In what follows, unprimed symbols denote the coordinates of some vector $\vb{V}$ in a given (unprimed) basis, while primed symbols denote the coordinates of the same vector in another (primed) basis. 
@@ -194,7 +198,7 @@ In matrix notation we thus obtain the following transformation rules for coordin
 The matrices connecting the primed coordinates to the unprimed are the same (see the transformations  \ref{eq:2D_orthobasis_xform}) that connect vectors of the primed basis to those of the unprimed basis. 
 
 \subsubsection{Example 2 -- Non orthogonal bases}
-We now compute the coordinate transformations between a different pair of bases. For definitness, let take the two bases of example \ref{eq:2D_generalbases_xform}, so that 
+By the same procedure, we now compute the coordinate transformations between the two bases of example \ref{eq:2D_generalbases_xform}, so that 
 \begin{align*}
 \vb{V} &= x_1 \;\vb{e}_1\; + x_2\; \vb{e}_2\; \\
 \vb{V} &= {x'}_1 {\vb{e}'}_1 + {x'}_2 {\vb{e}'}_2  
@@ -223,3 +227,59 @@ In matrix notation we thus obtain the following transformation rules for coordin
 \end{subequations}
 
 Again, the matrices connecting the primed coordinates to the unprimed are the same (see the transformations  \ref{eq:2D_generalbases_xform}) that connect vectors of the primed basis to those of the unprimed basis.
+
+\section{Forms}
+We recall that a vector $\vb{v}$ lives in a \textit{vector space} $E$, the latter being defined with respect to a \textit{field} $K$ of \textit{scalars}. In most cases $K$ is the set of real numbers $\R$ or the set of complex numbers $\C$. A \textit{form} $\form{F}$ is a \textit{linear function} $\form{F} :E \rightarrow K$. 
+
+Once a basis is introduced in $E$, a form is fully specified by the values it takes on the basis vectors. These are referred to as the \textit{components} of $\form{F}$ over the given basis. In order to distinguish between the components of a \textit{vector} from those of a \textit{form}, we use \textit{upper indices} on the former and \textit{lower indices} on the latter. We also use Einstein's convention, whereby summation is implied on terms where the same index appears on two factors in different positions. With these conventions, given a basis $\{\vb{e}_1, \ldots, \vb{e}_n\}$, we may write
+
+\begin{subequations}
+\label{eq:form_components}
+\begin{align}   
+f_i    &\equiv \form{F} (\vb{e}_i) \\
+\vb{v} &= x^i \vb{e}_i \\
+\form{F}(\vb{v}) &= \form{F}(x^i \vb{e}_i) \\
+                 &= x^i  \form{F}(\vb{e}_i) \\
+                 &= f_i x^i
+\end{align}
+\end{subequations}
+
+\subsection{Dual space of $E$}
+For a given $n$-dimensional vector space $E$ we may consider the set $E^*$ of all \textit{forms} acting on $E$. It is straightforward in $E^*$ to define linear combinations of forms, and to prove that $E^*$ is itself a vector space. Moreover, $E^*$ has the same dimension $n$ of $E$. This is proved by considering a basis $\{\vb{e}_1, \ldots, \vb{e}_n\}$ in $E$ and defining the following special forms (linear functions)
+
+\begin{equation}   
+\label{eq:form_basis}
+\form{\theta}^i(\vb{e}_k) = \delta^i_k \\
+\end{equation}
+
+whereby
+
+\begin{equation}
+\begin{aligned}   
+\label{eq:form_expansion}
+\form{F} &= \form{F}(\vb{e}_i) \form{\theta}^i \\
+         &= f_i \form{\theta}^i
+\end{aligned}
+\end{equation}
+
+The set of $n$ forms $\form{\theta}^1, \ldots, \form{\theta}^n$ is clearly a basis in $E^*$ so it is called the \textit{dual basis} of $\{\vb{e}_1, \ldots, \vb{e}_n\}$. 
+
+Our next task is to determine the subordinate change on the dual basis of $E^*$ induced by a change of basis in $E$.
+
+\subsection{Subordinate basis change in $E$ and $E^*$}
+
+The following -- side by side -- identities that are separately true in the two bases: 
+
+\begin{align}   
+\label{eq:forms_xform_a}
+   \vb{v}            &=  x^i \vb{e}_i           &     \vb{v}            &=  \tilde{x}^i \tilde{\vb{e}}_i   \\ 	     
+\label{eq:forms_xform_b}
+   \form{F}(\vb{v})  &=  x^i \form{F}(\vb{e}_i) &     \form{F}(\vb{v})  &=  \tilde{x}^i \form{F}(\tilde{\vb{e}}_i) \\
+\label{eq:forms_xform_c}
+   &=  x^i f_k \form{\theta}^k(\vb{e}_i)        &     &=  \tilde{x}^i \tilde{f}_k \form{\tilde{\theta}}^k(\tilde{\vb{e}}_i) \\
+\label{eq:forms_xform_d}
+   &=  x^i f_k \delta^k_i                       &     &=  \tilde{x}^i \tilde{f}_k \delta^k_i \\
+\label{eq:forms_xform_e}
+&=  f_i \, x^i             &       &=  \tilde{f}_i \, \tilde{x}^i   
+\end{align}
+
