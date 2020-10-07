@@ -1,48 +1,72 @@
 \appendix
 \chapter{Tensors}
 \label{ch:Tensors} 
+We recall that a vector $\vb{v}$ lives in a \textit{vector space} $E$, where the latter is associated to a \textit{field} $K$ of \textit{scalars}. $K$ is often the set of real numbers $\R$ or the set of complex numbers $\C$. 
 
 \section{Change of basis}
 Let $\{\vb{e}_1, \ldots, \vb{e}_n \}$ and $\{\tilde{\vb{e}}_1, \ldots, \tilde{\vb{e}}_n \}$ be two distinct bases\footnote{A basis is a maximal set of linearly independent vectors. All bases have the same number of elements. This number defines the dimensionality of the vector space.} of an $n$-dimensional vector space $E$.  
-Let $A$ be the matrix whose element $A_{ij}$ is the coefficient of the unprimed basis vector $\vb{e}_j$ in the linear expansion of the primed basis vector $\tilde{\vb{e}}_i$ with respect to the unprimed basis    
+Let $A$ be the matrix whose element $A^i_j$ is the coefficient of the unprimed basis vector $\vb{e}_j$ in the linear expansion of the primed basis vector $\tilde{\vb{e}}_i$ with respect to the unprimed basis\footnote{In the adopted convention the \textit{row index} of a matrix $A$ is a \textit{subscript}, while the \textit{column index} is a \textit{superscript}.} 
 \begin{align}
 \label{eq:primed_from_unprimed}
-\mqty[ \tilde{\vb{e}}_1 \\ \vdots \\ \tilde{\vb{e}}_j \\ \vdots \\ \tilde{\vb{e}}_n ] = \mqty|
-A_{11}  &  \ldots  & A_{1j}  &  \cdots  & A_{1n} \\
+\mqty[ \tilde{\vb{e}}_1 \\ \vdots \\ \tilde{\vb{e}}_i \\ \vdots \\ \tilde{\vb{e}}_n ] = \mqty|
+A^1_1   &  \ldots  & A^j_1   &  \cdots  & A^n_1  \\
 \vdots  &  \cdots  & \vdots  &  \cdots  & \vdots \\
-A_{i1}  &  \cdots  & A_{ij}  &  \cdots  & A_{in} \\
+A^1_i   &  \cdots  & A^j_i   &  \cdots  & A^n_i  \\
 \vdots  &  \cdots  & \vdots  &  \cdots  & \vdots \\
-A_{n1}  &  \cdots  & A_{nj}  &  \cdots  & A_{nn} |
-\mqty[ \vb{e}_1 \\ \vdots \\ \vb{e}_i \\ \vdots \\ \vb{e}_n ]  
+A^1_n   &  \cdots  & A^j_n   &  \cdots  & A^n_n  |
+\mqty[ \vb{e}_1 \\ \vdots \\ \vb{e}_j \\ \vdots \\ \vb{e}_n ]  
 \end{align}
 
 The $i$-th \textit{row} of $A$ thus contains the coefficients of the linear expansion of $\tilde{\vb{e}}_i$ with respect to the unprimed basis. 
 
-In order to connect maximal sets of linearly independent vectors, the matrix $A$ must admit an \textit{inverse} hence it must be a \textit{regular} matrix, which is equivalent to require that its determinant must not be zero. The symmetric of \ref{eq:primed_from_unprimed} gives vectors of the primed basis as linear combinations of vectors of the unprimed basis. The matrix involved in that relation is the \textit{inverse} of $A$. Therefore
-
+In order to connect maximal sets of linearly independent vectors, the matrix $A$ must admit an \textit{inverse} hence it must be a \textit{regular} matrix, which is equivalent to require that its determinant must not be zero. The symmetric of \ref{eq:primed_from_unprimed} gives vectors of the primed basis as linear combinations of vectors of the unprimed basis. The matrix involved in that relation is the \textit{inverse} of $A$, which for typografic reasons we often denote as $\tilde{A}$ instead of $A^{-1}$. Therefore
 \begin{subequations}
 \label{eq:twoway_basis_change}
 \begin{align}
-\tilde{\vb{e}}_i = A_{ij} \vb{e}_j \\
-\vb{e}_i = A_{ij}^{-1} \tilde{\vb{e}}_j 
+\label{eq:twoway_basis_change_a}
+\tilde{\vb{e}}_i &= A_i^j  \vb{e}_j  & \\
+\label{eq:twoway_basis_change_b}
+\vb{e}_i         &= \tilde{A}_i^j \tilde{\vb{e}}_j \equiv ({A^{-1}})_i^j \tilde{\vb{e}}_j 
 \end{align}
 \end{subequations}
 
+The same vector $\vb{v}$ is represented, in each basis of $E$, as a distinct linear combination of basis vectors whose coefficients are uniquely determined. Each coefficient is called the \textit{component} of $\vb{v}$ with respect to a corresponding basis vector. We can thus write, with respect to the two bases in \ref{eq:twoway_basis_change}
+\begin{subequations}
+\label{eq:vector_two_bases}
+\begin{align}
+\label{eq:vector_two_bases_a}
+\vb{v} &= x^i \vb{e}_i			                &	\vb{v} &= \tilde{x}^i \tilde{\vb{e}}_i \\	 
+\label{eq:vector_two_bases_b}
+      &= x^i \tilde{A}_i^j \tilde{\vb{e}}_j     &          &= \tilde{x}^i A_i^j  \vb{e}_j 
+\end{align}
+\end{subequations}
 
+Comparing the \textit{left} equation of \ref{eq:vector_two_bases_a} with the \textit{right} equation of \ref{eq:vector_two_bases_b} and the \textit{right} equation of \ref{eq:vector_two_bases_a} with the \textit{left} equation of \ref{eq:vector_two_bases_b} we obtain
+
+\begin{subequations}
+\label{eq:twoway_coord_change}
+\begin{align}
+\label{eq:twoway_coord_change_a}
+\tilde{x}^i &= \tilde{A}^i_k  x^k \\
+\label{eq:twoway_coord_change_b}
+x^i &= A^i_k \tilde{x}^k 
+\end{align}
+\end{subequations}
+
+Comparing equations \ref{eq:twoway_basis_change} with equations \ref{eq:twoway_coord_change} we observe that in a change of basis, vector \textit{components} change in the opposite way compared to the \textit{basis vectors}. For that reason vector components are said to be \textit{contravariant}.    
+
+We will see that \textit{tensors} are a generalization of vectors and that most of their distinctive characteristics are associated to their behaviour with respect to a change of basis in the underlying vector spaces. The theory extends to finite dimensional vector spaces (heareafter FDVS) whose dimensionality $n$ can assume any finite value. 
 
 It is customary in applications to deal with \textit{orthogonal} bases, that is to say: bases whose elements are mutually orthogonal. For even greater convenience basis vectors may be chosen to be of \textit{unit norm}. 
-Unfortunately, assuming to only deal with orthogonal bases hides some key aspects of the general theory of tensors\footnote{Part of this theory holds even for vector spaces where \textit{orthogonality} is impossible to define, because they are not equipped with a \textit{scalar product}.}.   
+Unfortunately, assuming to only deal with orthogonal bases hides some key aspects of the general theory of tensors\footnote{Part of this theory holds even for vector spaces where \textit{orthogonality} is impossible to define, because they are not equipped with a \textit{scalar product}.}. 
 
-We will see that \textit{tensors} are a generalization of vectors and that most of their distinctive characteristics are associated to their behaviour with respect to a change of basis in the underlying vector spaces. The theory extends to finite dimensional vector spaces (heareafter FDVS) whose dimensionality $n$ can assume any finite value. Our strategy is to expose and motivate definitions with concrete examples, often presenting two-dimensional cases.
+Our strategy is to expose and motivate definitions with concrete examples, often based on two-dimensional cases.
 
-\subsection{Bases in two dimensions}
+\section{Example bases in two dimensions}
 Here we propose a pair of orthonormal bases and a pair of non-orthonormal bases to study the matrices connecting the two bases in each pair.  
 
 \subsection{Orthonormal bases in two dimensions}
-In a two dimensional \textit{Euclidean}\footnote{A vector space equipped with a scalar product, in which therefore it is possible to define the \textit{length} of a vector and the \textit{angle} between two vectors.} vector space any two mutually orthogonal vectors of unit length provide a Cartesian basis. The transformation between any two Cartesian bases is defined by an \textit{orthogonal} $n \times n$ matrix whose columns and rows all have unit norm. In two dimensions the transformation is uniquely determined by a single parameter that we can always interpret as the \textit{angle} $\phi$ by which one basis is \textit{rotated} with respect to the other. 
-
-Here the unit vectors $\{\vu{i}, \vu{j}\}$ and $\{\vu{i}', \vu{j}'\}$ belong to the unprimed and primed orthonormal basis, respectively.  
-
+In a two dimensional \textit{Euclidean}\footnote{A vector space equipped with a scalar product, in which therefore it is possible to define the \textit{length} of a vector and the \textit{angle} between two vectors.} vector space any two mutually orthogonal vectors of unit length provide a Cartesian basis. The transformation between any two Cartesian bases is defined by an \textit{orthogonal} $n \times n$ matrix whose columns and rows all have unit norm. We thus have as many constraints as matrix coefficients, and the latter can always be interpreted as sines and cosines of an  \textit{angle} $\phi$ by which one basis is \textit{rotated} with respect to the other. Here the unit vectors $\{\vu{i}, \vu{j}\}$ and $\{\vu{i}', \vu{j}'\}$ belong to the unprimed and primed orthonormal basis, respectively.  
 Simple geometric considerations lead to the following transformation matrices if we assume that the primed basis is obtained by a rotation of the unprimed basis by an angle $\phi$ which places the axis $\vu{i}'$ \textit{above} the axis $\vu{i}$ and the axis $\vu{j}'$ to the \textit{left} of the axis $\vu{j}$: 
 
 \begin{subequations}
@@ -61,7 +85,7 @@ Simple geometric considerations lead to the following transformation matrices if
 \end{align}
 \end{subequations}
 
-In the following the rotation matrix of \ref{eq:2D_orthobasis_xform_a} will be referred to as $R(\phi)$  while the rotation matrix of \ref{eq:2D_orthobasis_xform_b} -- the inverse of the former -- will be referred to as $R(-\phi)$ or $R^{-1}(\phi)$.
+In the following the rotation matrix of \ref{eq:2D_orthobasis_xform_a} will be referred to as $R(\phi)$  while the rotation matrix of \ref{eq:2D_orthobasis_xform_b} -- the inverse of the former -- will be referred to as $R(-\phi)$, $R^{-1}(\phi)$ or $\tilde{R}(\phi)$.
 \subsection{General bases in two dimensions}
 Two exemplary non orthogonal bases in two dimensions are defined with respect to the orthonormal axes $\{\vu{i}, \vu{j}\}$ of a Cartesian basis, by use of the rotation matrices $R(\phi)$ and $R(-\phi)$ whose coefficients are given in \ref{eq:2D_orthobasis_xform_a} and \ref{eq:2D_orthobasis_xform_b}, respectively. We start with two pairs of orthogonal vectors, each pair obtained by a rotation of the basis $\vu{i}, \vu{j}$:  
 \begin{align*}
@@ -162,10 +186,10 @@ Performing the product of the two matrices appearing in each one of the above eq
 \end{subequations}
 
 The matrices in equations \ref{eq:2D_convergent_to_divergent} and \ref{eq:2D_divergent_to_convergent} (including the scaling factor $1/\cos(2\phi)$ that multiplies all their elements) are each other's \textit{inverse}. Indeed the product of the unscaled matrices yields the identity matrix multiplied by $\cos^2(2\phi)$, which is the \textit{squared reciprocal} of the scaling factor. 
-In the following the matrix in \ref{eq:2D_convergent_to_divergent} will be denoted as $T(\phi)$  while the matrix in \ref{eq:2D_divergent_to_convergent} -- the inverse of the former -- will be denoted as $T(-\phi)$ or $T^{-1}(\phi)$.
+In the following the matrix in \ref{eq:2D_convergent_to_divergent} will be denoted as $T(\phi)$  while the matrix in \ref{eq:2D_divergent_to_convergent} -- the inverse of the former -- will be denoted as $T(-\phi)$, $T^{-1}(\phi)$ or $\tilde{T}(\phi)$.
 
 \subsection{Coordinates transformation for vectors}
-In the previous sections we have provided examples -- in two dimensions -- of a transformation between two orthonormal bases (equations \ref{eq:2D_orthobasis_xform}) and of a transformation between bases that are not orthogonal (equations \ref{eq:2D_generalbases_xform}). In this section we examine how a vector's coordinates in a given basis relate to coordinates of the same vector in another basis. In what follows, unprimed symbols denote the coordinates of some vector $\vb{v}$ in a given (unprimed) basis, while primed symbols denote the coordinates of the same vector in another (primed) basis. 
+In the previous sections we have provided examples -- in two dimensions -- of a transformation between two orthonormal bases (equations \ref{eq:2D_orthobasis_xform}) and of a transformation between bases that are not orthogonal (equations \ref{eq:2D_generalbases_xform}). In this section we examine how a vector's coordinates in a given basis relate to coordinates of the same vector in another basis, thus checking in two concretes case the validity of \ref{eq:twoway_coord_change}. In what follows, unprimed symbols denote the coordinates of some vector $\vb{v}$ in a given (unprimed) basis, while primed symbols denote the coordinates of the same vector in another (primed) basis. 
 \subsubsection{Example 1 -- Orthogonal bases}
 For definitness, take the two orthonormal bases of example \ref{eq:2D_orthobasis_xform}, so that 
 \begin{align*}
@@ -195,7 +219,8 @@ In matrix notation we thus obtain the following transformation rules for coordin
 \end{align}
 \end{subequations} 
 
-The matrices connecting the primed coordinates to the unprimed are the same (see the transformations  \ref{eq:2D_orthobasis_xform}) that connect vectors of the primed basis to those of the unprimed basis. 
+The matrices connecting the primed coordinates to the unprimed are the same (see the transformations  \ref{eq:2D_orthobasis_xform}) that connect vectors of the primed basis to those of the unprimed basis.
+\textbf{E R R O R !  This contradicts equations \ref{eq:twoway_coord_change}.} 
 
 \subsubsection{Example 2 -- Non orthogonal bases}
 By the same procedure, we now compute the coordinate transformations between the two bases of example \ref{eq:2D_generalbases_xform}, so that 
@@ -220,16 +245,18 @@ In matrix notation we thus obtain the following transformation rules for coordin
 \mqty[ \,x_1\, \\ \,x_2\,] = \:\;T(\phi)\:\, \mqty[ \,x_1\, \\ \,x_2\,] \\
 \label{eq:2D_generalcoord_xform_b}
 \mqty[ \,x_1\, \\ \,x_2\,] &= \frac{1}{\cos(2\phi)} \mqty|
-1           & \:\:\:\:\sin(2\phi) \\
-\:\:\:\:\sin(2\phi) &           1 | 
-\mqty[ \tilde{x}_1 \\ \tilde{x}_2]  = T^{-1} (\phi) \mqty[ \tilde{x}_1 \\ \tilde{x}_2] 
+1           & \:\:\:\:\,\sin(2\phi) \\
+\:\:\:\:\sin(2\phi) &           \,1 | \,
+\mqty[ \tilde{x}_1 \\ \tilde{x}_2]  \:= T^{-1} (\phi) \mqty[ \tilde{x}_1 \\ \tilde{x}_2] 
 \end{align}
 \end{subequations}
 
 Again, the matrices connecting the primed coordinates to the unprimed are the same (see the transformations  \ref{eq:2D_generalbases_xform}) that connect vectors of the primed basis to those of the unprimed basis.
+\textbf{E R R O R !  This contradicts equations \ref{eq:twoway_coord_change}.} 
+
 
 \section{Forms}
-We recall that a vector $\vb{v}$ lives in a \textit{vector space} $E$, the latter being defined with respect to a \textit{field} $K$ of \textit{scalars}. In most cases $K$ is the set of real numbers $\R$ or the set of complex numbers $\C$. A \textit{form} $\form{F}$ is a \textit{linear function} $\form{F} :E \rightarrow K$. 
+In the context of a \textit{vector space} $E$ over the field $K$, a \textit{form} $\form{F}$ is a \textit{linear, homogeneous function} $\form{F} :E \rightarrow K$. 
 
 Once a basis is introduced in $E$, a form is fully specified by the values it takes on the basis vectors. These are referred to as the \textit{components} of $\form{F}$ over the given basis. In order to distinguish between the components of a \textit{vector} from those of a \textit{form}, we use \textit{upper indices} on the former and \textit{lower indices} on the latter. We also use Einstein's convention, whereby summation is implied on terms where the same index appears on two factors in different positions. With these conventions, given a basis $\{\vb{e}_1, \ldots, \vb{e}_n\}$, we may write
 
@@ -268,7 +295,7 @@ Our next task is to determine the subordinate change on the dual basis of $E^*$ 
 
 \subsection{Subordinate basis change in $E$ and $E^*$}
 
-Let two bases $\:\vb{e}_1, \ldots, \vb{e}_n$ and $\tilde{\vb{e}}_1, \ldots, \tilde{\vb{e}}_n\:$ in $E$ -- hereafter referred to as the \textit{unprimed} and, respectively, the \textit{primed} basis -- be connected to each other by the transformation \textit{matrix} $A$ as in \ref{eq:twoway_basis_change}. Here, for typographic clarity we use the symbol $\tilde{A}$ (instead of $A^{-1}$) to denote the \textit{inverse} of $A$. For reasons that will become clear later on\footnote{For now, let take it as a convenient way to visually check that repeated indices denoting an implied summation should always be in different positions.} the \textit{column} index of the matrix is a \textit{superscript} while the \textit{row} index is a \textit{subscript}, so that 
+Let two bases $\:\vb{e}_1, \ldots, \vb{e}_n$ and $\tilde{\vb{e}}_1, \ldots, \tilde{\vb{e}}_n\:$ in $E$ -- hereafter referred to as the \textit{unprimed} and, respectively, the \textit{primed} basis -- be connected to each other by the transformation \textit{matrix} $A$ as in \ref{eq:twoway_basis_change}. Here, for typographic clarity we use the symbol $\tilde{A}$ (instead of $A^{-1}$) to denote the \textit{inverse} of $A$. For reasons that will become clear later on the \textit{column} index of the matrix is a \textit{superscript} while the \textit{row} index is a \textit{subscript}, so that 
 \begin{subequations}
 \label{eq:twoway_basis_change_supsub-notation}
 \begin{align}
@@ -318,8 +345,7 @@ The final step toward a direct relationship between forms of the dual bases is t
 \form{\theta}^i  &=  A^i_j \tilde{\form{\theta}}^j 
 \end{align}
  
-The transformations \ref{eq:form_bases_xform_b} translate in the context of $E^*$ the transformations \ref{eq:twoway_basis_change_supsub-notation} between bases of $E$. Comparing  these equations we note that the role of the same matrices $A$ and $\tilde{A}$ is \quotes{inverted}. The same happens with the transformation of coordinates.
-
+The transformations \ref{eq:form_bases_xform_b} translate in the context of $E^*$ the transformations \ref{eq:twoway_basis_change_supsub-notation} between bases of $E$. Comparing  these equations we note that the role of the matrices $A$ and $\tilde{A}$ is \quotes{inverted}, in the transformation of \textit{basis forms}, in comparison to their role in the transformation of \textit{basis vectors}.
 
 \subsection{Subordinate coordinates change in $E$ and $E^*$}
 A direct relationship between the \textit{coordinates} of a form $\form{F}$ with respect to different bases can now be obtained using \ref{eq:form_bases_xform_b} and \ref{eq:form_expansion}
@@ -331,13 +357,13 @@ A direct relationship between the \textit{coordinates} of a form $\form{F}$ with
 \form{F} &= f_k A^k_i \tilde{\form{\theta}}^i  & 	\form{F} &= \tilde{f}_k \tilde{A}^k_i \form{\theta}^i
 \end{align}
 
-Confronting the left of \ref{eq:form_coordinates_xform_a} with the right of \ref{eq:form_coordinates_xform_b}  then the right of \ref{eq:form_coordinates_xform_a} with the left of \ref{eq:form_coordinates_xform_b} we obtain\footnote{Because the coefficients of the expansion of a vector-space element are unique.}
+Confronting the right of \ref{eq:form_coordinates_xform_a} with the left of \ref{eq:form_coordinates_xform_b} then the left of \ref{eq:form_coordinates_xform_a} with the right of \ref{eq:form_coordinates_xform_b}  we obtain\footnote{Because the coefficients of the expansion of a vector-space element are unique.}
 
 \begin{align} 
 \label{eq:form_coordinates_xform_c}
-f_i          &=  \tilde{A}^k_i \tilde{f}_k  \\
+\tilde{f}_i  &=  A^k_i f_k	\\
 \label{eq:form_coordinates_xform_d}
-\tilde{f}_i  &=  A^k_i f_k
+f_i          &=  \tilde{A}^k_i \tilde{f}_k 
 \end{align}
 
 According to \ref{eq:form_coordinates_xform_c} and \ref{eq:form_coordinates_xform_d}, the \textit{coordinates} of a \textit{form} transform differently than those of a vector, indeed
