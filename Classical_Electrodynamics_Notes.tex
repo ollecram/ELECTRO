@@ -62,6 +62,11 @@
 \newcommand{\uh}[1]{\underaccent{\hat}{#1}}
 \newcommand{\form}[1]{\uh{#1}}
 
+% To create italic, bold, bolditalic text
+\newcommand{\tit}[1]{\textit{#1}}
+\newcommand{\tbf}[1]{\textbf{#1}}
+\newcommand{\tbi}[1]{\textit{\textbf{#1}}}
+
 
 \DeclareRobustCommand{\rchi}{{\mathpalette\irchi\relax}}
 \newcommand{\irchi}[2]{\raisebox{\depth}{$#1\chi$}} % inner command, used by \rchi
@@ -83,7 +88,7 @@
 
 %\include{dedic}
 
-\include{Plan}	
+%\include{Plan}	
 \tableofcontents
 %\addappheadtotoc
 
@@ -92,7 +97,7 @@
 %\include{Griffiths_00}  % Griffiths - Electrodynamics / Vector Analysis
 %\include{Felsager_01}   % Felsager  - Electromagnetism
 
-%\include{Griffiths_01}  % Griffiths - Electrodynamics / Electrostatics
+\include{Griffiths_01}  % Griffiths - Electrodynamics / Electrostatics
 %\include{Griffiths_02}	 % Griffiths - Electrodynamics / Potentials
 %\include{Griffiths_03}	 % Griffiths - Electrodynamics / Electric Fields in Matter
 %\include{Griffiths_04}	 % Griffiths - Electrodynamics / Magnetostatics
@@ -137,13 +142,13 @@
 %\include{Landau_08}	 % L.D. Landau, E.M. Lifshitz -- Teoria dei Campi
 %\include{Landau_09}	 % L.D. Landau, E.M. Lifshitz -- Teoria dei Campi
 
-\appendixpage
-\include{appendix_I_Tensors}
+%\appendixpage
+%\include{appendix_I_Tensors}
 
 
 
 \backmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\include{referenc}
+%\include{referenc}
 \printindex
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
