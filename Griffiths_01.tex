@@ -26,7 +26,7 @@ Based on the \tbi{superposition principle}, the effect of multiple source charge
 \end{equation}
 
 \subsection{The Electric Field}
-The \tbi{electrostatic field} $\vb{E}(\vb{r})$ is, by definition, the force exerted on a \tbi{unit test charge} located at the point $\vb{r}$ by all other charges (assumed at rest), namely
+The \tbi{electrostatic field} $\vb{E}(\vb{r})$ is, by definition, the force exerted on a \tbi{unit test charge} located at the point $\vb{r}$ by all other charges (assumed at rest). With $\vb{s} = \vb{r} - \vb{r}'$, we therefore write namely
 
 \begin{equation}
 \label{eq:G01_electrostatic_field}
@@ -83,7 +83,7 @@ where $\theta$ is the angle between a separation vector with the $\vu{k}$ axis. 
 
 When $z \gg d$ any dependency on $d$ can be eliminated from the denominator giving, as expected 
 
-$$\lim_{d \rightarrow 0} \vb{E}(\vb{r}) = \frac{2q \, \vu{k}}{z^2}$$ 
+$$\vb{E}(z) \approx \lim_{d \rightarrow 0} \vb{E}(\vb{r}) = \frac{2q \, \vu{k}}{z^2}$$ 
 
 namely the same field as of a single particle with twice as much charge. 
 
@@ -114,3 +114,137 @@ where $\theta$ is the angle between a separation vector with the $\vu{k}$ axis. 
 \end{equation*}
 
 \subsection{Continuous Charge Distributions}
+
+Our definition of the electric field (Eq. \ref{eq:G01_electrostatic_field}) assumes that the source of the field is a collection of discrete point charges $q_i$. If instead the charge is distributed continuosly over some region, the sum becomes an integral:
+
+\begin{equation}
+\label{eq:G01_electrostatic_field_continuous}
+\vb{E}(\vb{r}) = \int \frac{\vu{s}}{s^2} \,dq
+\end{equation}
+
+If the charge is spread along a \tit{line} then $dq = \lambda dl'$, where $\lambda$ is the charge per unit length and $dl'$ is the element of length along the line; if it is smeared out over a \tit{surface} then $dq = \sigma da'$, where $\sigma$ is the charge per unit surface and $da'$ is an element of area over the surface; and if the charge fills a \tit{volume} with charge per unit volume $\rho$, then $dq = \rho d\tau'$, where $d\tau'$ is an element of volume:
+
+\begin{equation}
+\label{eq:G01_electrostatic_field_continuous_line}
+\vb{E}(\vb{r}) = \int \lambda(\vb{r}') \frac{\vu{s}}{s^2} \,dl' =  \int \lambda(\vb{r}') \frac{\vb{r} - \vb{r}'}{\abs{\vb{r} - \vb{r}'}^3} \,dl'
+\end{equation}
+
+\begin{equation}
+\label{eq:G01_electrostatic_field_continuous_surf}
+\vb{E}(\vb{r}) = \int \sigma(\vb{r}') \frac{\vu{s}}{s^2} \,da'  =   \int \sigma(\vb{r}') \frac{\vb{r} - \vb{r}'}{\abs{\vb{r} - \vb{r}'}^3} \,da'
+\end{equation}
+
+\begin{equation}
+\label{eq:G01_electrostatic_field_continuous_vol}
+\vb{E}(\vb{r}) = \int \rho(\vb{r}') \frac{\vu{s}}{s^2} \,d\tau' = \int \rho(\vb{r}') \frac{\vb{r} - \vb{r}'}{\abs{\vb{r} - \vb{r}'}^3} \,d\tau'
+\end{equation}
+ 
+\subsubsection*{Example 2}
+Find the electric field a distance $z$ above the midpoint of a straight line segment of length $2L$ that carries a uniform line charge \tit{density} $\lambda$. 
+
+\subsubsection*{Solution}
+Adopting a reference frame whose origin is the midpoint of the line distribution, we exploit the result of Example 1
+whereby the contribution of two line elements $dl_1$ and $dl_2$ located symmetrically with respect to the origin is 
+$$d \vb{E}(z) = \vu{k} \frac{2\,q\,z}{[x^2 + z^2]^{3/2}} = \vu{k} \frac{\lambda (dx_1 + dx_2) \,z}{[x^2 + z^2]^{3/2}}$$
+\begin{align*}
+\vb{E}(z) &= \int_{-L}^{+L} \lambda(\vb{r}') \frac{\vb{r} - \vb{r}'}{\abs{\vb{r} - \vb{r}'}^3} \,dl'\\
+          &= \vu{k}  \int_{0}^{L} \frac{ 2 \, \lambda \,z \, dx}{[x^2 + z^2]^{3/2}} \\
+          &=  2 \lambda z\, \vu{k} \int_{0}^{L} \frac{dx}{[x^2 + z^2]^{3/2}}  
+\end{align*}
+
+The last integral has the form 
+$$\int \frac{dx}{r^3}$$
+with $r = [x^2 + z^2]^{1/2}$. The \tit{primitive} of this integral (Dwight 200.3) is $$\frac{1}{z^2}\,\frac{x}{r}$$ Therefore
+\begin{align*}
+\vb{E}(z) &=  \frac{2 \lambda}{z} \, \left[ \frac{x}{\sqrt{x^2 + z^2}} \right]_0^L  \, \vu{k} \\
+          &=  \frac{2 \lambda L }{z\sqrt{L^2 + z^2}} \, \vu{k} 
+\end{align*}
+
+When $z \gg L$ any dependency on $L$ can be eliminated from the denominator giving, as expected 
+
+$$\vb{E}(z) \approx \lim_{L \rightarrow 0} \vb{E}(z) = \frac{2 \lambda L }{z^2} \, \vu{k} $$ 
+
+namely the field of a point particle carrying the total charge $2 \lambda L$. 
+
+\subsubsection*{Problem 3}
+Find the electric field a distance $z$ above one end of a straight line segment of length $L$ that carries a uniform line charge $\lambda$. Check that your formula is consistent with what you would expect for the case $z \gg L$.
+
+\subsubsection*{Solution}
+
+\begin{align*}
+\vb{r} &= z \vu{k}, \:\: \vb{r}' = x \vu{i} \\
+\vb{s} &= \vb{r} - \vb{r}' = z \vu{k} - x \vu{i}, \:\: s = \sqrt{x^2 + z^2}, \:\: \vu{s} = \frac{z \vu{k} - x \vu{i}}{\sqrt{x^2 + z^2}} \\
+\vb{E}(z) &=  \int_0^L \frac{\lambda \, \vu{s} \, dx}{s^2} \\
+          &=  \lambda \, z \, \vu{k} \int_0^L \frac{dx}{[x^2 + z^2]^{3/2}} \, - \lambda \, \vu{i} \int_0^L \frac{x \, dx}{[x^2 + z^2]^{3/2}}
+\end{align*}
+
+Primitives of the last two integrals are (Dwight 200.03 and 201.03)
+$$ \frac{1}{z^2} \frac{x}{\sqrt{x^2 + z^2}}, \:\:\: - \frac{1}{\sqrt{x^2 + z^2}}$$
+
+Therefore
+
+\begin{align*}
+\vb{E}(z) &=  \frac{\lambda}{z} \, \left[ \frac{x}{\sqrt{x^2 + z^2}} \right]_0^L  \, \vu{k} +   \lambda \, \left[\frac{1}{\sqrt{x^2 + z^2}}\right]_0^L \, \vu{i} \\
+          &= \frac{\lambda\,L\,z}{\sqrt{L^2 + z^2}}\, \vu{k} + \lambda \left(\frac{1}{\sqrt{L^2 + z^2}} - \frac{1}{z}        \right) \, \vu{i} \\
+          &= \frac{\lambda\,L}{\sqrt{1 + (L/z)^2}}\, \vu{k} + \lambda \left(\frac{1}{\sqrt{L^2 + z^2}} - \frac{1}{z}        \right) \, \vu{i}
+\end{align*}
+
+When $z \gg L$ 
+
+$$\vb{E}(z) \approx \lim_{L \rightarrow 0} \vb{E}(z) = \lambda L \, \vu{k} $$ 
+
+\subsubsection*{Problem 4}
+Find the electric field a distance $z$ above the center of a square loop (side $a$) carrying uniform line charge $\lambda$. [\tit{Hint}: Use the result of Ex. 2]
+
+\subsubsection*{Solution}
+Let $d = \sqrt{a^2/4 + z^2}$ be the distance between the point $P$, located a distance $z$ above the center of the square, and the \tit{midpoint} of each side. The magnitude of the field $\vb{E}_i^P$ generated at $P$ by the $i$-th side of the loop can be obtained from the solution of Ex. 2 with the following correspondence between variables:
+
+$$ a \leftrightarrow 2L, \:\: d = \sqrt{a^2/4 + z^2} \leftrightarrow z$$  
+
+We also observe that we must refer the solution of Ex. 2 (separately for each side) to a frame that contains both the line element and the point $P$. The angle $\phi$ formed by the $\vu{k}$ axis of such frame and the vertical $\vu{z}$ through the center of the loop is determined by  
+
+$$\cos(\phi) = \vu{k} \cdot \vu{z} = \frac{z}{d} = \frac{z}{\sqrt{a^2/4 + z^2}}$$
+
+Clearly, the component of $E$ orthogonal to $\vu{z}$ takes opposite values on opposite sides of the loop, so it can be ignored altogether: we must only ensure that a factor $\cos(\phi)$ be applied to the field magnitude $\abs{\vb{E}}$ at $P$ to obtain the projection of $\vb{E}$  along $\vu{z}$. 
+
+After this preamble, the magnitude of the field at $P$ generated by a \tit{single side} is 
+\begin{align*}
+\abs{\vb{E}} &= \frac{2 \lambda L}{z\, \sqrt{L^2 + z^2}} \rightarrow \frac{a \lambda}{d\, \sqrt{a^2/4 + d^2}}\\
+             &= \frac{a\,\lambda}  {d\, \sqrt{a^2/4 + d^2}} = \frac{a\,\lambda}    {\sqrt{(a^2/4 + z^2)(a^2/4 + a^2/4 + z^2)}} \\
+             &= \frac{a\,\lambda} {\sqrt{z^4 + (3/4) a^2 z^2 + a^4/8}}
+\end{align*}
+
+The component of $\vb{E}$ at the point $P$ is obtained by multiplying the above result by $4 \cos(\phi) = 4z/d$:
+
+\begin{align*}
+\vb{E}^P(z) &= \frac{4\, a\, \lambda\, z\, \vu{z}} {d\, \sqrt{z^4 + (3/4) a^2 z^2 + a^4/8}} \\
+            &= \frac{4\, a\, \lambda\, z\, \vu{z}} {\sqrt{(a^2/4 + z^2)[z^4 + (3/4) a^2 z^2 + a^4/8]}} \\
+            &= \frac{4\, q\, z\, \vu{z}} {\sqrt{z^6 + a^2 z^4 + (5/16) a^4 z^2 + a^6/16}}      
+\end{align*}
+   
+When $z \gg a$ 
+
+$$\vb{E}^P(z) \approx \lim_{a \rightarrow 0} \vb{E}^P(z) =  \frac{4\,q\,\vu{z}}{z^2}$$    
+
+
+\subsubsection*{Problem 5}
+Find the electric field a distance $z$ above the center of a circular loop of radius $r$ carrying a uniform line charge $\lambda$.
+
+\subsubsection*{Solution}
+Let $d = \sqrt{r^2 + z^2}$ be the distance between the point $P$, located a distance $z$ above the center of the circular loop and the charge associated to an infinitesimal line element $dl'$ along the loop. Introducing polar coordinates $r, \theta$ in the plane of the loop (with the origin $O$ in the center of the latter) we observe that the vector $\vb{E}(\theta)$ generated by a line element $dl'$ located at an angle $\theta$ along the loop makes an angle $\phi$ with the axis $\vu{k}$. This angle is determined by 
+$$\cos(\phi) = \vu{k} \cdot \frac{\vb{E}(\theta)}{\abs{\vb{E}(\theta)}} = \frac{z}{d} = \frac{z}{\sqrt{r^2 + z^2}}$$
+  
+The \tit{sum of the electric fields} at $P$ generated by two line elements separated by an angle $\pi$ yield a vector that is parallel to $\vu{k}$ (that is, orthogonal to the loop) because the projections onto the plane of the loop of the electric fields generated by the two line elements are \tit{equal in magnitude and opposite in direction}. 
+
+In conclusion, we can obtain the total field $\vb{E}$ at the point $P$ by integrating the magnitude of the field generated by line elements multiplied by the factor $\cos(\phi) = z/d$, therefore
+
+\begin{align*}
+\vb{E}^P(z) &= \int_0^{2\pi}  \frac{\cos(\phi) \lambda  r}{d^2} d\theta  \, \vu{k} = \frac{\cos(\phi) \lambda  r}{d^2} \int_0^{2\pi} d\theta \, \vu{k}\\
+            &= \frac{(2 \pi r \lambda) \cos(\phi)}{d^2} \, \vu{k} \\
+            &= \frac{q\,z}{d^{3/2}}  \, \vu{k} \\
+            &=  \frac{q \, z}{(\sqrt{r^2 + z^2})^{3/2}} \, \vu{k}
+\end{align*}
+
+where $q = 2 \pi r \lambda$ is the total charge on the loop. When $z \gg r$ 
+
+$$\vb{E}^P(z) \approx \lim_{r \rightarrow 0} \vb{E}^P(z) =  \frac{q\,\vu{k}}{z^2}$$      
