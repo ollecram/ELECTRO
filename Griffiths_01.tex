@@ -412,17 +412,93 @@ $$\div{\vb{E}} = \int \div{ \left( \frac{\vb{r} - \vb{r}'}{\abs{\vb{r} - \vb{r}'
 
 In section \ref{subsec:divergence_of_r_over_r2} we calculated the divergence of $\vu{r}/r^2$, whence
 
-$$\div{\frac{\vu{r}}{r^2}} = 4\pi \delta^3(\vb{r}) \:\: \longrightarrow \:\: \div{ \left( \frac{\vb{r} - \vb{r}'}{\abs{\vb{r} - \vb{r}'}^3} \right)} = 4\pi \delta^3(\vb{r} - \vb{r}')$$
+$$\div{\left({\frac{\vu{r}}{r^2}}\right)} = 4\pi \delta^3(\vb{r}) \:\: \longrightarrow \:\: \div{ \left( \frac{\vb{r} - \vb{r}'}{\abs{\vb{r} - \vb{r}'}^3} \right)} = 4\pi \delta^3(\vb{r} - \vb{r}')$$
 
 therefore 
 
 \begin{equation}
+\label{eq:Gauss_differential_form}
 \div{\vb{E}(\vb{r})} = \int 4\pi \delta^3(\vb{r} - \vb{r}') \, \rho(\vb{r}') \,d\tau' = 4 \pi \rho(\vb{r})   
 \end{equation}
 
 
+The Gauss law in \tit{integral form} (equation \ref{eq:Gauss_integral_form}) is recovered from \ref{eq:Gauss_differential_form} by applying the divergence theorem:
+
+\begin{equation*}
+\int_{\Sigma} \vb{E} \cdot d\vb{a} = \int_V  \div{\vb{E}} \, d\tau = 4 \pi \int_V \rho d\tau = 4\pi Q_{enc} 
+\end{equation*}
+
+\subsection{Applications of Gauss's Law}
+When the direction of the electric field is dictated a-priori by \tit{symmetry considerations} the Gauss law in integral form can be the easiest wy to compute electric fields. 
+
+\subsubsection*{Example 3}
+Find the field outside a uniformly charged solid sphere of radius $R$ and total charge $q$.  
+
+\subsubsection*{Solution}
+
+For any spherical surface with the same center and radius $r > R$, Gauss law states that
+
+\begin{equation*}
+\int_{\Sigma} \vb{E} \cdot d\vb{a} = 4\pi Q_{enc} 
+\end{equation*}
+
+By symmetry, the field can only be \tit{radial} therefore $\vb{E}(\vb{r}) = \abs{\vb{E}} \vu{r}$, where $\abs{\vb{E}}$ is \tit{constant} over the spherical surface.The area element in the surface integral is also directed radially ($d\vb{a} = da  \vu{r} $) so that 
+
+$$\vb{E} \cdot d\vb{a} = \abs{\vb{E}} da $$
+
+and
+
+\begin{align*}
+\int_{\Sigma} \vb{E} \cdot d\vb{a} &=  \abs{\vb{E}}\, \int _{\Sigma} da \\
+4\pi q &=  \abs{\vb{E}} \, \int \int r^2 \sin \theta d\theta d\phi = \abs{\vb{E}} 4\pi r^2
+\end{align*}
+
+From the last equality it follows that $\abs{\vb{E}} = q/r^2$ and, finally 
+
+$$\vb{E} =  \frac{q \vu{r}}{r^2} $$
+
+the same field produced by a point charge $q$ concentrated at the center. 
+
+Symmetry is crucial to the application of Gauss's law. The three kinds of symmetry where the law works are 
+
+\subsubsection*{Example 4}
+A long cylinder carries a charge density that is proportional to the distance from the axis: $\rho = ks$, for some constant $k$. Find the electric field inside the cylinder.
+
+\subsubsection*{Solution}
+The Gaussian surface of choice in this case is a cylindel of length $l$ and radius $s$.
+
+$$\int_{\Sigma} \vb{E} \cdot d\vb{a} = 4\pi Q_{enc} $$
+
+where
+
+\begin{equation*}
+ Q_{enc} = \int_V \rho d\tau = \int (k s') (ds'\,d\phi \, dx = 2\pi k l \int_0^s {s'}^2 ds' = \frac{2}{3}\pi k l s^3 
+\end{equation*}
+
+By Gauss's law $4\pi Q_{enc}$ is the \tit{flux} of $\vb{E}$ which in this case is $\abs{\vb{E}}$ times the area of the Gaussian cylinder, namely
+
+$$4 \pi Q_{enc} =  \frac{8}{3}\pi k l s^3 = \abs{\vb{E}} 2 \pi s l$$
+
+whereby 
+
+$$\vb{E} = \abs{\vb{E}} \vu{s} = \frac{4}{3}k s^2 \vu{s}$$
 
 
+\subsubsection*{Example 5}
+An infinite plane carries a uniform surface charge $\sigma$. Find its electric field.
 
+\subsubsection*{Solution}
+The Gaussian surface of choice is a \quotes{pillbox} extending equal distances above and below the plane, with the two faces parallel to the plane having area $A$. The electric field $\vb{E}$ must be normal to the plane and constant in magnitude on both the upper and lower sides. 
 
+$$\int_{\Sigma} \vb{E} \cdot d\vb{a} = 2 \abs{\vb{E}} A $$
+$$4 \pi Q_{enc} =  \frac{8}{3}\pi k l s^3 = \abs{\vb{E}} 2 \pi s l$$
 
+\begin{align*}
+\int_{\Sigma} \vb{E} \cdot d\vb{a} &=  2 \abs{\vb{E}} A \\
+4\pi q &=  4 \pi \sigma A \\
+4 \pi \sigma A = 2 \abs{\vb{E}} A
+\end{align*}
+
+whereby 
+
+$$\vb{E} = \abs{\vb{E}} \vu{n} = 2 \pi \sigma \vu{n}$$
