@@ -153,6 +153,29 @@ But now we can apply (\ref{eq:Morin_04.14} again to express the quantity contain
 
 So to compound three speeds rather than just two, we just put a third term into the product in (\ref{eq:Morin_04.16}) to get (\ref{eq:Morin_04.19}). Evidently if $D$ were a rocket that emitted a fifth object $E$ we could continue in this way, and so indefinitely. The rule in the form (\ref{eq:Morin_04.17}) would get more and more complicated, but in the form (\ref{eq:Morin_04.16}) it would retain the same simple form.
 
+% BOX 1 **START** -- << Generalize and simplify formula 4.19 >>
+\parindent=0pt  % Set the paragraph indentation to 0 (normal = 10pt) before the box 
+\parbox{\textwidth}{\begin{mdframed}[style=MyFrame] %Added "\parbox{\textwidth}{"
+%\lipsum[1]
+Formula (\ref{eq:Morin_04.19}) can be generalized to consider an arbitrary number $m+1$ of frames $F_0, F_1, \ldots, F_{m}$ in relative motion along the same direction $\hatv{v}$, with $\hatv{v}_i = v_i \hatv{v}$ being the velocity of the $i$-th frame with respect to the $(i-1)$-th frame. 
+In this case, (\ref{eq:Morin_04.19}) becomes 
+\begin{equation*}
+\frac{c - v_m}{c + v_m} = \prod_{i=1}^{m-1} \frac{c - v_i}{c + v_i} 
+\end{equation*}
+A case of special interest is the one in which the $v_i = v$'s are all equal. In particular, if we assume $v = k/l \cdot c$ with $k,l$ integers and $k < l$, the above formula becomes 
+\begin{equation*}
+\frac{c - v_m}{c + v_m} = \prod_{i=1}^{m-1} \frac{1 - k/l}{1 + k/l} = \left( \frac{l-k}{l+k} \right)^{(m-1)}\,.
+\end{equation*}
+hence
+\begin{equation*}
+v_m = c \, \cdot \, \left( \frac{1 - Q}{1 + Q} \right)\:\: \text{where}\:\: Q = \left( \frac{l-k}{l+k} \right)^{(m-1)}\,.
+\end{equation*}
+
+%\lipsum[2]
+\end{mdframed}} %Added a closing "}" here
+\parindent=10pt % Set the paragraph indentation to normal (10pt) 
+% BOX 1 ** END ** -- << Generalize and simplify formula 4.19 >>
+
 The additional law in either of its two forms (\ref{eq:Morin_04.17}) or (\ref{eq:Morin_04.16}) continues to hold even when not all the velocities have the same sign -- even, for example, when the ball moves toward the rear of the train rather than the front. If Alice throws a ball with speed $u$ toward the \tit{rear} of a train that moves with positive velocity $v$ along the track, then the velocity $w$ of the ball along the track is given by
 \begin{equation}\label{eq:Morin_04.20}
 w = \frac{-u + v}{1 - \left( \frac{u}{c}\right) \left( \frac{v}{c}\right)}\,,

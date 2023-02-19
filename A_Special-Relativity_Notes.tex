@@ -38,6 +38,22 @@
 \usetikzlibrary{datavisualization}
 \usetikzlibrary{datavisualization.formats.functions}
 
+% To create a placeholder paragraph with Latin text
+\usepackage{lipsum}
+
+% To create framed text boxes with custom defined styles 
+%\usepackage[linewidth=1pt]{mdframed}
+\usepackage[framemethod=TikZ]{mdframed}
+\mdfdefinestyle{MyFrame}{%
+    linecolor=brown,			% blue, orange, brown, ...
+    outerlinewidth=1pt,
+    roundcorner=10pt,
+    innertopmargin=\baselineskip,
+    innerbottommargin=\baselineskip,
+    innerrightmargin=15pt,
+    innerleftmargin=15pt,
+    backgroundcolor=gray!5!white}
+
 % Force chapter numbering to restart within each part
 \makeatletter
 %\@addtoreset{chapter}{part}
@@ -53,16 +69,42 @@
 
 \begin{document}
 
+%========================================================================
+
 \newcommand{\quotes}[1]{``#1''}
 \newcommand{\sfT}{$\mathsf{T}$}
 \newcommand{\udT}{\rotatebox[origin=c]{180}{$\mathsf{T}$}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\C}{\mathbb{C}}
 
-% To put accents below letters. Here \form{\theta} put a tilde below 
+
+%Bold calligraphic letters 
+\newcommand{\N}{\mathbb{N}}	% integers
+\newcommand{\Z}{\mathbb{Z}}	% relative
+\newcommand{\Q}{\mathbb{Q}}	% rationals
+\newcommand{\R}{\mathbb{R}}	% reals
+\newcommand{\C}{\mathbb{C}}	% complex
+\newcommand{\F}{\mathbb{F}}	% generic field 1
+\newcommand{\K}{\mathbb{K}}	% generic field 2
+
+%Plain calligraphic letters 
+\newcommand{\U}{\mathcal{U}}    % sets 1
+\newcommand{\V}{\mathcal{V}}    % sets 2
+\newcommand{\W}{\mathcal{W}}    % sets 3
+%\newcommand{\S}{\mathcal{S}}    % sets 4  -- complaint about command \S already defined
+%\newcommand{\T}{\mathcal{T}}    % sets 5
+
+% To create boldface vectors with a hat or check accent 
+\newcommand{\hatvb}[1]{\vb{\hat{#1}}}
+\newcommand{\chkvb}[1]{\vb{\check{#1}}}
+
+% To create not-bold vectors with a hat or check accent 
+\newcommand{\hatv}[1]{\hat{#1}}
+\newcommand{\chkv}[1]{\check{#1}}
+
+% To create <bra| and |ket> with a hat to denote unitary and/or basis vectors
+\newcommand{\hbra}[1]{\bra*{\hat{#1}}}
+\newcommand{\hket}[1]{\ket*{\hat{#1}}}
+
+% To put accents below letters. 
 \newcommand{\ut}[1]{\underaccent{\tilde}{#1}}
 \newcommand{\uh}[1]{\underaccent{\hat}{#1}}
 \newcommand{\form}[1]{\uh{#1}}
@@ -71,7 +113,6 @@
 \newcommand{\tit}[1]{\textit{#1}}
 \newcommand{\tbf}[1]{\textbf{#1}}
 \newcommand{\tbi}[1]{\textit{\textbf{#1}}}
-
 
 \DeclareRobustCommand{\rchi}{{\mathpalette\irchi\relax}}
 \newcommand{\irchi}[2]{\raisebox{\depth}{$#1\chi$}} % inner command, used by \rchi
@@ -83,11 +124,17 @@
 %\def\brcurs{\vb{\rcurs}}
 %\def\hrcurs{\vu{\rcurs}}
 
+%========================================================================
+
 
 \author{Marcello Vitaletti}
 \title{Special Relativity\\
 {\small }}
 \maketitle
+\begin{mdframed}[leftmargin=-10pt,rightmargin=-10pt]
+These notes are my annotated transcript of books on the subject referred to by the title. Ellipses in the text mean that part of the text from the original text has been omitted. Framed text boxes like this one, contain my original annotations.
+\end{mdframed}
+
 
 \frontmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -99,7 +146,7 @@
 
 \mainmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
+\part{It's About Time\\ {\small Annoted transcript from N. David Mermin's book}}
 \include{Morin_01}      % Morin - It's About Time - The principle of Relativity
 \include{Morin_02}      % Morin - It's About Time - Combining (Small) Velocities
 \include{Morin_03}      % Morin - It's About Time - The Speed of Light
