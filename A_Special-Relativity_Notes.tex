@@ -54,6 +54,10 @@
     innerleftmargin=15pt,
     backgroundcolor=gray!5!white}
 
+% To make larger integral symbol with \bigint, \bigints, etc...
+\usepackage{bigints}
+
+
 % Force chapter numbering to restart within each part
 \makeatletter
 %\@addtoreset{chapter}{part}
@@ -71,6 +75,8 @@
 
 %========================================================================
 
+\newcommand{\vexp}[1]{e^{#1}}
+
 \newcommand{\quotes}[1]{``#1''}
 \newcommand{\sfT}{$\mathsf{T}$}
 \newcommand{\udT}{\rotatebox[origin=c]{180}{$\mathsf{T}$}}
@@ -86,11 +92,12 @@
 \newcommand{\K}{\mathbb{K}}	% generic field 2
 
 %Plain calligraphic letters 
+\newcommand{\A}{\mathcal{A}}    % Amplitude
 \newcommand{\U}{\mathcal{U}}    % sets 1
 \newcommand{\V}{\mathcal{V}}    % sets 2
 \newcommand{\W}{\mathcal{W}}    % sets 3
-%\newcommand{\S}{\mathcal{S}}    % sets 4  -- complaint about command \S already defined
-%\newcommand{\T}{\mathcal{T}}    % sets 5
+%\newcommand{\S}{\mathcal{S}}   % sets 4  -- complaint about command \S already defined
+%\newcommand{\T}{\mathcal{T}}   % sets 5
 
 % To create boldface vectors with a hat or check accent 
 \newcommand{\hatvb}[1]{\vb{\hat{#1}}}
@@ -116,6 +123,9 @@
 
 \DeclareRobustCommand{\rchi}{{\mathpalette\irchi\relax}}
 \newcommand{\irchi}[2]{\raisebox{\depth}{$#1\chi$}} % inner command, used by \rchi
+
+
+
 
 %----------------------------------------------------------------------------------------
 %   r Griffiths, curls and fonts from mt2pro[lite]->pro

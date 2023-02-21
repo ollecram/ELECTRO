@@ -80,7 +80,130 @@ e_{i,j} \equiv \mqty( 1 & 0 & 0 \\
                       0 & 0 & 1 )\:.
 \end{equation}
 
-We refer to $e_{i,j}$ as the \tit{metric of space} in Euclidean geometry. Similarly, we refer to $\eta_{\mu,\nu}$ as the \tit{metric of spacetime} in special relativity.   
+We refer to $e_{i,j}$ as the \tit{metric of space} in Euclidean geometry. Similarly, we refer to $\eta_{\mu,\nu}$ as the \tit{metric of spacetime} in special relativity. 
+
+It should be mentioned that the ability to give finite spatial or spacetime displacements a vector space structure, as implicitly assumed in the discussion above, is very special to \tit{flat} geometry. In a curved geometry--such as the 2-dimensional durface of a potato--there is no natural notion of adding two finite displacements about a point. Nevertheless, in a curved geometry, a notion of \quotes{infinitesimal displacements} about any point $p$ can be defined, as these infinitesimal displacements have a vector space structure. The vector space of infinitesimal displacements about $p$ is referred to as the \tit{tangent space} at $p$. In differential geometry, a metric would be defined as a (not necessarily positive-definite) inner product defined on the tangent space at $p$. However, the spacetime geometry of special relativity is flat. so we may treat \tit{finite} spacetime displacements $\Delta x^\mu \equiv x^\mu - x^\mu(p)$ about a point $p$ as \quotes{vectors}--and we can treat the metric as an inner product on these finite displacement vectors--as we have done above.
+
+A striking feature of the spacetime metric eq.(\ref{eq:Wald_08.7}) is that there are nonzero spacetime displacement vectors $\Delta x^\mu$ about an event $p$ that are \tit{null}, in other words, such that 
+\begin{equation}\label{eq:Wald_08.10}
+\sum_{\mu, \nu} \eta_{\mu\nu} \Delta x^\mu \Delta x^\nu = 0\,.
+\end{equation}
+
+The collection of all null spacetime displacement vectors arount $p$ comprise a cone with vertex at $p$. The portion of the cone with $\Delta x^0 \geq 0$ is referred to as the \tit{future light cone} of $p$, whereas the portion with $\Delta x^0 \leq 0$ is referred to as its \tit{past light cone}. In the precise sense discussed in [ACE] chapter 5, electromagnetic radiation emitted at $p$ propagates along the future light cone of $p$ (see [ACE] section 5.2), whereas radiation observed at $p$ propagated to $p$ along its past light cone (see [ACE] section 5.4). The interior of the future light cone of $p$ is referred to as the \tit{future} of $p$. It is composed of events that, in principle, can be reached by an observer initially present at $p$. Similarly, the interior of the past light cone of $p$ is referred to as the \tit{past} of $p$. It is composed of events with the property that an observer starting at that event can, in principle, arrive at $p$. The events lying outside the light cone of $p$ are said to be \tit{spacelike related} to $p$. No observer can be present both at $p$ and at an event specelike related to $p$. In other words, in special relativity, nothing can travel faster than light.
+
+If $q$ is an event that lies in the future of $p$, then there is a unique inertial observer who is present at both $p$ and $q$. The proper time $\Delta t$ that elapses on a clock carried by this observer between $p$ and $q$ is given in any inertial coordinates by\footnote{This can be seen by noting that the right side of eq.(\ref{eq:Wald_08.11}) is the spacetime interval between $p$ and $q$ and does not depend on the choice of inertial coordinates. In the frame of the inertial observer who goes from $p$ to $q$, we have $\Delta \vb{r} = 0$, so $\sum \eta_{\mu \nu} \Delta x^\mu \Delta x^\nu = -c^2 (\Delta t)^2\,.$}
+\begin{equation}\label{eq:Wald_08.11}
+\Delta \tau = \frac{1}{c} \sqrt{- \sum_{\mu, \nu} \Delta x^\mu \Delta x^\nu }\,,
+\end{equation}
+where  $\Delta x^\mu = x^{\mu}(q) - x^{\mu}(p)$. A general noninertial observer will trace out a curve in spacetime, called the \tit{worldline} of the observer. Any curve in spacetime may be specified by giving $x^{\mu}(\lambda)$, where $\lambda$ is an arbitrary parametrization of the curve. The tangent $T^\mu$ to the curve in this parametrization is defined by 
+\begin{equation}\label{eq:Wald_08.12}
+T^\mu =  \dv{x^{\mu}}{\lambda} \,.
+\end{equation}
+The tangent $T^\mu$ to the worldline of any observer must be timelike 
+(i.e., $\sum_{\mu,\nu} \eta_{\mu\nu} T^\mu T^\nu < 0$), since the observer must stay within the light cone of any event that he/she passes through. The proper time elapsed on the clock of an arbitrary noninertial observer going between events $p$ and $q$ is given by
+\begin{equation}\label{eq:Wald_08.13}
+\Delta \tau = \frac{1}{c} \bigints_{\lambda(p)}^{\lambda(q)} {\sqrt{- \sum_{\mu, \nu} T^\mu T^\nu} d\lambda }  \,.
+\end{equation}
+
+It is not difficult to show that the inertial observer who passes through events $p$ and $q$ maximizes the elapsed proper time relative to all observers who pass between $p$ and $q$. This fact is often referred to as the \tit{twin paradox} (see problem 1 at the end of the chapter).
+
+It is convenient to parametrize the worldline of an arbitrary observer by the proper time $\tau$ elapsed along the worldline. The tangent to the worldline of an arbitrary observer in this parametrization is called the 4-\tit{velocity} of the observer:
+\begin{equation}\label{eq:Wald_08.14}
+u^\mu = \dv{x^\mu}{\tau} \,.
+\end{equation}
+It follows from eq.(\ref{eq:Wald_08.13}) with $\lambda = \tau$ that $\sum_{\mu, \nu} \eta_{\mu\nu} u^\mu u^\nu = - c^2$. In any inertial coordinates, the velocity $\vb{v}$ of this observer is given by
+\begin{equation}\label{eq:Wald_08.15}
+\vb{v} = \dv{\vb{r}}{t} = c \dv{\vb{r}}{x^0} =  c \frac{d\vb{r}/d\tau}{dx^0/d\tau} = c \frac{\vb{u}}{u^0} \,.
+\end{equation}
+It follows from this relation and the normalization condition on $u^\mu$ that, in any inertial coordinates, the components of $u^\mu$ are given in terms of $\vb{v}$ by 
+\begin{equation}\label{eq:Wald_08.16}
+u^\mu = (c \gamma, \gamma \vb{v})\,,
+\end{equation}
+where $\gamma$ is given by eq.(\ref{eq:Wald_08.4}).
+
+As discussed above, because of the flat spacetime geometry, the finite displacements $\Delta x^\mu = x^\mu - x^\mu(p)$ about $p$ comprise a 4-dimensional vector space, which we denote by $V_p$. The tangent $T^\mu$ to a curve passing through $p$ can naturally be viewed as a vector in $V_p$. For an arbitrary spacetime vector, we will strictly adhere to the notetional convention that an \tit{upper} Greek letter index will be attached to the letter representing the vector (e.g., when a symbol such as $W^\mu$ appears below, one can immediately tell from the notation that $W^\mu$ is a spacetime vector).
+
+Spacetime vectors in special relativity have a geometrical status in exactly the same sense that ordinary vectors have a geometrical status in ordinary, 3-dimensional space. Although the representation of a spacetime vector in terms of its components depends on a choice of inertial coordinate system, one may view the spacetime vector has having a geometrical meaning that does not depend on a choice of coordinates--in exaclty the same manner as an ordinary vector can be viewed as having a geometrical meaning, independent of the representation of its components in a particular Cartesian coordinate system. 
+
+Another class of objects that have a similar geometrical status are linear m,aps taking vectors to numbers. A linear map taking $V_p$ into $\R$ is called a \tit{dual vector}. The collection of all dual vectors at $p$ comprises a vector space of the same dimension as $V_p$, known as the \tit{dual space} to $V_p$ and denoted as $V^*_p$. Given any vector $W^\mu$ in $V_p$, we can use the spacetime metric $\eta_{\mu\nu}$ to construct a dual vector $L_W$ taking $V_p$ into $\R$ by
+\begin{equation}\label{eq:Wald_08.17}
+S^\mu \longrightarrow \sum_{\mu,\nu}\eta_{\mu\nu} S^\mu W^\nu\,,
+\end{equation}
+that is, $L_W$ maps the arbitrary vector $S^\mu$ into the number given by the right side of this equation. It is not difficult to show that, in the presence of a metric, all dual vectors arise in this manner. It is natural to denote the dual vector $L_W$ by  
+\begin{equation}\label{eq:Wald_08.18}
+W_\mu = \sum_{\nu=0}^3 \eta_{\mu\nu} W^\nu\,,
+\end{equation}
+so that the linear map $L_W$ is given by $$S^\mu \longrightarrow \sum_\nu S^\nu W_\nu\,.$$
+In this notation, the lowered index on $W_\mu$ on the left side of eq. (\ref{eq:Wald_08.18}) indicates that this quantity is the dual vector obtained from $W^\mu$ rather than $W^\mu$ itself. For an arbitrary dual vector, we will strictly adhere to the notational convention that a \tit{lower} Greek letter index will be attached to the letter representing the dual vector (e.g., when a symbol such as $U_\mu$ appears below, one can immediately tell from the notation that $U_\mu$ is aspacetime dual vector).
+
+Since the spacetime metric is nondegenerate, eq. (\ref{eq:Wald_08.18}) can be inverted to give 
+\begin{equation}\label{eq:Wald_08.19}
+W^\mu = \sum_{\nu=0}^3 \eta^{\mu\nu} W_\nu\,,
+\end{equation}
+where $\eta^{\mu\nu}$ denotes the inverse spacetime metric, whose matrix of components is given by the inverse matrix\footnote{In an inertial coordinate system, the components of $\eta_{\mu\nu}$ are given by eq. (\ref{eq:Wald_08.7}) (see [ACE] eq. (5.121)). However, $\eta^{\mu\nu}$ and $\eta_{\mu\nu}$ are fundamentally very different objects, and this equality of their components would not hold in a general, noninertial coordinate system.} of $\eta_{\mu\nu}$. Following standard conventions, if $U_\mu$ is a dual vector, we denote the corresponding vector given by eq. (\ref{eq:Wald_08.19}) as $U^\mu$. Thus, we use $\eta^{\mu\nu}$ and $\eta_{\mu\nu}$ to raise and lower indices in the manner given by eq. (\ref{eq:Wald_08.18}) and eq. (\ref{eq:Wald_08.19}).
+
+Vectors and dual vectors are fundamentally very different objects. Nevertheless, when a metric is present, vectors and dual vectors can be identified via the correspondence eq. (\ref{eq:Wald_08.18}) or equivalently, eq. (\ref{eq:Wald_08.19}). When dealing with a vector 
+$\vb{v}$ in ordinary Euclidean space, the components $(v^1, v^2, v^3)$ of the vector in Cartesian coordinates are equal to the components  $(v_1, v_2, v_3)$ of the corresponding dual vector on account of the trivial form, eq. (\ref{eq:Wald_08.9}) of the Euclidean metric. Thus, in this case, if one treats a vector as a 3-tuple of numbers, one can get away with not making a distinction between a vector and its corresponding dual vector.\footnote{In this regard, it should be noted that in the previous chapters of this book, we denoted the Cartesian components of vectors such as the electric field $\vb{E}$ as $E_i$ rather than $E^i$. This is not because we were working with the corresponding dual vector but instead because there was no need to make a distinction between vectors and dual vectors and, correspondingly, no need to adhere to the conventions on the index positions that we have just introduced. We wrote \quotes{$E_i$} simply because it was typographically more convenient to write $E_i$ rather than $E^i$. However, from this point forward in this book, we will strictly adhere to our conventions on index positions.} This accounts for why many students of physics have never explicitly encountered the notion of a dual vector. However, in special relativity, in any inertial coordinates, the dual vector$W_\mu$ corresponding to $W^\mu$ has $W_0 = - W^0$, and we cannot get away with ignoring the distinction between vectors and dual vectors.
+
+A prime example of a dual vector at $p$ is the spacetime gradient $\delta_\mu f = \delta f / \delta x^\mu$ of a function evaluated at $p$. This is seen to be a dual vector as follows. For any curve with tangent $T^\mu$ at $p$, the quantity $\sum_\mu T^\mu \delta_\mu f$ represents the derivative $df / d \lambda$ of $f$ along the curve and thus is well defined, independently of any choice of coordinates. Thus $\delta_\mu f$ at $p$ naturally can be viewed as a linear map taking tangent vectors $T^\mu$ at $p$ into numbers (i.e., a dual vector). Note that in ordinary Euclidean space, the gradient of $f$ would normally be denoted by $\grad f$ in vector calculus notation (i.e., it would be treated as a vector rather than a dual vector). This is because the correspondence between vectors and dual vectors that is provided by the Euclidean metric is being used. Fundamentally, however, the gradient of $f$ is a dual vector.
+
+Another important example of a dual vector arises when we consider plane wave solutions or, more generally, solutions in the geometric optics approximation. Let $\psi$ be a plane wave solution of the scalar wave equation
+\begin{equation}\label{eq:Wald_08.20}
+\psi(t, \vb{r}) = C \vexp{-i \omega t + i \vb{k}\cdot\vb{r} }\,.
+\end{equation}
+
+The phase of $\psi$, 
+\begin{equation}\label{eq:Wald_08.21}
+\Phi \equiv -\omega t +  \vb{k}\cdot\vb{r} \,,
+\end{equation}
+may be viewed as a linear map taking spacetime displacement vectors $x^\mu = (ct, \vb{r})$ into numbers. Thus 
+\begin{equation}\label{eq:Wald_08.22}
+k_\mu = (-\omega/c, k_1, k_2, k_3)
+\end{equation}
+defines a spacetime dual vector. More generally, for any $\psi$ of the spacetime geometric optics form (see [ACE] problem 1 of chapter 7)
+\begin{equation}\label{eq:Wald_08.23}
+\psi(t, \vb{r}) = \A(t, \vb{r}) \vexp{\Phi(t, \vb{r})}\,,
+\end{equation}
+the quantity 
+\begin{equation}\label{eq:Wald_08.24}
+k_\mu = \delta_\mu \Phi
+\end{equation}
+defines a dual vector field on spacetime. These results also apply to plane wave and geometric optics solutions to Maxwell's equations. It is important to note that, as shown in [ACE] problem 1 of chapter 7, the corresponding vecor field 
+\begin{equation}\label{eq:Wald_08.25}
+k^\mu = \sum_\nu \eta^{\mu\nu} k_\nu
+\end{equation}
+is null, $$ \sum_{\mu\nu} \eta^{\mu\nu} k_\nu = 0\,,$$
+and it is tangent to straight lines (\quotes{light rays}) in spacetime. The upshot is that for plane waves--or, more generally, geometric optics solutions--the \tit{wave} 4-\tit{vector}
+\begin{equation}\label{eq:Wald_08.26}
+k^\mu = (\omega/c, \vb{k})
+\end{equation}
+plays a role for light rays that is very similar to the role played by the 4-velocity $u^\mu$ for particle motion. In particular, the change in frequency and direction of a light ray as seen by a moving observer follows from the fact that $k^\mu$ is a spacetime vector (see [ACE] problem 4).
+
+It should be noted that vectors and dual vectors transform differently under Lorentz transformations. Under the Lorentz transformation eq. (\ref{eq:Wald_08.3}) with origin at $p$, a vector $W^\mu$ at $p$ transforms as 
+\begin{equation}\label{eq:Wald_08.27}
+W^\mu \longrightarrow {W'}^\mu = \sum_\nu (\Lambda^{-1})^\mu_\nu W^\nu \,,
+\end{equation}
+where the matrix of components of the Lorentz transformation $\Lambda^\mu_\nu$ is given by\footnote{The \quotes{1 up} and \quotes{1 down} index positions in $\Lambda^\mu_\nu$ correspond to the fact that $\Lambda^\mu_\nu$ is a linear map on vectors and hence is a tensor of type (1,1) (see the discussion later in this section).} 
+\begin{equation}\label{eq:Wald_08.28}
+\Lambda^\mu_\nu = \mqty(  \gamma     & -\gamma v/c & 0 & 0 \\
+                         -\gamma v/c &  \gamma     & 0 & 0 \\
+                             0       &       0     & 1 & 0 \\
+                             0       &       0     & 0 & 1 ) \;.
+\end{equation}
+
+In contrast, a dual vector $U_\mu$ transforms as\footnote{Note the index position of the summed index $\nu$ in eq. (\ref{eq:Wald_08.29}), which would correspond to taking the transpose of the matrix $\Lambda^{-1}$ in usual matrix multiplication rules. Note also that the cartesian coordinate components of a rotation matrix $R^\mu_\nu$ in Euclidean geometry satisfy 
+$(R^{-1})^\nu_\mu = R^\mu_\nu$, so the transformations eq.(\ref{eq:Wald_08.27}) and eq.(\ref{eq:Wald_08.29}) take the same form for rotations in Euclidean geometry, consistent with being able to treat vectors and dual vectors as \quotes{the same} in this case.}
+\begin{equation}\label{eq:Wald_08.29}
+U_\mu \longrightarrow {U'}_\mu = \sum_\nu (\Lambda^{-1})^\nu_\mu U_\nu \,,
+\end{equation}
+where $(\Lambda^{-1})^\mu_\nu$ is the inverse of $\Lambda^\mu_\nu$. It is easily checked that $(\Lambda^{-1})^\mu_\nu$ is given by the same formula as eq. (\ref{eq:Wald_08.28}) with $v \rightarrow - v$. The relations eq. (\ref{eq:Wald_08.18}) and eq. (\ref{eq:Wald_08.19}) are preserved under Lorentz transformations on account of the invariance of the metric under Lorentz transformations in the sense that (see problem 2)
+\begin{equation}\label{eq:Wald_08.30}
+\eta_{\alpha\beta} = \sum_{\mu,\nu} (\Lambda^{-1})^\mu_\alpha (\Lambda^{-1})^\nu_\beta \, \eta_{\mu\nu} \,.
+\end{equation}
+
+The important thing about vectors and dual vectors is not the specific formulas describing how they transform under Lorentz transformations but rather that they represent geometrical quantities that are well defined, independently of any choice of inertial coordinates. The worldline of a particle in spacetime is a well-defined curve that has physical meaning independently of how the events in spacetime are labeled with inertial or other coordinates. The 4-velocity $u^\mu$ of the particle (i.e., the normalized tangent to its worldline) similarly has a well-defined physical meaning. It is therefore reasonable that it could enter the physical laws of motion of the particle. The fact that $u^\mu$ transform according to eq. (\ref{eq:Wald_08.27}) under a change of inertial coordinates merely reflects that it has a well-defined geometrical meaning as a vector. Similarly, the gradient $\delta_\mu f$ of a function $f$ has a well-defined meaning as a dual vector, and the fact that it transforms as eq. (\ref{eq:Wald_08.29}) is merely a reflection of this. If $f$ is a physical quantity, it is reasonable that $\delta_\mu f$ could enter laws of physics involving $f$.
+
+A tensor is a more general geometrical quantity than vectors and dual vectors that can be defined in a mathematical precise manner as follows: 
 
 
 
