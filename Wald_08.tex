@@ -7,16 +7,17 @@ The theory of electromagnetism is far more elegant and simple when formulated in
 
 Einstein original formulation of special relativity relied heavily on the transformations between the labeling of events by different inertial observers and the invariance of the laws of physics under such transformations. The theory was reformulated in a much more geometrical manner by Minkowski in 1908, wherein it was recognized that the underlying structure of spacetime in special relativity is that of a spacetime metric\footnote{Minkowski introdued an imaginary time coordinate so as to obtain a Euclidean sacetime metric. However, although this approach remains in use in many treatments of special relativity, it does not generalize to curved spacetime and cannot be used in general relativity. We shall use a real time coordinate in our treatment, and our spacetime metric will therefore be of Lorentian signature.}.
 
-Our tretament of special relativity will emphasize the role of the spacetime metric. Although Einstein was initially unimpressed by Minkowski's reformulation, he soon incorporated it into his thinking about gravitation. This led him to the theory of general relativity, wherein the spacetime metricbecomes a dynamical variable that describes not only spacetime structurebut also all the effects of gravity. However, we shall not discuss general relativity here. 
+Our tretament of special relativity will emphasize the role of the spacetime metric. Although Einstein was initially unimpressed by Minkowski's reformulation, he soon incorporated it into his thinking about gravitation. This led him to the theory of general relativity, wherein the spacetime metric becomes a dynamical variable that describes not only spacetime structure but also all the effects of gravity. However, we shall not discuss general relativity here. 
 
-The framework of special relativity is presented in section 8.1. The formulation of electromagnetism in the framework of special relativity is then given in section 8.2. In section 8.3.1, we analyze the motion of a (relativistic) charged particle in an external electromagnetic field, including the solution for motion in a uniform electric field and in a uniform magnetic field. The Lienard-Wiechert solution describing the retarded field of a point charge in arbitrary motion is given in section 8.3.2, and properties of the radiated power for this solution are analyzed there as well.
+The framework of special relativity is presented in section \ref{sec:Wald_08.1}. The formulation of electromagnetism in the framework of special relativity is then given in section \ref{sec:Wald_08.2}. In section \ref{subsec:Wald_08.3.1}, we analyze the motion of a (relativistic) charged particle in an external electromagnetic field, including the solution for motion in a uniform electric field and in a uniform magnetic field. The Lienard-Wiechert solution describing the retarded field of a point charge in arbitrary motion is given in section \ref{subsec:Wald_08.3.2}, and properties of the radiated power for this solution are analyzed there as well.
 
 \section{The Framework of Special Relativity}
+\label{sec:Wald_08.1}
 It is useful to think of space and time as composed of \quotes{events}--where each event corresponds to a point of space at an instant of time. The collection of all events comprises a 4-dimensional continuum, which I refer to as \quotes{spacetime}. 
 
 I take as a starting point that there exist global families of inertial observers who \quotes{fill} all of spacetime (i.e., within each family, one and only one of these observers passes through each event in spacetime). I further assume that the observers in each family are all \quotes{at rest} with respect to one another, that they can consistently synchronize their clocks by some physical procedure, and that the spatial relationships between these observers are described by Euclidean geometry. Finally, I also assume that different families of such inertial observers all move at uniform velocity with respect to one another, so that the different families may be labeled by their valocity $v$ with respect to some reference family. These assumptions are true in both pre-relativity physics and in special relativity, so they would make a very poor starting point from a fundamental viewpoint. 
 
-By the above assumptions, the inertial observers in a given family can uniquely label events by $(t, \vb{r})$, where $t$ denotes the time of the event and $\vb{r} = (x, y, z)$ are the spatial Cartesian coordinates of that event for that observer. I refer to the labeling of events in this way as \tit{inertial coordinates}. The assumption that events can be labeled in this way is implicit in every physics text of other reference where a \quotes{$t$} or \quotes{$\vb{r}$} appears in an equation. However, this labeling depends on (i) a choice of origin of time (i.e., what time is labeled as $t=0$); (ii) a choive of origin of space (i.e., what observer in the family is at $\vb{r}= \vb{0}$); (iii) a choice of orientation of axes (to define the $x-$, $y-$, and $z-$directions); and, most importantly for our present purposes, (iv) a choice of which family of inertial observers to use (i.e., a choice of the velocity $\vb{v}$ of the family). Different choices of origin of $t$ and $\vb{r}$, orientation of axes, and $\vb{v}$ will give rise to different labelings $(t', \vb{r}')$ of events. 
+By the above assumptions, the inertial observers in a given family can uniquely label events by $(t, \vb{r})$, where $t$ denotes the time of the event and $\vb{r} = (x, y, z)$ are the spatial Cartesian coordinates of that event for that observer. I refer to the labeling of events in this way as \tit{inertial coordinates}. The assumption that events can be labeled in this way is implicit in every physics text or other reference where a \quotes{$t$} or \quotes{$\vb{r}$} appears in an equation. However, this labeling depends on (i) a choice of origin of time (i.e., what time is labeled as $t=0$); (ii) a choive of origin of space (i.e., what observer in the family is at $\vb{r}= \vb{0}$); (iii) a choice of orientation of axes (to define the $x-$, $y-$, and $z-$directions); and, most importantly for our present purposes, (iv) a choice of which family of inertial observers to use (i.e., a choice of the velocity $\vb{v}$ of the family). Different choices of origin of $t$ and $\vb{r}$, orientation of axes, and $\vb{v}$ will give rise to different labelings $(t', \vb{r}')$ of events. 
 
 Usually, treatments of special relativity focus entirely on the difference in labeling of events between families of inertial observers who are moving with velocity $\vb{v}$ relative to one another. This is given by a Galilean transformation in pre-relativity physics and by a Lorentz transformation in special relativity. Although it certainly is useful to know the explicit form of this transformation, a nearly exclusive focus on this obscures the geometrical content of the theory. It is analogous to studying ordinary Euclidean geometry by focusing on how Cartesia coordinates transform under rotations. 
 
@@ -34,9 +35,9 @@ The situation in special relativity is simpler. In special relativity, there is 
 I = - c^2 (\Delta t)^2 + \abs{\Delta{\vb{r}}}^ 2\,.
 \end{equation}
 
-Furthermore, it can be shown that the worlslines of inertial observers can be constructed from a knpwledge of $I$ between all pairs of events. Thus, $I$ provides the complete description of spacetime structure in special relativity.
+Furthermore, it can be shown that the worldlines of inertial observers can be constructed from a knowledge of $I$ between all pairs of events. Thus, $I$ provides the complete description of spacetime structure in special relativity.
 
-To tie the previous paragraph to what people are usually taught in special relativity, note tyat, in special relativity, the labeling $(t, \vb{r})$ of events by a family $O$ of observers is related to the labeling $(t', \vb{r}')$ by a family $O'$ of observers moving with velocity $v$ in the $x$-direction relative to $O$ (and with the same origin event and the same orientation of axes as $O$) by a \tit{Lorentz transformation}:
+To tie the previous paragraph to what people are usually taught in special relativity, note that, in special relativity, the labeling $(t, \vb{r})$ of events by a family $O$ of observers is related to the labeling $(t', \vb{r}')$ by a family $O'$ of observers moving with velocity $v$ in the $x$-direction relative to $O$ (and with the same origin event and the same orientation of axes as $O$) by a \tit{Lorentz transformation}:
 \begin{equation}\label{eq:Wald_08.3}
 \begin{aligned}
 t' &= \gamma (t - vx/c^2)\,,\\
@@ -54,12 +55,12 @@ It is easily checked that $I$ is invariant under Lorentz transformations. Furthe
 
 The spacetime interval $I$ has the same mathematical form as the squared distance in Euclidean geometry except for the minus sign in front of the contribution coming from  $(\Delta t)^2$. To pursue this further, we switch notation from $(t, \vb{r})$ to $x^\mu$ with $\mu=0,1,2,3\,$, where 
 \begin{equation}\label{eq:Wald_08.5}
-x^0 = ct\,,\::x^1 = x\,,\::x^2 = y\,,\::x^3 = z\,.
+x^0 = ct\,,\:x^1 = x\,,\:x^2 = y\,,\:x^3 = z\,.
 \end{equation}
 
-Note the superscript position of $\mu$ in $x^\mu$, which will be important in order to aligh with notational conventions explained further below. We view $x^\mu$ as representing a spacetime displacement vector (relative to some origin in spacetime) in much the same way as we normally view $\vb{r}$ as representing a spatial displacement vector (relative to some origin in space). We view $I$, eq. (\ref{eq:Wald_08.2}), as arising from an \quotes{inner product} on spacetime displacement vectors, where the inner product of $x_1^\mu$ and $x_2^\mu$ is given in any inertial coordinates by 
+Note the superscript position of $\mu$ in $x^\mu$, which will be important in order to align with notational conventions explained further below. We view $x^\mu$ as representing a spacetime displacement vector (relative to some origin in spacetime) in much the same way as we normally view $\vb{r}$ as representing a spatial displacement vector (relative to some origin in space). We view $I$, eq. (\ref{eq:Wald_08.2}), as arising from an \quotes{inner product} on spacetime displacement vectors, where the inner product of $x_1^\mu$ and $x_2^\mu$ is given in any inertial coordinates by 
 \begin{equation}\label{eq:Wald_08.6}
-I(x_1^\mu, x_2^\nu) = \sum_{\mu, \nu=0}^3 \eta_{\mu\nu} x_1^\mu x_2^\nu\,,
+I(x_1^\mu, x_2^\mu) = \sum_{\mu, \nu=0}^3 \eta_{\mu\nu} x_1^\mu x_2^\nu\,,
 \end{equation}
 where\footnote{Many authors  define $\eta_{\mu\nu}$ with an opposite sign convention, which results in sign changes in some formulas. The reader is advised to check the sign convention used for $\eta_{\mu\nu}$ when comparing formulas in different references. As mentioned in footnote 1 in this chapter, some authors use an imaginary time coordinate, in which case $\eta_{\mu\nu}$ would take a Euclidean form and normally would not be written down explicitly at all.}
 \begin{equation}\label{eq:Wald_08.7}
@@ -69,9 +70,9 @@ where\footnote{Many authors  define $\eta_{\mu\nu}$ with an opposite sign conven
                               0 & 0 & 0 & 1 )\:.
 \end{equation}
 
-I put \quotes{inner product} in quotes, because altough $I$ is linear in each variable, symmetric and nondegenerate (i.e., $I(x_1^\mu, x_2^\nu) = 0$ for all $x_2^\mu$ if and only if $x_1^\mu = 0$), it fails to be positive definite. Nevertheless, it is closely analogous to the inner product on vectors in ordinary Euclidean geometry, 
+I put \quotes{inner product} in quotes, because although $I$ is linear in each variable, symmetric and nondegenerate (i.e., $I(x_1^\mu, x_2^\mu) = 0$ for all $x_2^\mu$ if and only if $x_1^\mu = 0$), it fails to be positive definite. Nevertheless, it is closely analogous to the inner product on vectors in ordinary Euclidean geometry, 
 \begin{equation}\label{eq:Wald_08.8}
-(\vb{x}_1, \vb{x}_2) = \sum_{i,j=1}^3 e_{i,j} x^i x^j\,,
+(\vb{x}_1^\mu, \vb{x}_2^\mu) = \vb{x}_1 \cdot \vb{x}_2 = \sum_{i,j=1}^3 e_{i,j} \vb{x}^i_1 \vb{x}^j_2\,,
 \end{equation}
 where 
 \begin{equation}\label{eq:Wald_08.9}
@@ -82,7 +83,7 @@ e_{i,j} \equiv \mqty( 1 & 0 & 0 \\
 
 We refer to $e_{i,j}$ as the \tit{metric of space} in Euclidean geometry. Similarly, we refer to $\eta_{\mu,\nu}$ as the \tit{metric of spacetime} in special relativity. 
 
-It should be mentioned that the ability to give finite spatial or spacetime displacements a vector space structure, as implicitly assumed in the discussion above, is very special to \tit{flat} geometry. In a curved geometry--such as the 2-dimensional durface of a potato--there is no natural notion of adding two finite displacements about a point. Nevertheless, in a curved geometry, a notion of \quotes{infinitesimal displacements} about any point $p$ can be defined, as these infinitesimal displacements have a vector space structure. The vector space of infinitesimal displacements about $p$ is referred to as the \tit{tangent space} at $p$. In differential geometry, a metric would be defined as a (not necessarily positive-definite) inner product defined on the tangent space at $p$. However, the spacetime geometry of special relativity is flat. so we may treat \tit{finite} spacetime displacements $\Delta x^\mu \equiv x^\mu - x^\mu(p)$ about a point $p$ as \quotes{vectors}--and we can treat the metric as an inner product on these finite displacement vectors--as we have done above.
+It should be mentioned that the ability to give finite spatial or spacetime displacements a vector space structure, as implicitly assumed in the discussion above, is very special to \tit{flat} geometry. In a curved geometry--such as the 2-dimensional durface of a potato--there is no natural notion of adding two finite displacements about a point. Nevertheless, in a curved geometry, a notion of \quotes{infinitesimal displacements} about any point $p$ can be defined, as these infinitesimal displacements have a vector space structure. The vector space of infinitesimal displacements about $p$ is referred to as the \tit{tangent space} at $p$. In differential geometry, a metric would be defined as a (not necessarily positive-definite) inner product defined on the tangent space at $p$. However, the spacetime geometry of special relativity is flat. So we may treat \tit{finite} spacetime displacements $\Delta x^\mu \equiv x^\mu - x^\mu(p)$ about a point $p$ as \quotes{vectors}--and we can treat the metric as an inner product on these finite displacement vectors--as we have done above.
 
 A striking feature of the spacetime metric eq.(\ref{eq:Wald_08.7}) is that there are nonzero spacetime displacement vectors $\Delta x^\mu$ about an event $p$ that are \tit{null}, in other words, such that 
 \begin{equation}\label{eq:Wald_08.10}
@@ -102,7 +103,7 @@ T^\mu =  \dv{x^{\mu}}{\lambda} \,.
 The tangent $T^\mu$ to the worldline of any observer must be timelike 
 (i.e., $\sum_{\mu,\nu} \eta_{\mu\nu} T^\mu T^\nu < 0$), since the observer must stay within the light cone of any event that he/she passes through. The proper time elapsed on the clock of an arbitrary noninertial observer going between events $p$ and $q$ is given by
 \begin{equation}\label{eq:Wald_08.13}
-\Delta \tau = \frac{1}{c} \bigints_{\lambda(p)}^{\lambda(q)} {\sqrt{- \sum_{\mu, \nu} T^\mu T^\nu} d\lambda }  \,.
+\Delta \tau = \frac{1}{c} \bigints_{\lambda(p)}^{\lambda(q)} {d\lambda \: \sqrt{- \sum_{\mu, \nu} T^\mu T^\nu} }  \,.
 \end{equation}
 
 It is not difficult to show that the inertial observer who passes through events $p$ and $q$ maximizes the elapsed proper time relative to all observers who pass between $p$ and $q$. This fact is often referred to as the \tit{twin paradox} (see problem 1 at the end of the chapter).
@@ -121,11 +122,11 @@ u^\mu = (c \gamma, \gamma \vb{v})\,,
 \end{equation}
 where $\gamma$ is given by eq.(\ref{eq:Wald_08.4}).
 
-As discussed above, because of the flat spacetime geometry, the finite displacements $\Delta x^\mu = x^\mu - x^\mu(p)$ about $p$ comprise a 4-dimensional vector space, which we denote by $V_p$. The tangent $T^\mu$ to a curve passing through $p$ can naturally be viewed as a vector in $V_p$. For an arbitrary spacetime vector, we will strictly adhere to the notetional convention that an \tit{upper} Greek letter index will be attached to the letter representing the vector (e.g., when a symbol such as $W^\mu$ appears below, one can immediately tell from the notation that $W^\mu$ is a spacetime vector).
+As discussed above, because of the flat spacetime geometry, the finite displacements $\Delta x^\mu = x^\mu - x^\mu(p)$ about $p$ comprise a 4-dimensional vector space, which we denote by $V_p$. The tangent $T^\mu$ to a curve passing through $p$ can naturally be viewed as a vector in $V_p$. For an arbitrary spacetime vector, we will strictly adhere to the notational convention that an \tit{upper} Greek letter index will be attached to the letter representing the vector (e.g., when a symbol such as $W^\mu$ appears below, one can immediately tell from the notation that $W^\mu$ is a spacetime vector).
 
-Spacetime vectors in special relativity have a geometrical status in exactly the same sense that ordinary vectors have a geometrical status in ordinary, 3-dimensional space. Although the representation of a spacetime vector in terms of its components depends on a choice of inertial coordinate system, one may view the spacetime vector has having a geometrical meaning that does not depend on a choice of coordinates--in exaclty the same manner as an ordinary vector can be viewed as having a geometrical meaning, independent of the representation of its components in a particular Cartesian coordinate system. 
+Spacetime vectors in special relativity have a geometrical status in exactly the same sense that ordinary vectors have a geometrical status in ordinary, 3-dimensional space. Although the representation of a spacetime vector in terms of its components depends on a choice of inertial coordinate system, one may view the spacetime vector has having a geometrical meaning that does not depend on a choice of coordinates---in exactly the same manner as an ordinary vector can be viewed as having a geometrical meaning, independent of the representation of its components in a particular Cartesian coordinate system. 
 
-Another class of objects that have a similar geometrical status are linear m,aps taking vectors to numbers. A linear map taking $V_p$ into $\R$ is called a \tit{dual vector}. The collection of all dual vectors at $p$ comprises a vector space of the same dimension as $V_p$, known as the \tit{dual space} to $V_p$ and denoted as $V^*_p$. Given any vector $W^\mu$ in $V_p$, we can use the spacetime metric $\eta_{\mu\nu}$ to construct a dual vector $L_W$ taking $V_p$ into $\R$ by
+Another class of objects that have a similar geometrical status are linear maps taking vectors to numbers. A linear map taking $V_p$ into $\R$ is called a \tit{dual vector}. The collection of all dual vectors at $p$ comprises a vector space of the same dimension as $V_p$, known as the \tit{dual space} to $V_p$ and denoted as $V^*_p$. Given any vector $W^\mu$ in $V_p$, we can use the spacetime metric $\eta_{\mu\nu}$ to construct a dual vector $L_W$ taking $V_p$ into $\R$ by
 \begin{equation}\label{eq:Wald_08.17}
 S^\mu \longrightarrow \sum_{\mu,\nu}\eta_{\mu\nu} S^\mu W^\nu\,,
 \end{equation}
@@ -144,6 +145,24 @@ where $\eta^{\mu\nu}$ denotes the inverse spacetime metric, whose matrix of comp
 
 Vectors and dual vectors are fundamentally very different objects. Nevertheless, when a metric is present, vectors and dual vectors can be identified via the correspondence eq. (\ref{eq:Wald_08.18}) or equivalently, eq. (\ref{eq:Wald_08.19}). When dealing with a vector 
 $\vb{v}$ in ordinary Euclidean space, the components $(v^1, v^2, v^3)$ of the vector in Cartesian coordinates are equal to the components  $(v_1, v_2, v_3)$ of the corresponding dual vector on account of the trivial form, eq. (\ref{eq:Wald_08.9}) of the Euclidean metric. Thus, in this case, if one treats a vector as a 3-tuple of numbers, one can get away with not making a distinction between a vector and its corresponding dual vector.\footnote{In this regard, it should be noted that in the previous chapters of this book, we denoted the Cartesian components of vectors such as the electric field $\vb{E}$ as $E_i$ rather than $E^i$. This is not because we were working with the corresponding dual vector but instead because there was no need to make a distinction between vectors and dual vectors and, correspondingly, no need to adhere to the conventions on the index positions that we have just introduced. We wrote \quotes{$E_i$} simply because it was typographically more convenient to write $E_i$ rather than $E^i$. However, from this point forward in this book, we will strictly adhere to our conventions on index positions.} This accounts for why many students of physics have never explicitly encountered the notion of a dual vector. However, in special relativity, in any inertial coordinates, the dual vector$W_\mu$ corresponding to $W^\mu$ has $W_0 = - W^0$, and we cannot get away with ignoring the distinction between vectors and dual vectors.
+
+% BOX 1 **START** -- << Summary of notation conventions >>
+\parindent=0pt  % Set the paragraph indentation to 0 (normal = 10pt) before the box 
+\parbox{\textwidth}{\begin{mdframed}[style=MyFrame] %Added "\parbox{\textwidth}{"
+%\lipsum[1]
+Let us summarize the different notation conventions in use for vectors in 3-dimensional Euclidean space, versus those adopted for vectors and dual vectors in 4-dimensional \tit{spacetime}:
+\begin{enumerate}[i)]
+\item A \tbf{boldface} \tit{letter} is normally used to indicate the \tit{vector} character of an object (e.g.: $\vb{r}$) in 3-dimensional space. The object components with respect to a coordinate frame are denoted by plain font letters, like in 
+\quotes{$\vb{r} = (x, y, z) $}.  
+\item Objects in 4-dimensional spacetime are identified by a letter in plain font (e.g.: $x$) and one or more lower and upper indices. 
+\item A \tit{subscript} or \tit{superscript} might be useful to denote distinct objects identified by the same \tit{letter} (e.g.: $\vb{r}_1, \ldots , \vb{r}_k$). This practice is \tbi{discouraged} in 4-dimensional \tit{spacetime}, where \tit{subscripts} or \tit{superscripts} generally need to appear beside that same \tit{letter} to specify \tbi{either} the \tit{tensorial character} of the object \tbi{or} to denote a specific \tit{component} of the latter.
+\item A plain font letter with a Greek \tit{superscript} (e.g. $x^\mu$) denotes either a 4-dimensional \tit{vector} (i.e. a (1,0) type, rank 1 tensor) or the $\mu$-th component of the latter (e.g., when the \tit{letter} appears in the expression of a sum, its \tit{superscript} being one of the \tit{indices} being summed over).     
+\item A plain font letter with a Greek \tit{subscript} (e.g. $x_\nu$) denotes either a 4-dimensional \tit{dual vector} (i.e. a (0,1) type, rank 1 tensor) or the $\nu$-th component of the latter (e.g., when the \tit{letter} appears in the expression of a sum, its \tit{subscript} being one of the \tit{indices} being summed over).  
+\end{enumerate} 
+%\lipsum[2]
+\end{mdframed}} %Added a closing "}" here
+\parindent=10pt % Set the paragraph indentation to normal (10pt) 
+% BOX 1 ** END ** -- << Summary of notation conventions >>
 
 A prime example of a dual vector at $p$ is the spacetime gradient $\delta_\mu f = \delta f / \delta x^\mu$ of a function evaluated at $p$. This is seen to be a dual vector as follows. For any curve with tangent $T^\mu$ at $p$, the quantity $\sum_\mu T^\mu \delta_\mu f$ represents the derivative $df / d \lambda$ of $f$ along the curve and thus is well defined, independently of any choice of coordinates. Thus $\delta_\mu f$ at $p$ naturally can be viewed as a linear map taking tangent vectors $T^\mu$ at $p$ into numbers (i.e., a dual vector). Note that in ordinary Euclidean space, the gradient of $f$ would normally be denoted by $\grad f$ in vector calculus notation (i.e., it would be treated as a vector rather than a dual vector). This is because the correspondence between vectors and dual vectors that is provided by the Euclidean metric is being used. Fundamentally, however, the gradient of $f$ is a dual vector.
 
@@ -168,7 +187,7 @@ the quantity
 \begin{equation}\label{eq:Wald_08.24}
 k_\mu = \delta_\mu \Phi
 \end{equation}
-defines a dual vector field on spacetime. These results also apply to plane wave and geometric optics solutions to Maxwell's equations. It is important to note that, as shown in [ACE] problem 1 of chapter 7, the corresponding vecor field 
+defines a dual vector field on spacetime. These results also apply to plane wave and geometric optics solutions to Maxwell's equations. It is important to note that, as shown in [ACE] problem 1 of chapter 7, the corresponding vector field 
 \begin{equation}\label{eq:Wald_08.25}
 k^\mu = \sum_\nu \eta^{\mu\nu} k_\nu
 \end{equation}
@@ -181,9 +200,9 @@ plays a role for light rays that is very similar to the role played by the 4-vel
 
 It should be noted that vectors and dual vectors transform differently under Lorentz transformations. Under the Lorentz transformation eq. (\ref{eq:Wald_08.3}) with origin at $p$, a vector $W^\mu$ at $p$ transforms as 
 \begin{equation}\label{eq:Wald_08.27}
-W^\mu \longrightarrow {W'}^\mu = \sum_\nu (\Lambda^{-1})^\mu_\nu W^\nu \,,
+W^\mu \longrightarrow {W'}^\mu = \sum_\nu {\Lambda^\mu}_\nu \, W^\nu \,,
 \end{equation}
-where the matrix of components of the Lorentz transformation $\Lambda^\mu_\nu$ is given by\footnote{The \quotes{1 up} and \quotes{1 down} index positions in $\Lambda^\mu_\nu$ correspond to the fact that $\Lambda^\mu_\nu$ is a linear map on vectors and hence is a tensor of type (1,1) (see the discussion later in this section).} 
+where the matrix of components of the Lorentz transformation ${\Lambda^\mu}_\nu$ is given by\footnote{The \quotes{1 up} and \quotes{1 down} index positions in $\Lambda^\mu_\nu$ correspond to the fact that $\Lambda^\mu_\nu$ is a linear map on vectors and hence is a tensor of type (1,1) (see the discussion later in this section).} 
 \begin{equation}\label{eq:Wald_08.28}
 \Lambda^\mu_\nu = \mqty(  \gamma     & -\gamma v/c & 0 & 0 \\
                          -\gamma v/c &  \gamma     & 0 & 0 \\
@@ -194,16 +213,92 @@ where the matrix of components of the Lorentz transformation $\Lambda^\mu_\nu$ i
 In contrast, a dual vector $U_\mu$ transforms as\footnote{Note the index position of the summed index $\nu$ in eq. (\ref{eq:Wald_08.29}), which would correspond to taking the transpose of the matrix $\Lambda^{-1}$ in usual matrix multiplication rules. Note also that the cartesian coordinate components of a rotation matrix $R^\mu_\nu$ in Euclidean geometry satisfy 
 $(R^{-1})^\nu_\mu = R^\mu_\nu$, so the transformations eq.(\ref{eq:Wald_08.27}) and eq.(\ref{eq:Wald_08.29}) take the same form for rotations in Euclidean geometry, consistent with being able to treat vectors and dual vectors as \quotes{the same} in this case.}
 \begin{equation}\label{eq:Wald_08.29}
-U_\mu \longrightarrow {U'}_\mu = \sum_\nu (\Lambda^{-1})^\nu_\mu U_\nu \,,
+U_\mu \longrightarrow {U'}_\mu = \sum_\nu {(\Lambda^{-1})^\nu}_\mu \, U_\nu \,,
 \end{equation}
-where $(\Lambda^{-1})^\mu_\nu$ is the inverse of $\Lambda^\mu_\nu$. It is easily checked that $(\Lambda^{-1})^\mu_\nu$ is given by the same formula as eq. (\ref{eq:Wald_08.28}) with $v \rightarrow - v$. The relations eq. (\ref{eq:Wald_08.18}) and eq. (\ref{eq:Wald_08.19}) are preserved under Lorentz transformations on account of the invariance of the metric under Lorentz transformations in the sense that (see problem 2)
+where ${(\Lambda^{-1})^\nu}_\mu$ is the inverse of ${\Lambda^\mu}_\nu$. It is easily checked that ${(\Lambda^{-1})^\mu}_\nu$ is given by the same formula as eq. (\ref{eq:Wald_08.28}) with $v \rightarrow - v$. The relations eq. (\ref{eq:Wald_08.18}) and eq. (\ref{eq:Wald_08.19}) are preserved under Lorentz transformations on account of the invariance of the metric under Lorentz transformations in the sense that (see problem 2)
 \begin{equation}\label{eq:Wald_08.30}
-\eta_{\alpha\beta} = \sum_{\mu,\nu} (\Lambda^{-1})^\mu_\alpha (\Lambda^{-1})^\nu_\beta \, \eta_{\mu\nu} \,.
+\eta_{\alpha\beta} = \sum_{\mu,\nu} {(\Lambda^{-1})^\mu}_\alpha {(\Lambda^{-1})^\nu}_\beta \, \eta_{\mu\nu} \,.
 \end{equation}
 
 The important thing about vectors and dual vectors is not the specific formulas describing how they transform under Lorentz transformations but rather that they represent geometrical quantities that are well defined, independently of any choice of inertial coordinates. The worldline of a particle in spacetime is a well-defined curve that has physical meaning independently of how the events in spacetime are labeled with inertial or other coordinates. The 4-velocity $u^\mu$ of the particle (i.e., the normalized tangent to its worldline) similarly has a well-defined physical meaning. It is therefore reasonable that it could enter the physical laws of motion of the particle. The fact that $u^\mu$ transform according to eq. (\ref{eq:Wald_08.27}) under a change of inertial coordinates merely reflects that it has a well-defined geometrical meaning as a vector. Similarly, the gradient $\delta_\mu f$ of a function $f$ has a well-defined meaning as a dual vector, and the fact that it transforms as eq. (\ref{eq:Wald_08.29}) is merely a reflection of this. If $f$ is a physical quantity, it is reasonable that $\delta_\mu f$ could enter laws of physics involving $f$.
 
-A tensor is a more general geometrical quantity than vectors and dual vectors that can be defined in a mathematical precise manner as follows: 
+A tensor is a more general geometrical quantity than vectors and dual vectors that can be defined in a mathematical precise manner as follows: A \tit{tensor of type (k,l)} at $p$ is a multilinear (i.e., linear in each variable separately) map taking $k$ dual vectors and $l$ vectors at $p$ into $\R$. Thus, a tensor of type (0,1) is a linear map from vectors into numbers, i.e., it is a dual vector. A tensor of type (1,0) is a linear map from dual vectors into numbers. This might sound like yet another new object, but it is not difficult to see that such a \quotes{double dual vector} can be naturally identified with an ordinary vector,\footnote{This can be seen as follows. The action of a dual vector $U_\mu$ on a vector $S^\mu$ is given by $S^\mu \rightarrow \sum_\mu U_\mu S^\mu$. However, $\sum_\mu U_\mu S^\mu$ could equally well be viewed as defining an action of $S^\mu$ on dual vectors given by $U_\mu \rightarrow \sum_\mu U_\mu S^\mu$. In this manner, we may view any vector $S^\mu$ as corresponding to a double dual vector.} 
+so a tensor of type (1,0) is just a vector. A tensor of type (0,2) is a map that takes a pair of vectors into $\R$ and is linear in each variable. The spacetime metric $\eta_{\mu\nu}$ is an example of a tensor of type (0,2). A tensor $T$ of type (1,1) is a map that takes a dual vector and a vector into $\R$ and is linear in each variable. A tensor $T$ of type (1,1) can be naturally identified\footnote{
+To see this, note that for any $v \in V_p$, the quantity $T(\cdot, v)$ is a linear map from $V^*_p$ into $\R$ and thus is a double dual vector, which can be identified with a vector. Thus, $T$ can be uniquely associated with a linear map from $V_p$ into $V_p$.} 
+with a linear map taking $V_p$ into $V_p$ (and also can be identified with a linear map taking $V^*_p$ into $V^*_p$). 
+
+Following the index conventions given above for vectors and dual vectors, we shall denote a tensor $T$ of type $(k,l)$ with 
+$k$ upper and $l$ lower Greek indices, 
+that is as ${T^{\mu_1\ldots\mu_k}}_{\nu_1\ldots\nu_l}$, 
+where all the indices range from 0 to 3. 
+We can use $\eta^{\mu\nu}$ and $\eta_{\mu\nu}$ to raise and lower any of the indices in the manner given by 
+eq. (\ref{eq:Wald_08.18}) and eq. (\ref{eq:Wald_08.19}), thereby enabling us to convert a tensor of type $(k,l)$ into a tensor 
+of any other type with the same rank, where the rank $r$ of a tensor is defined by $r = k + l$. 
+Note that a general tensor of rank $r$ on a 4-dimensional space has $4^r$ independent components. 
+
+Under a Lorentz transformation, ${T^{\mu_1\ldots\mu_k}}_{\nu_1\ldots\nu_l}$ transforms as follows:
+\begin{align}\label{eq:Wald_08.31}
+\begin{split}
+& {T^{\mu_1\ldots\mu_k}}_{\nu_1\ldots\nu_l} \longrightarrow {{T'}^{\mu_1\ldots\mu_k}}_{\nu_1\ldots\nu_l} \\
+& \:\:\:=\: \sum_{\alpha_1\ldots\beta_l} 
+{\Lambda^{\mu_1}}_{\alpha_1} \cdots {\Lambda^{\mu_k}}_{\alpha_k} \cdots {(\Lambda^{-1})^{\beta_1}}_{\nu_1} \cdots {(\Lambda^{-1})^{\beta_l}}_{\nu_l}\; {T^{\alpha_1\ldots\alpha_k}}_{\beta_1\ldots\beta_l} \,.
+\end{split}
+\end{align}
+
+In other words, if a tensor of type $(k, l)$ has components ${T^{\mu_1\ldots\mu_k}}_{\nu_1\ldots\nu_l}$ in some inertial coordinates $x^\mu$, then the components of the tensor in the inertial coordinate system ${x'}^\mu = \sum_\nu {\Lambda^\mu}_\nu x^\nu$ are given by eq. (\ref{eq:Wald_08.31}).\footnote{Here we are taking a \quotes{passive view} of Lorentz transformations, wherein the tensor does not change, but its description in terms of coordinate components changes. Alternatively, we could take an \quotes{active view} of Lorentz transformations, wherein the inertial coordinate system is fixed but the Lorentz transformation is viewed as acting on the tensor, mapping the tensor $T$ at $x^\mu$ to a new tensor $T'$ at ${x'}^\mu$ via the formula (\ref{eq:Wald_08.31}). These views are equivalent (i.e., we obtain the same results by making a passive Lorentz transformation as we would by making an \tit{active} transformation by the \tit{inverse} of this Lorentz transformation).} 
+Again, the important thing about a tensor is not the explicit formula eq. (\ref{eq:Wald_08.31}) for how its components transform under a change of inertial coordinates but the fact that it represents a well-defined object, independent of any choice of coordinates. 
+
+A \tit{tensor field} of type $(k, l)$ is the specification of a type $(k, l)$ tensor at $p$ for app $p$. It is convenient to define a tensor of type $(0, 0)$ to be a number, in which case a function may be viewed as a tensor field of type $(0, 0)$
+ We define the derivative of a tensor field ${T^{\mu_1\ldots\mu_k}}_{\nu_1\ldots\nu_l}$ of type $(k, l)$ to be the tensor field $\partial_\alpha {T^{\mu_1\ldots\mu_k}}_{\nu_1\ldots\nu_l}$  of type $(k, l+1)$ given in any inertial coordinates by 
+\begin{equation}\label{eq:Wald_08.32}
+\partial_\alpha {T^{\mu_1\ldots\mu_k}}_{\nu_1\ldots\nu_l} = \pdv{{T^{\mu_1\ldots\mu_k}}_{\nu_1\ldots\nu_l}}{x^\alpha} \;.
+\end{equation}
+ 
+Although this formula may look obvious/trivial, this simple notion of differentiation of a tensor field relies heavily on the flatness of the geometry of spacetime.\footnote{The notion of the gradient of a function (i.e., the derivative of type $(0, 0)$) does not require a flat geometry for the definition of eq. (\ref{eq:Wald_08.32}) to yield a dual vector, but a flat geometry is needed to use eq. (\ref{eq:Wald_08.32}) to define the derivative of a higher rank tensor in a coordinate invariant way.} In a curved geometry, there is still a unique, well-defined notion of differentiation of tensor fields that is determined by the metric, but this notion (usually referred to as \quotes{covariant differentiation}) is not obtained by merely taking partial derivatives in a coordinate system. However, we are not concerned with curved geometries here, and the more general notion of differentiation in a curved geometry reduces to eq. (\ref{eq:Wald_08.32}) in inertial coordinates in a flat geometry. Thus, eq. (\ref{eq:Wald_08.32}) is entirely satisfactory for our purposes.
+
+We now turn to the implications of what we have said about the laws of physics in special relativity. We want the mathematical objects representing physical quantities to be well defined, using only the structure of spacetime in special relativity. Similarly, we want the equations satisfied by these objects to be well defined, using only the special relativistic structure of spacetime. This suggests the following two criteria for the formulation of the laws of physics in special relativity: (i) Physical quantities should be represented by spacetime tensors/tensor fields. (ii) The equations satisfied by these tensors/tensor fields should involve only these tensor fields, the spacetime metric, and operations that map spacetime tensors into spacetime tensors, \footnote{An important example of such an operation is the trace ${T^{\mu_1\ldots\mu_k}}_{\nu_1\ldots\nu_l} \rightarrow \sum_\alpha {T^{\mu_1\ldots\alpha\ldots\mu_k}}_{\nu_1\ldots\alpha\ldots\nu_l} $ over one upper index and one lower index, which is a well-defined operation taking a tensor of type $(k, l)$ into a tensor of type $(k-1, l-1)$. The fact that this operation is independent of the choice of inertial coordinates can be seen from eq. (\ref{eq:Wald_08.31}).}
+such as the notion of differentiation given by eq. (\ref{eq:Wald_08.32}). These criteria correspond to the more common statement that in special relativity, the laws of physics should be invariant under Lorentz transformations. Any relation equating two tensors will be well defined independently of any choice of inertial coordinates and thus automatically will remain valid under a change of inertial coordinates. We refer to a theory satisfying  properties (i) and (ii) as being \tit{special relativistic covariant}.
+
+The implications of the previous paragraphare well illustrated by considering the nature of the laws of particle mechanics in special relativity. In pre-relativity physics, we define the momentum $\vb{p}$ of a particle by 
+\begin{equation}\label{eq:Wald_08.33}
+\vb{p} = m \vb{v} = m \dv{\vb{r}}{t}\,,
+\end{equation}
+
+where $m$ denotes the mass of the particle, which is usually assumed to be constant. Newton's second law then takes the form 
+\begin{equation}\label{eq:Wald_08.34}
+\dv{\vb{p}}{t} = \vb{f}\,,
+\end{equation}
+
+where the form of the force $\vb{f}$ depends on the particular situaton considered. However, spatial vectors have no well-defined status in special relativity, nor does $t$, so eq. (\ref{eq:Wald_08.34}) as it stands is not an acceptable law of physics in special relativity. We have two possibilities for formulating an acceptable version of the laws of particle mechanics: (a) It could be that eq. (\ref{eq:Wald_08.34}) is actually already special relativistically covariant, and all that needs to be done is formulate/rewrite this equation in such a way that it involves only spacetime tensors. (b) Equation (\ref{eq:Wald_08.34}) does not correspond to a special relativistically covariant equation, in which case it must be discarded and replaced by a new law that involves only spacetime tensors. In the present case, it is possibility (b) that holds. Thus, we must find a new law of particle mechanics---reducing to eq. (\ref{eq:Wald_08.34}) for nonrelativistic motion---that involves only spacetime tensors. 
+
+The only reasonable candidate for a spacetime tensor that could represent the velocity of a particle is its 4-veocity, $u^\mu$. The only reasonable candidate for a spacetime tensor that could represent the momentum of the particle is 
+\begin{equation}\label{eq:Wald_08.35}
+p^\mu = m u^\mu\,.
+\end{equation}
+We refer to $p^\mu$ as the 4-momentum of the particle and, in special relativity, the parameter $m$ is usually referred to as the \quotes{rest mass} of the particle (to distinguish it from what some authors call the \quotes{relativistic mass}, $p^0/c = \gamma m$). The only reasonable candidate for a modified version of Newton's second law that involves only tensor quantities is 
+\begin{equation}\label{eq:Wald_08.36}
+\sum_\nu u^\nu \partial_\nu p^\mu = f^\mu\,.
+\end{equation}
+where the 4-force $f^\mu$ depends on the particular situation considered. Thus, the principles of the previous paragraph lead, in an essentially unique way, to the modification eq. (\ref{eq:Wald_08.36}) of Newton's second law that is special relativistically covariant. 
+
+Note that $u^\mu \partial_\mu = d/d\tau$ (i.e., $u^\mu \partial_\mu$ is the derivative along the worldline of the particle using the proper time parametrization). Thus we may rewrite eq. (\ref{eq:Wald_08.36}) in the form
+\begin{equation}\label{eq:Wald_08.37}
+\frac{d}{d\tau} \left(m \frac{d x^\mu}{d \tau} \right) = f^\mu\,.
+\end{equation}
 
 
 
+
+
+\section{TBD}
+\label{sec:Wald_08.2}
+
+
+\section{TBD}
+\label{sec:Wald_08.3}
+
+\subsection{TBD}
+\label{subsec:Wald_08.3.1}
+
+\subsection{TBD}
+\label{subsec:Wald_08.3.2}
