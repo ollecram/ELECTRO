@@ -309,6 +309,100 @@ We conclude this section by stating two standard notational conventions that wil
 \section{The Formulation of Electromagnetic Theory in the Framework of Special Relativity}
 \label{sec:Wald_08.2}
 
+We wish to formulate the theory of electromagnetism in a manifestly special relativistically covariant manner. The discussion of electromagnetism (in the [ACE] chapters 1-7) thus far has involved spatial vector fields, such as $\vb{A}$, $\vb{E}$, and $\vb{B}$. Such spatial vectors have no well-defined status in special relativity. In accord with the discussion at the end of the previous section, we must either rewrite electromagnetic theory so that it involves only spacetime tensor fields, or we must discard the theory and replace it with a new one that does. In the case of Newtonian particle mechanics, 
+we had to do the latter (i.e., we discarded the pre-relativity version, eq(\ref{eq:Wald_08.34}), of Newton's second law and replaced it with the modified version, eq. (\ref{eq:Wald_08.36}), that is special relativistically covariant). Fortunately, in the case of electromagnetism, we need only do the former; we may simply rewrite the theory in a manner wherein it can be explicitly seen to involve spacetime tensors. Thus, in particular, all the equations and results regarding electromagnetism obtained in the chapters 1-7 of this book remain valid in special relativity.
+
+Our task is to reformulate all the equations of section 5.1 of the [ACE] book in spacetime tensor form.  The first step is to make sense of $\vb{A}$. The most straightforward way of incorporating a spatial vector, such as $\vb{A}$, into the framework of special relativity would be to make it part of a spacetime vector $A^\mu$. In fact, this can be done quite easily by combining the scalar potential $\phi$ with $\vb{A}$ to define a 4-vector:
+\begin{equation}\label{eq:Wald_08.40}
+A^\mu \equiv (\phi/c, \vb{A})\,.
+\end{equation}
+In other words, instead of viewing $\phi$ as a scalar function on spacetime--as would have been natural in pre-relativity physics--we now interpret $\phi/c$ as being the time component of a 4-vector field whose spatials componens are $\vb{A}$. 
+
+In fact, it is more natural and convenient to work with the corresponding dual vector field (see eq. (\ref{eq:Wald_08.18})):
+\begin{equation}\label{eq:Wald_08.41}
+A_\mu \equiv (- \phi/c, A_1, A_2, A_3)\,,
+\end{equation}
+where the spatial components $(A_1, A_2, A_3)$ of $A_\mu$ are numerically equal to $(A_1, A_2, A_3) = \vb{A}$. A general gauge transformation eq. [ACE] book 5.1 then takes the form\footnote{
+Note that the zeroth component of this equation is $-\phi/c \rightarrow -\phi/c + \pdv{\chi}{x^0} =  -\phi/c + (1/c) \pdv{\chi}{t}$, that is, $\phi \rightarrow \phi - \pdv{}{\chi}{t}$, that is, $\phi \rightarrow \phi - \pdv{\chi}{t}$ }
+\begin{equation}\label{eq:Wald_08.42}
+A_\mu \rightarrow {A'}_\mu = A_\mu + \delta_\mu \chi \,.
+\end{equation}
+Thus, we have written the potentials and their gauge transformations in a special relativistically covariant form. 
+
+Next, we define the \tit{electromagnetic field-strength tensor} by
+\begin{equation}\label{eq:Wald_08.43}
+F_{\mu \nu} = \partial_\mu A_\nu - \partial_\nu A_\mu\,,
+\end{equation}
+
+so that $F_{\mu \nu}$ is a spacetime tensor field of type (0,2). Since $F_{\mu \nu}$ is antisymmetric, $F_{\mu \nu} = -F_{\nu \mu}$, it is easily seen that $F_{\mu \nu}$ has only $6$ independent components. These independent components of $F_{\mu \nu}$ can be taken to be
+\begin{equation}\label{eq:Wald_08.44}
+E_i/c = F_{i 0} = - \frac{1}{c} \pdv{\phi}{x^i} - \pdv{A_i}{x^0}\,, \quad 
+B_i = \frac{1}{2} \sum_{j,k=1}^3 \epsilon_{ijk}F_{jk} = \sum_{j,k=1}^3 \epsilon_{ijk}\pdv{A_k}{x^j}\,,
+\end{equation}
+where $\epsilon_{ijk}$, defined by [ACE] eq. (4.6), is the fully antisymmetric \tit{Levi Civita} tensor. In more explicit terms, the components of the tensor $F_{\mu \nu}$ defined by eq. (\ref{eq:Wald_08.43}) are  
+\begin{equation}\label{eq:Wald_08.45}
+F_{\mu \nu} = \mqty(
+0      &  -E_1/c   &   -E_2/c    &   -E_3/c  \\
+E_1/c  &    0      &      B_3    &   -B_2    \\          
+E_2/c  &  -B_3     &       0     &    B_1    \\
+E_3/c  &   B_2     &     -B_1    &     0     )\;.
+\end{equation}
+
+Thus, $F_{\mu \nu}$ combines $\vb{E}$ and $\vb{B}$ into a single spacetime tensor field. In this way, we have reformulated the definitions ([ACE] (5.2) and (5.3)) of $\vb{E}$ and $\vb{B}$ in a special relativistically covariant manner. 
+
+Our next task is to write Maxwell's equations in a manifestly special relativistically covariant form. The definition of $F_{\mu \nu}$ together with the equality of mixed partials implies that 
+\begin{equation}\label{eq:Wald_08.46}
+\partial_\alpha F_{\mu \nu} + \partial_\mu F_{\nu \alpha} + + \partial_\nu F_{\alpha \mu} = 0\,.
+\end{equation}
+This equation is equivalent to [ACE] eqs. (5.6) and (5.7), and thus reformulates these equations in a special relativistically covariant manner. To express the remaining Maxwell [ACE] equations (5.4) and (5.5) in a manifestly covariant form, we first combine the charge density $\rho$ and the current density $\vb{J}$  into a single spacetime vector field $J^\mu$, known as the \tit{charge-current 4-vector}:
+\begin{equation}\label{eq:Wald_08.47}
+J^\mu = (c \rho, \vb{J})  \,.
+\end{equation}
+
+This makes the source terms in Maxwell's equations into a special relativistically covariant quantity. 
+Charge-current conservation [ACE] eq. (5.8) then takes the manifestly covariant form 
+\begin{equation}\label{eq:Wald_08.48}
+\partial_\mu J^\mu = 0 \,.
+\end{equation}
+
+It is then straightforward to check that the remaining Maxwell [ACE] equations (5.4) and (5.5) can be written as the single spacetime tensor equation\footnote{}
+\begin{equation}\label{eq:Wald_08.49}
+\partial^\alpha F_{\alpha \mu} = - \mu_0 J^\mu \,,
+\end{equation}
+where we are using the notational conventions described at the end of section \ref{sec:Wald_08.1}.
+
+Our remaining task is to write the energy density, momentum density, and stresses of the electromagnetic field in a special relativistically covariant form. This can be done by defining the following tensor field of type (0,2):
+
+\begin{equation}\label{eq:Wald_08.50}
+T^{EM}_{\mu \nu} = \frac{1}{\mu_0} \left[{F_m}^\alpha F_{\nu \alpha} - \frac{1}{4} \eta_{\mu \nu} F_{\alpha \beta} F^{\alpha \beta} \right] \,,
+\end{equation}
+which is called the \tit{stress-energy-momentum tensor} (or stress-energy tensor, for short) of the electromagnetic field. It is straightforard to check that
+\begin{align}
+T^{EM}_{0 0} &= \frac{1}{2 \mu_0} \sum_i \left(\frac{1}{c^2} E_i^2 + B_i^2 \right) 
+= \frac{1}{2} \left(\epsilon_0 \abs{\vb{E}}^2 + \frac{1}{\mu_0} \abs{\vb{B}}^2 \right) \,,\label{eq:Wald_08.51}\\
+T^{EM}_{0 i} &= T^{EM}_{i 0} = \frac{1}{\mu_0} \sum_j F_{0 j} F_{i j} = - \frac{1}{\mu_0 c} (\vb{E} \times \vb{B})_i \,,\label{eq:Wald_08.52}\\
+T^{EM}_{i j} &= - \frac{1}{\mu_0} \left[ \frac{1}{c^2} E_i  E_j + B_i B_j - \frac{1}{2} \delta_{i j} \left( \frac{1}{c^2}\abs{\vb{E}}^2 + \abs{\vb{B}}^2 \right)\right] \,.\label{eq:Wald_08.53}
+\end{align}
+
+Thus, $T^{EM}_{00}$ is the energy density of the electromagnetic field, eq. [ACE] (5.11). It can be seen that $-T^{EM}_{0i} / c$ is just the momentum density, eq. [ACE] (5.12), or equivalently,  $-c T^{EM}_{0i}$ is the Poynting flux,  eq. [ACE] (5.14). Finally, $- T^{EM}_{ij}$ is just the stress tensor $\Theta_{ij}$ of the electromagnetic field, eq. [ACE] (5.13). Thus, $T^{EM}_{\mu \nu}$ combines into a single spacetime tensor the stress, energy, and momentum properties of the electromagnetic field--quantities that would be viewed as distinct in pre-relativity physics. The energy and momentum conservation relations eq. [ACE] (5.17) and (5.20) then can be rewritten as the single spacetime tensor equation:
+\begin{equation}\label{eq:Wald_08.54}
+\partial^\alpha T^{EM}_{\alpha \mu} = F_{\mu \nu} J^\nu \;.
+\end{equation}
+
+Note that $T^{EM}_{\mu \nu}$ has vanishing trace: $\eta^{\mu \nu}T^{EM}_{\mu \nu} = 0$.  
+
+It is a fundamental requirement of general relativity that all other forms of matter also can be assigned a stress-energy-momentum tensor $T^M_{\mu \nu}$, whose components have the same interpretation as given above for the electromagnetic stress-energy-momentum tensor. It is also a fundamental requirement of general relativity that...
+
+
+
+
+
+
+
+
+
+ 
+
 
 \section{TBD}
 \label{sec:Wald_08.3}
