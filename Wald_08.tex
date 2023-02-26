@@ -306,7 +306,7 @@ This gives rise to new formulas for momentum and energy, namely $\vb{p} = \gamma
 
 We conclude this section by stating two standard notational conventions that will be used throughout the rest of this book: (i)Up until this point, we have explicitly written the metric $\eta_{\mu \nu}$ wherever it has been used to convert vectors to dual vectors via the correspondence eq. (\ref{eq:Wald_08.18}). We will no longer continue to do so (e.g., having introduced the 4-velocity $u^\mu$, we will simply write $u_\mu$ for $\sum_\nu \eta_{\mu \nu} u^\nu$). Similarly, we will not write the inverse matrix explicitly when converting a dual vector to a vector via the eq. (\ref{eq:Wald_08.19}) (e.g., we will write $\delta^\mu f$ for $\sum_\nu \eta^{\mu \nu} \delta_\nu f\,$). (ii) We will omit the summation sign $\sum$ when summing over a repeated upper and lower index (e.g., we will simply write $u^\mu \delta_\mu f$ for $\sum_m u^\mu \delta_\mu f\,$). The omission of the summation sign in such sums was introcuced by Einstein and is referred to as the \tit{Einstein summation convention}. As a simple example of the notational conventions (i) and (ii) that will be used freely below, the first equality in (\ref{eq:Wald_08.38}) will now be written as $0 = u^\mu f_\mu$ (or, equivalently, as $0 = u_\mu f^\mu$). 
 
-\section{The Formulation of Electromagnetic Theory in the Framework of Special Relativity}
+\section[Covariant Electromagnetic Theory]{The Formulation of Electromagnetic Theory in the Framework of Special Relativity}
 \label{sec:Wald_08.2}
 
 We wish to formulate the theory of electromagnetism in a manifestly special relativistically covariant manner. The discussion of electromagnetism (in the [ACE] chapters 1-7) thus far has involved spatial vector fields, such as $\vb{A}$, $\vb{E}$, and $\vb{B}$. Such spatial vectors have no well-defined status in special relativity. In accord with the discussion at the end of the previous section, we must either rewrite electromagnetic theory so that it involves only spacetime tensor fields, or we must discard the theory and replace it with a new one that does. In the case of Newtonian particle mechanics, 
@@ -391,24 +391,75 @@ Thus, $T^{EM}_{00}$ is the energy density of the electromagnetic field, eq. [ACE
 
 Note that $T^{EM}_{\mu \nu}$ has vanishing trace: $\eta^{\mu \nu}T^{EM}_{\mu \nu} = 0$.  
 
-It is a fundamental requirement of general relativity that all other forms of matter also can be assigned a stress-energy-momentum tensor $T^M_{\mu \nu}$, whose components have the same interpretation as given above for the electromagnetic stress-energy-momentum tensor. It is also a fundamental requirement of general relativity that...
+It is a fundamental requirement of general relativity that all other forms of matter also can be assigned a stress-energy-momentum tensor $T^M_{\mu \nu}$, whose components have the same interpretation as given above for the electromagnetic stress-energy-momentum tensor. It is also a fundamental requirement of general relativity that the total stress-energy-momentum tensor $T^{EM}_{\mu \nu} + T^M_{\mu \nu}$ must satisfy an equation that expresses local conservation of energy and momentum. In the flat spacetime of special relativity, this conservation equation takes the form
+\begin{equation}\label{eq:Wald_08.55}
+\partial^\alpha \left[ T^{EM}_{\alpha \mu} + T^M_{\alpha \mu} \right] = 0\,,
+\end{equation}
+and thus
+\begin{equation}\label{eq:Wald_08.56}
+\partial^\alpha T^M_{\alpha \mu} = - \partial^\alpha T^{EM}_{\alpha \mu} = - F_{\nu \mu} J^\nu \,.
+\end{equation}
 
+In any inertial coordinates, the time component of eq. (\ref{eq:Wald_08.56}) is equivalent to the [ACE] formula (5.19) for the rate at which energy per unit volume is transferred from the electromagnetic field to matter. The space components of eq. (\ref{eq:Wald_08.56}) are equivalent to the [ACE] formula (5.21) for the Lorentz force density.
 
+Finally, it is worth noting that---when expressed in terms of $A_\mu$ rather than $\phi$ and $\vb{A}$---the Lorenz gauge condition [ACE] eq. (5.24) takes the simpler form  
+\begin{equation}\label{eq:Wald_08.57}
+\partial^\mu A_\mu =0 \,.
+\end{equation}
+Thus, the Lorenz gauge condition is a special relativistically covariant condition. Maxwell's equations in Lorenz gauge take the form
+\begin{equation}\label{eq:Wald_08.58}
+\Box A_\mu \equiv \partial^\alpha \partial_\alpha A_\mu = - \mu_0 J_\mu\,,
+\end{equation}
+which is manifestly special relativistically covariant. The retarded solution to eq. (\ref{eq:Wald_08.58}) is
+\begin{equation}\label{eq:Wald_08.59}
+A_\mu = \frac{\mu_0}{4 \pi} \int{\frac{[J_\mu(t', \vb{x}')]_{\text{ret}}}{\abs{\vb{x} - \vb{x}'}} d^3 x'}   \,,
+\end{equation}
+which is equivalent to [ACE] eqs. (5.56) and (5.57).
 
+Thus we have succeeded in writing all the equations and results of [ACE] section 5.1 in special relativistically covariant form. What has been gained by doing this? After all, as we have seen, the equations of electrodynamics as reformulated above are identical to the equations of electrodynamics as given in [ACE] section 5.1. However, this fact alone is very significant, because it shows that---unlike Newton's second law of particle mechanics---the theory of electromagnetism does not have to be modified to be compatible with the spacetime structure of special relativity. Furthermore, as I shall now explain, the formulation of the theory of electromagnetism in special relativistically covariant form gives rise to a major change in viewpoint on electromagnetic phenomena. 
 
+From the perspective of pre-relativity physics, the equations of [ACE] section 5.1 make sense only in a preferred rest frame, presumably provided by an \quotes{aether.} Electromagnetic waves would then naturally be thought of as propagating disturbances of the aether (much as sound waves are propagating disturbances of the air), and it would be naturally to try to give a purely mechanical explanation of all electromagnetic phenomena--as Maxwell himself attempted to do. However, with the need for a preferred rest frame eliminated, the notion of an aether becomes entirely unnatural, and it becomes natural to view the electromagnetic field as a physical entity in its own right.
 
+In the pre-relativity viewpoint, it would not be any more useful to ask how an observer moving with respect to the aether would interpret electromagnetic phenomena than it would be to ask how an observer moving through air would interpret sound waves. A simple description would be available only in the rest frame of the medium, and it would be most sensible to do all calculations in this rest frame. If one wanted to give a description of electromagnetic phenomena from the viewpoint of an observer moving through the aether, it would not be obvious how to define the electric and magnetic fields \quotes{seen} by such a moving observer. Whatever definition of electric and magnetic fields that one gave, with pre-relativity notions of spacetime structure, they could not satisfy an unmodified form of Maxwell's equations in the frame of the moving observer.
 
+However, we have now seen that in special relativity, electromagnetic theory in the form given in [ACE] section 5.1 holds in all inertial coordinates. All inertial observers would give exactly the same description of electromagnetic phenomena in terms of spacetime tensors. But if they define electromagnetic quantities in terms of particular components of these tensors, different observers  will assign different values to these electromagnetic quantities. This difference in values is given by the tensor transformation law eq. (\ref{eq:Wald_08.31}). It is of interest to see more explicitly how this works in the case of charge and current densities $\rho$ and $\vb{J}$, and in the case of the electromagnetic fields $\vb{E}$ and $\vb{B}$.
 
+First consider the charge current $J^\mu$, eq. (\ref{eq:Wald_08.47}). Since this quantity is a spacetime vector, by eq. (\ref{eq:Wald_08.27}), an observer $O'$ at event $p$ who is moving in the $x$-direction with velocity $v$ with respect to observer $O$ would assign to the 4-current at $p$ the components 
+\begin{equation}\label{eq:Wald_08.60}
+{J'}^\mu = \Lambda^\mu_\nu J^\nu \,.
+\end{equation}
 
+Writing this out, we see that the charge density $\rho$ and current density $\vb{J}$ transform as
+\begin{align}
+\rho' &= \gamma \rho - \gamma \frac{v}{c^2} J^1\,, \label{eq:Wald_08.61}\\
+{J'}^1 &= \gamma J^1 - \gamma v \rho \,. \label{eq:Wald_08.62}
+\end{align}
 
- 
+It should not be surprising that a charge density $\rho$ would contribute to the current density seen by a moving observer, as found in eq. (\ref{eq:Wald_08.62}). However, is perhaps surprising that a current density $\vb{J}$ contributes to the charge density seen by a moving observer. 
 
+As we have seen, the electromagnetic field strengths $\vb{E}$ and $\vb{B}$ are, in fact components of the spacetime tensor $F_{\mu \nu}$, eq. (\ref{eq:Wald_08.43}). Since $F_{\mu \nu}$ is a tensor of type (0,2), by eq. (\ref{eq:Wald_08.31}), its components transform as 
+\begin{equation}\label{eq:Wald_08.63}
+F_{\mu \nu} \rightarrow F'_{\mu \nu} = \sum_{\alpha, \beta} {(\Lambda^{-1})^\alpha}_\mu {(\Lambda^{-1})^\beta}_\nu F_{\alpha \beta} \,.
+\end{equation}
 
-\section{TBD}
+Thus, if observer $O$ sees fields $\vb{E}$ and $\vb{B}$ present at event $p$, we find from this equation that an observer $O'$ moving in the $x$-direction with velocity $v$ with respect to observer $O$ would determine that the fields at $p$ are 
+\begin{align}
+E'_1 = E_1     &,\, B'_1 = B_1\,,\label{eq:Wald_08.64}\\
+E'_2 = \gamma (E_2 - v B_3)&,\, B'_2 = \gamma \left(B_2 + \frac{v}{c^2} E_3\right)\,,\label{eq:Wald_08.65}\\
+E'_3 = \gamma (E_3 + v B_2) &,\, B'_3 = \gamma \left(B_3 - \frac{v}{c^2} E_2\right)\,.\label{eq:Wald_08.66}
+\end{align}
+In other words, we have 
+\begin{align}
+\vb{E}'_\parallel = \vb{E}_\parallel &,\, \vb{B}'_\parallel = \vb{B}_\parallel\,,\label{eq:Wald_08.67}\\
+\vb{E}'_\perp = \gamma (\vb{E}_\perp + \vb{v} \times \vb{B})  &,\, \vb{B}'_\perp = \gamma (\vb{B}_\perp - \frac{1}{c^2} \vb{v} \times \vb{E})\,,\label{eq:Wald_08.68}
+\end{align}
+where \quotes{$\parallel$} and \quotes{$\perp$} respectively denote components parallel and perpendicular to $\vb{v}$. That $\vb{E}$ and $\vb{B}$ transform into each other under Lorentz transformations is a reflection of their being different components of a single spacetime tensor $F_{\mu \nu}$.
+
+\section{Charged Particle Motion and Radiation}
 \label{sec:Wald_08.3}
 
-\subsection{TBD}
+\subsection{Charged particle motion}
 \label{subsec:Wald_08.3.1}
 
-\subsection{TBD}
+\subsection{Radiation from a point charge in arbitrary motion}
 \label{subsec:Wald_08.3.2}
