@@ -316,7 +316,7 @@ Our task is to reformulate all the equations of section 5.1 of the [ACE] book in
 \begin{equation}\label{eq:Wald_08.40}
 A^\mu \equiv (\phi/c, \vb{A})\,.
 \end{equation}
-In other words, instead of viewing $\phi$ as a scalar function on spacetime--as would have been natural in pre-relativity physics--we now interpret $\phi/c$ as being the time component of a 4-vector field whose spatials componens are $\vb{A}$. 
+In other words, instead of viewing $\phi$ as a scalar function on spacetime--as would have been natural in pre-relativity physics--we now interpret $\phi/c$ as being the time component of a 4-vector field whose spatial componens are $\vb{A}$. 
 
 In fact, it is more natural and convenient to work with the corresponding dual vector field (see eq. (\ref{eq:Wald_08.18})):
 \begin{equation}\label{eq:Wald_08.41}
@@ -457,9 +457,124 @@ where \quotes{$\parallel$} and \quotes{$\perp$} respectively denote components p
 
 \section{Charged Particle Motion and Radiation}
 \label{sec:Wald_08.3}
+Thus far in this book, apart from our treatment of electrostatics, we have largely avoided discussing point charges. The main reason is that, as discussed in [ACE] section 1.4, at a fundamental level, charged matter must be viewed as continuously distributed rather than point-like. Nevertheless, as already stated in [ACE] section 1.4, the idealization of a point charge is very useful for considering (i) the motion of a small charged body whose self-fields can be neglected\footnote{Self-field effects will be considered in depth in [ACE] chapter 10.} and (ii) the radiation emitted by a small charged body undergoing arbitrary motion. We have delayed discussing these topics until now, so that we can give a fully relativistic treatment of both charged particle motion and radiation from a charged particle. 
 
 \subsection{Charged particle motion}
 \label{subsec:Wald_08.3.1}
+As discussed at the end of section \ref{sec:Wald_08.1}, Newton's second law in special relativity takes the form
+\begin{equation}\label{eq:Wald_08.69}
+u^\nu \partial_\nu p^\mu = \dv{p^\mu}{\tau} = f^\mu\,,
+\end{equation}
+where $p^\mu = m u^\mu$. The electromagnetic 4-force $f^\mu$ exerted on a particle of charge $q$ is obtained by taking the limit of eq. (\ref{eq:Wald_08.56}) as the matter and charge distribution shrinks down to a worldline. This is a highly nontrivial limit in that, if taken at fixed charge, the electromagnetic self-energy of the body would diverge. We will deal with the issue of how properly take the point charge limit in [ACE] chapter 10. For now we merely ignore the effects of the \quotes{self-field} of the charged body and replace $F_{\mu \nu}$ on the right side of eq. (\ref{eq:Wald_08.56}) by the external field $F^\text{ext}_{\mu \nu}$, into which the body is placed.   The integral of the left side of eq. (\ref{eq:Wald_08.56}) over space at time $t$ yields
+\begin{equation}\label{eq:Wald_08.70}
+\begin{aligned}
+\int{ \partial^\alpha T^M_{\alpha \mu}d^3x} &= \bigintsss{\left[-\frac{1}{c} \pdv{T^M_{0 \mu}}{t} + \sum_{i=1}^3 \partial_i T^M_{i \mu} \right] d^3x} \\
+&= -\frac{1}{c}\dv{}{t} \int{T^M_{0 \mu} d^3x} = \dv{p_\mu}{t}\,,
+\end{aligned}
+\end{equation}
+where $p^\mu$ is the total matter 4-momentum of the body,\footnote{We will see in [ACE] chapter 10 that the electromagnetic self-energy of the body--which is being neglected here--will contribute to its rest mass and 4-momentum.} and we used Gauss's law and the boundedness of the matter distribution in the second equality to set the integral of the spatial divergence of the matter stress-energy tensor to zero.
+
+To evaluate the spatial integral of the right side of eq. (\ref{eq:Wald_08.56}), we need an expression for the charge-current 4-vector $J^\mu$ of the body in the limit that it has shrunk down to a worldline. Since $J^\mu$ is a spacetime vector, it is clear that it must point along the direction of the 4-velocity $u^\mu$ of the worldline in this limit--there simply is no other candidate for the direction of $J^\mu$. Clearly, $J^\mu$ must be localized on the worldline of the particle. Thus, if the particle motion is described in some inertial cooordinate system as $\vb{x} = \vb{X}(t)$ (where $\vb{X}(t)$ is a vector function of $t$ with $\abs{d{\vb{X}}/dt} < c$), we must have
+\begin{equation}\label{eq:Wald_08.71}
+J^\mu (t, \vb{x}) \propto   \delta(\vb{x} - \vb{X}(t))\, u^\mu\,.
+\end{equation}
+Since $J^0 = c \rho$ (see eq. (\ref{eq:Wald_08.47})), the constant of proportionality in eq. (\ref{eq:Wald_08.71}) can be fixed by requiring that the spatial integral of $J^0$ be equal to $cq$. Since $u^0 = c\gamma$, we thereby obtain 
+\begin{equation}\label{eq:Wald_08.72}
+J^\mu (t, \vb{x}) = \frac{q}{\gamma} \delta(\vb{x} - \vb{X}(t))\, u^\mu\,.
+\end{equation}
+
+In terms of $\rho$ and $\vb{J}$, we obtain
+\begin{equation}\label{eq:Wald_08.73}
+ \rho(t, \vb{x}) = q \delta(\vb{x} - \vb{X}(t))\,, \quad 
+\vb{J}(t, \vb{x}) = q \dv{\vb{X}}{t} \delta(\vb{x} - \vb{X}(t))\,.
+\end{equation}
+
+The spatial integral of the right side of eq. (\ref{eq:Wald_08.56}) with $F_{\nu \mu}$ replaced by $F^\text{ext}_{\nu \mu}$ then yields
+\begin{equation}\label{eq:Wald_08.74}
+- \int{ F^\text{ext}_{\nu \mu} J^\nu d^3x} = - \frac{q}{\gamma} F^\text{ext}_{\nu \mu} u^\nu\,.
+\end{equation}
+
+Thus, equating the spatial integrals of the left and right sides of eq. (\ref{eq:Wald_08.56}) in the point charge limit, we obtain
+\begin{equation}\label{eq:Wald_08.75}
+\dv{p^\mu}{t} = - \frac{q}{\gamma} F^\text{ext}_{\nu \mu} u^\nu\,.
+\end{equation}
+
+Using the fact that along the worldline of the particle, we have 
+\begin{equation}\label{eq:Wald_08.76}
+\dv{t}{\tau} = \frac{1}{c} \dv{X^0}{\tau} = \frac{u^0}{c} = \gamma\,,
+\end{equation}
+we see that eq. (\ref{eq:Wald_08.75}) can be put in the manifestly covariant form (\ref{eq:Wald_08.69}) with
+\begin{equation}\label{eq:Wald_08.77}
+ f_\mu = -q F^\text{ext}_{\nu \mu} u^\nu\,.
+\end{equation}
+
+Note that $u^\mu f_\mu = -q F^\text{ext}_{\nu \mu} u^\mu u^\nu = 0$, since $F^\text{ext}_{\mu \nu} = - F^\text{ext}_{\nu \mu}$. Thus, by eq. (\ref{eq:Wald_08.38}), the rest mass $m$ of a point charge does not change when it moves under the influence of an external electromagnetic field. 
+
+In any inertial coordinates, the components of $u^\mu$ are $(c \gamma, \gamma \vb{v})$, and the components of $F^\text{ext}_{\mu \nu}$ are given by eq. (\ref{eq:Wald_08.45}). Thus the spatial components of eq. (\ref{eq:Wald_08.69}) with $f^\mu$ given by eq. (\ref{eq:Wald_08.77}) take the form
+\begin{equation}\label{eq:Wald_08.78}
+m \dv{(\gamma \vb{v})}{t} = q \gamma (\vb{E} + \vb{v} \times \vb{B})\,,
+\end{equation}
+where here and in the following, it is understood that $\vb{E}$ and $\vb{B}$ are the external fields. 
+Using eq. (\ref{eq:Wald_08.76}), we see that eq. (\ref{eq:Wald_08.78}) is equivalent to   
+\begin{equation}\label{eq:Wald_08.79}
+m \dv{(\gamma \vb{v})}{t} = m \dv{(\gamma \vb{v})}{\tau} \dv{\tau}{t} = q(\vb{E} + \vb{v} \times \vb{B})\,.
+\end{equation}
+This differs from the usual nonrelativistic equation of motion for a charged particle found in elementary texts only in that on the left side of this equation, $\vb{v}$ is replaced by $\gamma \vb{v}$. 
+
+We now consider two important, simple examples of charged particle motion. The first example is motion in a uniform electric field $\vb{E}$, that is, in some inertial coordinates $(t, \vb{x})$, we have that $\vb{E}$ is independent of $(t, \vb{x})$ and $\vb{B} = 0$/ Without loss of generality, we may assume that $\vb{E}$ points in the $x$-direction: $\vb{E} = E \vb{\hat{x}}$. We may choose the origin of coordinates so that $\vb{X}(0) = \vb{0}$ (i.e., the particle is at $\vb{x} = 0$ at $t = 0$). For simplicity, consider the case where the particle is initially at rest: $d\vb{X}/dt = 0$ at $t=0$. It is clear from  eq. (\ref{eq:Wald_08.79}) that we will have $Y(t) = Z(t) = 0$ for all $t$, so we need only consider the $x$-motion. We have 
+\begin{equation}\label{eq:Wald_08.80}
+\dv{(\gamma v)}{t} = \frac{q}{m} E\,,
+\end{equation}
+where $v = dX/dt$. Integration of this equation using $v = 0$ at $t = 0$ yields
+\begin{equation}\label{eq:Wald_08.81}
+\gamma v = \frac{q}{m} E t\,,
+\end{equation}
+and hence, 
+\begin{equation}\label{eq:Wald_08.82}
+v = \dv{X}{t} = \frac{q E t /m}{[q + (qEt/(mc))^2]^{1/2}}\,.
+\end{equation}
+Integration of this equation with the initial condition $X = 0$ at $t = 0$ yields the solution
+\begin{equation}\label{eq:Wald_08.83}
+X(t) = \frac{mc^2}{qE} \left\{ [ 1 + (qEt/(mc))^2 ]^{1/2} - 1 \right\}\,.
+\end{equation}
+For $t \ll mc/(qE)$, we have $v \ll c$, and the solution reduces to 
+\begin{equation}\label{eq:Wald_08.84}
+X(t) \approx \frac{1}{2} \frac{qE}{m} t^2 \,.
+\end{equation}
+
+The second example is motion in a uniform magnetic field $\vb{B}$; that is, in some inertial coordinates 
+$(t, \vb{x})$, we have that $\vb{B}$ is independent of $(t, \vb{x})$ and $\vb{E}=0$. 
+The equation of motion eq. (\ref{eq:Wald_08.79}) becomes
+\begin{equation}\label{eq:Wald_08.85}
+\dv{\gamma \vb{v}}{t} = \frac{q}{m} \vb{v} \times \vb{B}\,.
+\end{equation}
+Dotting this equation with $\vb{v}$, we find that $v = \abs{\vb{v}}$ is constant. 
+Since $\gamma$ is constant, we may rewrite this equation as  
+\begin{equation}\label{eq:Wald_08.86}
+\dv{\vb{v}}{t} = \frac{q}{\gamma m} \vb{v} \times \vb{B}\,.
+\end{equation}
+
+The general solution to this equation is helical motion (i.e., linear motion parallel to $\vb{B}$ and circular motion perpendicular to $\vb{B}$). More explicitly, taking $\vb{B}$ to point along the $z$-axis so that $\vb{B} = B \hat{\vb{z}}$, we find that the general solution to eq. (\ref{eq:Wald_08.86}) is
+\begin{equation}\label{eq:Wald_08.87}
+\begin{aligned}
+X(t) &= X_0 + R_g cos(\omega_g t + \phi_0)\,,\\
+Y(t) &= Y_0 - R_g sin(\omega_g t + \phi_0)\,,\\
+Z(t) &= v_{z_0} t + z_0\,.
+\end{aligned}
+\end{equation}
+Here $X_0$, $Y_0$, $v_{z_0}$ and $z_0$ are constants, and 
+\begin{equation}\label{eq:Wald_08.88}
+\omega_g \equiv \frac{qB}{\gamma m}\,, \quad R_g \equiv \frac{v_\perp}{\abs{\omega_g}}\,,
+\end{equation}
+where $v_\perp$ is the (constant) magnitude of the velocity\footnote{We must, of course, have $v^2_{z_0} + v^2_\perp < c^2$.} in the $x\text{-}y$ plane. 
+We refer to $\omega_g$ as the \tit{gyrofrequency} (or \tit{cyclotron frequency}), and refer to $R_g$ as the \tit{gyroradius} (or \tit{Larmor radius}). For nonrelativistic motion, $\gamma \approx 1$, the gyrofrequency is approximately
+\begin{equation}\label{eq:Wald_08.89}
+\omega_g \approx \frac{qB}{m}\,,
+\end{equation}
+which is independent of the velocity.
+
+ 
+   
 
 \subsection{Radiation from a point charge in arbitrary motion}
 \label{subsec:Wald_08.3.2}
