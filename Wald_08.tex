@@ -474,7 +474,7 @@ where $p^\mu = m u^\mu$. The electromagnetic 4-force $f^\mu$ exerted on a partic
 \end{equation}
 where $p^\mu$ is the total matter 4-momentum of the body,\footnote{We will see in [ACE] chapter 10 that the electromagnetic self-energy of the body--which is being neglected here--will contribute to its rest mass and 4-momentum.} and we used Gauss's law and the boundedness of the matter distribution in the second equality to set the integral of the spatial divergence of the matter stress-energy tensor to zero.
 
-To evaluate the spatial integral of the right side of eq. (\ref{eq:Wald_08.56}), we need an expression for the charge-current 4-vector $J^\mu$ of the body in the limit that it has shrunk down to a worldline. Since $J^\mu$ is a spacetime vector, it is clear that it must point along the direction of the 4-velocity $u^\mu$ of the worldline in this limit--there simply is no other candidate for the direction of $J^\mu$. Clearly, $J^\mu$ must be localized on the worldline of the particle. Thus, if the particle motion is described in some inertial cooordinate system as $\vb{x} = \vb{X}(t)$ (where $\vb{X}(t)$ is a vector function of $t$ with $\abs{d{\vb{X}}/dt} < c$), we must have
+To evaluate the spatial integral of the right side of eq. (\ref{eq:Wald_08.56}), we need an expression for the charge-current 4-vector $J^\mu$ of the body in the limit that it has shrunk down to a worldline. Since $J^\mu$ is a spacetime vector, it is clear that it must point along the direction of the 4-velocity $u^\mu$ of the worldline in this limit--there simply is no other candidate for the direction of $J^\mu$. Clearly, $J^\mu$ must be localized on the worldline of the particle. Thus, if the particle motion is described in some inertial coordinate system as $\vb{x} = \vb{X}(t)$ (where $\vb{X}(t)$ is a vector function of $t$ with $\abs{d{\vb{X}}/dt} < c$), we must have
 \begin{equation}\label{eq:Wald_08.71}
 J^\mu (t, \vb{x}) \propto   \delta(\vb{x} - \vb{X}(t))\, u^\mu\,.
 \end{equation}
@@ -521,7 +521,7 @@ m \dv{(\gamma \vb{v})}{t} = m \dv{(\gamma \vb{v})}{\tau} \dv{\tau}{t} = q(\vb{E}
 \end{equation}
 This differs from the usual nonrelativistic equation of motion for a charged particle found in elementary texts only in that on the left side of this equation, $\vb{v}$ is replaced by $\gamma \vb{v}$. 
 
-We now consider two important, simple examples of charged particle motion. The first example is motion in a uniform electric field $\vb{E}$, that is, in some inertial coordinates $(t, \vb{x})$, we have that $\vb{E}$ is independent of $(t, \vb{x})$ and $\vb{B} = 0$/ Without loss of generality, we may assume that $\vb{E}$ points in the $x$-direction: $\vb{E} = E \vb{\hat{x}}$. We may choose the origin of coordinates so that $\vb{X}(0) = \vb{0}$ (i.e., the particle is at $\vb{x} = 0$ at $t = 0$). For simplicity, consider the case where the particle is initially at rest: $d\vb{X}/dt = 0$ at $t=0$. It is clear from  eq. (\ref{eq:Wald_08.79}) that we will have $Y(t) = Z(t) = 0$ for all $t$, so we need only consider the $x$-motion. We have 
+We now consider two important, simple examples of charged particle motion. The first example is motion in a uniform electric field $\vb{E}$, that is, in some inertial coordinates $(t, \vb{x})$, we have that $\vb{E}$ is independent of $(t, \vb{x})$ and $\vb{B} = 0$. Without loss of generality, we may assume that $\vb{E}$ points in the $x$-direction: $\vb{E} = E \vb{\hat{x}}$. We may choose the origin of coordinates so that $\vb{X}(0) = \vb{0}$ (i.e., the particle is at $\vb{x} = 0$ at $t = 0$). For simplicity, consider the case where the particle is initially at rest: $d\vb{X}/dt = 0$ at $t=0$. It is clear from  eq. (\ref{eq:Wald_08.79}) that we will have $Y(t) = Z(t) = 0$ for all $t$, so we need only consider the $x$-motion. We have 
 \begin{equation}\label{eq:Wald_08.80}
 \dv{(\gamma v)}{t} = \frac{q}{m} E\,,
 \end{equation}
@@ -626,7 +626,7 @@ with
 (i.e., $\vb{\hat{n}}$ is the unit vector that points from the position of the particle at $t_\text{ret}$ to the observation point $\vb{x}$). Equations (\ref{eq:Wald_08.98}) and (\ref{eq:Wald_08.99}) are called the \tit{Lienard-Wiechert potentials}.
 
 The electric and magnetic fields can be computed from the Lienard-Wiechert potentials in the usual manner via [ACE] eqs. (5.2) and (5.3). However, when taking derivatives of $\phi$ and $\vb{A}$ with respect to $t$ and $\vb{x}$, it is important to recognize that in eqs. (\ref{eq:Wald_08.98}) and (\ref{eq:Wald_08.99}), the quantity $t_\text{ret}$ denotes the time of intersection of the past light cone of $(t, \vb{x})$ with the worldline of the particle. 
-Thus, for the given particle worldline $\vb{X}(t_\text{ret}$ is the function of $(t, \vb{x})$ that is implicitly defined by 
+Thus, for the given particle worldline $\vb{X}(t_\text{ret})$ is the function of $(t, \vb{x})$ that is implicitly defined by 
 \begin{equation}\label{eq:Wald_08.102}
 t_\text{ret} = t - \frac{1}{c}{\abs{\vb{x} - \vb{X}(t_\text{ret})}}\,.
 \end{equation}
@@ -636,7 +636,7 @@ Taking the partial derivative of this equation with respect to $t$, we obtain
 \end{equation}
 and hence
 \begin{equation}\label{eq:Wald_08.104}
-\pdv{t_\text{ret}}{t} = \frac{1}{1 - \frac{1}{c}\vb{\hat{n}} \cdot \dv{\vb{X}}{t}\bigg\rvert_{t = t_\text{ret}}} = \frac{1}{\alpha}\,.
+\pdv{t_\text{ret}}{t} = \frac{1}{1 - \frac{1}{c}\vb{\hat{n}} \cdot \dv{\vb{X}}{t}\big\rvert_{t = t_\text{ret}}} = \frac{1}{\alpha}\,.
 \end{equation}
 Similarly we find
 \begin{equation}\label{eq:Wald_08.105}
@@ -653,7 +653,7 @@ Using these relations, we can take the derivatives of the potentials (\ref{eq:Wa
  \vb{E}(t, \vb{x}) & =  q \frac{\mu_0 c^2}{4 \pi} \frac{\left( \vb{\hat{n}} - \frac{1}{c} \dv{\vb{X}}{t} \right) \left( 1 - \frac{1}{c^2} \abs{\dv{\vb{X}}{t}}^2 \right)}{\alpha^3 \abs{\vb{x} - \vb{X}(t_\text{ret})}^2} + q \frac{\mu_0}{4 \pi} \frac{\vb{\hat{n}} \times \left[\left( \vb{\hat{n}} - \frac{1}{c} \dv{\vb{X}}{t} \right) \times \dv[2]{\vb{X}}{t} \right]}{\alpha^3 \abs{\vb{x} - \vb{X}(t_\text{ret})}^2}\,,\label{eq:Wald_08.107} \\
 c\vb{B}(t, \vb{x}) & =  \vb{\hat{n}} \times \vb{E}(t, \vb{x})\,,\label{eq:Wald_08.108} 
 \end{align}
-where it is understood that $\dv{\vb{X}}{t}$ and $\dv[2]{\vb{X}}{t}$ are evaluated at $t_\text{ret}$. It should be emphasized that eqs. (\ref{eq:Wald_08.107}) and (\ref{eq:Wald_08.108}) are exact solutions and hold at all distances from the worldline $\vb{X}(t)$ of the point charge.
+where it is understood that $\dv*{\vb{X}}{t}$ and $\dv*[2]{\vb{X}}{t}$ are evaluated at $t_\text{ret}$. It should be emphasized that eqs. (\ref{eq:Wald_08.107}) and (\ref{eq:Wald_08.108}) are exact solutions and hold at all distances from the worldline $\vb{X}(t)$ of the point charge.
 
 It is of interest to calculate the electromagnetic energy radiated to infinity, as given by the Poynting flux as $\abs{\vb{x}} \rightarrow \infty$. 
 The first term in eq. (\ref{eq:Wald_08.107}) falls off as $1/\abs{\vb{x}}^2$, so only the second term contributes to the energy flux at infinity. In addition, the difference between $\vb{\hat{n}}$ and $\vb{\hat{x}}$ can be neglected at this order, where  $\vb{\hat{x}}$ is the unit outward radial vector. We find that the radiated power per unit solid angle at a given retarded time $t_\text{ret}$ is given by
@@ -664,16 +664,16 @@ The first term in eq. (\ref{eq:Wald_08.107}) falls off as $1/\abs{\vb{x}}^2$, so
                &= \frac{q^2 \mu_0}{16 \pi^2 c \alpha^6} \bigg\lvert  \vb{\hat{x}} \times \left[\left(\vb{\hat{x}} - \frac{1}{c}\dv{\vb{X}}{t}\right) \times \dv[2]{\vb{X}}{t}\right]\bigg\rvert^2 \,,
 \end{aligned}
 \end{equation}
-where $\dv{\vb{X}}{t}$ and $\dv[2]{\vb{X}}{t}$ are evaluated at $t_\text{ret}$. Note that the limit $\abs{\vb{x}} \rightarrow \infty$ at fixed retarded time means that the limit is being taken on spheres of radius $\abs{\vb{x}}$ lying on the future light cone of the event on the worldline of the particle at $t = t_\text{ret}$. 
+where $\dv*{\vb{X}}{t}$ and $\dv*[2]{\vb{X}}{t}$ are evaluated at $t_\text{ret}$. Note that the limit $\abs{\vb{x}} \rightarrow \infty$ at fixed retarded time means that the limit is being taken on spheres of radius $\abs{\vb{x}}$ lying on the future light cone of the event on the worldline of the particle at $t = t_\text{ret}$. 
 
 Since the right side of eq. (\ref{eq:Wald_08.109}) is most naturally evaluated on spheres of constant retarded time at infinity it is natural to define the notion of energy flux per unit solid angle per unit \tit{retarded} time by 
 \begin{equation}\label{eq:Wald_08.110}
 \dv{P'}{\Omega} \equiv \dv{P}{\Omega} \dv{t}{t_\text{ret}} = \dv{P}{\Omega} \alpha = = \frac{q^2 \mu_0}{16 \pi^2 c \alpha^5} \bigg\lvert  \vb{\hat{x}} \times \left[\left(\vb{\hat{x}} - \frac{1}{c}\dv{\vb{X}}{t}\right) \times \dv[2]{\vb{X}}{t}\right]\bigg\rvert^2 \,.
 \end{equation}
 
-The total flux of energy between two retarded times would then be obtained by integrating the right side of eq. (\ref{eq:Wald_08.110}) over each sphere of constant retarded time and then integrating with respect to $t_\text{ret}$. As we shall see below, a simple formula can be obtained for the integral of $\dv{P'}{\Omega}$ over a sphere of constant retarded time.
+The total flux of energy between two retarded times would then be obtained by integrating the right side of eq. (\ref{eq:Wald_08.110}) over each sphere of constant retarded time and then integrating with respect to $t_\text{ret}$. As we shall see below, a simple formula can be obtained for the integral of $\dv*{P'}{\Omega}$ over a sphere of constant retarded time.
 
-If the particle is at rest at some event on its worldline, then at the retarded time corresponding to that event, eq. (\ref{eq:Wald_08.109}) with $\dv{\vb{X}}{t} = 0$ and $\alpha = 1$ reduces to
+If the particle is at rest at some event on its worldline, then at the retarded time corresponding to that event, eq. (\ref{eq:Wald_08.109}) with $\dv*{\vb{X}}{t} = 0$ and $\alpha = 1$ reduces to
 \begin{equation}\label{eq:Wald_08.111}
 \begin{aligned}
 \left(\dv{P}{\Omega}\right)_{\dv{\vb{X}}{t} = 0} &= \frac{q^2 \mu_0}{16 \pi^2 c} \bigg\lvert  \vb{\hat{x}} \times \left[\vb{\hat{x}} \times \dv[2]{\vb{X}}{t}\right]\bigg\rvert^2 \\
@@ -681,10 +681,75 @@ If the particle is at rest at some event on its worldline, then at the retarded 
 \abs{\dv[2]{\vb{X}}{t}}^2 - \left(\vb{\hat{x}} \cdot \dv[2]{\vb{X}}{t}\right)^2 \right]\,.
 \end{aligned}
 \end{equation}
-This agrees with [ACE] eq. (5.79), since teh dipole moment of the charged particle is $\vb{p}=q\vb{X}$.
-In particular, the angular distribution of the energy flux has a purely dipole pattern (i.e., it varies with angle as $\sin^2 \theta$, where $\theta$ is the angle between $\dv[2]{\vb{X}}{t}$ and the observation point).The effects of nonzero velocity, $\dv{\vb{X}}{t} \neq 0$, on the nature of the angular distribution of the radiated power at the corresponding retarded time can be illustrated by considering the following two special cases. We orient.... 
+This agrees with [ACE] eq. (5.79), since the dipole moment of the charged particle is $\vb{p}=q\vb{X}$.
+In particular, the angular distribution of the energy flux has a purely dipole pattern (i.e., it varies with angle as $\sin^2 \theta$, where $\theta$ is the angle between $\dv*[2]{\vb{X}}{t}$ and the observation point).The effects of nonzero velocity, $\dv*{\vb{X}}{t} \neq 0$, on the nature of the angular distribution of the radiated power at the corresponding retarded time can be illustrated by considering the following two special cases. We orient our spatial axes so that
+$\dv*{\vb{X}}{t}$ at the given retarded time instantaneously points in the $z$-direction:
+$\dv*{\vb{X}}{t}= v \vb{\hat{z}}$. Then we have 
+\begin{equation}\label{eq:Wald_08.112}
+\alpha = 1 - \frac{v}{c} \cos \theta .
+\end{equation}
+First consider the case where $\dv*[2]{\vb{X}}{t}$ points in the same direction as $\dv*{\vb{X}}{t}$---as occurs for linear acceleration. Then eq. (\ref{eq:Wald_08.109} becomes
+\begin{equation}\label{eq:Wald_08.113}
+\left(\dv{P}{\Omega}\right)_\parallel = \frac{q^2 \mu_0}{16 \pi^2 c}
+\frac{\sin^2 \theta}{\left( 1 - \frac{v}{c} \cos \theta\right)^6} \abs{\dv[2]{\vb{X}}{t}}^2\,,
+\end{equation}
+whereas $(\dv*{P'}{\Omega})_\parallel$ would be given by the same formula with one fewer power of $(1 - \frac{v}{c} \cos \theta)$ in the denominator. As the second example, consider the case where, at a given retarded time, $\dv*[2]{\vb{X}}{t}$ points orthogonally to $\dv*{\vb{X}}{t}$---as occurs for circular motion. For relativistic velocities, the radiation in this case is known as \tit{synchrotron radiation}. We further orient our axes so that $\dv*[2]{\vb{X}}{t}$ instantaneously points in the $x$-direction. Equation (\ref{eq:Wald_08.109}) then yields
+\begin{equation}\label{eq:Wald_08.114}
+\left(\dv{P}{\Omega}\right)_\perp = \frac{q^2 \mu_0}{16 \pi^2 c}
+\frac{1}{\left( 1 - \frac{v}{c} \cos \theta\right)^6}
+\left[\left( 1 - \frac{v}{c} \cos \theta\right)^2 - \left(1 -\frac{v^2}{c^2}     \right)\sin^2 \theta \cos^2 \phi \right] \abs{\dv[2]{\vb{X}}{t}}^2,
+\end{equation}
+where $(\theta, \phi)$ are the spherical coordinates of the observation point, with the axes chosen as above. Again $\dv*{P'}{\Omega})_\perp$ would be given by the same formula with one fewer power of $(1 - \frac{v}{c} \cos \theta)$ in the denominator. 
+As eq. (\ref{eq:Wald_08.113}) and eq. (\ref{eq:Wald_08.114}) illustrate, if $v \rightarrow c$, the radiation becomes highly beamed in the forward direction. This beaming of the radiation as compared with that seen by an observer who is at rest relative to the particle can be understood as resulting from the combined effects of the Lorentz boosting of the field strengths, eq. (\ref{eq:Wald_08.68}), and aberration (see problem 4).
+
+The total power radiated at a fixed retarded time is obtained by integrating $\dv*{P}{\Omega}$ over angles:
+\begin{equation}\label{eq:Wald_08.115}
+P = \int \dv{P}{\Omega} d\Omega = \int \dv{P}{\Omega} \sin \theta\, d\theta d\phi\,. 
+\end{equation}
+
+For the case of a particle instantaneously at rest at a given retarded time, the angular integration of eq.  (\ref{eq:Wald_08.111}) was already carried out in [ACE] eq. (5.81). We obtain Larmor's formula
+\begin{equation}\label{eq:Wald_08.116}
+P_0 =  \frac{q^2 \mu_0}{6 \pi c} \abs{\dv[2]{\vb{X}}{t}}^2 \,,
+\end{equation}
+where the subscript $0$ on $P$ indicates that this formula holds only when the particle is at rest at the given retarded time. For a particle at rest, we have 
+\begin{equation}\label{eq:Wald_08.117}
+a^\mu \equiv \dv{u^\mu}{\tau} = (0, \dv[2]{\vb{X}}{t})\,.
+\end{equation}
+Therefore, we may rewrite this formula as
+\begin{equation}\label{eq:Wald_08.118}
+P_0 =  \frac{q^2 \mu_0}{6 \pi c} a^\mu a_\mu \,.
+\end{equation}
+If the particle is not at rest, the angular integrals needed to calculate the radiated power are quite complicated. However, the total power per unit retarded time, 
+\begin{equation}\label{eq:Wald_08.119}
+P' = \int \dv{P'}{\Omega} d\Omega\,, 
+\end{equation}
+can be obtained quite simply by the following argument. In the instantaneous frame of the particle, the energy radiated to infinity over an infinitesimally small retarded time interval $\Delta t_0$ as measured in the rest frame is given by 
+\begin{equation}\label{eq:Wald_08.120}
+\Delta \mathcal{E}_0 = P_0 \Delta t_0\,. 
+\end{equation}
+In the instantaneous rest frame of the particle, the electromagnetic field carries no net momentum to infinity during this infinitesimal time interval, as can be seen from the fact that radiation flux eq. (\ref{eq:Wald_08.111}) is parity invariant. Now, by arguments similar to that of part (d) of problem 5, the 4-momentum radiated to infinity between the given retarded times transforms as a 4-vector under Lorentz boosts. Thus, in an arbitrary Lorentz frame, we have
+\begin{equation}\label{eq:Wald_08.121}
+\Delta \mathcal{E} = \gamma \Delta \mathcal{E}_0 = \gamma P_0 \Delta t_0\,, 
+\end{equation}
+with $\gamma = (1 - v^2/c^2)^{-1/2}$. By definition of $P'$, we have 
+\begin{equation}\label{eq:Wald_08.122}
+\Delta \mathcal{E} = P' \Delta t_\text{ret}\,. 
+\end{equation}
+Finally, in the arbitrary Lorentz frame, we have $\Delta t_\text{ret} = \gamma \Delta t_0$, since the elapsed coordinate time along the worldline of the particle is time dilated relative to the rest frame. \\
+Putting all this together, we see that in an arbitrary frame, we have
+\begin{equation}\label{eq:Wald_08.123}
+P' = P_0  = frac{q^2 \mu_0}{6 \pi c} a^\mu a_\mu \,.            \,. 
+\end{equation}
+This, in any inertial frame, the total energy radiated to infinity in that frame between retarded times $t_1$ and $t_2$ is given by 
+\begin{equation}\label{eq:Wald_08.124}
+\mathcal{E} = \frac{q^2 \mu_0}{6 \pi c} \int_{t_1}^{t_2} a^\mu(t_\text{ret}) a_\mu(t_\text{ret}) \,, 
+\end{equation}
+where, in the integral, $t_\text{ret}$ is the retarded time coordinate in that inertial frame.
 
 
+
+
+ 
 
 
 
