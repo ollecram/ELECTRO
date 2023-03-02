@@ -45,15 +45,33 @@ S[\vb{r}(t) + \vb{u}(t)] &= \bigintsss_{t_0}^{t_f} L(\vb{r}+\vb{u}, \dot{\vb{r}}
 & = S[\vb{r}(t)] + \delta S\,,
 \end{aligned}
 \end{equation}
-where we obtain the second line by Taylor expansion in $\vb{u}(t)$ and $\dot{\vb{u}}(t)$ (assuming both are small). The notation here is convenient, but warrants definition. The derivative $\pdv*{L}{\vb{r}}$ is really just the gradient of $L$, what we would normally call $\grad L$. Similarly, $\pdv*{R}{\dot{\vb{r}}}$ is a vector whose components are the derivative of $L$ with respect to $\dot{x}$, $\dot{y}$, and $\dot{z}$ (in cartesian coordinates:
+where we obtain the second line by Taylor expansion in $\vb{u}(t)$ and $\dot{\vb{u}}(t)$ (assuming both are small). The notation here is convenient, but warrants definition. The derivative $\pdv*{L}{\vb{r}}$ is really just the gradient of $L$, what we would normally call $\grad L$. Similarly, $\pdv*{R}{\dot{\vb{r}}}$ is a vector whose components are the derivative of $L$ with respect to $\dot{x}$, $\dot{y}$, and $\dot{z}$ (in cartesian coordinates):
 \begin{equation}\label{eq:JFrank_CFT_03.6}
-\pdv{L}{\dot{\vb{r}}} \equiv \pdv{L}{\dot{x}} \vb{\hat{x}} + \pdv{L}{\dot{y}} \vb{\hat{y}} + \pdv{L}{\dot{z}} \vb{\hat{z}}
-\,.
+\pdv{L}{\dot{\vb{r}}} \equiv \pdv{L}{\dot{x}} \vb{\hat{x}} + \pdv{L}{\dot{y}} \vb{\hat{y}} + \pdv{L}{\dot{z}} \vb{\hat{z}}\,.
 \end{equation}
-Now for the trajectory described by $\vb{r}(t)$ to be a minimum, we must have $\delta S = 0$ ($\delta S$ is as close as we can get to a \quotes{derivative} for $S$, and we demand that it vanish) for all $\vb{u}$. 
+Now for the trajectory described by $\vb{r}(t)$ to be a minimum, we must have $\delta S = 0$ ($\delta S$ is as close as we can get to a \quotes{derivative} for $S$, and we demand that it vanish) for all $\vb{u}$. To see what this implies about $\vb{r}(t)$ itself, note that $\vb{u}$ is arbitrary, but once it has been chosen, $\dot{\vb{u}}$ is determined. We'd like to write all of $\delta S$ in terms of the arbitrary $\vb{u}$. We can do that by integrating the second term in $\delta S$ by parts, noting that $\vb{u}$ vanishes at the end points of the integration (by construction):
+\begin{equation}\label{eq:JFrank_CFT_03.7}
+\begin{aligned}
+\delta S &= \bigintsss_{t_0}^{t_f} \left[\pdv{L}{\vb{r}} \cdot \vb{u} + \pdv{L}{\dot{\vb{r}}} \cdot \dot{\vb{u}} \right] dt \\
+         &= \bigintsss_{t_0}^{t_f} \left[\pdv{L}{\vb{r}} - \dv{}{t}\pdv{L}{\dot{\vb{r}}} \right] \cdot \vb{u} \, dt = 0
+\end{aligned}
+\end{equation}
+and for this to hold for all excursions $\vb{u}$, we must have
+\begin{equation}\label{eq:JFrank_CFT_03.8}
+\pdv{L}{\vb{r}} - \dv{}{t} \pdv{L}{\dot{\vb{r}}} = 0\,,
+\end{equation}
+the Euler-Lagrange equations of motion. 
+It is important to remember that we have not assumed any particular coordinates for $\vb{r}(t)$. We can write $L$ in terms of any coordinates we like; the equations of motions do not change. Sometimes we highlight that by writing:
+\begin{equation}\label{eq:JFrank_CFT_03.9}
+\pdv{L}{q^i} - \dv{}{t} \pdv{L}{\dot{q}^i} = 0\,,\quad \text{for}\: i= 1, 2,3, 
+\end{equation}
+where $\{ q^i\}_{i=1}^3$ are the \quotes{generalized coordinates.}
 
-$\ldots$
+This procedure, of extremizing an action, may seem obscure. Why should a peculiar combination of kinetic and potential energy lead to equations of motion like (\ref{eq:JFrank_CFT_03.9}) that reproduce Newton's second law? And what, if any, physical insight does the story here contain? It is interesting that for $U = 0$, there is a natural geometric interpretation for both the action and the process of minimizing. The action is proportional to the length squared along the curve defined by $\vb{r}(t)$, and its extremization is really length minimization. For $U \neq 0$, we lose the length interpretation and rely on the correctness of the equations of motion (meaning the reproduction of Newton's second law) in Cartesian coordinates to justify the procedure. 
 
+\subsection*{Example}  
+Of the two pieces that make up $L$, the kinetic energy is always the same. For a particle of mass $m$ moving along the path $\vb{r}(t)$, $T=\frac{1}{2} m \,\dot{\vb{r}}(t) \cdot \dot{\vb{r}}(t)$. The potential energy depends on the physical system (the mass is attached to a spring, or it's charged and in the presence of an electric field, etc.); we'll leave it as $U(\vb{r})$ for now. In Cartesian coordinates,  $T=\frac{1}{2} m (\dot{x}^2 + \dot{y}^2 + \dot{z}^2)$, and 
+$U(x, y, z)$ is the potential energy. Then using (\ref{eq:JFrank_CFT_03.9}), we recover precisely (\ref{eq:JFrank_CFT_03.2}). If we instead use cylindrical coordinates, . . . .
   
 
  
