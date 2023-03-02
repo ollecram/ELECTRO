@@ -1,3 +1,59 @@
 \chapter{Field Lagrangians}
 \label{ch:JFrank_CFT_3}
+\section{Review of Lagrangian Mechanics}\label{sec:JFrank_CFT_03}
+In classical mechanics, Newton's second law is the primary quantitative tool. Given a potential $U(\vb{r})$, we have to solve
+\begin{equation}\label{eq:JFrank_CFT_03.1}
+m \ddot{\vb{r}} = - \grad U(\vb{r})
+\end{equation}
+subject to some initial or boundary conditions.
+Then $\dot{\vb{r}}(t) = x(t) \hat{\vb{x}} + y(t) \hat{\vb{y}} + z(t) \hat{\vb{z}}$ is a vector that tells us the location of a particle of mass $m$ at time $t$ moving under the influence of $U(\vb{r})$.
 
+As written, Newton's second law refers to Cartesian coordinates, so the above is really three equations
+\begin{equation}\label{eq:JFrank_CFT_03.2}
+\begin{aligned}
+m \ddot{x}(t) &= - \pdv{U}{x}\,, \\
+m \ddot{y}(t) &= - \pdv{U}{y}\,, \\
+m \ddot{z}(t) &= - \pdv{U}{z}\,. 
+\end{aligned}
+\end{equation}
+
+If we want to change coordinates, we have to manipulate these equations appropriately, and that can get unwieldy. For example, if we switch to cylindrical coordinates (a mild transformation, comparatively), in which\\ $x = s \cos \phi$, $y = s \sin \phi$, and $z$ remains the same, the equations in (\ref{eq:JFrank_CFT_03.2}) become
+\begin{equation}\label{eq:JFrank_CFT_03.3}
+\begin{aligned}
+m \left( \ddot{s} \cos \phi - 2 \dot{s} \dot{\phi} \sin \phi - s \ddot{\phi} \sin \phi - s \dot{\phi}^2 \cos \phi \right) &= - \pdv{U}{s} \pdv{s}{x} - \pdv{U}{\phi} \pdv{\phi}{x}\,, \\
+m \left( \ddot{s} \sin \phi + 2 \dot{s} \dot{\phi} \cos \phi + s \ddot{\phi} \cos \phi - s \dot{\phi}^2 \sin \phi \right) &= - \pdv{U}{s} \pdv{s}{y} - \pdv{U}{\phi} \pdv{\phi}{y}\,, \\
+m \ddot{z}(t) &= - \pdv{U}{z}\,. 
+\end{aligned}
+\end{equation}
+
+While Newton's second law can rarely be solved analytically, it is even harder to glean information when the physics is obscured by a different choice of coordinate system. Even the free particle solution is complicated in cylindrical coordinates. You would have to take linear combinations of the equations above to isolate, for example, equations for $\ddot{s}$ and $\ddot{\phi}$. 
+
+Enter the Lagrangian, and the Euler-Lagrange equations of motion are coordinate invariant, meaning that they are structurally identical in all coordinate systems. We define the Lagrangian, $L = T - U$, the kinetic energy minus the potential energy for a particular physical configuration. Then we can integrate to get a functional (a function that takes a function and returns a number), the action:
+\begin{equation}\label{eq:JFrank_CFT_03.4}
+S[\vb{r}(t)] = \bigintsss_{t_0}^{t_f} L(\vb{r}(t), \dot{\vb{r}}(t)) dt =
+\bigintsss_{t_0}^{t_f} \left(\frac{1}{2} m \, \dot{\vb{r}} \cdot \dot{\vb{r}} - U(\vb{r})\right) dt\,.
+\end{equation}
+
+The action assigns a number to a given trajectory, described by the vector pointing from the origin to the location of the particle at time $t$: $\vb{r}(t)$ (defined for all $t \in [t_0, t_f]$). The \quotes{dynamical trajectory,} the one taken by the particle according to Newton's second law, is the one that minimizes $S$.\footnote{Technically, we'll be \tit{extremizing} $S$, by setting its derivative to zero, but that extremum is, typically, a minimum.} That minimization occurs over the space of all possible paths connecting the initial and final locations of the particle.
+
+When thinking about the minimum value for $S$, we have to compare apples with apples. Physical observation provides the relevant physical boundary conditions: we see the particle at location $\vb{r}_0$ at time $t_0$, and then we observe it later at location $\vb{r}_f$, time $t_f$.  What happens in between is the question. In [CFT] Figure 3.1, we see two different paths connecting the same endpoints; which one minimizes the action? In order to carry out the minimization, we perturb about the dynamical trajectory (which is at this point unknown). Let $\vb{r}(t)$ be the true trajectory, the solution to Newton's second law with appropriate boundary values. Then an arbitrary perturbation looks like: $\vb{r}(t) + \vb{u}(t)$ where $\vb{u}(t_0) = \vb{u}(t_f) = 0$ to respect the boundary conditions. How does the action respond to this arbitrary perturbation? If we take $\vb{u}(t)$ small, then we can expand the action, 
+\begin{equation}\label{eq:JFrank_CFT_03.5}
+\begin{aligned}
+S[\vb{r}(t) + \vb{u}(t)] &= \bigintsss_{t_0}^{t_f} L(\vb{r}+\vb{u}, \dot{\vb{r}}+\dot{\vb{u}}) dt \\
+&\approx \bigintsss_{t_0}^{t_f} L(\vb{r}, \dot{\vb{r}}) dt  
++  \bigintsss_{t_0}^{t_f} \left[\pdv{L}{\vb{r}} \cdot \vb{u} + \pdv{L}{\dot{\vb{r}}} \cdot \dot{\vb{u}} \right] dt \\
+& = S[\vb{r}(t)] + \delta S\,,
+\end{aligned}
+\end{equation}
+where we obtain the second line by Taylor expansion in $\vb{u}(t)$ and $\dot{\vb{u}}(t)$ (assuming both are small). The notation here is convenient, but warrants definition. The derivative $\pdv*{L}{\vb{r}}$ is really just the gradient of $L$, what we would normally call $\grad L$. Similarly, $\pdv*{R}{\dot{\vb{r}}}$ is a vector whose components are the derivative of $L$ with respect to $\dot{x}$, $\dot{y}$, and $\dot{z}$ (in cartesian coordinates:
+\begin{equation}\label{eq:JFrank_CFT_03.6}
+\pdv{L}{\dot{\vb{r}}} \equiv \pdv{L}{\dot{x}} \vb{\hat{x}} + \pdv{L}{\dot{y}} \vb{\hat{y}} + \pdv{L}{\dot{z}} \vb{\hat{z}}
+\,.
+\end{equation}
+Now for the trajectory described by $\vb{r}(t)$ to be a minimum, we must have $\delta S = 0$ ($\delta S$ is as close as we can get to a \quotes{derivative} for $S$, and we demand that it vanish) for all $\vb{u}$. 
+
+$\ldots$
+
+  
+
+ 
