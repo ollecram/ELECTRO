@@ -149,6 +149,20 @@ and reparametrization invariance tells us we can make $\lambda$ anything, and th
 \dv{t}{\tau} = \frac{1}{\sqrt{1 - \frac{\vb{v} \cdot \vb{v}}{c^2}}} \,.
 \end{equation}
 
+
+\tbf{Problem 3.4}
+
+\tbf{Problem 3.5}
+
+\tbf{Problem 3.6}
+
+\tbf{Problem 3.7}
+
+\begin{equation}\label{eq:JFrank_CFT_3.19}
+S = - mc \int{\sqrt{- \dv{x^\mu}{t} \dv{x_\mu}{t}}\, dt} + \alpha \int{\dv{x^\mu}{t} A_\mu \, dt} \,,
+\end{equation}
+
+
 \subsection{Noether's Theorem}\label{eq:JFrank_CFT_3.1.2}  
 Aside from the uniformity of the equations of motion, the Lagrange approach makes it easy to see/prove Noether's theorem connecting symmetries to conservation laws. Suppose we have a free particle, so that there is no potential energy, and we work in Cartesian coordinates. 
 Then $L = \frac{1}{2} m \left(\dot{x}^2 + \dot{y}^2 + \dot{z}^2 \right)$, and the Lagrangian (and hence the action) is insensitive to a shift in coordinates; i.e., introducing 
@@ -169,7 +183,7 @@ T = \frac{1}{2} m \left(\dot{r}^2 + r^2 \dot{\theta}^2 + r^2 \sin^2 \theta \dot{
 \end{equation}
 
 and we have a potential that is spherically symmetric, depending only on $r$: $U(r)$. Then think of the equation of motion for $\phi$, a variable that does not appear in the Lagrangian at all: 
-\begin{equation}\label{eq:JFrank_CFT_3.20}
+\begin{equation}\label{eq:JFrank_CFT_3.22}
 \dv{}{t} \left( m r^2 \sin^2 \theta \dot{\phi} \right) = 0
 \end{equation}
 which tells us that $m r^2 \sin^2 \theta \dot{\phi}$ is a constant of the motion (an angular momentum, by the looks of it). 
@@ -177,6 +191,14 @@ which tells us that $m r^2 \sin^2 \theta \dot{\phi}$ is a constant of the motion
 These are cases of \quotes{ignorable} coordinates -- if a Lagrangian does not depend explicitly on one of the coordinates, call it $q_c$, then the associated \quotes{momentum} $\pdv*{L}{q_c}$ is conserved (meaning constant along the trajectory). That's Noether's theorem in this context, and the symmetry is $q_c \rightarrow q_c + A$ for constant $A$ (a coordinate shift).  
 
 \section{Fields}\label{sec:JFrank_CFT_3.2}
+Can we formulate an action for fields , as we did for particles? The advantages to such a formulation are the same for fields as for particles: compactness, structure-revelation, and access to conservation laws via Noether's theorem. We'll start with a field equation, the field version of an equation of motion, and develop an action that returns that field equation when extremized.
+
+We know several field equations by now. The simplest one governs a scalar field $\phi$ in vacuum:
+\begin{equation}\label{eq:JFrank_CFT_3.23}
+\Box \phi \equiv - \frac{1}{c^2} \pdv[2]{\phi}{t} + \laplacian{\phi} = 0\,,
+\end{equation}
+
+ 
 
 
 
