@@ -117,8 +117,6 @@ d l = \sqrt{- \dv{x^\mu}{t} \dv{x_\mu}{t}}\,,
 \end{equation}
 (the minus sign is just to make the length real, pure convention based on our choice of signs in the Minkowski metric), and again, we could use any parameter we like in $l = \int dl $. 
 
-
-
 % BOX 1 **START** -- << Link eq. 3.15 to the spacetime interval ds of special relativity >>
 \parindent=0pt  % Set the paragraph indentation to 0 (normal = 10pt) before the box 
 \parbox{\textwidth}{\begin{mdframed}[style=MyFrame] %Added "\parbox{\textwidth}{"
@@ -198,6 +196,125 @@ We know several field equations by now. The simplest one governs a scalar field 
 \Box \phi \equiv - \frac{1}{c^2} \pdv[2]{\phi}{t} + \laplacian{\phi} = 0\,,
 \end{equation}
 
+just the wave equation with fundamental speed $c$. This field equation is analogous to Newton's second law -- it tells us how to find $\phi$ for a source-free region of space-time (with boundary conditions specified, ensuring unique solution). The details of the coordinate system are hidden inside $\laplacian{\phi}$. 
+
+Is there an underlying action minimization that gives the field equation? Define the following action:
+\begin{equation}\label{eq:JFrank_CFT_3.24}
+S[\phi] = \frac{1}{2} \bigintsss{\left[-\left(\pdv{\phi}{x^0} \right)^2 + \grad{\phi} \vdot \grad{\phi} \right] d^4x }\,,
+\end{equation}
+with $d^4x \equiv dx^0 d\tau$, where $x^0\equiv ct$ is the temporal coordinate, with dimension of length, and $d\tau$ is the spatial volume element (not proper time!). Thus, we integrate in all four dimensions over some domain with a boundary (could be at infinity). If we write
+\begin{equation}\label{eq:JFrank_CFT_3.25}
+\pdv{\phi}{x^\mu} \dot{\equiv} \mqty( \pdv{\phi}{x^0} \\ \\
+                                     \pdv{\phi}{x} \\ \\
+                                     \pdv{\phi}{y} \\ \\
+                                     \pdv{\phi}{z}) \equiv \partial_\mu \phi \equiv \phi_{, \mu}
+\end{equation}
+working in Cartesian coordinates, then we can express the action neatly as 
+\begin{equation}\label{eq:JFrank_CFT_3.26}
+S[\phi] = \frac{1}{2} \int{\partial_\mu \phi\,\eta^{\mu \nu} \partial_\nu \phi } \,d^4x\,,
+\end{equation}
+
+where $\eta^{\mu \nu}$ is the Minkowski metric, 
+\begin{equation}\label{eq:JFrank_CFT_3.27}
+ \eta^{\mu \nu} \dot{=} \mqty( -1 & 0 & 0 & 0 \\ 
+                                0 & 1 & 0 & 0 \\ 
+                                0 & 0 & 1 & 0 \\ 
+                                0 & 0 & 0 & 1)
+\end{equation}
+in Cartesian coordinates. Notice that (\ref{eq:JFrank_CFT_3.26}) is just the analogue of the free $(U = 0)$ particle action (\ref{eq:JFrank_CFT_3.4}) with $t$-derivatives generalized to coordinate derivatives, and the dot product generalized to the space-time inner product. 
+
+Now suppose we do the same thing as before: introduce a perturbation to the field that vanishes on the boundaries of the domain (again, the observables live on the boundary, and we don't want our additional arbitrary function to spoil those). Take arbitrary $\chi$ (a function of position and time) and expand the action
+\begin{equation}\label{eq:JFrank_CFT_3.28}
+\begin{aligned}
+S[\phi + \chi]  & = \frac{1}{2} \int{\partial_\mu (\phi + \chi) \,\eta^{\mu \nu} \partial_\nu (\phi + \chi) } \,d^4x\,, \\ 
+                & \approx \frac{1}{2} \int{\partial_\mu \phi\,\eta^{\mu \nu} \partial_\nu \phi } \,d^4x\, +  \int{\partial_\mu \phi\,\eta^{\mu \nu} \partial_\nu \chi } \,d^4x\,.
+\end{aligned}
+\end{equation}
+The first term is just the original action value, and it is $\delta S$ -- the second term -- that we will set equal to zero for all $\chi$ to establish a minimum. 
+
+% BOX 2 **START** -- << Link eq. 3.15 to the spacetime interval ds of special relativity >>
+\parindent=0pt  % Set the paragraph indentation to 0 (normal = 10pt) before the box 
+\parbox{\textwidth}{\begin{mdframed}[style=MyFrame] %Added "\parbox{\textwidth}{"
+Note that the last integral in the second line of eq. (\ref{eq:JFrank_CFT_3.28}) accounts for two equal terms which contribute to $\delta S$ -- hence the lack of the factor $1/2$ in front of that integral. 
+An extra term being omitted -- hence the approximation symbol '$\approx$' --  is the integral of $\partial_\mu \chi\,\eta^{\mu \nu} \partial_\nu \chi$. Neglecting this term seems to be justified by the fact that it does not depend on $\phi$, hence no condition could arise from this term that could be translated into a condition on $\phi$ for the action to reach a minimum. However, this argument is weak/vague, hence this point needs to be clarified. 
+\end{mdframed}} %Added a closing "}" here
+\parindent=10pt % Set the paragraph indentation to normal (10pt) 
+% BOX 2 ** END ** -- << Link eq. 3.15 to the spacetime interval ds of special relativity >>
+
+As in the particle case, the issue is that while $\chi$ is arbitrary, $\partial_\nu \chi$ is not. We want to write $\delta S$ in terms of $\chi$, and that means we have to \quotes{flip} a derivative from $\chi$ back onto $\phi$. 
+
+The divergence theorem holds for our four-dimensional integrals just as it does for three-dimensional ones:
+\begin{equation}\label{eq:JFrank_CFT_3.29}
+\int_{\Omega} \partial_\mu A^\mu d^4x = \oint_{\delta \Omega} A^\mu d^3x
+\end{equation}
+where $\Omega$ is the domain of the integration with boundary $\delta \Omega$ and $d^3x$ is the surface \quotes{area} element. 
+
+Keeping in mind that $\chi$ vanishes on the boundary of the domain, 
+\begin{equation}\label{eq:JFrank_CFT_3.30}
+\int \partial_\nu (\partial_\mu \phi \eta^{\mu\nu} \chi) d^4x = \oint (\partial_\mu \phi \eta^{\mu\nu} \chi) d^3x = 0\,,
+\end{equation}
+but using the product rule, we also have
+\begin{equation}\label{eq:JFrank_CFT_3.31}
+\int \partial_\nu (\partial_\mu \phi \eta^{\mu \nu} \chi) d^4x = \int \chi (\partial_\nu \partial_\mu \phi \eta^{\mu\nu}) d^4x + \int{\partial_\mu \phi\,(\eta^{\mu \nu} \partial_\nu \chi)} \,d^4x\,.
+\end{equation}
+Since the whole thing must be zero by (\ref{eq:JFrank_CFT_3.30}), the two terms on the right are equal and opposite, and the second term is the one appearing in $\delta S$ from (\ref{eq:JFrank_CFT_3.28}). Substituting the (negative of the) first term there, we have the desired dependence on $\chi$ alone:
+\begin{equation}\label{eq:JFrank_CFT_3.32}
+\delta S = - \int{(\eta^{\mu\nu} \partial_\mu \partial_\nu \phi)} \chi  \,d^4x\,,
+\end{equation}
+and for this to be zero for all $\chi$, so that $\phi$ is really minimizing, we must have:
+\begin{equation}\label{eq:JFrank_CFT_3.33}
+- \eta^{\mu\nu} \partial_\mu \partial_\nu \phi = 0
+\end{equation}
+which is precisely $\Box \phi = 0$, the field equation that was our original target. 
+
+The more general setting (although still in Cartesian coordinates) is:
+\begin{equation}\label{eq:JFrank_CFT_3.34}
+S[\phi] = \int \Lg(\phi, \partial_\mu \phi) d^4x\,,
+\end{equation}
+where $\Lg$ is a \quotes{Lagrangian} that takes, in theory, $\phi$ and $\partial_\mu \phi$ as arguments. The variation in this case yields the analogue of the Euler-Lagrange equations from above:
+\begin{equation}\label{eq:JFrank_CFT_3.35}
+\pdv{\Lg}{\phi} - \partial_\mu \left(\pdv{\Lg}{(\partial_\mu \phi)} \right) = 0\,.
+\end{equation}
+which can be compared with (\ref{eq:JFrank_CFT_3.8}). 
+
+\tbf{Problem 3.8}
+
+\tbf{Problem 3.9}
+
+\tbf{Problem 3.10}
+
+\tbf{Problem 3.11}
+
+\tbf{Problem 3.12}
+\begin{equation}\label{eq:JFrank_CFT_3.36}
+S[\psi, \chi] = \int{\left( \frac{1}{2} \psi_{,\mu} \eta^{\mu\nu} \psi_{,\nu} +  \frac{1}{2} \chi_{,\mu} \eta^{\mu\nu} \chi_{,\nu}   \right)}  \,d^4x\,,
+\end{equation}
+
+\tbf{Problem 3.13}
+
+\tbf{Problem 3.14}
+\begin{equation}\label{eq:JFrank_CFT_3.37}
+S[\phi] = - K^2 \int{ \sqrt{1 - \frac{\psi_{,\mu} \psi_{,\nu} \eta^{\mu\nu} }{K^2}} }  \,d^4x\,,
+\end{equation}
+
+
+\tbf{Problem 3.15}
+\begin{equation}\label{eq:JFrank_CFT_3.38}
+S[\Psi] = \int{\Lg(\Psi, \Psi^*, \dot{\Psi}, \dot{\Psi}^*, \Psi_{,j}, \Psi^*_{,j})}  \,d^4x\,,
+\end{equation}
+where dots denote time derivatives, and $\Psi_{,j} \equiv \pdv*{\Psi}{x^j}$ for $j=1,2,3$, the spatial derivatives. 
+
+\begin{equation}\label{eq:JFrank_CFT_3.39}
+- \pdv{}{t} \left(\pdv{\Lg}{\dot{\Psi}^*}\right)
+- \pdv{}{x^j} \left(\pdv{\Lg}{\Psi^*_{,j}}\right) + \pdv{\Lg}{\Psi^*} = 0
+\end{equation}
+and the complex conjugate of this equation (varying with respect to $\Psi$ instead of $\Psi^*$).
+
+\begin{equation}\label{eq:JFrank_CFT_3.40}
+\Lg = \frac{\hbar^2}{2m} \grad \Psi^* \cdot \grad \Psi + V \Psi^* \Psi - \frac{i \hbar}{2} 
+(\Psi^* \dot{\Psi} - \Psi \dot{\Psi}^*) \,, 
+\end{equation}
+with constants $\hbar$ and $m$ and real function $V$. Run it through your field equation (either one) and see what you get. 
  
 
 
