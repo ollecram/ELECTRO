@@ -1,4 +1,46 @@
 \section{Noether's Theorem and Conservation}\label{sec:JFrank_CFT_3.3}
+The action is a scalar quantity. That ensures that the field equations are generally covariant (meaning that they \quotes{look} the same in all coordinate systems). So coordinate transformations should leave the value of the action unchanged. A scalar function does not respond to coordinate transformation. For a scalar quantity $Q(x)$ and a transformation to new coordinates $\bar{x}$, we have $\bar{Q}(\bar{x}) = Q(\bar{x})$; i.e., the function is written in terms of the new coordinates. As an example, suppose we had, in two dimensions, 
+$Q(x, y) = \sqrt{x^2 + y^2}$. If we switch to polar coordinates $Q(s, \phi) = s$. 
+
+% BOX 3 **START** -- << Functional form of a scalar function on a change of coordinates  >>
+\parindent=0pt  % Set the paragraph indentation to 0 (normal = 10pt) before the box 
+\parbox{\textwidth}{\begin{mdframed}[style=MyFrame] %Added "\parbox{\textwidth}{"
+%--------------------------------------------------------------------------------
+I find the above argument confusing, perhaps due to one or two typos. First of all, let $x^\mu = (x,y)$ be cartesian coordinates on a two-dimensional domain (the surface of a sphere)  For sure I would replace 
+\quotes{$Q(s, \phi) = s$} with $\bar{Q}(s, \phi) = s$ the likely because of 
+
+The preceding example illustrates the meaning of the requirement that $\bar{Q}(\bar{x}) = Q(\bar{x})$. It seems to me that the same should be more precisely stated as 
+$\bar{Q}(\bar{x}) = Q(x(\bar{x}))$, or $Q(x) = \bar{Q}(\bar{x}(x))$. 
+
+These ways of expressing the requirement clarify that $Q$ and $\bar{Q}$ must have distinct functional forms of dependency on their arguments in order to ensure that\\ i) for any $x$, $\bar{Q}(\bar{x}) = Q(x(\bar{x}))\,$; and \\
+ii) for any $\bar{x}$, $Q(x) = \bar{Q}(\bar{x}(x))\,$. 
+%--------------------------------------------------------------------------------
+\end{mdframed}} %Added a closing "}" here
+\parindent=10pt % Set the paragraph indentation to normal (10pt) 
+% BOX 3 ** END ** -- <<  Functional form of a scalar function on a change of coordinates >>
+
+The scalar nature of the action is the \quotes{symmetry} here, and in this section, we'll work out the associated conserved quantity, an expression of Noether's theorem. 
+
+In general, the integrand of the action is $\Lg(\phi, \partial_\mu \phi, \eta_{\mu\nu})d^4x$ (including the volume element now) where we have displayed the dependence of $\Lg$ on the metric $\eta_{\mu\nu}$ explicitly. For an arbitrary coordinate transformation, taking 
+$x^\mu \rightarrow \bar{x}^\mu$, the action remains the same, so that: 
+\begin{equation}\label{eq:JFrank_CFT_3.41}
+\Lg(\phi, \partial_\mu \phi, \eta_{\mu\nu})d^4x = 
+\bar{\Lg}(\bar{\phi}, \bar{\partial}_\mu \bar{\phi}, \bar{\eta}_{\mu\nu})d^4\bar{x} \,. 
+\end{equation}
+Our goal now is to work out the implications of (\ref{eq:JFrank_CFT_3.41}).
+A change of coordinates induces changes in the field $\phi$, its derivative $\phi_{,\mu}$ and the metric $\eta_{\mu\nu}$. Those changes in turn generate a change $\delta S$ in the action. We want $\delta S = 0$, since the action is a scalar. The requirement $\delta S = 0$, which is a statement of the coordinate invariance of the action, will define a set of conserved quantities. 
+
+\subsection{Infinitesimal transformations}\label{ssec:JFrank_CFT_3.3.1}
+Suppose we have a coordinate transformation $\bar{x}^\mu = x^\mu + \epsilon f^\mu$ where $f^\mu$ is a function of $x^\mu$ and $\epsilon$ is small. There will be some linear (in $\epsilon$) change in $\phi$:
+\begin{equation}\label{eq:JFrank_CFT_3.42}
+\bar{\phi}(\bar{x}) = \phi(\bar{x}) = \phi(x + \epsilon f) \approx \phi(x) + \epsilon \pdv{\phi}{x^\mu} f^\mu\,,
+\end{equation}
+which we can write as $\phi(\bar{x}) = \phi(x) + \delta \phi(x)$, i.e., $\phi$ plus a small perturbation. Similarly 
+\begin{equation}\label{eq:JFrank_CFT_3.43}
+\bar{\phi}_{,\mu}(\bar{x}) = \phi_{,\mu}(x) + \delta  \phi_{,\mu}(x)\,.
+\end{equation}
+We also expect the metric to change, and we'll assume it retains a linearized form as well:
+$\bar{\eta}_{\mu\nu} \approx \eta_{\mu\nu} + \delta \eta_{\mu\nu}$ for small $\delta \eta_{\mu\nu}$. The transformation of the tensorial $\delta \phi_{,\mu}$ and $\delta \eta_{\mu\nu}$ are more complicated than for the scalar case, so $\delta \phi_{,\mu}$ and $\delta \eta_{\mu\nu}$ require more work to express in terms of $f^\mu$ than the $\delta \phi$ from (\ref{eq:JFrank_CFT_3.42}).
 
 \section{Stress Tensor}\label{sec:JFrank_CFT_3.4}
 
