@@ -4,45 +4,45 @@
 Il pieno sviluppo della teoria dell'elettromagnetismo nel diciannovesimo secolo rappresenta una delle più grandi conquiste nella storia della fisica. La teoria dell'elettromagnetismo formulata da Maxwell è una teoria matematicamente coerente che fornisce un'eccellente descrizione di una gamma estremamente ampia di fenomeni fisici. Naturalmente, l’elettromagnetismo di Maxwell è una teoria classica che non può descrivere adeguatamente fenomeni in cui le proprietà quantistiche del campo elettromagnetico svolgono un ruolo importante, ma la teoria quantistica del campo elettromagnetico è costruita sulle fondamenta della teoria classica.
 
 Le equazioni di Maxwell mettono in relazione i campi elettrico e magnetico, 
-$E$ e $B$, tra loro e con la densità di carica, $\rho$, e la densità di corrente, $\vb{J}$. 
+$E$ e $B$, tra loro e con la densità di carica, $\rho$, e la densità di corrente, $\vb*{J}$. 
 Cioè, $\rho(\vb{x})$ è la carica elettrica per unità di volume in $\vb{x}$, e per qualsiasi 
-vettore unitario $\vu{n}$ in $\vb{x}$, $\vb{J}(\vb{x}) \cdot \vu{n}$ 
+vettore unitario $\vu{n}$ in $\vb{x}$, $\vb*{J}(\vb{x}) \cdot \vu{n}$ 
 fornisce il flusso di carica per unità di area attraverso un elemento di area perpendicolare 
 a $\vu{n}$. 
 Le equazioni di Maxwell in unità\footnote{Come discusso nella prefazione, le unità SI hanno la sfortunata caratteristica che le tre costanti $\epsilon_0 \approx 8,85 \times 10^{-12} \text{F/m}$  (la permittività del vuoto), $\mu_0 \approx 1,26 \times 10^{-6} \text{H/m}$ (la permeabilità del vuoto), e $c \approx 3,00 \times 10^8 \text{m/s}$ (la velocità della luce) che compaiono nelle equazioni dell'elettromagnetismo non sono indipendenti ma soddisfano $\epsilon_0 \mu_0 c^2 = 1$. Di conseguenza, l'aspetto delle formule nelle unità SI può essere modificato in modi non banali utilizzando questa identità.} SI sono le seguenti:
 
 \begin{align}
-\div{\vb{E}}  &= \frac{\rho}{\epsilon_0}\,, \label{eq:1.1} \\
-\curl{\vb{B}} - \frac{1}{c^2} \pdv{\vb{E}}{t} &= \mu_0 \vb{J}\,,\label{eq:1.2} \\
-\div{\vb{B}}  &= 0\,, \label{eq:1.3} \\
-\curl{\vb{E}} + \pdv{\vb{B}}{t} &= 0\,.\label{eq:1.4}
+\div{\vb*{E}}  &= \frac{\rho}{\epsilon_0}\,, \label{eq:1.1} \\
+\curl{\vb*{B}} - \frac{1}{c^2} \pdv{\vb*{E}}{t} &= \mu_0 \vb*{J}\,,\label{eq:1.2} \\
+\div{\vb*{B}}  &= 0\,, \label{eq:1.3} \\
+\curl{\vb*{E}} + \pdv{\vb*{B}}{t} &= 0\,.\label{eq:1.4}
 \end{align}
 
-Le sorgenti $\rho$ e $\vb{J}$ debbono soddisfare l'equazione di conservazione carica-corrente
+Le sorgenti $\rho$ e $\vb*{J}$ debbono soddisfare l'equazione di conservazione carica-corrente
 \begin{equation}\label{eq:1.5}
-\pdv{\rho}{t} + \div{\vb{J}} = 0\,,
+\pdv{\rho}{t} + \div{\vb*{J}} = 0\,,
 \end{equation}
 poichè altrimenti non esisterebbero soluzioni per le equazioni \ref{eq:1.1} e \ref{eq:1.2}. 
-A parte questa restrizione, le quantità $\rho(t, \vb(x))$ e $\vb{J}(t, \vb(x))$ possono essere assegnate arbitrariamente. 
+A parte questa restrizione, le quantità $\rho(t, \vb(x))$ e $\vb*{J}(t, \vb(x))$ possono essere assegnate arbitrariamente. 
 
 Le equazioni di Maxwell sono sopravvissute senza modifiche per più di un secolo e mezzo (vale a dire, le equazioni che ho scritto sopra sono equivalenti a quelle fornite da Maxwell). Tuttavia, la nostra comprensione dell’elettromagnetismo a livello fondamentale è progredita notevolmente dai tempi di Maxwell. Nonostante questo, molti modi obsoleti di pensare all’elettromagnetismo rimangono prevalenti. Ciò è fortemente rafforzato dal modo quasi storico in cui l’elettromagnetismo viene solitamente insegnato, anche a livello universitario: normalmente si inizia con la legge di Coulomb in elettrostatica, con le cariche puntiformi considerate \quotes{fondamentali}.
 
-Ciò motiva l'introduzione di un campo elettrico $\vb{E}$ che soddisfa l'eq. (\ref{eq:1.1}) così come $\curl{\vb{E}} = 0$ (cioè, l’equazione (\ref{eq:1.4}) con $\pdv*{\vb{B}}{t} = 0$ ). 
+Ciò motiva l'introduzione di un campo elettrico $\vb*{E}$ che soddisfa l'eq. (\ref{eq:1.1}) così come $\curl{\vb*{E}} = 0$ (cioè, l’equazione (\ref{eq:1.4}) con $\pdv*{\vb*{B}}{t} = 0$ ). 
 L'energia viene assegnata all'interazione elettrostatica tramite un'analisi del lavoro meccanico svolto durante lo spostamento quasi statico delle cariche puntiformi. Allo stesso modo, in magnetostatica, si inizia normalmente con la legge di Biot-Savart per la forza tra gli elementi di corrente. 
-Ciò motiva l'introduzione di un campo magnetico $\vb{B}$ che soddisfi l'eq. (\ref{eq:1.2}) con $\pdv*{\vb{E}}{t} = 0$ così come l'eq. (\ref{eq:1.3}). 
-Vengono quindi introdotti i termini dinamici in $\vb{E}$ e $\vb{B}$ per ottenere le equazioni di Maxwell complete nella forma fornita sopra. 
+Ciò motiva l'introduzione di un campo magnetico $\vb*{B}$ che soddisfi l'eq. (\ref{eq:1.2}) con $\pdv*{\vb*{E}}{t} = 0$ così come l'eq. (\ref{eq:1.3}). 
+Vengono quindi introdotti i termini dinamici in $\vb*{E}$ e $\vb*{B}$ per ottenere le equazioni di Maxwell complete nella forma fornita sopra. 
 
-Ad un certo punto vengono inoltre introdotti, come un modo conveniente per risolvere le equazioni di Maxwell (\ref{eq:1.3}) e (\ref{eq:1.4}), un potenziale scalare, $\phi$, ed un potenziale vettoriale, $\vb{A}$, che soddisfano\footnote{Entrambe le (\ref{eq:1.3}) ed (\ref{eq:1.4}) sono soddisfatte come conseguenza delle identità 
+Ad un certo punto vengono inoltre introdotti, come un modo conveniente per risolvere le equazioni di Maxwell (\ref{eq:1.3}) e (\ref{eq:1.4}), un potenziale scalare, $\phi$, ed un potenziale vettoriale, $\vb*{A}$, che soddisfano\footnote{Entrambe le (\ref{eq:1.3}) ed (\ref{eq:1.4}) sono soddisfatte come conseguenza delle identità 
 $\div{(\curl \vb{V})} = 0$ e $\curl{(\grad{f})} = \vb{0}$, a loro volta conseguenza della commutatività delle derivate parziali \tit{miste} del secondo ordine, cioè dell'identità $\pdv*{f}{x}{y} = \pdv*{f}{y}{x}$ valida 
 per qualunque funzione $f$ di due o più variabili.}
 
 \begin{align}
-\vb{E}  &= - \grad{\phi} - \pdv{\vb{A}}{t}\,, \label{eq:1.6} \\
-\vb{B}  &= \curl{\vb{A}}\,. \label{eq:1.7} 
+\vb*{E}  &= - \grad{\phi} - \pdv{\vb*{A}}{t}\,, \label{eq:1.6} \\
+\vb*{B}  &= \curl{\vb*{A}}\,. \label{eq:1.7} 
 \end{align}
 
 Questo modo di presentare la teoria dell'elettromagnetismo incoraggia una serie di modi malsani di pensare alla teoria, che ho definito \quotes{miti} nel titolo di questo capitolo. I più perniciosi tra questi miti sono i seguenti: 
-(i) Le intensità di campo, $\vb{E}$ e $\vb{B}$, sono considerate fondamentali, mentre i potenziali, $\phi$ e $\vb{A}$, sono visti come quantità introdotte semplicemente per comodità. 
+(i) Le intensità di campo, $\vb*{E}$ e $\vb*{B}$, sono considerate fondamentali, mentre i potenziali, $\phi$ e $\vb*{A}$, sono visti come quantità introdotte semplicemente per comodità. 
 (ii) Le proprietà di energia, quantità di moto e stress del campo elettromagnetico sono considerate proprietà derivate o ipotizzate dalle interazioni con la materia carica e leggi di conservazione piuttosto che proprietà del campo elettromagnetico aventi uno stato fondamentale paragonabile a quello delle stesse equazioni di Maxwell. Ad esempio, a questo proposito, si afferma spesso che la densità dell'impulso del campo elettromagnetico è definita a meno del rotore di un campo vettoriale, poiché non è determinata univocamente dalla conservazione dell'energia. 
 (iii) I campi elettromagnetici sono considerati \tit{prodotti} dalla materia carica (in opposizione al fatto che i campi elettromagnetici \tit{interagiscono} con la materia carica). 
 (iv) Le cariche puntiformi sono considerate una descrizione fondamentale della materia carica, nonostante le evidenti incongruenze matematiche ad esse associate, come l'autoenergia infinita. 
@@ -53,9 +53,9 @@ considerevole della teoria
 elettromagnetica una volta arrivati 
 alla fine di questo libro non è ragionevole presumere tale conoscenza all'inizio.
 In effetti, molti dei punti qui discussi verranno adeguatamente spiegati in dettaglio solo negli ultimi due capitoli di questo libro.
-Non è necessario che il lettore segua tutti i dettagli della discussione in questo capitolo -- poiché tutto ciò che viene detto in questo capitolo sarà chiarito nel resto del libro -- ma è importante che il lettore acquisisca un’idea del punto di vista sull’elettromagnetismo classico che propongo. Ritengo che sia altamente preferibile iniziare questo libro in questo modo piuttosto che iniziare con il piede sbagliato, seguendo il consueto percorso quasi storico. Nei capitoli successivi svilupperò l'argomento in modo largamente convenzionale, iniziando con l'elettrostatica e la magnetostatica prima di passare all'elettrodinamica completa, ma il punto di vista adottato sarà sempre pienamente compatibile con la discussione di questo capitolo. Prima di discutere i miti di cui sopra, desidero fare alcuni commenti sulla relazione tra l’elettrodinamica classica e la relatività ristretta. Le equazioni di Maxwell non sono compatibili con la struttura dello spaziotempo della fisica pre-relatività a meno che non si abbia un \quotes{sistema di quiete preferenziale}. Questo, di per sé, non era preoccupante nel diciannovesimo secolo, poiché si credeva che esistesse un mezzo meccanico – l’\tit{etere luminifero} – attraverso il quale si propagavano i campi elettromagnetici. Un tale etere fornirebbe naturalmente una struttura di quiete preferita. Tuttavia, la mancanza di prove nell'esperimento di Michelson-Morley per un sistema di quiete preferenziale, così come altri problemi con la teoria dell'etere, hanno portato a gravi difficoltà che alla fine sono state risolte dalla teoria della relatività speciale. Nella teoria della relatività speciale, la funzione temporale newtoniana $t$ (che definisce una “nozione assoluta” di simultaneità) e la metrica dello spazio sono sostituite da un’unica quantità: la metrica dello spaziotempo. L’elettrodinamica classica è pienamente compatibile con la struttura dello spaziotempo della relatività ristretta, senza la necessità dell’etere. La struttura dell'elettrodinamica classica è considerevolmente più semplice se formulata nel quadro della relatività ristretta. Aspetto fino al capitolo 8 per discutere adeguatamente la formulazione dell'elettromagnetismo nell'ambito della relatività ristretta, ma desidero fare qui alcune osservazioni, in modo che il lettore possa avere un'idea di come appare questa formulazione senza aspettare fino alla fine del capitolo. Nella relatività speciale, il potenziale scalare, $\phi$, e il potenziale vettoriale, $\vb{A}$, sono considerati le componenti temporali e spaziali di un singolo \tit{potenziale quadri-(duale)vettoriale}
+Non è necessario che il lettore segua tutti i dettagli della discussione in questo capitolo -- poiché tutto ciò che viene detto in questo capitolo sarà chiarito nel resto del libro -- ma è importante che il lettore acquisisca un’idea del punto di vista sull’elettromagnetismo classico che propongo. Ritengo che sia altamente preferibile iniziare questo libro in questo modo piuttosto che iniziare con il piede sbagliato, seguendo il consueto percorso quasi storico. Nei capitoli successivi svilupperò l'argomento in modo largamente convenzionale, iniziando con l'elettrostatica e la magnetostatica prima di passare all'elettrodinamica completa, ma il punto di vista adottato sarà sempre pienamente compatibile con la discussione di questo capitolo. Prima di discutere i miti di cui sopra, desidero fare alcuni commenti sulla relazione tra l’elettrodinamica classica e la relatività ristretta. Le equazioni di Maxwell non sono compatibili con la struttura dello spaziotempo della fisica pre-relatività a meno che non si abbia un \quotes{sistema di quiete preferenziale}. Questo, di per sé, non era preoccupante nel diciannovesimo secolo, poiché si credeva che esistesse un mezzo meccanico – l’\tit{etere luminifero} – attraverso il quale si propagavano i campi elettromagnetici. Un tale etere fornirebbe naturalmente una struttura di quiete preferita. Tuttavia, la mancanza di prove nell'esperimento di Michelson-Morley per un sistema di quiete preferenziale, così come altri problemi con la teoria dell'etere, hanno portato a gravi difficoltà che alla fine sono state risolte dalla teoria della relatività speciale. Nella teoria della relatività speciale, la funzione temporale newtoniana $t$ (che definisce una “nozione assoluta” di simultaneità) e la metrica dello spazio sono sostituite da un’unica quantità: la metrica dello spaziotempo. L’elettrodinamica classica è pienamente compatibile con la struttura dello spaziotempo della relatività ristretta, senza la necessità dell’etere. La struttura dell'elettrodinamica classica è considerevolmente più semplice se formulata nel quadro della relatività ristretta. Aspetto fino al capitolo 8 per discutere adeguatamente la formulazione dell'elettromagnetismo nell'ambito della relatività ristretta, ma desidero fare qui alcune osservazioni, in modo che il lettore possa avere un'idea di come appare questa formulazione senza aspettare fino alla fine del capitolo. Nella relatività speciale, il potenziale scalare, $\phi$, e il potenziale vettoriale, $\vb*{A}$, sono considerati le componenti temporali e spaziali di un singolo \tit{potenziale quadri-(duale)vettoriale}
 \begin{equation}\label{eq:1.8}
-A_\mu = (-\phi/c, \vb{A})\,.
+A_\mu = (-\phi/c, \vb*{A})\,.
 \end{equation}
 I campi elettrico e magnetico si immaginano prodotti da un singolo tensore intensità di campo
 \begin{equation}\label{eq:1.9}
@@ -74,29 +74,61 @@ poiché gli osservatori che si muovono l’uno rispetto all’altro definiscono 
 quello che un osservatore affermerebbe essere un \quotes{campo elettrico puro} sarà visto 
 da un altro osservatore come una combinazione di campi elettrici e magnetici. La \tit{descrizione invariante} delle intensità di campo è data da $F_{\mu \nu}$. Le equazioni di Maxwell possono quindi essere scritte in termini di $F_{\mu \nu}$, la metrica dello spaziotempo, ed il 4-vettore carica-corrente:
 \begin{equation}\label{eq:1.12}
-J^\mu = (c \rho, \vb{J})\,.
+J^\mu = (c \rho, \vb*{J})\,.
 \end{equation}
 Sebbene la formulazione relativistica speciale dell'elettrodinamica  classica presenti il principale vantaggio  della semplicità, presenta il principale svantaggio della non familiarità. È improbabile che la maggior parte dei lettori abbia familiarità con la distinzione tra, ad esempio, vettori e vettori duali, e con il ruolo svolto dalla metrica dello spaziotempo nelle equazioni della fisica. Sebbene questi concetti non siano eccessivamente difficili da spiegare – e li spiegherò nel capitolo 8 – sarebbe una distrazione eccessiva farlo prima di presentare la teoria dell’elettromagnetismo. Pertanto, rimanderò la discussione sulla relatività speciale al capitolo 8 e, con l'eccezione di alcuni commenti collaterali, non utilizzerò la notazione relativistica speciale per l'elettrodinamica classica fino a quel momento. 
 
 Tuttavia, è importante che il lettore sia consapevole del fatto che l'elettrodinamica classica è compatibile con la struttura dello spaziotempo della relatività ristretta, anche se usiamo una notazione che non la rende manifestamente tale.
 
-\section{Le variabili Elettromagnetiche Fondamentali Sono i Potenziali, Non le Intensità dei Campi}
+\section{Le variabili Elettromagnetiche Fondamentali Sono i Potenziali, Non le Intensità dei Campi}\label{sec:1.1}
 Il campo eletromagnetico è un costituente fondamentale della natura. La sua esistenza non richiede di essere giustificata o spiegata più  di quanto richieda di essere giustificata o spiegata l'esistenza, diciamo, degli elettroni. Il campo elettromagnetico è un \quotes{campo di gauge,} lo stesso fondamentale tipo di campo che descrive anche la $W$, la $Z$, bosoni e gluoni. In effetti, il campo elettromagnetico insieme con i campi $W$ e $Z$ costituisce un \quotes{campo di gauge elettrodebole} che descrive tanto le interazioni elettromagnetiche che le interazioni deboli. Tuttavia, per i fenomeni di (\quotes{bassa-energia}) cui ci interessiamo in questo libro, il campo elettromagnetico si disaccoppia dai suoi partner elettrodeboli e può essere preso in considerazione separatamente.
 Rimando al capitolo 9 per fornire una discussione matematicamente completa dell'elettromagnetismo come campo di gauge.   
-Ciò di cui è necessario che il lettore sia consapevole fin da ora è che la descrizione fondamentale del campo elettromagnetico è data in termini dei potenziali $\phi$ e $\vb{A}$, non delle intensità di campo $\vb{E}$ e $\vb{B}$. Come spiegato in seguito, ci sono situazioni in cui i potenziali contengono più informazioni di quelle che possono essere ottenute dalle intensità del campo. Tuttavia i potenziali $\phi$ e $\vb{A}$ non descrivono univocamente il campo elettromagnetico: i potenziali $\phi', \vb{A}'$ e $\phi, \vb{A}$ sono considerati fisicamente equivalenti (cioè rappresentano lo stesso campo elettromagnetico) se differiscono per una trasformazione di gauge, 
+Ciò di cui è necessario che il lettore sia consapevole fin da ora è che la descrizione fondamentale del campo elettromagnetico è data in termini dei potenziali $\phi$ e $\vb*{A}$, non delle intensità di campo $\vb*{E}$ e $\vb*{B}$. Come spiegato in seguito, ci sono situazioni in cui i potenziali contengono più informazioni di quelle che possono essere ottenute dalle intensità del campo. Tuttavia i potenziali $\phi$ e $\vb*{A}$ non descrivono univocamente il campo elettromagnetico: i potenziali $\phi', \vb*{A}'$ e $\phi, \vb*{A}$ sono considerati fisicamente equivalenti (cioè rappresentano lo stesso campo elettromagnetico) se differiscono per una trasformazione di gauge, 
 cioè se per qualche funzione $\chi(t, \vb{x})$, abbiamo
 \footnote{Nella notazione della relatività ristretta, una trasformazione di gauge può essere espressa più semplicemente come $A_\mu  \longrightarrow A_\mu + \pdv*{\chi}{x^\mu}$.}
 
 \begin{equation}\label{eq:1.13}
-\phi' = \phi - \pdv{\chi}{t}\,, \quad \vb{A}' = \vb{A} + \grad{\chi}\,.
+\phi' = \phi - \pdv{\chi}{t}\,, \quad \vb*{A}' = \vb*{A} + \grad{\chi}\,.
 \end{equation}
 
 In altre parole, un campo elettromagnetico è una classe di equivalenza di potenziali 
-$\phi, \vb{A}$ definita dalla trasformazione (\ref{eq:1.13}). 
+$\phi, \vb*{A}$ definita dalla trasformazione (\ref{eq:1.13}). 
 
-Si dimostra facilmente che le intensità di campo, $\vb{E}$ e $\vb{B}$, definite dalle equazioni (\ref{eq:1.6}) e (\ref{eq:1.7}), sono gauge invarianti. Inoltre, non è difficile mostrare che in ogni regione semplicemente connessa dello spaziotempo, se 
-$\phi_1, \vb{A}_1$ e  $\phi_2, \vb{A}_2$ danno origine alle stesse intensità di campo $\vb{E}$ e $\vb{B}$, allora $\phi_1, \vb{A}_1$ e  $\phi_2, \vb{A}_2$ differiscono al più per una trasformazione di gauge. Pertanto, in una regione semplicemente connessa, 
-$\vb{E}$ e $\vb{B}$ contengono tutta l'informazione contenuta in $\phi$ ed $\vb{A}$. 
-Poichè tutte le quantità fisicamente misurabili debbono essere gauge invarianti, è molto conveniente in molte circostanze lavorare con $\vb{E}$ e $\vb{B}$ piuttosto che con $\phi$ ed $\vb{A}$. In molti contesti, i fenomeni elettromagnetici possono essere completamente descritti in termini di $\vb{E}$ e $\vb{B}$.
+Si dimostra facilmente che le intensità di campo, $\vb*{E}$ e $\vb*{B}$, definite dalle equazioni (\ref{eq:1.6}) e (\ref{eq:1.7}), sono gauge invarianti. Inoltre, non è difficile mostrare che in ogni regione semplicemente connessa dello spaziotempo, se 
+$\phi_1, \vb*{A}_1$ e  $\phi_2, \vb*{A}_2$ danno origine alle stesse intensità di campo $\vb*{E}$ e $\vb*{B}$, allora $\phi_1, \vb*{A}_1$ e  $\phi_2, \vb*{A}_2$ differiscono al più per una trasformazione di gauge. Pertanto, in una regione semplicemente connessa, 
+$\vb*{E}$ e $\vb*{B}$ contengono tutta l'informazione contenuta in $\phi$ ed $\vb*{A}$. 
+Poichè tutte le quantità fisicamente misurabili debbono essere gauge invarianti, è molto conveniente in molte circostanze lavorare con $\vb*{E}$ e $\vb*{B}$ piuttosto che con $\phi$ ed $\vb*{A}$. In molti contesti, i fenomeni elettromagnetici possono essere completamente descritti in termini di $\vb*{E}$ e $\vb*{B}$.
 
-Tuttavia, come vedremo nel capitolo 9, l'accoppiamento del campo elettromagnetico alla materia carica fondamentale (vale a dire, campi di carica) può essere descritta solamente in termini di potenziali, non delle intensità di campo. In addition to what precedes, vi sono situazioni fisicamente rilevanti in cui $\vb{E}$ e $\vb{B}$ non contengono tutta l'informazione associata al campo elettromagnetico. Ad esempio, si consideri la regione esterna ad un solenoide infinito. Supponiamo che all'interno del solenoide vi sia un campo magnetico uniforme non nullo, ma all'esterno del solenoide, abbiamo $\vb{E} = \vb{B} = 0$. Poichè la regione esterna al solenoide non è semplicemente connessa, il fatto che $\vb{E}$ e $\vb{B}$ si annullino in quella regione non implica che lì i potenziali siano gauge equivalenti a zero.  
+Tuttavia, come vedremo nel capitolo 9, l'accoppiamento del campo elettromagnetico alla materia carica fondamentale (vale a dire, campi di carica) può essere descritta solamente in termini di potenziali, non delle intensità di campo. In aggiunta a quanto esposto, vi sono situazioni fisicamente rilevanti in cui $\vb*{E}$ e $\vb*{B}$ non contengono tutta l'informazione associata al campo elettromagnetico. Ad esempio, si consideri la regione esterna ad un solenoide infinito. Supponiamo che all'interno del solenoide vi sia un campo magnetico uniforme non nullo, ma all'esterno del solenoide, abbiamo $\vb*{E} = \vb*{B} = 0$. Poichè la regione esterna al solenoide non è semplicemente connessa, il fatto che $\vb*{E}$ e $\vb*{B}$ si annullino in quella regione non implica che lì i potenziali siano gauge equivalenti a zero.  
+Infatti, per il teorema di Stokes, l'eq. (\ref{eq:1.7}) implica che quando $\vb*{B} \neq 0$ all'\tit{interno} del solenoide si abbia 
+$\oint \vb*{A} \vdot \dd \vb*{l} \neq 0$ per ogni circuito chiuso che lo racchiuda  dall'\tit{esterno}.
+(Si noti che $\oint \vb*{A} \vdot \dd \vb*{l} \neq 0$ è gauge invariante, cioè il suo valore non cambia per effetto di una trasformazione del tipo (\ref{eq:1.13}.))
+
+Una particella quantomeccanica carica che rimane completamente all'esterno del solenoide sarà influenzata dal potenziale vettore in questa zona, ove esso causerà uno spostamento di fase relativo della funzione d'onda attorno al solenoide, producendo uno spostamento fisicamente misurabile nel risultante schema di interferenza. Questo fenomeno, noto come effetto Aharonov-Bohm, è talvolta attribuito alle stranezze della meccanica quantistica. Tuttavia, l'effetto non ha nulla a che fare con la meccanica quantistica: lo stesso effetto si verificherebbe per un campo carico classico\footnote{Per i dettagli si veda B. Felsager, \tit{Geometry, Particles and Fields}, sezione 1.4 .}. 
+E non c'è niente di strano nell'effetto, una volta che si riconosca che il campo elettromagnetico è rappresentato, a livello fondamentale, dai potenziali $\phi, \vb*{A}$ (modulo gauge), non dalle intensità di campo $\vb*{E}$ e $\vb*{B}$. Pertanto, mentre per molti scopi è conveniente introdurre e lavorare con le intensitò di campo $\vb*{E}$ e $\vb*{B}$, è importante riconoscere che la descrizione fondamentale del campo elettromagnetico è data dai potenziali $\phi$ ed $\vb*{A}$ . Le equazioni di Maxwell (\ref{eq:1.3}) e (\ref{eq:1.4}) dovrebbero essere viste come date dalle equazioni (\ref{eq:1.6}) e (\ref{eq:1.7}).
+
+
+\section{Energia, Impulso e Stress del Campo Sono una Parte Integrante della Teoria}\label{sec:1.2}
+Al campo elettromagnetico, come a tutte le altre forme di materia, sono associate le proprietà energia, impulso e stress. Queste proprietà, come le equazioni di Maxwell (\ref{eq:1.1})--(\ref{eq:1.4}), sono parte integrante della teoria. Come discusso in modo più approfondito nel capitolo 9, l'elettrodinamica classica può essere formulata sulla base della densità Lagrangiana  
+\begin{equation}\label{eq:1.14}
+\cL = \frac{1}{2} \left(\epsilon_0 {\abs{\vb*{E}}}^2 - \frac{1}{\mu_0} {\abs{\vb*{B}}}^2 \right) - \phi \rho + \vb*{A} \vdot \vb*{J}\,.
+\end{equation}
+
+Qui, come discusso nella sezione \ref{sec:1.1}, le variabili dinamiche sono $\phi$ ed $\vb*{A}$, e le equazioni di Eulero-Lagrange si ottengono variando $\cL$ rispetto a queste variabili; $\vb*{E}$ e $\vb*{B}$ sono trattate come funzioni di $\phi$ ed $\vb*{A}$ definite dalle equazioni (\ref{eq:1.6}) e (\ref{eq:1.7}). Nell'equazione (\ref{eq:1.14}), la densità di carica $\rho$ e la densità di corrente $\vb*{J}$ sono trattate come quantità dinamiche prescritte esternamente
+\footnote{Naturalmente, la materia carica dovrebbe realmente avere i propri gradi di libertà dinamici, e dovrebbero esserci termini aggiuntivi nella Lagrangiana che coinvolgono i campi che rappresentano la materia carica. I termini di accoppiamento tra la materia carica ed il campo elettromagnetico dovrebbero quindi essere rappresentati in termini di $\phi$, $\vb*{A}$ ed i campi dinamici che descrivono la materia carica. Ciò verrà visto esplicitamente nel capitolo 9.}. 
+
+Le equazioni di Eulero-Lagrange derivanti dalla variazione dell'eq. (\ref{eq:1.14}) rispetto a $\phi$ ed $\vb*{A}$ sono proprio le equazioni di Maxwell (\ref{eq:1.1})--(\ref{eq:1.2}). Le equazioni di Maxwell aggiuntive (\ref{eq:1.3})--(\ref{eq:1.4}) derivano dalle definizioni (\ref{eq:1.6}) e (\ref{eq:1.7}) di $\vb*{E}$ e $\vb*{B}$, rispettivamente. Il fatto che la Lagrangiana debba essere vista come una funzione di $\phi$ ed $\vb*{A}$ -- e che i termini che rappresentano l'accoppiamento del campo elettromagnetico alla materia carica non possono nemmeno essere scritti in termini di $\vb*{E}$ e $\vb*{B}$ -- è un'ulteriore manifestazione del fatto che le variabili dinamiche fondamentali in elettromagnetismo sono $\phi$ ed $\vb*{A}$.
+
+le proprietà di energia, impulso e stress del campo elettromagnetico sono determinate dal suo accoppiamento con la gravità. L'accoppiamento alla gravità si ottiene generalizzando la Lagrangiana (\ref{eq:1.14}) per lo spaziotempo della relatività speciale allo spaziotempo curvo. Ciò può essere fatto in un modo molto semplice e naturale, che è anche unico se non si ammette che derivate della metrica appaiano nella lagrangiana di Maxwell. Il tensore stress-energia-impulso del campo elettromagnetico si ottiene quindi per differenziazione funzionale della lagrangiana rispetto alla metrica dello spaziotempo, poichè questo è ciò che appare come termine sorgente per la gravità nell'equazione della relatività generale di Einstein. Indico brevemente come ciò funziona nella sezione 9.1. L'unico punto che qui desidero sottolineare è che, proprio come la Lagrangiana (\ref{eq:1.14}) dà origine alle equazioni di Maxwell, la sua naturale generalizzazione allo spaziotempo curvo dà origine alle seguenti formule per la densità di energia $\cE$, la densità di impulso $\cP$ e per il tensore degli stress $\Theta_{ij}$:
+\begin{equation}\label{eq:1.15}
+\cE = \frac{1}{2} \left(\epsilon_0 {\abs{\vb*{E}}}^2 + \frac{1}{\mu_0} {\abs{\vb*{B}}}^2 \right)\,,
+\end{equation}
+\begin{equation}\label{eq:1.16}
+\cP = \epsilon_0 \vb*{E} \cross \vb*{B}\,,
+\end{equation}
+\begin{equation}\label{eq:1.17}
+\Theta_{ij} =  \frac{1}{2} E_iE_j + \frac{1}{\mu_0} B_iB_j
+- \frac{1}{2} \delta_{ij} \left(\epsilon_0 {\abs{\vb*{E}}}^2 + \frac{1}{\mu_0} {\abs{\vb*{B}}}^2 \right)\,.
+\end{equation}
+Queste formule dovrebbero essere considerate come aventi uno status fondamentale nella teoria dell'elettromagnetismo, paragonabile a quello delle equazioni di Maxwell.
+In linea di principio, la validità delle eq. (\ref{eq:1.15})-(\ref{eq:1.17}) potrebbe essere verificata osservando gli effetti gravitazionali dei campi elettromagnetici. I campi elettromagnetici forniscono contributi non trascurabili all'energa di massa della materia ordinaria, certamente abbastanza grandi da produrre effetti gravitazionali osservabili per corpi macroscopici. Tuttavia, non c'è modo di osservare questi effetti separatamente dagli effetti gravitazionali dei costituenti non elettromagnetici della materia. Pertanto, osservare gli effetti gravitazionali dei campi elettromagnetici liberi sono troppo piccoli per essere misurati in esperimenti di laboratorio. Tuttavia, nell'universo primordiale, la radiazione elettromagnetica distribuita termicamente che attualmente costituisce lo sfondo cosmico a microonde ha dato un contributo domnante alla densità di energia e alla pressione nell'universo, che influenzano entrambe l'espansione dell'universo. Si osserva che la storia dell'espansione dell'universo è in accordo con la densità di energia elettromagnetica e la pressione della radiazione termica ottenute dalle formule di cui sopra. 
