@@ -1,2 +1,62 @@
-\chapter{Elettrostatica}\label{Wald_EM_01}
+\chapter{Elettrostatica}\label{Wald_EM_02}
 \thv{Da R. M. Wald -- Advanced Classical Electromagnetism, 2022}\\
+
+Prima di considerare l'elettrodinamica nella sua interezza, è molto istruttivo fornire un'analisi completa del caso in cui la densità di carica $\rho$ e la densità di corrente $\vb*{J}$ sono indipendenti dal tempo ($\pdv*{\rho}{t} = 0$ e $\pdv*{\vb*{J}}{t} = \vb{0}$), e anche i potenziali 
+$\phi$ ed $\vb*{A}$ sono indipendenti dal tempo ($\pdv*{\phi}{t} = 0$ e $\pdv*{\vb*{A}}{t} = \vb{0}$). In tal caso, l'equazione (\ref{eq:1.1}) per 
+$\vb*{E} = - \grad{\phi}$ si disaccoppia completamente dall'equazione (\ref{eq:1.2}) per $\vb*{B} = \curl{\vb*{A}}$. Basta quindi considerare separatamente i casi in cui, oltre alla stazionarietà, o abbiamo $\vb*{J} = \vb*{A} = \vb{0}$ (elettrostatica) oppure abbiamo 
+$\rho = \phi = 0$ (magnetostatica). Tratteremo la magnetostatica nel capitolo 4.
+
+La maggior parte delle trattazioni dell'elettrostatica iniziano con le cariche puntiformi e la legge di Coulomb ed infine arrivano all'equazione di Poisson. Noi iniziamo con le equazioni di Maxwell, che si riducono immediatamente all'equazione di Poisson. Introduco le cariche puntiformi nella sezione \ref{sec:2.2} e ottengo la legge di Coulomb alla fine della sezione \ref{sec:2.3}. La sezione \ref{sec:2.1} stabilisce le proprietà chiave delle soluzioni. 
+
+\section[Unicità delle Soluzioni]{Unicità delle Soluzioni in Elettrostatica}\label{sec:2.1}
+Assumiamo $\vb*{J} = \vb*{A} = \vb{0}$ e $\pdv*{\rho}{t} = \pdv*{\phi}{t} = 0$. Le uniche equazioni non banali dell'elettromagnetismo, in questo caso, sono la prima equazione di Maxwell (\ref{eq:1.1}),  
+\begin{equation}\label{eq:2.1}
+\div{\vb*{E}}  = \frac{\rho}{\epsilon_0}\,, 
+\end{equation}
+
+e la relazione tra $\vb*{E}$ e $\phi$, eq. (\ref{eq:1.6}),
+\begin{equation}\label{eq:2.2}
+\vb*{E}  = - \grad{\phi}\,. 
+\end{equation}
+
+Queste equazioni si possono combinare in un'unica equazione
+\begin{equation}
+\laplacian{\phi}  = - \frac{\rho}{\epsilon_0}\,, 
+\end{equation}\label{eq:2.3}
+in cui l'\tit{operatore Laplaciano}, $\laplacian$, è definito in coordinate Cartesiane come
+\begin{equation}\label{eq:2.4}
+\laplacian \equiv \div{\grad} = \pdv[2]{}{x} + \pdv[2]{}{y} + \pdv[2]{}{z} \,.  
+\end{equation}
+
+L'equazione (\ref{eq:2.3}) è conosciuta come l'\tit{equazione di Poisson}.
+
+Si noti che la libertà di gauge eq. (\ref{eq:1.13}) è fortemente limitata in elettrostatica dal requisito
+che $\phi$ sia indipendente dal tempo e $\vb*{A} = 0$. Pertanto, le uniche trasformazioni di gauge consentite sono generate da 
+$\chi(t, \vb*{x}) = t \times \mathrm{costante}$, quindi l'unica libertà di gauge in $\phi$ è
+\begin{equation}\label{eq:2.5}
+\phi \longrightarrow \phi' = \phi + \mathrm{costante}\,. 
+\end{equation}
+
+Il seguente teorema è alla base di molti risultati in elettrostatica.
+
+\tbi{Teorema (Teorema di Gauss):} \tit{Sia $\vb*{v}$ un campo vettoriale arbitrario differenziabile in $\R^3$.
+Sia $\cV \subset \R^3$ una regione limitata la cui frontiera, $S = \partial \cV$, è una superficie bi-dimensionale (vedi il commento di seguito a questo teorema). Sotto queste condizioni si ha} 
+\begin{equation}\label{eq:2.6}
+\int_{\cV} \div{\vb*{v}} \dd[3]{x} = \int_S \vb*{v} \vdot \vu{n} \dd{S}
+\end{equation}
+
+\tit{ove $\vu{n}$ è il vettore unitario normale ad $S$ \quotes{diretto all'esterno} (cioè al di fuori di $\cV$) e $dS$ denota l'elemento di area su $S$.}
+
+
+\section{Cariche Puntiformi e Funzioni di Green}\label{sec:2.2}
+
+
+\section{Energia di Interazione e Forza}\label{sec:2.3}
+
+
+\section[Espansione Multipolo]{Espansione Multipolo della Funzione di Green}\label{sec:2.4}
+
+
+\section[Cavità Conduttrici]{Cavità Conduttrici; Funzioni di Green di Dirichlet e Neumann}\label{sec:2.5}
+
+\section*{Problemi}
