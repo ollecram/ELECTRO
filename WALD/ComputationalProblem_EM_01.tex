@@ -1,6 +1,6 @@
-\chapter*{Problema 1}\label{EM_P_01}
+\chapter*{Evoluzione spazio-temporale del campo Elettromagnetico}\label{EM_P_01}
 
-\section*{1.1 Premesse}\label{ref:sec_1.1}
+\section*{1.1 Premesse}\label{sec_1.1}
 L'elettromagnetismo classico si basa sulle equazioni di Maxwell
 \begin{align}
 \div{\vb*{E}}  &= \frac{\rho}{\epsilon_0}\,, \label{eq:1.1} \\
@@ -24,16 +24,50 @@ Siano $\vb*{E}_0(\vb*{x})$ e $\vb*{B}_0(\vb*{x})$ campi vettoriali arbitrari nel
 
 Allora esiste un'unica soluzione $\vb*{E}(t, \vb*{x}), \vb*{B}(t, \vb*{x})$ delle equazioni di \\Maxwell (\ref{eq:1.1})-(\ref{eq:1.4}) tale che
 \begin{align}
-\vb*{E}(t=0, \vb*{x}) &= \vb*{E}_0(\vb*{x})\,, \textrm{ e} \\ 
-\vb*{B}(t=0, \vb*{x}) &= \vb*{B}_0(\vb*{x})\,.
+\vb*{E}(t=0, \vb*{x}) &= \vb*{E}_0(\vb*{x})\,, \textrm{ e} \label{eq:1.6}\\ 
+\vb*{B}(t=0, \vb*{x}) &= \vb*{B}_0(\vb*{x})\,. \label{eq:1.7}
 \end{align}
 
 
 Esistono tante soluzioni delle equazioni di Maxwell con 
-$\rho$ e $\vb*{J}$ fissati, quante sono le possibili scelte dei campi $\vb*{E}_0(\vb*{x}), \vb*{B}_0(\vb*{x})$ la cui divergenza soddisfa le condizioni di cui sopra. Il fatto che questa informazione iniziale del campo elettromagnetico possa essere specificata liberamente dimostra che il campo elettromagnetico ha i suoi propri gradi di libertà dinamici indipendenti. \\Le soluzioni alle equazioni di Maxwell \tit{non} sono determinate da $\rho$ e $\vb*{J}$.
+$\rho$ e $\vb*{J}$ fissati, quante sono le possibili scelte dei campi $\vb*{E}_0(\vb*{x}), \vb*{B}_0(\vb*{x})$ la cui divergenza soddisfa le condizioni di cui sopra. Il fatto che questa informazione iniziale del campo elettromagnetico possa essere specificata liberamente dimostra che il campo elettromagnetico ha i suoi propri gradi di libertà dinamici indipendenti: la soluzione delle equazioni di Maxwell \tit{non è determinata} da $\rho$ e $\vb*{J}$.
 
 
-\section{Problema}\label{ref:sec_2}
+\section*{1.2 Analisi del problema}\label{sec_1.2}
+
+Le premesse esposte nella precedente sezione \ref{sec_1.1} indicano la possibilità di determinare l'evoluzione spazio-temporale del campo elettromagnetico nell'assunzione che siano in qualche modo note -- perché indipendentemente imposte dall'esterno -- le densità della carica $\rho$ e della corrente $\vb*{J}$ in una regione di spazio $\Omega$ per un certo intervallo di tempo $T$. Assumiamo che la regione $\Omega$ sia chiusa, connessa e limitata e che le densità di carica e corrente siano nulle all'esterno di $\Omega$: in pratica sarà sufficiente che siano nulle entro una distanza $c T$ dalla superficie $\partial \Omega$ di $\Omega$.
+
+Per fissare le idee, consideriamo una regione di \tit{spazio vuoto} $\Omega$ racchiusa da una sfera di raggio $R$, assumendo che carica e corrente siano nulle ovunque, tranne che sulla superficie $\partial \Omega$ della sfera. 
+
+Per quanto esposto nella precedente sezione 1.1, possiamo considerare assegnate a priori la densità di carica $\rho(t; \theta, \phi)$ e $\vb*{J}(t; \theta, \phi)$ per $t \in [0:T]$, ove $\theta$ 
+e $\phi$ sono le coordinate sferiche di un punto sulla superficie, purché i valori assegnati siano consistenti con la legge di \tit{conservazione locale} della carica, espressa dall'equazione di continuità carica-corrente (\ref{eq:1.5}).
+
+Nella sezione 1.3 analizziamo modi per garantire il requisito di continuità.
+
+Una maggior varietà di problemi può essere generata considerando una regione di \tit{spazio vuoto} $\Omega$ compresa tra due superfici chiuse e connesse della quali una è interamente contenuta nell'altra. Il caso forse più semplice è quello in cui la frontiera $\partial \Omega$ di $\Omega$ è costituita dall'unione delle frontiere (disgiunte) $\partial \Omega_1$ ed $\partial \Omega_2$ di due sfere\footnote{Non necessariamente \tit{concentriche}.} di raggio $R_1$ ed $R_2$ ove $R_1 < R_2$. In tal caso si assumerà che carica e corrente siano nulle ovunque, tranne che sulle superfici $\partial \Omega_1$ e $\partial \Omega_2$. Si noti che in tal caso la carica totale su $\partial \Omega_1$ e la carica totale su $\partial \Omega_2$ \tit{potranno} essere separatamente assegnate e \tit{dovranno} essere separatamente conservate. 
 
 
+
+
+\section*{1.3 Evoluzione consistente del campo carica-corrente}\label{sec_1.3}
+
+
+
+\section*{1.4 Condizioni iniziali sul campo elettromagnetico}\label{sec_1.4}
+Per quanto esposto nella precedente sezione 1.1, possiamo assegnare i valori iniziali del campo elettromagnetico, cioè dei campi vettoriali $\vb*{E}_0 = \vb*{E}(0; \vb*{x})$ e $\vb*{B}_0 = \vb*{B}(0; \vb*{x})$, con l'unico vincolo che valgano le equazioni (\ref{eq:1.6}) e (\ref{eq:1.7}), cioè che il campo magnetico iniziale $\vb*{B}_0$ abbia ovunque divergenza nulla e che la divergenza del campo elettrico $\vb*{E}_0 = \rho(0; \vb*{x})/\epsilon_0$ sia ovunque determinata dalla densità di carica. 
+
+Nella sezione 1.5 introduciamo una possibile \tit{discretizzazione} della regione spazio-temporale $\Omega$ e della sua frontiera $\partial \Omega$ con particolare riferimento al caso in cui  $\partial \Omega$ è costituita dall'unione di 1 o 2 superfici sferiche e la stessa regione $\Omega$ è una sfera o è la porzione di spazio racchiusa tra 2 sfere concentriche. 
+
+Nella sezione 1.6 analizziamo come si possano definire valori iniziali del campo elettromagnetico consistenti con i vincoli imposti alla divergenza di $\vb*{E}_0$ e $\vb*{B}_0$.
+
+Nella sezione 1.7 discutiamo una versione \tit{discretizzata} del problema ai valori iniziali, ed analizziamo come si possano calcolare i valori del campo elettromagnetico su una griglia di punti ad un certo istante $t+\Delta t$ posto che siano noti i valori del campo e delle \tit{sorgenti} ($\rho$ e $\vb*{J}$) al tempo $t$. 
+ 
+
+\section*{1.5 Discretizzazione di $\Omega$ e della sua frontiera}\label{sec_1.5}
+
+
+\section*{1.6 Valori iniziali del campo elettromagnetico}\label{sec_1.6}
+
+
+\section*{1.7 Evoluzione temporale discretizzata del campo}\label{sec_1.6}
 
