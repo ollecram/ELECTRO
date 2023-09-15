@@ -45,14 +45,34 @@ e $\phi$ sono le coordinate sferiche di un punto sulla superficie, purché i val
 Nella sezione 1.3 analizziamo modi per garantire il requisito di continuità.
 
 Una maggior varietà di problemi può essere generata considerando una regione di \tit{spazio vuoto} $\Omega$ compresa tra due superfici chiuse e connesse della quali una è interamente contenuta nell'altra. Il caso forse più semplice è quello in cui la frontiera $\partial \Omega$ di $\Omega$ è costituita dall'unione delle frontiere (disgiunte) $\partial \Omega_1$ ed $\partial \Omega_2$ di due sfere\footnote{Non necessariamente \tit{concentriche}.} di raggio $R_1$ ed $R_2$ ove $R_1 < R_2$. In tal caso si assumerà che carica e corrente siano nulle ovunque, tranne che sulle superfici $\partial \Omega_1$ e $\partial \Omega_2$. Si noti che in tal caso la carica totale su $\partial \Omega_1$ e la carica totale su $\partial \Omega_2$ \tit{potranno} essere separatamente assegnate e \tit{dovranno} essere separatamente conservate. 
-
-
-
-
+\pagebreak
 \section*{1.3 Evoluzione consistente del campo carica-corrente}\label{sec_1.3}
-
-
-
+\begin{enumerate}[(I)]
+\item \tbi{METODO I}  
+%-----------------------------------------------------------------------------
+	%-------------------------------------------------------------------------
+	\begin{enumerate}[(a)]
+	\item Definisci una distribuzione di carica totale $Q$ sulla superficie $S$ con un metodo qualsiasi. Esempio: 6 \tit{poli} di carica \tit{positiva} nelle direzioni corrispondenti alle 6 facce di un cubo inscritto nella sfera, e 8 \tit{poli} di carica \tit{negativa} nelle direzioni corrispondenti agli 8 spigoli del medesimo cubo.  
+	\item Definisci il movimento di un vettore unitario $\vu{n}(t)$ che applicato al centro della sfera definisce implicitamente una \tit{curva} $(\theta(t), \phi(t))$ nello spazio tridimensionale; 
+	\item Scegli la velocità angolare\footnote{Questa velocità angolare potrebbe avere un valore costante, oppure un valore oscillante tra due valori.} $\omega$ con cui ruotare la distribuzione di carica attorno all'asse che contiene il centro della sfera ed il punto di coordinate sferiche 
+$(\theta(t), \phi(t))$;
+	\item Ad ogni istante $t_i \geq 0$, ottieni la distribuzione di carica all'istante $t_{i+1} = t_i + \Delta t$ in base al cambio di direzione dell'asse di rotazione (da $\vu{n}(t_i)$ a $\vu{n}(t_{i+1})$) e alla velocità angolare $\omega$ con cui la distribuzione di carica ruota attorno all'asse;
+	\item Calcola $\vb*{J}(t_{i+1}; \theta(t_{i+1}), \phi(t_{i+1}) )$  in base al movimento dell'asse di rotazione $\vu{n}(t)$ e alla velocità di rotazione $\omega$ attorno ad esso.
+	\end{enumerate}
+	%-------------------------------------------------------------------------
+%-----------------------------------------------------------------------------
+\item \tbi{METODO II} 
+%-----------------------------------------------------------------------------
+	%-------------------------------------------------------------------------
+	\begin{enumerate}[(a)]
+	\item Definisci una distribuzione di carica totale $Q$ sulla superficie $S$ in termini di un  suo sviluppo in armoniche sferiche ortogonali, che coinvolga $k$ armoniche, con $k \geq 2$;  
+	\item Varia nel tempo in modo continuo i coefficienti $c_k(t)$ dello sviluppo partendo da un set \tit{iniziale} $c^{i}_1, \ldots, c^{i}_k$ per arrivare ad un set \tit{finale} $c^{f}_1, \ldots, c^{f}_k$ in modo che in ciascun punto la derivata temporale della densità sia contenuta entro un limite predefinito;
+	\item Utilizza un modello discreto della superficie sferica per determinare \footnote{Questo potrebbe richiedere la soluzione di un sistema lineare sparso di grandi dimensioni.} numericamente $\vb*{J}(t_k)$.
+	\end{enumerate}
+	%-------------------------------------------------------------------------
+%-----------------------------------------------------------------------------
+\end{enumerate}
+\pagebreak
 \section*{1.4 Condizioni iniziali sul campo elettromagnetico}\label{sec_1.4}
 Per quanto esposto nella precedente sezione 1.1, possiamo assegnare i valori iniziali del campo elettromagnetico, cioè dei campi vettoriali $\vb*{E}_0 = \vb*{E}(0; \vb*{x})$ e $\vb*{B}_0 = \vb*{B}(0; \vb*{x})$, con l'unico vincolo che valgano le equazioni (\ref{eq:1.6}) e (\ref{eq:1.7}), cioè che il campo magnetico iniziale $\vb*{B}_0$ abbia ovunque divergenza nulla e che la divergenza del campo elettrico $\vb*{E}_0 = \rho(0; \vb*{x})/\epsilon_0$ sia ovunque determinata dalla densità di carica. 
 
