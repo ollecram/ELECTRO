@@ -54,7 +54,7 @@ Una maggior varietà di problemi può essere generata considerando una regione d
 	\begin{enumerate}[(a)]
 	\item Definisci una distribuzione di carica totale $Q$ sulla superficie $S$ con un metodo qualsiasi. Esempio: 6 \tit{poli} di carica \tit{positiva} nelle direzioni corrispondenti alle 6 facce di un cubo inscritto nella sfera, e 8 \tit{poli} di carica \tit{negativa} nelle direzioni corrispondenti agli 8 spigoli del medesimo cubo.  
 	\item Definisci il movimento di un vettore unitario $\vu{n}(t)$ che applicato al centro della sfera definisce implicitamente una \tit{curva} $(\theta(t), \phi(t))$ nello spazio tridimensionale; 
-	\item Scegli la velocità angolare\footnote{Questa velocità angolare potrebbe avere un valore costante, oppure un valore oscillante tra due valori.} $\omega$ con cui ruotare la distribuzione di carica attorno all'asse che contiene il centro della sfera ed il punto di coordinate sferiche 
+	\item Scegli la velocità angolare\footnote{Nel caso più semplice questa velocità angolare avrà un valore costante oppure, ad esempio, il suo valore potrebbe oscillare periodicamente tra due valori.} $\omega$ con cui ruotare la distribuzione di carica attorno all'asse che contiene il centro della sfera ed il punto di coordinate sferiche 
 $(\theta(t), \phi(t))$;
 	\item Ad ogni istante $t_i \geq 0$, ottieni la distribuzione di carica all'istante $t_{i+1} = t_i + \Delta t$ in base al cambio di direzione dell'asse di rotazione (da $\vu{n}(t_i)$ a $\vu{n}(t_{i+1})$) e alla velocità angolare $\omega$ con cui la distribuzione di carica ruota attorno all'asse;
 	\item Calcola $\vb*{J}(t_{i+1}; \theta(t_{i+1}), \phi(t_{i+1}) )$  in base al movimento dell'asse di rotazione $\vu{n}(t)$ e alla velocità di rotazione $\omega$ attorno ad esso.
@@ -67,16 +67,16 @@ $(\theta(t), \phi(t))$;
 	\begin{enumerate}[(a)]
 	\item Definisci una distribuzione di carica totale $Q$ sulla superficie $S$ in termini di un  suo sviluppo in armoniche sferiche ortogonali, che coinvolga $k$ armoniche, con $k \geq 2$;  
 	\item Varia nel tempo in modo continuo i coefficienti $c_k(t)$ dello sviluppo partendo da un set \tit{iniziale} $c^{i}_1, \ldots, c^{i}_k$ per arrivare ad un set \tit{finale} $c^{f}_1, \ldots, c^{f}_k$ in modo che in ciascun punto la derivata temporale della densità sia contenuta entro un limite predefinito;
-	\item Utilizza un modello discreto della superficie sferica per determinare \footnote{Questo potrebbe richiedere la soluzione di un sistema lineare sparso di grandi dimensioni.} numericamente $\vb*{J}(t_k)$.
+	\item Utilizza un modello discreto della superficie sferica per determinare\footnote{Questo potrebbe richiedere la soluzione di un sistema lineare sparso di grandi dimensioni.} numericamente $\vb*{J}(t_k)$.
 	\end{enumerate}
 	%-------------------------------------------------------------------------
 %-----------------------------------------------------------------------------
 \end{enumerate}
 \pagebreak
-\section*{1.4 Condizioni iniziali sul campo elettromagnetico}\label{sec_1.4}
+\section*{1.4 Densità di carica $\rho$ e di corrente $\vb*{J}$}\label{sec_1.4}
 Per quanto esposto nella precedente sezione 1.1, possiamo assegnare i valori iniziali del campo elettromagnetico, cioè dei campi vettoriali $\vb*{E}_0 = \vb*{E}(0; \vb*{x})$ e $\vb*{B}_0 = \vb*{B}(0; \vb*{x})$, con l'unico vincolo che valgano le equazioni (\ref{eq:1.6}) e (\ref{eq:1.7}), cioè che il campo magnetico iniziale $\vb*{B}_0$ abbia ovunque divergenza nulla e che la divergenza del campo elettrico $\vb*{E}_0 = \rho(0; \vb*{x})/\epsilon_0$ sia ovunque determinata dalla densità di carica. 
 
-Nella sezione 1.5 introduciamo una possibile \tit{discretizzazione} della regione spazio-temporale $\Omega$ e della sua frontiera $\partial \Omega$ con particolare riferimento al caso in cui  $\partial \Omega$ è costituita dall'unione di 1 o 2 superfici sferiche e la stessa regione $\Omega$ è una sfera o è la porzione di spazio racchiusa tra 2 sfere concentriche. 
+Nella sezione 1.5 introduciamo una possibile \tit{discretizzazione} della regione spazio-temporale $\Omega$ e della sua frontiera $\partial \Omega$ con particolare riferimento al caso in cui $\Omega$ è la porzione di spazio racchiusa tra 2 \tit{sfere concentriche}\footnote{La scelta è dettata dalla facilità con cui in questo caso si può discretizzare la regione $\Omega$: basta collegare con segmenti \tit{radiali} coppie di punti corrispondenti di cui il primo si trova nella superficie sferica più interna ed il secondo si trova su quella più esterna.}, la frontiera $\partial \Omega$ essendo costituita dall'unione delle 2 superfici sferiche. 
 
 Nella sezione 1.6 analizziamo come si possano definire valori iniziali del campo elettromagnetico consistenti con i vincoli imposti alla divergenza di $\vb*{E}_0$ e $\vb*{B}_0$.
 
@@ -89,5 +89,5 @@ Nella sezione 1.7 discutiamo una versione \tit{discretizzata} del problema ai va
 \section*{1.6 Valori iniziali del campo elettromagnetico}\label{sec_1.6}
 
 
-\section*{1.7 Evoluzione temporale discretizzata del campo}\label{sec_1.6}
+\section*{1.7 Evoluzione temporale del campo discretizzato}\label{sec_1.6}
 
