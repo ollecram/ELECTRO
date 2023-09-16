@@ -45,7 +45,16 @@ e $\phi$ sono le coordinate sferiche di un punto sulla superficie, purché i val
 Nella sezione 1.3 analizziamo modi per garantire il requisito di continuità.
 
 Una maggior varietà di problemi può essere generata considerando una regione di \tit{spazio vuoto} $\Omega$ compresa tra due superfici chiuse e connesse della quali una è interamente contenuta nell'altra. Il caso forse più semplice è quello in cui la frontiera $\partial \Omega$ di $\Omega$ è costituita dall'unione delle frontiere (disgiunte) $\partial \Omega_1$ ed $\partial \Omega_2$ di due sfere\footnote{Non necessariamente \tit{concentriche}.} di raggio $R_1$ ed $R_2$ ove $R_1 < R_2$. In tal caso si assumerà che carica e corrente siano nulle ovunque, tranne che sulle superfici $\partial \Omega_1$ e $\partial \Omega_2$. Si noti che in tal caso la carica totale su $\partial \Omega_1$ e la carica totale su $\partial \Omega_2$ \tit{potranno} essere separatamente assegnate e \tit{dovranno} essere separatamente conservate. 
-\pagebreak
+
+Per quanto esposto nella precedente sezione 1.1, possiamo assegnare i valori iniziali del campo elettromagnetico, cioè dei campi vettoriali $\vb*{E}_0 = \vb*{E}(0; \vb*{x})$ e $\vb*{B}_0 = \vb*{B}(0; \vb*{x})$, con l'unico vincolo che valgano le equazioni (\ref{eq:1.6}) e (\ref{eq:1.7}), cioè che il campo magnetico iniziale $\vb*{B}_0$ abbia ovunque divergenza nulla e che la divergenza del campo elettrico $\vb*{E}_0 = \rho(0; \vb*{x})/\epsilon_0$ sia ovunque determinata dalla densità di carica. 
+
+Nella sezione 1.4 introduciamo una possibile \tit{discretizzazione} della regione spazio-temporale $\Omega$ e della sua frontiera $\partial \Omega$ con particolare riferimento al caso in cui $\Omega$ è la porzione di spazio racchiusa tra 2 \tit{sfere concentriche}\footnote{La scelta è dettata dalla facilità con cui in questo caso si può discretizzare la regione $\Omega$: basta collegare con segmenti \tit{radiali} coppie di punti corrispondenti di cui il primo si trova nella superficie sferica più interna ed il secondo si trova su quella più esterna.}, la frontiera $\partial \Omega$ essendo costituita dall'unione delle 2 superfici sferiche. 
+
+Nella sezione 1.5 analizziamo come si possano definire valori iniziali del campo elettromagnetico consistenti con i vincoli imposti alla divergenza di $\vb*{E}_0$ e $\vb*{B}_0$.
+
+Nella sezione 1.6 discutiamo una versione \tit{discretizzata} del problema ai valori iniziali, ed analizziamo come si possano calcolare i valori del campo elettromagnetico su una griglia di punti ad un certo istante $t+\Delta t$ posto che siano noti i valori del campo e delle \tit{sorgenti} ($\rho$ e $\vb*{J}$) al tempo $t$. 
+
+%\pagebreak
 \section*{1.3 Evoluzione consistente del campo carica-corrente}\label{sec_1.3}
 \begin{enumerate}[(I)]
 \item \tbi{METODO I}  
@@ -72,22 +81,12 @@ $(\theta(t), \phi(t))$;
 	%-------------------------------------------------------------------------
 %-----------------------------------------------------------------------------
 \end{enumerate}
-\pagebreak
-\section*{1.4 Densità di carica $\rho$ e di corrente $\vb*{J}$}\label{sec_1.4}
-Per quanto esposto nella precedente sezione 1.1, possiamo assegnare i valori iniziali del campo elettromagnetico, cioè dei campi vettoriali $\vb*{E}_0 = \vb*{E}(0; \vb*{x})$ e $\vb*{B}_0 = \vb*{B}(0; \vb*{x})$, con l'unico vincolo che valgano le equazioni (\ref{eq:1.6}) e (\ref{eq:1.7}), cioè che il campo magnetico iniziale $\vb*{B}_0$ abbia ovunque divergenza nulla e che la divergenza del campo elettrico $\vb*{E}_0 = \rho(0; \vb*{x})/\epsilon_0$ sia ovunque determinata dalla densità di carica. 
 
-Nella sezione 1.5 introduciamo una possibile \tit{discretizzazione} della regione spazio-temporale $\Omega$ e della sua frontiera $\partial \Omega$ con particolare riferimento al caso in cui $\Omega$ è la porzione di spazio racchiusa tra 2 \tit{sfere concentriche}\footnote{La scelta è dettata dalla facilità con cui in questo caso si può discretizzare la regione $\Omega$: basta collegare con segmenti \tit{radiali} coppie di punti corrispondenti di cui il primo si trova nella superficie sferica più interna ed il secondo si trova su quella più esterna.}, la frontiera $\partial \Omega$ essendo costituita dall'unione delle 2 superfici sferiche. 
-
-Nella sezione 1.6 analizziamo come si possano definire valori iniziali del campo elettromagnetico consistenti con i vincoli imposti alla divergenza di $\vb*{E}_0$ e $\vb*{B}_0$.
-
-Nella sezione 1.7 discutiamo una versione \tit{discretizzata} del problema ai valori iniziali, ed analizziamo come si possano calcolare i valori del campo elettromagnetico su una griglia di punti ad un certo istante $t+\Delta t$ posto che siano noti i valori del campo e delle \tit{sorgenti} ($\rho$ e $\vb*{J}$) al tempo $t$. 
- 
-
-\section*{1.5 Discretizzazione di $\Omega$ e della sua frontiera}\label{sec_1.5}
+\section*{1.4 Discretizzazione di $\Omega$ e della sua frontiera}\label{sec_1.4}
 
 
-\section*{1.6 Valori iniziali del campo elettromagnetico}\label{sec_1.6}
+\section*{1.5 Valori iniziali del campo elettromagnetico}\label{sec_1.5}
 
 
-\section*{1.7 Evoluzione temporale del campo discretizzato}\label{sec_1.6}
+\section*{1.6 Evoluzione temporale del campo discretizzato}\label{sec_1.6}
 
