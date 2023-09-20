@@ -6,36 +6,38 @@ L'elettromagnetismo classico si basa sulle equazioni di Maxwell
 \div{\vb*{E}}  &= \frac{\rho}{\epsilon_0}\,, \label{eq:1.1} \\
 \curl{\vb*{B}} - \frac{1}{c^2} \pdv{\vb*{E}}{t} &= \mu_0 \vb*{J}\,,\label{eq:1.2} \\
 \div{\vb*{B}}  &= 0\,, \label{eq:1.3} \\
-\curl{\vb*{E}} + \pdv{\vb*{B}}{t} &= 0\,.\label{eq:1.4}
+\curl{\vb*{E}} + \pdv{\vb*{B}}{t} &= \,,\label{eq:1.4}
 \end{align}
 
 ove le sorgenti $\rho$ e $\vb*{J}$ debbono soddisfare l'equazione di conservazione carica-corrente
 \begin{equation}\label{eq:1.5}
-\pdv{\rho}{t} + \div{\vb*{J}} = 0\,,
+\pdv{\rho}{t} + \div{\vb*{J}} = 0\,.
 \end{equation}
 
 Si assumano specificati nello spaziotempo $\rho(t, \vb*{x})$ e $\vb*{J}(t, \vb*{x})$, per i quali sia soddisfatta l'equazione di conservazione (\ref{eq:1.5}). 
 
 Siano $\vb*{E}_0(\vb*{x})$ e $\vb*{B}_0(\vb*{x})$ campi vettoriali arbitrari nello spazio tali che 
 \begin{align}
-\div{\vb*{E}_0} &= \rho(t=0, \vb*{x})/\epsilon_0\,, \textrm{ e} \\ 
-\div{\vb*{B}_0} &= 0\,. 
+\div{\vb*{E}_0} &= \rho(t=0, \vb*{x})/\epsilon_0\,, \textrm{ e}  \label{eq:1.6}\\ 
+\div{\vb*{B}_0} &= 0\,. \label{eq:1.7}
 \end{align}
 
 Allora esiste un'unica soluzione $\vb*{E}(t, \vb*{x}), \vb*{B}(t, \vb*{x})$ delle equazioni di \\Maxwell (\ref{eq:1.1})-(\ref{eq:1.4}) tale che
 \begin{align}
-\vb*{E}(t=0, \vb*{x}) &= \vb*{E}_0(\vb*{x})\,, \textrm{ e} \label{eq:1.6}\\ 
-\vb*{B}(t=0, \vb*{x}) &= \vb*{B}_0(\vb*{x})\,. \label{eq:1.7}
+\vb*{E}(t=0, \vb*{x}) &= \vb*{E}_0(\vb*{x})\,, \textrm{ e} \label{eq:1.8}\\ 
+\vb*{B}(t=0, \vb*{x}) &= \vb*{B}_0(\vb*{x})\,. \label{eq:1.9}
 \end{align}
 
 
-Esistono tante soluzioni delle equazioni di Maxwell con 
-$\rho$ e $\vb*{J}$ fissati, quante sono le possibili scelte dei campi $\vb*{E}_0(\vb*{x}), \vb*{B}_0(\vb*{x})$ la cui divergenza soddisfa le condizioni di cui sopra. Il fatto che questa informazione iniziale del campo elettromagnetico possa essere specificata liberamente dimostra che il campo elettromagnetico ha i suoi propri gradi di libertà dinamici indipendenti: la soluzione delle equazioni di Maxwell \tit{non è determinata} da $\rho$ e $\vb*{J}$.
+Esistono tante soluzioni delle equazioni di Maxwell, con 
+$\rho$ e $\vb*{J}$ fissati, quante sono le possibili scelte dei campi $\vb*{E}_0(\vb*{x}), \vb*{B}_0(\vb*{x})$ la cui divergenza soddisfa le condizioni di cui sopra. Il fatto che questa informazione iniziale del campo elettromagnetico possa essere specificata liberamente dimostra che la dinamica del campo elettromagnetico coinvolge gradi di libertà indipendenti dalle \tit{sorgenti}. In altri termini: la soluzione delle equazioni di Maxwell \tit{non è determinata} da $\rho$ e $\vb*{J}$.
 
 
 \section*{1.2 Analisi del problema}\label{sec_1.2}
 
-Le premesse esposte nella precedente sezione \ref{sec_1.1} indicano la possibilità di determinare l'evoluzione spazio-temporale del campo elettromagnetico nell'assunzione che siano in qualche modo note -- perché indipendentemente imposte dall'esterno -- le densità della carica $\rho$ e della corrente $\vb*{J}$ in una regione di spazio $\Omega$ per un certo intervallo di tempo $T$. Assumiamo che la regione $\Omega$ sia chiusa, connessa e limitata e che le densità di carica e corrente siano nulle all'esterno di $\Omega$: in pratica sarà sufficiente che siano nulle entro una distanza $c T$ dalla superficie $\partial \Omega$ di $\Omega$.
+Le premesse esposte nella precedente sezione \ref{sec_1.1} indicano la possibilità di determinare l'evoluzione spazio-temporale del campo elettromagnetico nell'assunzione che siano in qualche modo note -- perché indipendentemente imposte dall'esterno -- le densità della carica $\rho$ e della corrente $\vb*{J}$ in una regione di spazio $\Omega$ per un certo intervallo di tempo $T$, mentre sarà ammissibile come \tit{valore iniziale} ($t=0$) del campo una \tit{qualsiasi} coppia di funzioni vettoriali $\vb*{E}_0(\vb*{x})$ e $\vb*{B}_0(\vb*{x})$ che soddisfi\footnote{Nel seguito forniremo argomenti a favore dell'esistenza di \tit{molteplici soluzioni}.} alle equazioni (\ref{eq:1.6}) e (\ref{eq:1.7}). 
+
+Assumiamo che la regione $\Omega$ sia chiusa, connessa e limitata e che le densità di carica e corrente siano nulle all'esterno di $\Omega$: in pratica sarà sufficiente che siano nulle entro una distanza $c T$ dalla superficie $\partial \Omega$ di $\Omega$.
 
 Per fissare le idee, consideriamo una regione di \tit{spazio vuoto} $\Omega$ racchiusa da una sfera di raggio $R$, assumendo che carica e corrente siano nulle ovunque, tranne che sulla superficie $\partial \Omega$ della sfera. 
 
@@ -44,7 +46,7 @@ e $\phi$ sono le coordinate sferiche di un punto sulla superficie, purché i val
 
 Nella sezione 1.3 analizziamo modi per garantire il requisito di continuità.
 
-Una maggior varietà di problemi può essere generata considerando una regione di \tit{spazio vuoto} $\Omega$ compresa tra due superfici chiuse e connesse della quali una è interamente contenuta nell'altra. Il caso forse più semplice è quello in cui la frontiera $\partial \Omega$ di $\Omega$ è costituita dall'unione delle frontiere (disgiunte) $\partial \Omega_1$ ed $\partial \Omega_2$ di due sfere\footnote{Non necessariamente \tit{concentriche}.} di raggio $R_1$ ed $R_2$ ove $R_1 < R_2$. In tal caso si assumerà che carica e corrente siano nulle ovunque, tranne che sulle superfici $\partial \Omega_1$ e $\partial \Omega_2$. Si noti che in tal caso la carica totale su $\partial \Omega_1$ e la carica totale su $\partial \Omega_2$ \tit{potranno} essere separatamente assegnate e \tit{dovranno} essere separatamente conservate. 
+Una maggior varietà di problemi può essere generata considerando una regione di \tit{spazio vuoto} $\Omega$ compresa tra due superfici chiuse e connesse delle quali una sia interamente contenuta nell'altra. Il caso forse più semplice è quello in cui la frontiera $\partial \Omega$ di $\Omega$ è costituita dall'unione delle frontiere (disgiunte) $\partial \Omega_1$ ed $\partial \Omega_2$ di due sfere\footnote{Non necessariamente \tit{concentriche}.} di raggio $R_1$ ed $R_2$ ove $R_1 < R_2$. In tal caso si assumerà che carica e corrente siano nulle ovunque, tranne che sulle superfici $\partial \Omega_1$ e $\partial \Omega_2$. Si noti che in tal caso la carica totale su $\partial \Omega_1$ e la carica totale su $\partial \Omega_2$ \tit{potranno} essere separatamente assegnate e \tit{dovranno} essere separatamente conservate\footnote{In generale, in questa configurazione, campi elettromagnetici saranno presenti anche nella regione esterna alla superficie $\partial \Omega_2$ come nella regione racchiusa dalla sfera $\Omega_1$, tuttavia \tit{appare plausibile} che questi siano determinati \tit{separatamente}, \tit{in ciascuna regione}, dalle condizioni alla frontiera su $\rho$ e $\vb*{J}$ e dalle condizioni iniziali per $\vb*{E}$ e $\vb*{B}$.}. 
 
 Per quanto esposto nella precedente sezione 1.1, possiamo assegnare i valori iniziali del campo elettromagnetico, cioè dei campi vettoriali $\vb*{E}_0 = \vb*{E}(0; \vb*{x})$ e $\vb*{B}_0 = \vb*{B}(0; \vb*{x})$, con l'unico vincolo che valgano le equazioni (\ref{eq:1.6}) e (\ref{eq:1.7}), cioè che il campo magnetico iniziale $\vb*{B}_0$ abbia ovunque divergenza nulla e che la divergenza del campo elettrico $\vb*{E}_0 = \rho(0; \vb*{x})/\epsilon_0$ sia ovunque determinata dalla densità di carica. 
 
@@ -62,8 +64,8 @@ Nella sezione 1.6 discutiamo una versione \tit{discretizzata} del problema ai va
 	%-------------------------------------------------------------------------
 	\begin{enumerate}[(a)]
 	\item Definisci una distribuzione di carica totale $Q$ sulla superficie $S$ con un metodo qualsiasi. Esempio: 6 \tit{poli} di carica \tit{positiva} nelle direzioni corrispondenti alle 6 facce di un cubo inscritto nella sfera, e 8 \tit{poli} di carica \tit{negativa} nelle direzioni corrispondenti agli 8 spigoli del medesimo cubo.  
-	\item Definisci il movimento di un vettore unitario $\vu{n}(t)$ che applicato al centro della sfera definisce implicitamente una \tit{curva} $(\theta(t), \phi(t))$ nello spazio tridimensionale; 
-	\item Scegli la velocità angolare\footnote{Nel caso più semplice questa velocità angolare avrà un valore costante oppure, ad esempio, il suo valore potrebbe oscillare periodicamente tra due valori.} $\omega$ con cui ruotare la distribuzione di carica attorno all'asse che contiene il centro della sfera ed il punto di coordinate sferiche 
+	\item Definisci il \tit{movimento rigido} di un vettore unitario $\vu{n}(t)$ che applicato al centro della sfera determini implicitamente una \tit{curva} $(\theta(t), \phi(t))$ nello spazio tridimensionale; 
+	\item Scegli la velocità angolare\footnote{Nel caso più semplice questa velocità angolare avrà un valore costante. In alternativa, il suo valore potrebbe oscillare periodicamente tra due valori.} $\omega$ con cui ruotare la distribuzione di carica attorno all'asse che contiene il centro della sfera ed il punto di coordinate sferiche 
 $(\theta(t), \phi(t))$;
 	\item Ad ogni istante $t_i \geq 0$, ottieni la distribuzione di carica all'istante $t_{i+1} = t_i + \Delta t$ in base al cambio di direzione dell'asse di rotazione (da $\vu{n}(t_i)$ a $\vu{n}(t_{i+1})$) e alla velocità angolare $\omega$ con cui la distribuzione di carica ruota attorno all'asse;
 	\item Calcola $\vb*{J}(t_{i+1}; \theta(t_{i+1}), \phi(t_{i+1}) )$  in base al movimento dell'asse di rotazione $\vu{n}(t)$ e alla velocità di rotazione $\omega$ attorno ad esso.
@@ -74,15 +76,39 @@ $(\theta(t), \phi(t))$;
 %-----------------------------------------------------------------------------
 	%-------------------------------------------------------------------------
 	\begin{enumerate}[(a)]
-	\item Definisci una distribuzione di carica totale $Q$ sulla superficie $S$ in termini di un  suo sviluppo in armoniche sferiche ortogonali, che coinvolga $k$ armoniche, con $k \geq 2$;  
-	\item Varia nel tempo in modo continuo i coefficienti $c_k(t)$ dello sviluppo partendo da un set \tit{iniziale} $c^{i}_1, \ldots, c^{i}_k$ per arrivare ad un set \tit{finale} $c^{f}_1, \ldots, c^{f}_k$ in modo che in ciascun punto la derivata temporale della densità sia contenuta entro un limite predefinito;
-	\item Utilizza un modello discreto della superficie sferica per determinare\footnote{Questo potrebbe richiedere la soluzione di un sistema lineare sparso di grandi dimensioni.} numericamente $\vb*{J}(t_k)$.
+	\item Definisci una distribuzione di carica totale $Q$ sulla superficie $S$ in termini di un  suo sviluppo in armoniche sferiche (ortogonali), che coinvolga $k$ armoniche, con $k \geq 2$;  
+	\item Varia nel tempo in modo continuo i coefficienti $c_k(t)$ dello sviluppo partendo da un set \tit{iniziale} $c^{i}_1, \ldots, c^{i}_k$ per arrivare ad un set \tit{finale} $c^{f}_1, \ldots, c^{f}_k$ in modo che in ciascun punto la derivata temporale della densità sia contenuta entro un limite predefinito e che la carica totale rimanga invariata;
+	\item Utilizza un modello discreto della superficie sferica per determinare\footnote{Questo potrebbe richiedere la soluzione di un sistema lineare sparso di grandi dimensioni. Supponiamo infatti che la superfice sferica sia discretizzata come un set di triangoli e che i valori della densità $\rho$ e della corrente $\vb*{J}$ siano definiti ai \tit{vertici} della \tit{mesh}. Su ogni \tit{lato} (edge) della triangolazione il \tit{flusso} di carica che passa da un triangolo al triangolo adiacente sarà espresso come la media di $\vb*{J}$ presa al tempo $t$ sui vertici alle due estremità del lato in questione, mentre la somma di tale flusso sui tre lati di ciascun triangolo deve coincidere con la variazione di carica all'interno del triangolo dopo un tempo $\Delta t$.} numericamente $\vb*{J}(t_k)$.
+	\end{enumerate}
+	%-------------------------------------------------------------------------
+	%-------------------------------------------------------------------------
+%-----------------------------------------------------------------------------
+\item \tbi{METODO III} (variante del metodo I) 
+%-----------------------------------------------------------------------------
+	%-------------------------------------------------------------------------
+	\begin{enumerate}[(a)]
+	\item Definisci \tit{due} distribuzioni spaziali della densità di carica sulla superficie $S$: una distribuzione di carica \tit{positiva} $\rho^+(\theta, \phi)$ concentrata attorno ad un certo insieme $P^+$ di punti (ad esempio: i $6$ vertici di un \tit{ottaedro}  inscritto nella sfera) ed una distribuzione di carica \tit{negativa} $\rho^-(\theta, \phi)$ concentrata attorno ad un diverso insieme di punti $P^-$ (ad esempio: gli $8$ vertici di un \tit{cubo}  inscritto nella sfera);
+	\item Scegli le direzioni $\vu{n}^+$ e $\vu{n}^-$ di $2$ distinti assi di rotazione (rette passanti per il centro della sfera) attorno ai quali far ruotare le due distribuzioni di carica) sapendo che la distribuzione $\rho^+$ dovrà ruotare a velocità angolare costante $\omega^+$  attorno all'asse $\vu{n}^+$, mentre la distribuzione $\rho^-$ dovrà ruotare a velocità angolare costante $\omega^-$  attorno all'asse $\vu{n}^-$; 
+	\item La distribuzione di carica all'istante $t = 0$ è la sovrapposizione (somma) delle distribuzioni $\rho^+$ e $\rho^-$. Dopo un tempo $\Delta t$ la distribuzione di carica sarà la sovrapposizione della $\rho^+$ ruotata di un angolo $\omega^+ \times \Delta t$ attorno all'asse $\vu{n}^+$ e della $\rho^-$ ruotata di un angolo $\omega^- \times \Delta t$ attorno all'asse $\vu{n}^-$. 
+	\item Con queste assunzioni, la corrente \tit{positiva} $\vb{J}^+$ generata dalla rotazione della distribuzione di carica $\rho^+$ attorno all'asse $\vu{n}^+$ in un qualsiasi punto $\vb*{r}$ della superficie sferica\footnote{$\vb*{r}$ è il raggio vettore che unisce il centro della sfera al punto.} ha il valore $\vb{J}^+(\vb*{r}) = \rho^+ \omega^+ (\vb*{r} \cross \vu{n}^+)$;
+	\item Analogamente, la corrente \tit{negativa} $\vb{J}^-$ generata dalla rotazione della distribuzione di carica $\rho^-$ attorno all'asse $\vu{n}^-$ in un qualsiasi punto $\vb*{r}$ della superficie sferica ha il valore $\vb{J}^-(\vb*{r}) = \rho^- \omega^- (\vb*{r} \cross \vu{n}^-)$;
+	\item La corrente risultante in un qualsiasi punto $\vb*{r}$ della superficie sferica è evidentemente la somma algebrica delle due correnti di cui sopra: $\vb{J}(\vb*{r}) = \vb{J}^+(\vb*{r}) + \vb{J}^-(\vb*{r})$.
 	\end{enumerate}
 	%-------------------------------------------------------------------------
 %-----------------------------------------------------------------------------
 \end{enumerate}
 
 \section*{1.4 Discretizzazione di $\Omega$ e della sua frontiera}\label{sec_1.4}
+
+Nello spazio tridimensionale la maggiore uniformità possibile--nella discretizzazione di una superficie sferica--si realizza  partendo dai 20 vertici di un \tit{dodecaedro regolare} inscritto nella sfera e applicando una procedura ricorsiva che ad ogni passo divide ciascun triangolo in $4$ triangoli, introducendo un nuovo vertice a metà di ciascun \tit{lato} (edge) definito al passo precedente\footnote{In questo approccio, ciascuno dei 20 vertici del dodecaedro regolare costituenti la mesh iniziale avrà attorno a sé esattamente $5$ triangoli, mentre tutti i nuovi vertici aggiunti ad ogni passo della procedura ricorsiva avranno attorno a loro esattamente $6$ triangoli. Appare ovvio che nello spazio tridimensionale questo tipo di disuniformità non possa che essere il minimo possibile. Tuttavia è ancora possibile migliorare marginalmente la qualità della \tit{mesh} applicando delle procedure di \tit{smoothing} tendenti a porre ogni vertice quanto più vicino possibile al centro dei vertici adiacenti.}. 
+
+Affrontiamo ora il problema della discretizzazione della regione di spazio $\Omega$ entro cui si vogliano calcolare numericamente i valori del campo elettromagnetico. Per quanto già esposto nella sezione 1.2, limitiamo lo studio di questo problema al caso in cui $\Omega$ è delimitata da 2 superfici sferiche concentriche $\partial \Omega_1$ e $\partial \Omega_2$ di raggi rispettivamente $R_1$ ed $R_2$. Supponiamo quindi che sia stata definita una triangolazione $\vb*{\tau}^1$ su $\partial \Omega_1$ e che la triangolazione $\vb*{\tau}^2$ su $\partial \Omega_2$ venga ottenuta proiettando i vertici di $\vb*{\tau}^1$ dal centro delle sfere sulla superficie $\partial \Omega_2$.  
+
+Connettendo dunque ogni vertice $\vb{v^1_i}$ della triangolazione $\vb*{\tau}^1$ al corrispondente vertice $\vb{v^2_i}$ di $\vb*{\tau}^2$ (quello cioè che viene raggiunto proiettando $\vb{v^1_i}$ su $\partial \Omega_2$) si ottiene una corrispondenza biunivoca tra i triangoli di $\partial \Omega_1$ ed i triangoli di $\partial \Omega_2$. Ogni coppia $(\tau^1_i, \tau^2_i)$ di triangoli corrispondenti così definita individua una \tit{piramide tronca} di cui $\tau^1_i$ costituisce la base minore e $\tau^2_i$ la base maggiore. Queste piramidi tronche sono solamente il punto di partenza per definire la discretizzazione della regione $\Omega$: in generale la distanza $D = \abs{R_2 - R_1}$ può essere molto più grande della lunghezza media dei lati dei triangoli sulle due superfici $\partial \Omega_1$ e $\partial \Omega_2$ mentre dobbiamo aspettarci che il gradiente di ciascuna componente dei campi $\vb*{E}$ e $\vb*{B}$ possa assumere valori di entità paragonabile in ogni direzione, quindi sia tangenzialmente alle superfici di frontiera che radialmente, tra $\partial \Omega_1$ e $\partial \Omega_2$.    
+
+Sarà quindi necessario, in generale, \quotes{affettare} (cioè suddividere) ciascuna delle piramidi tronche sopra descritte in $m$ strati di uguale spessore $d  = \abs{R_2 - R_1}/m$. Naturalmente ciò sarà fatto introducendo $m-1$ superfici sferiche concentriche tra        
+$\partial \Omega_1$ e $\partial \Omega_2$. Per evitare altre complicazioni dello stesso tipo --che richiederebbero una distribuzione più elaborata dei vertici della \tit{mesh}-- ci restringeremo a considerare il caso in cui la differenza tra i raggi delle due sfere concentriche non sia eccessiva, imponendo che la superficie di $\partial \Omega_2$ non superi il doppio di quella di $\partial \Omega_1$:  
+$$R_2 \leq \sqrt{2} R_1\,.$$   
 
 
 \section*{1.5 Valori iniziali del campo elettromagnetico}\label{sec_1.5}
