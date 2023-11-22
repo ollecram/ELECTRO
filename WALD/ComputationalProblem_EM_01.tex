@@ -59,16 +59,16 @@ Nella sezione 1.6 discutiamo una versione \tit{discretizzata} del problema ai va
 %\pagebreak
 \section*{1.3 Evoluzione consistente del campo carica-corrente}\label{sec_1.3}
 \begin{enumerate}[(I)]
-\item \tbi{METODO I}  
+\item \tbi{METODO I} 
 %-----------------------------------------------------------------------------
 	%-------------------------------------------------------------------------
 	\begin{enumerate}[(a)]
-	\item Definisci una distribuzione di carica totale $Q$ sulla superficie $S$ con un metodo qualsiasi. Esempio: 6 \tit{poli} di carica \tit{positiva} nelle direzioni corrispondenti alle 6 facce di un cubo inscritto nella sfera, e 8 \tit{poli} di carica \tit{negativa} nelle direzioni corrispondenti agli 8 spigoli del medesimo cubo.  
-	\item Definisci il \tit{movimento rigido} di un vettore unitario $\vu{n}(t)$ che applicato al centro della sfera determini implicitamente una \tit{curva} $(\theta(t), \phi(t))$ nello spazio tridimensionale; 
-	\item Scegli la velocità angolare\footnote{Nel caso più semplice questa velocità angolare avrà un valore costante. In alternativa, il suo valore potrebbe oscillare periodicamente tra due valori.} $\omega$ con cui ruotare la distribuzione di carica attorno all'asse che contiene il centro della sfera ed il punto di coordinate sferiche 
-$(\theta(t), \phi(t))$;
-	\item Ad ogni istante $t_i \geq 0$, ottieni la distribuzione di carica all'istante $t_{i+1} = t_i + \Delta t$ in base al cambio di direzione dell'asse di rotazione (da $\vu{n}(t_i)$ a $\vu{n}(t_{i+1})$) e alla velocità angolare $\omega$ con cui la distribuzione di carica ruota attorno all'asse;
-	\item Calcola $\vb*{J}(t_{i+1}; \theta(t_{i+1}), \phi(t_{i+1}) )$  in base al movimento dell'asse di rotazione $\vu{n}(t)$ e alla velocità di rotazione $\omega$ attorno ad esso.
+	\item Definisci \tit{due} distribuzioni spaziali della densità di carica sulla superficie $S$: una distribuzione di carica \tit{positiva} $\rho^+(\theta, \phi)$ concentrata attorno ad un certo insieme $P^+$ di punti (ad esempio: i $6$ vertici di un \tit{ottaedro}  inscritto nella sfera) ed una distribuzione di carica \tit{negativa} $\rho^-(\theta, \phi)$ concentrata attorno ad un diverso insieme di punti $P^-$ (ad esempio: gli $8$ vertici di un \tit{cubo}  inscritto nella sfera);
+	\item Scegli le direzioni $\vu{n}^+$ e $\vu{n}^-$ di $2$ distinti assi di rotazione (rette passanti per il centro della sfera attorno alle quali far ruotare le due distribuzioni di carica) sapendo che la distribuzione $\rho^+$ dovrà ruotare a velocità angolare costante $\omega^+$  attorno all'asse $\vu{n}^+$, mentre la distribuzione $\rho^-$ dovrà ruotare a velocità angolare costante $\omega^-$  attorno all'asse $\vu{n}^-$; 
+	\item La distribuzione di carica all'istante $t = 0$ è la sovrapposizione (somma) delle distribuzioni $\rho^+$ e $\rho^-$. Dopo un tempo $\Delta t$ la distribuzione di carica sarà la sovrapposizione della $\rho^+$ ruotata di un angolo $\omega^+ \times \Delta t$ attorno all'asse $\vu{n}^+$ e della $\rho^-$ ruotata di un angolo $\omega^- \times \Delta t$ attorno all'asse $\vu{n}^-$. 
+	\item Con queste assunzioni, la corrente \tit{positiva} $\vb{J}^+$ generata dalla rotazione della distribuzione di carica $\rho^+$ attorno all'asse $\vu{n}^+$ in un qualsiasi punto $\vb*{r}$ della superficie sferica\footnote{$\vb*{r}$ è il raggio vettore che unisce il centro della sfera al punto.} ha il valore $\vb{J}^+(\vb*{r}) = \rho^+ \omega^+ (\vb*{r} \cross \vu{n}^+)$;
+	\item Analogamente, la corrente \tit{negativa} $\vb{J}^-$ generata dalla rotazione della distribuzione di carica $\rho^-$ attorno all'asse $\vu{n}^-$ in un qualsiasi punto $\vb*{r}$ della superficie sferica ha il valore $\vb{J}^-(\vb*{r}) = \rho^- \omega^- (\vb*{r} \cross \vu{n}^-)$;
+	\item La corrente risultante in un qualsiasi punto $\vb*{r}$ della superficie sferica è evidentemente la somma algebrica delle due correnti di cui sopra: $\vb{J}(\vb*{r}) = \vb{J}^+(\vb*{r}) + \vb{J}^-(\vb*{r})$.
 	\end{enumerate}
 	%-------------------------------------------------------------------------
 %-----------------------------------------------------------------------------
@@ -83,24 +83,14 @@ $(\theta(t), \phi(t))$;
 	%-------------------------------------------------------------------------
 	%-------------------------------------------------------------------------
 %-----------------------------------------------------------------------------
-\item \tbi{METODO III} (variante del metodo I) 
-%-----------------------------------------------------------------------------
-	%-------------------------------------------------------------------------
-	\begin{enumerate}[(a)]
-	\item Definisci \tit{due} distribuzioni spaziali della densità di carica sulla superficie $S$: una distribuzione di carica \tit{positiva} $\rho^+(\theta, \phi)$ concentrata attorno ad un certo insieme $P^+$ di punti (ad esempio: i $6$ vertici di un \tit{ottaedro}  inscritto nella sfera) ed una distribuzione di carica \tit{negativa} $\rho^-(\theta, \phi)$ concentrata attorno ad un diverso insieme di punti $P^-$ (ad esempio: gli $8$ vertici di un \tit{cubo}  inscritto nella sfera);
-	\item Scegli le direzioni $\vu{n}^+$ e $\vu{n}^-$ di $2$ distinti assi di rotazione (rette passanti per il centro della sfera) attorno ai quali far ruotare le due distribuzioni di carica) sapendo che la distribuzione $\rho^+$ dovrà ruotare a velocità angolare costante $\omega^+$  attorno all'asse $\vu{n}^+$, mentre la distribuzione $\rho^-$ dovrà ruotare a velocità angolare costante $\omega^-$  attorno all'asse $\vu{n}^-$; 
-	\item La distribuzione di carica all'istante $t = 0$ è la sovrapposizione (somma) delle distribuzioni $\rho^+$ e $\rho^-$. Dopo un tempo $\Delta t$ la distribuzione di carica sarà la sovrapposizione della $\rho^+$ ruotata di un angolo $\omega^+ \times \Delta t$ attorno all'asse $\vu{n}^+$ e della $\rho^-$ ruotata di un angolo $\omega^- \times \Delta t$ attorno all'asse $\vu{n}^-$. 
-	\item Con queste assunzioni, la corrente \tit{positiva} $\vb{J}^+$ generata dalla rotazione della distribuzione di carica $\rho^+$ attorno all'asse $\vu{n}^+$ in un qualsiasi punto $\vb*{r}$ della superficie sferica\footnote{$\vb*{r}$ è il raggio vettore che unisce il centro della sfera al punto.} ha il valore $\vb{J}^+(\vb*{r}) = \rho^+ \omega^+ (\vb*{r} \cross \vu{n}^+)$;
-	\item Analogamente, la corrente \tit{negativa} $\vb{J}^-$ generata dalla rotazione della distribuzione di carica $\rho^-$ attorno all'asse $\vu{n}^-$ in un qualsiasi punto $\vb*{r}$ della superficie sferica ha il valore $\vb{J}^-(\vb*{r}) = \rho^- \omega^- (\vb*{r} \cross \vu{n}^-)$;
-	\item La corrente risultante in un qualsiasi punto $\vb*{r}$ della superficie sferica è evidentemente la somma algebrica delle due correnti di cui sopra: $\vb{J}(\vb*{r}) = \vb{J}^+(\vb*{r}) + \vb{J}^-(\vb*{r})$.
-	\end{enumerate}
-	%-------------------------------------------------------------------------
-%-----------------------------------------------------------------------------
 \end{enumerate}
 
+Nell'appendice \ref{app:P_01_A} esponiamo in qualche dettaglio logiche ed algoritmi che possono essere implegati nella implementazione del primo dei metodi di cui sopra (Metodo I). 
+
+\pagebreak
 \section*{1.4 Discretizzazione di $\Omega$ e della sua frontiera}\label{sec_1.4}
 
-Nello spazio tridimensionale la maggiore uniformità possibile--nella discretizzazione di una superficie sferica--si realizza  partendo dai 20 vertici di un \tit{dodecaedro regolare} inscritto nella sfera e applicando una procedura ricorsiva che ad ogni passo divide ciascun triangolo in $4$ triangoli, introducendo un nuovo vertice a metà di ciascun \tit{lato} (edge) definito al passo precedente\footnote{In questo approccio, ciascuno dei 20 vertici del dodecaedro regolare costituenti la mesh iniziale avrà attorno a sé esattamente $5$ triangoli, mentre tutti i nuovi vertici aggiunti ad ogni passo della procedura ricorsiva avranno attorno a loro esattamente $6$ triangoli. Appare ovvio che nello spazio tridimensionale questo tipo di disuniformità non possa che essere il minimo possibile. Tuttavia è ancora possibile migliorare marginalmente la qualità della \tit{mesh} applicando delle procedure di \tit{smoothing} tendenti a porre ogni vertice quanto più vicino possibile al centro dei vertici adiacenti.}. 
+Nello spazio tridimensionale la maggiore uniformità possibile--nella discretizzazione di una superficie sferica--si realizza  partendo dai 20 vertici di un \tit{icosaedro regolare} inscritto nella sfera e applicando una procedura ricorsiva che ad ogni passo divide ciascun triangolo in $4$ triangoli, introducendo un nuovo vertice a metà di ciascun \tit{lato} (edge) definito al passo precedente\footnote{In questo approccio, ciascuno dei 20 vertici dell'icosaedro regolare costituenti la mesh iniziale avrà attorno a sé esattamente $5$ triangoli, mentre tutti i nuovi vertici aggiunti ad ogni passo della procedura ricorsiva avranno attorno a loro esattamente $6$ triangoli. Appare ovvio che nello spazio tridimensionale questo tipo di disuniformità non possa che essere il minimo possibile. Tuttavia è ancora possibile migliorare marginalmente la qualità della \tit{mesh} applicando delle procedure di \tit{smoothing} tendenti a porre ogni vertice quanto più vicino possibile al centro dei vertici adiacenti.}. 
 
 Affrontiamo ora il problema della discretizzazione della regione di spazio $\Omega$ entro cui si vogliano calcolare numericamente i valori del campo elettromagnetico. Per quanto già esposto nella sezione 1.2, limitiamo lo studio di questo problema al caso in cui $\Omega$ è delimitata da 2 superfici sferiche concentriche $\partial \Omega_1$ e $\partial \Omega_2$ di raggi rispettivamente $R_1$ ed $R_2$. Supponiamo quindi che sia stata definita una triangolazione $\vb*{\tau}^1$ su $\partial \Omega_1$ e che la triangolazione $\vb*{\tau}^2$ su $\partial \Omega_2$ venga ottenuta proiettando i vertici di $\vb*{\tau}^1$ dal centro delle sfere sulla superficie $\partial \Omega_2$.  
 
