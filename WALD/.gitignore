@@ -1,0 +1,10 @@
+*.aux
+*.idx
+*.log
+*.pdf
+*.synctex.gz
+*.toc
+*.jl.cov
+*.jl.*.cov
+*.jl.mem
+deps/deps.jl

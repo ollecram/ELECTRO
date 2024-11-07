@@ -1,0 +1,285 @@
+%%%%%%%%%%%%%%%%%%%% book.tex %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[english, 11pt, a4paper]{book}
+
+% Some specific typographic conventions used in Griffiths I2QM   START 
+\usepackage{mathtools}			% equation tag with [..] instead of (..)
+\newtagform{brackets}{[}{]}		% equation tag with [..] instead of (..)
+\usetagform{brackets}			% equation tag with [..] instead of (..)
+% Some specific typographic conventions used in Griffiths I2QM   END 
+
+%\usepackage[nomath]{lmodern}
+\usepackage[T1]{fontenc}
+%\usepackage[italian]{babel}
+% The following changes the Chapter heading from 'Chapter' to 'Lecture'
+%$\addto\captionsenglish{\renewcommand{\chaptername}{Lecture}}
+%$%\usepackage{fancyhdr}
+%$\newcommand\chap[1]{%
+%$ \chapter*{#1}%
+%$  \addcontentsline{toc}{chapter}{#1}}
+%$\newcommand\sect[1]{%
+%$  \section*{#1}%
+%$  \addcontentsline{toc}{section}{#1}}
+
+% The following for using the Euro symbol
+\usepackage[utf8x]{inputenc}
+\usepackage{lmodern, textcomp}
+  
+% choose options for [] as required from the list
+% in the Reference Guide, Sect. 2.2
+
+\usepackage{makeidx}         % allows index generation
+\usepackage{graphicx}        % standard LaTeX graphics tool
+\usepackage{subcaption}      % for subfigures environments 
+                             % when including figure files
+\usepackage{multicol}        % used for the two-column index
+\usepackage[bottom, symbol]{footmisc} % See https://tex.stackexchange.com/questions/826/symbols-instead-of-numbers-as-footnote-markers
+% etc.
+% see the list of further useful packages
+% in the Reference Guide, Sects. 2.3, 3.1-3.3
+\usepackage[normalem]{ulem}
+
+\usepackage[shortlabels]{enumitem}	% to be able to resume enumerated lists
+
+\usepackage{amsmath}	% To be able to slash
+\usepackage{bm}	        % To use bold greek letters in math mode with \bm{}
+\usepackage{amsfonts}	% To be able to use \mathbb ... 
+\usepackage{amssymb}	% To be able to use \nmid ... 
+\usepackage{amsthm}		% \qed, \qedhere
+\usepackage{slashed}	% any character (dirac)
+\usepackage[title,toc,page]{appendix}
+
+% See https://tex.stackexchange.com/questions/36524/how-to-put-a-framed-box-around-text-math-environment/36528
+\usepackage{collectbox}	% To make box around formulas
+
+% *** AFTER THIS LINE *** 
+%     put \usepackage{} for shared packages kept under ~\Links\repos\git\LaTeX_Styles
+
+% Physics package 
+% https://tex.stackexchange.com/questions/38978/how-can-i-manually-install-a-latex-package-debian-ubuntu-linux
+\usepackage[italicdiff]{/home/marcello/Links/repos/git/LaTeX_Styles/physics}	
+% To put accents below letters
+\usepackage{/home/marcello/Links/repos/git/LaTeX_Styles//accents}
+
+% To attach a symbols (instead of a number) to footnotes 
+%\usepackage[symbol]{footmisc}
+
+% To control vertical white space above and below equations
+% see https://tex.stackexchange.com/questions/69662/how-to-globally-change-the-spacing-around-equations
+\expandafter\def\expandafter\normalsize\expandafter{%
+    \normalsize
+    \setlength\abovedisplayskip{16pt}
+    \setlength\belowdisplayskip{16pt}
+    \setlength\abovedisplayshortskip{16pt}
+    \setlength\belowdisplayshortskip{16pt}
+}
+
+\input{../BOXED_TEXT_ETC}		%Use for creating boxed/framed parts of text with nice borders
+
+% To use extra symbols like dagger and double dagger in numbering footnotes 
+\usepackage{footmisc}
+
+% Allows aligning numbers at decimal point within `tabular environment
+%\usepackage{siunitx}
+%\sisetup{
+%  round-mode          = places, % Rounds numbers
+%  round-precision     = 2, % to 2 places
+%}
+
+% Force chapter numbering to restart within each part
+\makeatletter
+%\@addtoreset{chapter}{part}
+\makeatletter
+
+
+\makeindex             % used for the subject index
+                       % please use the style svind.ist with
+                       % your makeindex program
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+% Useful within \begin{equation*}...\end{equation*} to have ONE equation with number & label
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+
+\newcommand{\umlaut}[1]{\"#1}
+\newcommand{\quotes}[1]{``#1''}
+\newcommand{\ovr}[1]{\overline{#1}}
+\newcommand{\sfT}{$\mathsf{T}$}
+\newcommand{\udT}{\rotatebox[origin=c]{180}{$\mathsf{T}$}}
+\newcommand{\avg}[1]{\langle{#1}\rangle}
+
+%Bold calligraphic letters 
+\newcommand{\N}{\mathbb{N}}	% integers
+\newcommand{\Z}{\mathbb{Z}}	% relative
+\newcommand{\Q}{\mathbb{Q}}	% rationals
+\newcommand{\R}{\mathbb{R}}	% reals
+\newcommand{\C}{\mathbb{C}}	% complex
+\newcommand{\F}{\mathbb{F}}	% generic field 1
+\newcommand{\K}{\mathbb{K}}	% generic field 2
+\newcommand{\V}{\mathbb{V}}	% Shankar's for vector space V
+
+%Plain calligraphic letters 
+\newcommand{\cC}{\mathcal{C}}    % space 1
+\newcommand{\cF}{\mathcal{F}}    % space 2
+\newcommand{\cH}{\mathcal{H}}    % Calligraphic H for Hilbert space
+\newcommand{\cS}{\mathcal{S}}    % space 3, Flow of energy (e.g in electromagnetism)
+\newcommand{\cT}{\mathcal{T}}    % space 4 
+
+\newcommand{\cI}{\mathcal{I}}    % Moment of Inertia
+\newcommand{\cU}{\mathcal{U}}    % sets 1
+\newcommand{\cV}{\mathcal{V}}    % sets 2
+\newcommand{\cW}{\mathcal{W}}    % sets 3
+\newcommand{\cP}{\mathcal{P}}    % sets 4, Momentum density (e.g in electromagnetism) 
+\newcommand{\cQ}{\mathcal{Q}}    % sets 5
+\newcommand{\cR}{\mathcal{R}}    % sets 6
+
+\newcommand{\cL}{\mathcal{L}}    % Lagrangian density
+\newcommand{\cE}{\mathcal{E}}    % Energy density (e.g in electromagnetism)
+\newcommand{\cY}{\mathcal{Y}}    % Y
+
+% Quaternions
+\newcommand{\Qt}{\mathbb{H}}	% Hamilton's quaternions ('\H' APPARENTLY defined elsewhere by LaTeX}
+\newcommand{\qu}{\mathbf{1}}     % 1
+\newcommand{\qi}{\mathbf{i}}     % i
+\newcommand{\qj}{\mathbf{j}}     % j
+\newcommand{\qk}{\mathbf{k}}     % k
+
+% Fraktur (Gothic) font (e.g for algebras)
+\newcommand{\frk}[1]{\mathfrak{#1}}  
+
+% To show argument of the exponential function vertically, i.e., as a superscript 
+\newcommand{\vexp}[1]{\,e^{#1}}
+
+% To type an angle as a number of degrees like 45^\circ
+\newcommand{\degree}[1]{{#1}^\circ}
+
+% To create not-bold vectors with a hat or check accent 
+\newcommand{\hatv}[1]{\hat{#1}}
+\newcommand{\chkv}[1]{\check{#1}}
+
+% To create boldface vectors with a hat or check accent 
+\newcommand{\hatvb}[1]{\vb{\hat{#1}}}
+\newcommand{\chkvb}[1]{\vb{\check{#1}}}
+
+% To create boldface greek letters (e.g. for denoting vectors) 
+\newcommand{\bmath}[1]{\bm{#1}}  				% SAME AS \bm{#1} - NOT WORTH USING 
+\newcommand{\chkbm}[1]{\boldmath{\check{#1}}}	% bold-check
+\newcommand{\hatbm}[1]{\boldmath{\hat{#1}}}		% bold-hat
+
+% To create <x|, |x> and <x|y> with unit vectors inside
+\newcommand{\ubra}[1]{\bra*{\vu{#1}}}
+\newcommand{\uket}[1]{\ket*{\vu{#1}}}
+\newcommand{\uip}[2]{\ip*{\vu{#1}}{\vu{#2}}}
+
+% To put accents below letters. 
+\newcommand{\ut}[1]{\underaccent{\tilde}{#1}}
+\newcommand{\uh}[1]{\underaccent{\hat}{#1}}
+\newcommand{\form}[1]{\uh{#1}}
+
+% To create italic, bold, bolditalic text
+\newcommand{\tit}[1]{\textit{#1}}
+\newcommand{\tbf}[1]{\textbf{#1}}
+\newcommand{\tbi}[1]{\textit{\textbf{#1}}}
+
+% Latin Modern sans serif |OR| Helvetica (SELECT)
+\newcommand{\textlmss}{\fontfamily{lmss}\selectfont}
+\newcommand{\texthv}{\fontfamily{phv}\selectfont}
+
+% Latin Modern sans serif |OR| Helvetica (USE, within OR outside MATH !)
+\newcommand{\tlmss}[1]{\text{\textlmss{#1}}}
+\newcommand{\thv}[1]{\text{\texthv{#1}}}
+
+% To use \tlmss{T} symbol to denote transpose 
+\newcommand{\transp}[1]{{#1}^{\tlmss{T}}}
+
+% To use \dagger symbol to denote operator Adjoint
+\newcommand{\Adj}[1]{{#1}^\dagger}
+
+% To denote the Hermitian conjugate with a '+' superscript
+\newcommand{\Hconj}[1]{{#1}^{+}}
+
+% To use \tlmss{Ker}, \tlmss{Coker} and \tlmss{Img} to denote Kernel, Co-Kernel & Image 
+\newcommand{\Ker}{\tlmss{Ker}\,}
+\newcommand{\Coker}{\tlmss{Coker}\,}
+\newcommand{\Img}{\tlmss{Im}\,}
+
+% To use \tlmss{Alt} and \tlmss{alt} to denote alternation 
+\newcommand{\Alt}{\tlmss{Alt}\,}
+\newcommand{\alt}{\tlmss{alt}\,}
+
+% To use \tlmss{Ann} to denote annulets 
+\newcommand{\Ann}{\tlmss{Ann}\,}
+
+% Misc abbreviations
+\newcommand{\ora}[1]{\overrightarrow{#1}}
+
+\DeclareRobustCommand{\rchi}{{\mathpalette\irchi\relax}}
+\newcommand{\irchi}[2]{\raisebox{\depth}{$#1\chi$}} % inner command, used by \rchi
+
+% See https://tex.stackexchange.com/questions/36524/how-to-put-a-framed-box-around-text-math-environment/36528
+\makeatletter
+\newcommand{\mybox}{%
+    \collectbox{%
+        \setlength{\fboxsep}{1pt}%
+        \fbox{\BOXCONTENT}%
+    }%
+}
+\makeatother
+
+\author{Marcello Vitaletti}
+\title{Classical Electrodynamics\\
+\small{Selected material from J.D. Jackson 3rd Edition}}
+\maketitle
+
+\frontmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\include{dedic}
+
+%\include{Plan}	
+\setcounter{tocdepth}{1}	% Must appear BEFORE \tableofcontents!
+\tableofcontents
+%\addappheadtotoc
+
+\mainmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\setcounter{chapter}{-1}	% To start with Chapter 0 !!  
+%\input{../FANCYBOX}		% Example of boxed/framed parts of text with nice borders
+
+\begin{flushright}
+\tit{Quassù tutto vi appare regolato\\
+dal sorgere e calare di una stella;\\
+Si scambiano il pensiero con dei suoni,\\
+movimenti del viso e delle mani;\\
+Cercano l'armonia, ma spesso in guerra;\\
+Eppur vorrei restarci sulla Terra!} 
+\end{flushright} 
+
+\counterwithin{equation}{chapter}	% Equation numbering will be A.1 A.2   A.3   ... 
+
+
+% A -- Vector Analysis
+% B -- Electrostatics
+\include{Electro_JDJ_1}  % Material from J.D. Jackson Classical Electrodynamics, 3rd Edition - 
+
+
+\appendixpage
+% Appendix on Units and Dimensions
+\include{Electro_JDJ_A1}  % Appendix A from J.D. Jackson Classical Electrodynamics, 3rd Edition
+
+
+
+
+\backmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\include{referenc}
+\printindex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
+
+
+
+
+
