@@ -1,93 +1,20 @@
-\chapter{Units and Dimensions}\label{ch:1}
+\renewcommand{\thechapter}{I}
+\chapter{Introduction and Survey}
+\setcounter{equation}{0}	        % To start with Equation I.1
+\counterwithin{equation}{chapter}	% Equation numbering will be I.1 I.2   I.3   ... 
 
-The desirable features of a system of units in any field are convenience and clarity. For example, theoretical physicists active in relativistic quantum field theory and the theory of elementary particles find it convenient to \tit{choose}
-the universal constants such as Planck's quantum of action and the velocity of light in vacuum to be \tit{dimensionless}
-and of \tit{unit magnitude}. The resulting system of units (called \quotes{natural} units) has only \tit{one} basic unit, customarily chosen to be length. All quantities, whether length or time or force or energy, etc., are expressed in terms of this one unit and have dimensions which are powers of its dimension. There is nothing contrived or less fundamental about such a system than one involving the meter, the kilogram, and the second as basic units. It is merely a matter of convenience.\footnote[1]{In quantum field theory, powers of the coupling constant play the role of other basic units in doing dimensional analysis.} 
+\section{Maxwell Equations in Vacuum, Fields, and Sources}
 
-Tradition requires that mass ($m$), length (l), and time ($t$) be treated as basic. But for electrical quantities there has been no compelling tradition. 
+\section{Inverse Square Law, or the Mass of the Photon}
 
-At the present time the Système International (SI) has mass defined in terms of the standard \tit{kilogram} kept in Paris, length in terms of the \tit{meter} as a certain number of wavelengths in vacuo of a certain atomic transition in the $^{86}\text{Kr}$ atom, and time in terms of the \tit{second} being a certain integer number of periods of a hyperfine transition in $^{133}\text{Cs}$. Because of the extreme precision with which the velocity of light can be measured with stabilized lasers (actually the measurement of both the frequency and the wavelength of the same spectral line) it is likely that soon the definition of the meter will be in terms of the unit of time ($^{133}\text{Cs}$) and a defined value of the speed of light in vacuo.
+\section{Linear Superposition}
 
+\section{Maxwell Equations in Macroscopic Media}
 
-\section{Electromagnetic Units and Equations}\label{sec:1.1}
+\section{Boundary Conditions at Interfaces Between Different Media}
 
-In discussing the units and dimensions of electromagnetism we will take as our starting point the traditional choice of length ($l$), mass ($m$) and time ($t$) as independent, basic dimensions. Furthermore, we will make the commonly accepted definition of current as the time rate of change of charge ($I = \dd{q}/\dd{t}$). This means that the dimension of the ratio of charge and current is that of time\footnote{From the point of view of special relativity it would be more natural to give current the dimension of charge divided by length. Then current density $J$ and charge density $\rho$ would have the same dimensions and would form a \quotes{natural} $4$-vector. This is the choice made in a modified Gaussian system.}. The continuity equation for charge and current densities then takes the form:
-\begin{equation}\label{eq:1.1}
-\div \vb{J} + \pdv{\rho}{t} = 0
-\end{equation}
+\section{Some Remarks on Idealizations in Electromagnetism}
 
-To simplify matters we initially consider only electromagnetic phenomena in free space, apart from the presence of charges and currents.
-
-The basic physical law governing electrostatics is Coulomb's law on the force between two point charges $q$ and $q'$, separated by a distance $r$. In symbols this law is
-\begin{equation}\label{eq:1.2}
-F_1 = k_1 \frac{q\,q'}{r^2}
-\end{equation}
-
-The constant $k_1$ is a proportionality constant whose magnitude and dimensions \tit{either} are determined by the equation (if the magnitude and dimensions of the unit of charge have been specified independently) \tit{or} are chosen arbitrarily in order to define the unit of charge. Within our present framework all that is determined at the moment is that the product ($k_1 q q'$) has the dimensions\footnote{[$F$] = $m\,l\,t^{-2}$ =  [$k_1 q q' r^{-2}$], hence [$k_1 q q'$] = $m\,l^3\,t^{-2}$. } ($m l^3 t^{-2}$). 
-The electric field $\vb{E}$ is a derived quantity, customarily defined to be the force per unit charge. A more general definition would be that the electric field be numerically proportional to the force per unit charge, with a proportionality constant perhaps having dimensions such that the electric field id dimensionally different from force per unit charge. There is, however, nothing to be gained by this extra freedom in the definition of $\vb{E}$, since $\vb{E}$ is the first derived field quantity to be defined. Only when we define other field quantities may it be convenient to insert dimensional proportionality constants in the definitions in order to adjust the dimensions and magnitude of these fields relative to the electric field. Consequently, with no significant loss of generality the electric field of a point charge $q$ may be defined from (\ref{eq:1.2}) as the force per unit charge, 
-\begin{equation}\label{eq:1.3}
-F_1 = k_1 \frac{q}{r^2}
-\end{equation}
-All systems of units known to the author use this definition of electric field.
-
-For steady-state magnetic phenomena Ampère's observations form a basis for specifying the interaction and defining the magnetic induction. According to Ampère, the force per unit length between two infinitely long, parallel wires separated by a distance $d$ and carrying currents $I$ and $I'$ is
-\begin{equation}\label{eq:1.4}
-\frac{\dd{F_2}}{\dd{l}} = 2 k_2 \frac{I\,I'}{d}
-\end{equation}
-The constant $k_2$ is a proportionality constant akin to $k_1$ in (\ref{eq:1.2}). The dimensionless number $2$ is inserted in (\ref{eq:1.4}) for later convenience in specifying $k_2$. Because of our choice of the dimensions of current and charge embodied in (\ref{eq:1.1}), the dimensions of $k_2$ relative to $k_1$ are determined. From (\ref{eq:1.2}) and (\ref{eq:1.4}) it is easily found that the ratio $k_1/k_2$ 
-has the dimension of a velocity squared ($l^2\,t^{-2}$), Furthermore, by comparison of the magnitude of the two mechanical forces (\ref{eq:1.2}) and (\ref{eq:1.4}) for known charges and currents, the magnitude of the ratio $k_1/k_2$ in free space can be found. The numerical value is closely given by the square of the velocity of light in vacuum. Therefore in symbols we can write
-\begin{equation}\label{eq:1.5}
-\frac{k_1}{k_2} = c^2
-\end{equation}
-where $c$ stands for the velocity of light in magnitude and dimensions.
-
-The magnetic induction $\vb{B}$ is derived from the force laws of Ampère as being numerically proportional to the force per unit current with a proportionality constant $\alpha$ that may have certain dimensions chosen for convenience. Thus for a long straight wire carrying a current $I$, the magnetic induction $\vb{B}$ at a distance $d$ has the magnitude (and dimensions)
-\begin{equation}\label{eq:1.6}
-B = 2 k_2 \alpha \frac{I}{d}
-\end{equation}
-
-The dimensions of the ratio of electric field to magnetic induction can be found from (\ref{eq:1.1}) (\ref{eq:1.3}) (\ref{eq:1.5}), and (\ref{eq:1.6}). The result is that ($E/B$) has the dimension ($l/t\alpha$). 
-
-The third and final relation in the specification of electromagnetic units and dimensions is Faraday's law of induction, which connects electric and magnetic phenomena. The observed law that the electromotive force induced around a circuit is proportional to the rate of change of magnetic flux through it takes on the differential form
-\begin{equation}\label{eq:1.7}
-\curl \vb{E} + k_3 \pdv{\vb{B}}{t} = 0
-\end{equation}
-where $k_3$ is a constant of proportionality. Since the dimensions of $\vb{E}$ relative to $\vb{B}$ are established, the dimensions of $k_3$ can be expressed in terms of previously defined quantities merely by demanding that both terms in (\ref{eq:1.7}) have the same dimensions. Then it is found that $k_3$ has dimensions of $\alpha^{-1}$. Actually, $k_3$ is \tit{equal} to $\alpha^{-1}$. This is established on the basis of Galilean invariance\footnote{For this, see section 6.1 in Jackson's 2nd edition, or section 5.15 in Jackson's 3rd edition.}. But the easiest way to prove the equality is to write all the Maxwell equations in terms of the fields defined here:
-\begin{equation}\label{eq:1.8}
-\begin{aligned}
-\div  \vb{E} &= 4\pi\, k_1\, \rho\\
-\curl \vb{B} &= 4\pi\, k_2\, \alpha\, \, \vb{J}\:+\:\frac{k_2 \alpha}{k_1} \pdv{\vb{E}}{t}\\
-\curl \vb{E} + k_3\, \pdv{\vb{B}}{t} &= 0\\
-\div  \vb{B} &= 0
-\end{aligned}
-\end{equation}
-
-Then for source-free regions the two curl equations can be combined into the wave equation,
-\begin{equation}\label{eq:1.9}
-\laplacian \vb{B} - k_3 \:\frac{k_2 \alpha}{k_1}\, \pdv[2]{\vb{B}}{t} = 0
-\end{equation}
-
-The velocity of propagation of the waves described by (\ref{eq:1.9}) is related to the combination of constants appearing there. Since this velocity is known to be that of light, we may write
-\begin{equation}\label{eq:1.10}
-\frac{k_1}{\alpha}{k_3\,k_2\,\alpha} = c^2
-\end{equation}
-
-Combining (\ref{eq:1.5}) with (\ref{eq:1.10}), we find
-\begin{equation}\label{eq:1.11}
-k_3 = \frac{1}{\alpha}
-\end{equation}
-an equality holding for both magnitude and dimensions.
-
-
-
-
-
-
-
-
- 
-
-
-
+\section*{References and Suggested Reading}
 
 
