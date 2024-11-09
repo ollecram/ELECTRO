@@ -19,7 +19,7 @@ I take as a starting point that there exist global families of inertial observer
 
 By the above assumptions, the inertial observers in a given family can uniquely label events by $(t, \vb{x})$, where $t$ denotes the time of the event on the synchronized clock of the observer who passes through the event, and $\vb{x} = (x, y, z)$ are the Cartesian coordinates of that observer. I refer to the labeling of events in this way as \tit{inertial coordinates}. The assumption that events can be labeled in this way is implicit in every physics text or other reference where a \quotes{$t$} or \quotes{$\vb{x}$} appears in an equation. However,   this labeling depends on (i) a choice of origin of time (i.e., what time is labeled as $t=0$); (ii) a choice of origin of space (i.e., what observer in the family is at $\vb{x} = 0$); (iii) a choice of orientation of axes (to define the $x-$, $y-$,  and $z-$directions); and, most importantly for our present purposes, (iv) a choice of which family of inertial observers to use (i.e., a choice of the velocity $\vb{v}$ of the family). Different choices of origin of $t$ and $\vb{x}$, orientation of axes, and $\vb{v}$ will give rise to different labelings ($t', \vb{x}'$) of events. 
 
-Usually, treatments of special relativity focus entirely on the difference in the labeling of events between families of inertial observers who are moving with velocity $\vb{v}$ relative to one another. This is given by a Galilean transformation in pre-relativity physics and by a Lorentz transformation in special relativity. Although it certainly is useful to know the explicit form of this transformation, a nearly exclusive focus on this obscures the geometrical content of the theory. It is analogous to studying ordinary Euclidean geometry by focusing on how the Cartesia coordinates transform under rotations. 
+Usually, treatments of special relativity focus entirely on the difference in the labeling of events between families of inertial observers who are moving with velocity $\vb{v}$ relative to one another. This is given by a Galilean transformation in pre-relativity physics and by a Lorentz transformation in special relativity. Although it certainly is useful to know the explicit form of this transformation, a nearly exclusive focus on this obscures the geometrical content of the theory. It is analogous to studying ordinary Euclidean geometry by focusing on how the Cartesian coordinates transform under rotations. 
 
 I therefore focus on the \quotes{invariant structure} of spacetime. The four numbers $(t, \vb{x})$ associated with an event do not, by themselves, convey meaningful information about the event, since they depend as much, for example, on the choice of origin in $t$ and $\vb{x}$ as they do on the event itself. Even if we consider the differences $(\Delta t, \Delta \vb{x})$ in the labeling of two events by a given family of inertial observers so as to eliminate the origin dependence, the values of $(\Delta t, \Delta \vb{x})$ will depend on the choice of orientation of axes as well as on the choice of family of inertial observers. It is of great interest to determine what quantities constructed out of $(\Delta t, \Delta \vb{x})$ are invariant (i.e., independent of these choices). Such quantities are well defined without making any arbitrary choices and hence can be considered as attributable to the structure of spacetime itself. 
 
@@ -35,9 +35,65 @@ The situation in special relativity is much simpler. In special relativity, ther
 I = - c^2 (\Delta t)^2 + \abs{\Delta \vb{x}}^2\;.
 \end{equation}
  Furthermore, it can be shown that the worldlines of inertial observers can be constructed from a knowledge of $I$ between all pairs of events. Thus, $I$ provides the complete description of spacetime structure in special relativity. 
+ 
+To tie the previous paragraph to what people are usually taught in special relativity, note that, in special relativity, 
+the labeling $(t, \vb{x})$ of events by a family $O$ of observers is related to the labeling $(t', \vb{x}')$ by a family $O'$ of observers moving with velocity $v$ in the $x-$direction relative to $O$ (and with the same origin event and the same orientation of axes as $O$) by a \tit{Lorentz transformation}:
 
-  
+\begin{equation}\label{eq:8.3}
+\begin{aligned}
+t' &= \gamma (t - vx/c^2)\,,\\
+x' &= \gamma (x - vt)\,,\\
+y' &= y\,,\\
+z' &= z\,,
+\end{aligned}
+\end{equation}
 
+where   
+\begin{equation}\label{eq:8.4}
+\gamma \equiv \frac{1}{\sqrt{1 - v^2/c^2}}\,.
+\end{equation}
+
+It is easily checked that $I$ is invariant under Lorentz transformations. Furthermore, it can be shown that the most general transformation that preserves $I$ is a \tit{Poincaré transformation} (i.e., a composition of Lorentz transformations, rotations, and translations, as well as parity and time reversal transformations). Thus, Lorentz transformations naturally arise as (part of) the symmetry group of $I$.
+
+The spacetime interval $I$ has the same mathematical form as the squared distance in Euclidean geometry except for the minus sign in front of the contribution coming from $(\Delta t)^2$. To pursue this further, we switch notation from $(t, \vb{x})$ to $x^\mu$ with $\mu=0, 1, 2, 3\,,$ where 
+\begin{equation}\label{eq:8.5}
+x^0 = ct,\quad x^1 = x,\quad x^2 = y,\quad x^3 = z\,.
+\end{equation}
+
+Note the superscript position of $\mu$ in $x^\mu$, which will be important in order to align with notational conventions explained further below. We view $x^\mu$ as representing a spacetime displacement vector (relative to some origin in spacetime) in much the same way as we normally view $\vb{x}$ as representing a spatial displacement vector (relative to some origin in space). We view $I$, eq. (\ref{eq:8.2}), as arising from an \tit{inner product} on spacetime displacement vectors, where the inner product of $x^\mu_1$ and $x^\mu_2$ is given in any inertial coordinates by 
+\begin{equation}\label{eq:8.6}
+I(x^\mu_1, x^\mu_2)  = \sum_{\mu,\nu=0}^{3} \eta_{\mu \nu} x^\mu_1 x^\nu_2\,,
+\end{equation}
+
+where\footnote{Many authors define $\eta_{\mu \nu}$ with an opposite sign convention, which results in sign changes in some formulas. The reader is advised to check the sign convention used for $\eta_{\mu \nu}$ when comparing formulas in different references. As mentioned in footnote 1 in this chapter, some authors use an imaginary time coordinate, in which case $\eta_{\mu \nu}$ would take a Euclidean form and normally would not be written down explicitly at all.}
+\begin{equation}\label{eq:8.7}
+\eta_{\mu \nu} \equiv \mqty(-1 &0 &0 &0\\ 0 &1 &0 &0\\ 0 &0 &1 &0\\ 0 &0 &0 &1)\;.
+\end{equation}
+
+I put \quotes{inner product} in quotes, because although $I$ is linear in each variable, symmetric, and nondegenerate (i.e., $I(x^\mu_1, x^\mu_2) = 0$ for all $x^\mu_2$ if and only if $x^\mu_1 = 0$), it fails to be positive definite. Nevertheless, it is closely analogous to the inner product on vectors in ordinary Euclidean geometry, 
+\begin{equation}\label{eq:8.8}
+(\vb{x}_1, \vb{x}_2) = \vb{x}_1 \cdot \vb{x}_2 = \sum_{i,j=1}^3 e_{ij} x^i x^j\,,  
+\end{equation}
+
+where 
+
+\begin{equation}\label{eq:8.9}
+e_{i j} \equiv \mqty(1 &0 &0\\ 0 &1 &0\\ 0 &0 &1)\;.
+\end{equation}
+
+We refer to $e_{ij}$ as the \tit{metric of space} in Euclidean geometry. Similarly, werefer to $\eta_{\mu \nu}$ as the 
+\tit{metric of spacetime} in special relativity.
+
+It should be mentioned that the ability to give finite spatial or spacetime displacements a vector space structure, as implicitly assumed in the discussion above, is very spacial to a \tit{flat} geometry. In a curved geometry---such as the $2-$dimensional surface of a potato---there is no natural notion of adding two finite displacements about a point. Nevertheless, in a curved geometry, a notion of 
+\quotes{infinitesimal displacements} about $p$ is referred to as the \tit{tangent space} at $p$. 
+In differential geometry, a metric would be defined as a (not necessarily positive-definite) inner product defined on the tangent space at $p$ for all $p$. However, the spacetime geometry of special relativity is flat, so we may treat \tit{finite} spacetime displacements 
+$\Delta x^\mu \equiv x^\mu - x^\mu(p)$ about a point $p$ as \quotes{vectors}---and we can treat the metric as an inner product on these finite displacement vectors---as we have done above.
+
+A striking feature of the spacetime metric eq. (\ref{eq:8.7}) is that there are nonzero spacetime displacement vectors $\Delta x^\mu$
+about any event $p$ that are \tit{null}, in other words, such that 
+\begin{equation}\label{eq:8.10}
+\sum_{\mu \nu} \eta_{\mu \nu} \Delta x^\mu \Delta x^\nu = 0 \,.
+\end{equation}
 
 \section{The Formulation of Electromagnetic Theory in the Framework of Special Relativity}\label{sec:8.2}
 
