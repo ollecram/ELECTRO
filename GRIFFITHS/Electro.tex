@@ -33,7 +33,7 @@
 \usepackage{subcaption}      % for subfigures environments 
                              % when including figure files
 \usepackage{multicol}        % used for the two-column index
-\usepackage[bottom, symbol]{footmisc} % See https://tex.stackexchange.com/questions/826/symbols-instead-of-numbers-as-footnote-markers
+\usepackage[bottom]{footmisc}% places footnotes at page bottom
 % etc.
 % see the list of further useful packages
 % in the Reference Guide, Sects. 2.3, 3.1-3.3
@@ -60,9 +60,6 @@
 \usepackage[italicdiff]{/home/marcello/Links/repos/git/LaTeX_Styles/physics}	
 % To put accents below letters
 \usepackage{/home/marcello/Links/repos/git/LaTeX_Styles//accents}
-
-% To attach a symbols (instead of a number) to footnotes 
-%\usepackage[symbol]{footmisc}
 
 % To control vertical white space above and below equations
 % see https://tex.stackexchange.com/questions/69662/how-to-globally-change-the-spacing-around-equations
@@ -229,9 +226,8 @@
 }
 \makeatother
 
-\author{John David Jackson}
-\title{Classical Electrodynamics, Third Edition\\
-\small{Wiley, 2001}}
+\author{Marcello Vitaletti}
+\title{Electrodynamics}
 \maketitle
 
 \frontmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -255,29 +251,27 @@ movimenti del viso e delle mani;\\
 Cercano l'armonia, ma spesso in guerra;\\
 Eppur vorrei restarci sulla Terra!} 
 \end{flushright} 
-
-\counterwithin{equation}{chapter}	% Equation numbering will be A.1 A.2   A.3   ... 
-
-
-\include{Electro_JDJ_I}   % Introduction and Survey  
-\include{Electro_JDJ_1}   % Introduction to Electrostatics  
-\include{Electro_JDJ_2}   % Boundary-Value Problems in Electrostatics: I  
-\include{Electro_JDJ_3}   % Boundary-Value Problems in Electrostatics: II
-\include{Electro_JDJ_4}   % Multipoles, Electrostatics in Dielectric Media: II
-
-
-% 1 -- Vector Analysis
-%\include{Electro_JDJ_1}  % Material from J.D. Jackson Classical Electrodynamics, 3rd Edition - 
-% 2 -- Electrostatics
-%\include{Electro_JDJ_2}  % Material from J.D. Jackson Classical Electrodynamics, 3rd Edition - 
-
+% A -- Vector Analysis
+% B -- Electrostatics
+\include{Electro_B1}  % THE ELECTRIC FIELD
+\include{Electro_B2}  % DIVERGENCE AND CURLS OF ELECTROSTATIC FIELDS
+\include{Electro_B3}  % ELECTRIC POTENTIAL 
+\include{Electro_B4}  % WORK AND ENERGY IN ELECTROSTATICS
+\include{Electro_B5}  % CONDUCTORS
+% C -- Potentials
+% D -- Electric Fields in Matter
+% E -- Magnetostatics
+% F -- Magnetic-Fields-in-Matter
+% G -- Electrodynamics
+% H -- Conservation Laws
+% I -- Electromagnetic Waves
+% J -- Radiation
+% K -- Electrodynamics and Relativity
+% L -- Potentials and Fields
 
 \appendixpage
-% Appendix on Units and Dimensions
-\include{Electro_JDJ_A1}  % Appendix A from J.D. Jackson Classical Electrodynamics, 3rd Edition
-
-
-
+\appendix
+% M -- Helmoltz-Theorem
 
 \backmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\include{referenc}
