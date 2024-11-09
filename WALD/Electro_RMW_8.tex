@@ -1,6 +1,6 @@
 \setcounter{chapter}{0}
 \renewcommand{\thechapter}{8}
-\chapter{Special Relativity}
+\chapter{Special Relativity}\label{ch:8}
 \setcounter{equation}{0}	        % To start with Equation 1
 \counterwithin{equation}{chapter}	% Equation numbering will be 8.1 8.2 8.3   ... 
 
@@ -8,17 +8,44 @@ Special relativity is the theory of spacetime structure formulated by Einstein i
 
 The theory of electromagnetism is far more elegant and simple when formulated in the framework of special relativity. It therefore is somewhat of a travesty that, well into the twenty-first century, special relativity is discussed here---as in other texts on electromagnetism---as a separate chapter toward the end of the book. The reason, of course, is that even though special relativity has been a well established theory for much more than a century, its basic concepts are still so unfamiliar to most physicists that it is not feasible to begin the treatment of electromagnetism by giving its formulation in the framework of special relativity. It is my hope that this situation will be rectified by the twenty-second century.
 
-Einstein's original formulation
+Einstein's original formulation of special relativity relied heavily on the transformations between the labeling of events by different inertial observers and the invariance of the laws of physics under such transformations. The theory was reformulated in a much more geometrical form by Minkowski in 1908, wherein it was recognized that the underlying structure of spacetime in special relativity is that of a spacetime metric.\footnote{Minkowsky introduced an imaginary time coordinate so as to obtain a Euclidean spacetime metric. However, although this approach remains in use in many treatments of special relativity, it does not generalize to curved spacetime and cannot be used in general relativity. We shall use a real time coordinate in our treatment, and our specetime metric will therefore be of Lorentzian signature.} Our treatment of special relativity will emphasize the role of the spacetime metric. Although Einstein was initially unimpressed by Minkowski's reformulation, he soon incorporated it into his thinking about gravitation. This led him to the theory of general relativity, wherein the spacetime metric becomes a dynamical variable that describes not only spacetime but also the effects of gravity. However, we shall not discuss general relativity here. 
 
-\section{The Framework of Special Relativity}
+The framework of special relativity is presented in section 8.1. The formulation of electromagnetism in the framework of special relativity is then given in section 8.2. On section 8.3.1, we analyze the motion of a (relativistic) charged particle in an external electromagnetic field, including the solutions for motion in a nonuniform electric field and in a uniform magnetic field. The Lienard-Wiechert solution describing the retarded field of a point charge in arbitrary motion is given in section 8.3.2, and properties of the radiated power for this solution are analyzed there as well.  
 
-\section{The Formulation of Electromagnetic Theory in the Framework of Special Relativity}
+\section{The Framework of Special Relativity}\label{sec:8.1}
+It is useful to think of space and time as composed of \quotes{events}---where each event corresponds to a point of space at an instant of time. The collection of all events comprises a 4-dimensional continuum, which I refer to as \quotes{spacetime}.
 
-\section{Charged Particle Motion and Radiation}
+I take as a starting point that there exist global families of inertial observers who \quotes{fill} all of spacetime (i.e., within each family, one and only one of these observers passes through each event in spacetime). I further assume that the observers in each family are all \quotes{at rest} with respect to one another, that they can consistently synchronize their clocks by some physical procedure, and that the spatial relationships between these observers are described by Euclidean geometry. Finally, I also assume that different families of such inertial observers all move at uniform velocity with respect to one another, so that the different families may be labeled by their velocity with respect to some reference family. These assumptions are true in both pre-relativity physics and in special relativity, so they make a good starting point for describing the differences between these theories of spacetime structure. However, these assumptions are \tit{not} true in general relativity, so they would make a very poor starting point from a fundamental viewpoint.
 
-\subsection{Charged Particle Motion}
+By the above assumptions, the inertial observers in a given family can uniquely label events by $(t, \vb{x})$, where $t$ denotes the time of the event on the synchronized clock of the observer who passes through the event, and $\vb{x} = (x, y, z)$ are the Cartesian coordinates of that observer. I refer to the labeling of events in this way as \tit{inertial coordinates}. The assumption that events can be labeled in this way is implicit in every physics text or other reference where a \quotes{$t$} or \quotes{$\vb{x}$} appears in an equation. However,   this labeling depends on (i) a choice of origin of time (i.e., what time is labeled as $t=0$); (ii) a choice of origin of space (i.e., what observer in the family is at $\vb{x} = 0$); (iii) a choice of orientation of axes (to define the $x-$, $y-$,  and $z-$directions); and, most importantly for our present purposes, (iv) a choice of which family of inertial observers to use (i.e., a choice of the velocity $\vb{v}$ of the family). Different choices of origin of $t$ and $\vb{x}$, orientation of axes, and $\vb{v}$ will give rise to different labelings ($t', \vb{x}'$) of events. 
 
-\subsection{Radiation from a Point Charge in Arbitrary Motion}
+Usually, treatments of special relativity focus entirely on the difference in the labeling of events between families of inertial observers who are moving with velocity $\vb{v}$ relative to one another. This is given by a Galilean transformation in pre-relativity physics and by a Lorentz transformation in special relativity. Although it certainly is useful to know the explicit form of this transformation, a nearly exclusive focus on this obscures the geometrical content of the theory. It is analogous to studying ordinary Euclidean geometry by focusing on how the Cartesia coordinates transform under rotations. 
+
+I therefore focus on the \quotes{invariant structure} of spacetime. The four numbers $(t, \vb{x})$ associated with an event do not, by themselves, convey meaningful information about the event, since they depend as much, for example, on the choice of origin in $t$ and $\vb{x}$ as they do on the event itself. Even if we consider the differences $(\Delta t, \Delta \vb{x})$ in the labeling of two events by a given family of inertial observers so as to eliminate the origin dependence, the values of $(\Delta t, \Delta \vb{x})$ will depend on the choice of orientation of axes as well as on the choice of family of inertial observers. It is of great interest to determine what quantities constructed out of $(\Delta t, \Delta \vb{x})$ are invariant (i.e., independent of these choices). Such quantities are well defined without making any arbitrary choices and hence can be considered as attributable to the structure of spacetime itself. 
+
+In pre-relativity physics, there are two such invariant quantities: (i) the time interval $\Delta t$ between events, and (ii) the space interval $\abs{\Delta \vb{x}}^2$ between simultaneous events (i.e., events with $\Delta t = 0$). The space interval between nonsimultaneous events is not invariant, because if the family $O'$ of inertial observers moves with velocity $\vb{v}$ with respect to the family $O$, then we have 
+\begin{equation}\label{eq:8.1}
+\Delta \vb{x}' = \Delta \vb{x} - \vb{v} \Delta t\,,
+\end{equation}
+
+so $\abs{\Delta \vb{x}'}^2 \neq \abs{\Delta \vb{x}}^2$ if $\Delta t \neq 0$.  In addition, the collection of \quotes{worldlines} of inertial observers (i.e., the possible paths in spacetime of inertial observers) also can be viewed as an additional aspect of spacetime structure. The worldlines of inertial observers contain additional information independent of (i) and (ii) in that they cannot be constructed from knowing only $\Delta t$ for all pairs of events and knowing $\abs{\Delta \vb{x}}^2$ for simultaneous events. 
+
+The situation in special relativity is much simpler. In special relativity, there is a single invariant quantity, the spacetime interval $I$ between any pair of events, given by 
+\begin{equation}\label{eq:8.2}
+I = - c^2 (\Delta t)^2 + \abs{\Delta \vb{x}}^2\;.
+\end{equation}
+ Furthermore, it can be shown that the worldlines of inertial observers can be constructed from a knowledge of $I$ between all pairs of events. Thus, $I$ provides the complete description of spacetime structure in special relativity. 
+
+  
+
+
+\section{The Formulation of Electromagnetic Theory in the Framework of Special Relativity}\label{sec:8.2}
+
+\section{Charged Particle Motion and Radiation}\label{sec:8.3}
+
+\subsection{Charged Particle Motion}\label{ssec:8.3.1}
+
+\subsection{Radiation from a Point Charge in Arbitrary Motion}\label{ssec:8.3.2}
 
 %===================================================================================
 
