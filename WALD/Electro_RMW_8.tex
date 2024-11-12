@@ -8,7 +8,7 @@ Special relativity is the theory of spacetime structure formulated by Einstein i
 
 The theory of electromagnetism is far more elegant and simple when formulated in the framework of special relativity. It therefore is somewhat of a travesty that, well into the twenty-first century, special relativity is discussed here---as in other texts on electromagnetism---as a separate chapter toward the end of the book. The reason, of course, is that even though special relativity has been a well established theory for much more than a century, its basic concepts are still so unfamiliar to most physicists that it is not feasible to begin the treatment of electromagnetism by giving its formulation in the framework of special relativity. It is my hope that this situation will be rectified by the twenty-second century.
 
-Einstein's original formulation of special relativity relied heavily on the transformations between the labeling of events by different inertial observers and the invariance of the laws of physics under such transformations. The theory was reformulated in a much more geometrical form by Minkowski in 1908, wherein it was recognized that the underlying structure of spacetime in special relativity is that of a spacetime metric.\footnote{Minkowsky introduced an imaginary time coordinate so as to obtain a Euclidean spacetime metric. However, although this approach remains in use in many treatments of special relativity, it does not generalize to curved spacetime and cannot be used in general relativity. We shall use a real time coordinate in our treatment, and our specetime metric will therefore be of Lorentzian signature.} Our treatment of special relativity will emphasize the role of the spacetime metric. Although Einstein was initially unimpressed by Minkowski's reformulation, he soon incorporated it into his thinking about gravitation. This led him to the theory of general relativity, wherein the spacetime metric becomes a dynamical variable that describes not only spacetime but also the effects of gravity. However, we shall not discuss general relativity here. 
+Einstein's original formulation of special relativity relied heavily on the transformations between the labeling of events by different inertial observers and the invariance of the laws of physics under such transformations. The theory was reformulated in a much more geometrical form by Minkowski in 1908, wherein it was recognized that the underlying structure of spacetime in special relativity is that of a spacetime metric.\footnote{Minkowsky introduced an imaginary time coordinate so as to obtain a Euclidean spacetime metric. However, although this approach remains in use in many treatments of special relativity, it does not generalize to curved spacetime and cannot be used in general relativity. We shall use a real time coordinate in our treatment, and our spacetime metric will therefore be of Lorentzian signature.} Our treatment of special relativity will emphasize the role of the spacetime metric. Although Einstein was initially unimpressed by Minkowski's reformulation, he soon incorporated it into his thinking about gravitation. This led him to the theory of general relativity, wherein the spacetime metric becomes a dynamical variable that describes not only spacetime but also the effects of gravity. However, we shall not discuss general relativity here. 
 
 The framework of special relativity is presented in section 8.1. The formulation of electromagnetism in the framework of special relativity is then given in section 8.2. On section 8.3.1, we analyze the motion of a (relativistic) charged particle in an external electromagnetic field, including the solutions for motion in a nonuniform electric field and in a uniform magnetic field. The Lienard-Wiechert solution describing the retarded field of a point charge in arbitrary motion is given in section 8.3.2, and properties of the radiated power for this solution are analyzed there as well.  
 
@@ -86,7 +86,7 @@ Making use of vector notations introduced in Box \ref{box:8.1} we have
        &= -c^2 \gamma^2 \left(\Delta t - \Delta \vb{r}_\parallel \cdot \vb{v} /c^2 \right)^2
           +    \gamma^2 \abs{\Delta \vb{r}_\parallel - \vb{v} \Delta t}^2 \quad + \abs{\Delta \vb{r}_\perp}^2\\
        &=\;    -\gamma^2 \left( {(c \Delta t)}^2 + v^2/c^2 \abs{\Delta \vb{r}_\parallel}^2      -2 \Delta \vb{r}_\parallel \cdot \vb{v} \Delta t \right)\\
-       &+ \quad \gamma^2 \left( \abs{\Delta \vb{r}_\parallel}^2 + v^2 (\Delta t)^2 \quad\quad   -2 \Delta \vb{r}_\parallel \cdot \vb{v} \Delta t \right)\quad + \abs{\Delta \vb{r}_\perp}^2\\
+       &+ \quad \gamma^2 \left( \abs{\Delta \vb{r}_\parallel}^2 + v^2 (\Delta t)^2 \quad\quad   -2 \Delta \vb{r}_\parallel \cdot \vb{v} \Delta t \right)\quad\:\: + \abs{\Delta \vb{r}_\perp}^2\\
        &= - c^2 (\Delta t)^2  + \gamma^2 (1 - v^2/c^2) \abs{\Delta \vb{r}_\parallel}^2 + \abs{\Delta \vb{r}_\perp}^2\\
        &= - c^2 (\Delta t)^2  + \abs{\Delta \vb{r}_\parallel}^2 + \abs{\Delta \vb{r}_\perp}^2\\
        &= - c^2 (\Delta t)^2  + \abs{\Delta \vb{r}}^2\\ 
@@ -118,7 +118,7 @@ where\footnote{Many authors define $\eta_{\mu \nu}$ with an opposite sign conven
 
 I put \quotes{inner product} in quotes, because although $I$ is linear in each variable, symmetric, and nondegenerate (i.e., $I(x^\mu_1, x^\mu_2) = 0$ for all $x^\mu_2$ if and only if $x^\mu_1 = 0$), it fails to be positive definite. Nevertheless, it is closely analogous to the inner product on vectors in ordinary Euclidean geometry, 
 \begin{equation}\label{eq:8.8}
-(\vb{x}_1, \vb{x}_2) = \vb{x}_1 \cdot \vb{x}_2 = \sum_{i,j=1}^3 e_{ij} x^i x^j\,,  
+(\vb{x}_1, \vb{x}_2) = \vb{x}_1 \cdot \vb{x}_2 = \sum_{i,j=1}^3 e_{ij} x_1^i x_2^j\,,  
 \end{equation}
 
 where 
@@ -130,7 +130,7 @@ e_{i j} \equiv \mqty(1 &0 &0\\ 0 &1 &0\\ 0 &0 &1)\;.
 We refer to $e_{ij}$ as the \tit{metric of space} in Euclidean geometry. Similarly, werefer to $\eta_{\mu \nu}$ as the 
 \tit{metric of spacetime} in special relativity.
 
-It should be mentioned that the ability to give finite spatial or spacetime displacements a vector space structure, as implicitly assumed in the discussion above, is very spacial to a \tit{flat} geometry. In a curved geometry---such as the $2-$dimensional surface of a potato---there is no natural notion of adding two finite displacements about a point. Nevertheless, in a curved geometry, a notion of 
+It should be mentioned that the ability to give finite spatial or spacetime displacements a vector space structure, as implicitly assumed in the discussion above, is very special to a \tit{flat} geometry. In a curved geometry---such as the $2-$dimensional surface of a potato---there is no natural notion of adding two finite displacements about a point. Nevertheless, in a curved geometry, a notion of 
 \quotes{infinitesimal displacements} about $p$ is referred to as the \tit{tangent space} at $p$. 
 In differential geometry, a metric would be defined as a (not necessarily positive-definite) inner product defined on the tangent space at $p$ for all $p$. However, the spacetime geometry of special relativity is flat, so we may treat \tit{finite} spacetime displacements 
 $\Delta x^\mu \equiv x^\mu - x^\mu(p)$ about a point $p$ as \quotes{vectors}---and we can treat the metric as an inner product on these finite displacement vectors---as we have done above.
@@ -141,9 +141,9 @@ about any event $p$ that are \tit{null}, in other words, such that
 \sum_{\mu \nu} \eta_{\mu \nu} \Delta x^\mu \Delta x^\nu = 0 \,.
 \end{equation}
 
-The collection of all null specetime displacement vectors about $p$ comprise a cone with vertex at $p$, whereas the portion with $\Delta x \leq 0$ is referred to as its \tit{past light cone}. In the precise sense discussed in chapter 5, electromagnetic radiation emitted at $p$ propagates along the future light cone of $p$ (see section \ref{sec:5.2}), whereas electromagnetic radiation observed at $p$ propagated to $p$ along its past ligt cone (see section \ref{sec:5.4}). The interior of the future light cone of $p$ is referred to as the \tit{future} of $p$. It is composed of events that, in principle, can be reached by an observer initially present at $p$. Similarly, the interior of the past light cone of $p$ is referred to as the \tit{past} of $p$. It is composed of events with the property that an observer starting at that event can, in principle, arrive at $p$. The events lying outside the light cone of $p$ are said to be \tit{spacelike related} to $p$. No observer can be present both at $p$ and at an event spacelike related to $p$. In other words, in special relativity, nothing can travel faster than light. 
+The collection of all null spacetime displacement vectors about $p$ comprise a cone with vertex at $p$, as illustrated in figure 8.1. The portion with $\Delta x \leq 0$ is referred to as its \tit{past light cone}. In the precise sense discussed in chapter 5, electromagnetic radiation emitted at $p$ propagates along the future light cone of $p$ (see section 5.2), whereas electromagnetic radiation observed at $p$ propagated to $p$ along its past ligt cone (see section 5.4). The interior of the future light cone of $p$ is referred to as the \tit{future} of $p$. It is composed of events that, in principle, can be reached by an observer initially present at $p$. Similarly, the interior of the past light cone of $p$ is referred to as the \tit{past} of $p$. It is composed of events with the property that an observer starting at that event can, in principle, arrive at $p$. The events lying outside the light cone of $p$ are said to be \tit{spacelike related} to $p$. No observer can be present both at $p$ and at an event spacelike related to $p$. In other words, in special relativity, nothing can travel faster than light. 
 
-If $q$ is an event that lies in the future of $p$, then there is a unique inertial observer who is present at both $p$ and $q$. The proper time $\Delta \tau$ that elapses on a clock carried by this observer between $p$ and $q$ is given in any inertial cordinates by\footnote{AAAAA}
+If $q$ is an event that lies in the future of $p$, then there is a unique inertial observer who is present at both $p$ and $q$. The proper time $\Delta \tau$ that elapses on a clock carried by this observer between $p$ and $q$ is given in any inertial cordinates by\footnote{This can be seen by noting that the right side of eq. (\ref{eq:8.11}) is the spacetime interval between $p$ and $q$ and does not depend on the choice of inertial coordinates. In the frame of the inertial observers who goes from $p$ to $q$, we have $\Delta \vb{x} = 0$ so $\sum\eta_{\mu \nu} \Delta x^\mu \Delta x^\nu = - c^2 (\Delta t)^2$.}
 \begin{equation}\label{eq:8.11}
 \Delta \tau = \frac{1}{c}\sqrt{-\sum_{\mu, \nu} \eta_{\mu \nu} \Delta x^\mu \Delta x^\nu} \,,
 \end{equation}
@@ -151,13 +151,66 @@ If $q$ is an event that lies in the future of $p$, then there is a unique inerti
 where $\Delta x^\mu = x^\mu(q) - x^\mu(p)$. A general, noninertial observer will trace out a curve in spacetime, called the \tit{worldline} of the observer. Any curve in spacetime may be specified by giving $x^\mu(\lambda)$, where $\lambda$ 
 is an arbitrary parametrization of the curve. The tangent $T^\mu$ to the curve in this parametrization is defined by 
 \begin{equation}\label{eq:8.12}
-T^{\mu \nu} = \dv{x^\mu}{\lambda}\,.
+T^\mu = \dv{x^\mu}{\lambda}\,.
 \end{equation}
 
 The tangent $T^\mu$ to the worldline of any observer must be timelike (i.e, $\sum_{\mu \nu} \eta_{\mu \nu} T^\mu T^\nu < 0$), since the observer must stay within the light cone of any event that he/she passes through. The proper time elapsed on the clock of an arbitrary noninertial observer going between events $p$ and $q$ is given by
 \begin{equation}\label{eq:8.13}
 \Delta \tau = \frac{1}{c} \bigint_{\!\!\!\!\!\!\!\!\lambda(p)}^{\!\!\!\!\!\!\!\!\!\lambda(q)} {\sqrt{-\sum_{\mu, \nu} \eta_{\mu \nu} T^\mu T^\nu}} \dd{\lambda}\,.
 \end{equation}
+
+It is not difficult to show that the inertial observer who passes through events $p$ and $q$ maximizes the elapsed proper time relative to all observers who pass between $p$ and $q$. This fact is often referred to as the \tit{twin paradox} (see problem 1 at the end of the chapter).
+
+It is convenient to parametrize the worldline of an arbitrary observer by the proper time $\tau$ elapsed along the worldline. The tangent to the worldline in this parametrization is called the 4-\tit{velocity} of the observer:
+\begin{equation}\label{eq:8.14}
+u^\mu = \dv{x^\mu}{\tau}\,.
+\end{equation}
+
+It follows from eq. (\ref{eq:8.13}) with $\lambda = \tau$ that $$\sum_{\mu\, \nu} \eta_{\mu \nu} u^\mu u^\nu = -c^2\,.$$
+In any inertial coordinates, the velocity $\vb{v}$ of this observer is given by
+\begin{equation}\label{eq:8.15}
+\vb{v} = \dv{\vb{x}}{t} = c \dv{\vb{x}}{x^0} = c \frac{\dv*{\vb{x}}{\tau}}{\dv*{x^0}{\tau}} = c \frac{\vb{u}}{u^0}\,.
+\end{equation}
+
+It follows from this relation and the normalization condition on $u^\mu$ that, in any inertial coordinates, the components of $u^\mu$ are given in terms of $\vb{v}$ by 
+\begin{equation}\label{eq:8.16}
+u^\mu = (c \gamma, \gamma \vb{v})\,,
+\end{equation}
+where $\gamma$ is given by eq. (\ref{eq:8.4}).
+
+As discussed above, because of the flat spacetime geometry, the finite displacements 
+$\Delta x^\mu = x^\mu - x^\mu(p)$ about $p$ comprise a 4-dimensional vector space, which we denote by $V_p$. The tangent $T^\mu$ to a curve passing through $p$ can naturally be viewed as a vector in $V_p$. For an arbitrary spacetime vector, we will strictly adhere to the notational convention that an \tit{upper} Greek letter index will be attached to the letter representing the vector (e.g: when a symbol such as $W^\mu$ appears below, one can immediately tell from the notation that $W^\mu$ is a spacetime vector). 
+
+Spacetime vectors in special relativity have a geometrical status in exactly the same sense that ordinary vectors have a geometrical status in ordinary, 3-dimensional space. Although the representation of a spacetime vector in terms of its components depends on a choice of inertial coordinate system, one may view the spacetime vector as having a geometrical meaning that does not depend on a choice of coordinates---in exactly the same manner as an ordinary vector can be viewed as having a geometrical meaning, independent of the representation of its components in a particular Cartesian coordinate system. 
+
+Another class of objects that have a similar geometrical status are linear maps taking vectors to numbers. A linear map taking $V_p$ into $\R$ is called a \tit{dual vector}. The collection of all dual vectors at $p$ comprises a vector space of the same dimension as $V_p$, known as the \tit{dual space} to $V_p$ and denoted by $V^*_p$. Given any vector $W^\mu$ in $V_p$, we can use the spacetime metric $\eta_{\mu \nu}$  to construct a dual vector $L_W$ taking 
+$V_p$ into $\R$ by
+
+\begin{equation}\label{eq:8.17}
+S^\mu \rightarrow \sum_{\mu, \nu} \eta_{\mu \nu} S^\mu W^\nu\,,
+\end{equation}
+
+that is, $L_W$ maps the arbitrary vector $S^\mu$ into the number given by the right side of this equation. It is not difficult to show that, in the presence of a metric, all dual vectors arise in this manner. It is natural to denote the dual vector $L_W$ by 
+\begin{equation}\label{eq:8.18}
+W_\mu \equiv \sum_{\nu = 0}^3 \eta_{\mu \nu} W^\nu\,,
+\end{equation}
+so that the linear map $L_W$ is given by $S^\mu \rightarrow \sum_\nu S^\nu W_\nu$. In this notation, the lowered index on $W_\mu$ on the left side of eq. (\ref{eq:8.18}) indicates that this quantity is the dual vector obtained from $W^\mu$ rather than $W^\mu$ itself. For an arbitrary dual vector we will strictly adhere to the notational convention that a \tit{lower} Greek letter index will be attached to the letter representing the dual vector (e.g., when a symbol such as $U_\mu$ appears below, one can immediately tell from the notation that $U_\mu$ is a spacetime dual vector).
+
+Since the spacetime metric is not degenerate, eq. (\ref{eq:8.18}) can be inverted to give
+\begin{equation}\label{eq:8.19}
+W^\mu = \sum_{\nu = 0}^3 \eta^{\mu \nu} W_\nu\,,
+\end{equation}
+where $\eta^{\mu \nu}$ denotes the inverse spacetime metric, whose matrix of components is given by the inverse matrix\footnote{In an inertial coordinate system, the components of $\eta_{\mu \nu}$ are given by eq. (\ref{eq:8.7}), and the inverse of eq. (\ref{eq:8.7}) then has exactly the same components as eq. (\ref{eq:8.7}) (see eq. (5.121)). However, $\eta^{\mu \nu}$ and $\eta_{\mu \nu}$ are fundamentally very different objects, and this equality of their components would not hold in a general, noninertial coordinate system.} of $\eta_{\mu \nu}$. Following standard conventions, if $U_\mu$ is a dual vector, we denote the corresponding vector given by eq. (\ref{eq:8.19}) as $U^\mu$. Thus, we use $\eta^{\mu \nu}$ and $\eta_{\mu \nu}$ to raise and lower indices in the manner given by eq. (\ref{eq:8.18}) and eq. (\ref{eq:8.19}).
+
+Vectors and dual vectors are fundamentally very different objects. Nevertheless, when a metric is present, vectors and dual vectors can be identified via the correspondence eq. (\ref{eq:8.18}) or equivalently, eq. (\ref{eq:8.19}). When dealing with a vector $\vb{v}$ in ordinary Euclidean space, the components $(v^1, v^2, v^3)$ of the vector Cartesian coordinates are equal to the components $(v_1, v_2, v_3)$ of the corresponding dual vector on account of the trivial form, eq. (\ref{eq:8.9}), of the Euclidean metric. Thus, in this case, if one treats a vector as a 3-tuple of numbers, one can get away with not making a distinction between a vector and its corresponding dual vector.\footnote{In this regard, it should be noted that in the previous chapters of this book, we denoted the Cartesian components of vectors such as the electric field $\vb{E}$ as $E_i$ rather than $E^i$. This is not because we were working with the corresponding dual vector but instead because there was no need to make a distinction between vectors and dual vectors and, correspondingly, no need to adhere to the conventions on the index positions that we have just introduced. We wrote \quotes{$E_i$} simply because it was typographically more convenient to write $E_i$ rather than $E^i$. However, from this point forward in this book, we will strictly adhere to our conventions on index positions.} 
+This accounts for why many students of physics have never explicitly encountered the notion of a dual vector. However, in special relativity, in any inertial coordinates, the dual vector $W_\mu$ corresponding to $W^\mu$ has $W_0 = - W^0$, and we cannot get away with ignoring the distinction between vectors and dual vectors.  
+
+A prime example of a dual vector at $p$ is the spacetime gradient $\partial_\mu f = \pdv*{f}{x^\mu}$ of a function $f$ evaluated at $p$. This is seen to be a dual vector as follows. For any curve with tangent $T^\mu$ at $p$, the quantity $\sum_\mu T^\mu \partial_\mu f$ represents the derivative of $\pdv*{f}{\lambda}$ of $f$ along the curve and thus is well defined, independently of any choice of coordinates. Thus, $\partial_\mu f$ at $p$ naturally can be viewed as a linear map taking tangent vectors $T^\mu$ at $p$ into numbers (i.e., a dual vector). This is because the correspondence between vectors and dual vectors that is provided by the Euclidean metric is being used. Fundamentally, however, the gradient of $f$ is a dual vector.  
+
+
+ 
+
+
 
 
  
