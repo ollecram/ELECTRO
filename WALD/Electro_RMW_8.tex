@@ -141,6 +141,28 @@ about any event $p$ that are \tit{null}, in other words, such that
 \sum_{\mu \nu} \eta_{\mu \nu} \Delta x^\mu \Delta x^\nu = 0 \,.
 \end{equation}
 
+The collection of all null specetime displacement vectors about $p$ comprise a cone with vertex at $p$, whereas the portion with $\Delta x \leq 0$ is referred to as its \tit{past light cone}. In the precise sense discussed in chapter 5, electromagnetic radiation emitted at $p$ propagates along the future light cone of $p$ (see section \ref{sec:5.2}), whereas electromagnetic radiation observed at $p$ propagated to $p$ along its past ligt cone (see section \ref{sec:5.4}). The interior of the future light cone of $p$ is referred to as the \tit{future} of $p$. It is composed of events that, in principle, can be reached by an observer initially present at $p$. Similarly, the interior of the past light cone of $p$ is referred to as the \tit{past} of $p$. It is composed of events with the property that an observer starting at that event can, in principle, arrive at $p$. The events lying outside the light cone of $p$ are said to be \tit{spacelike related} to $p$. No observer can be present both at $p$ and at an event spacelike related to $p$. In other words, in special relativity, nothing can travel faster than light. 
+
+If $q$ is an event that lies in the future of $p$, then there is a unique inertial observer who is present at both $p$ and $q$. The proper time $\Delta \tau$ that elapses on a clock carried by this observer between $p$ and $q$ is given in any inertial cordinates by\footnote{AAAAA}
+\begin{equation}\label{eq:8.11}
+\Delta \tau = \frac{1}{c}\sqrt{-\sum_{\mu, \nu} \eta_{\mu \nu} \Delta x^\mu \Delta x^\nu} \,,
+\end{equation}
+
+where $\Delta x^\mu = x^\mu(q) - x^\mu(p)$. A general, noninertial observer will trace out a curve in spacetime, called the \tit{worldline} of the observer. Any curve in spacetime may be specified by giving $x^\mu(\lambda)$, where $\lambda$ 
+is an arbitrary parametrization of the curve. The tangent $T^\mu$ to the curve in this parametrization is defined by 
+\begin{equation}\label{eq:8.12}
+T^{\mu \nu} = \dv{x^\mu}{\lambda}\,.
+\end{equation}
+
+The tangent $T^\mu$ to the worldline of any observer must be timelike (i.e, $\sum_{\mu \nu} \eta_{\mu \nu} T^\mu T^\nu < 0$), since the observer must stay within the light cone of any event that he/she passes through. The proper time elapsed on the clock of an arbitrary noninertial observer going between events $p$ and $q$ is given by
+\begin{equation}\label{eq:8.13}
+\Delta \tau = \frac{1}{c} \bigint_{\!\!\!\!\!\!\!\!\lambda(p)}^{\!\!\!\!\!\!\!\!\!\lambda(q)} {\sqrt{-\sum_{\mu, \nu} \eta_{\mu \nu} T^\mu T^\nu}} \dd{\lambda}\,.
+\end{equation}
+
+
+ 
+ 
+  
 \section{The Formulation of Electromagnetic Theory in the Framework of Special Relativity}\label{sec:8.2}
 
 \section{Charged Particle Motion and Radiation}\label{sec:8.3}
