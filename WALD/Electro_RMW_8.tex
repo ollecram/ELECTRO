@@ -38,7 +38,6 @@ I = - c^2 (\Delta t)^2 + \abs{\Delta \vb{x}}^2\;.
  
 To tie the previous paragraph to what people are usually taught in special relativity, note that, in special relativity, 
 the labeling $(t, \vb{x})$ of events by a family $O$ of observers is related to the labeling $(t', \vb{x}')$ by a family $O'$ of observers moving with velocity $v$ in the $x-$direction relative to $O$ (and with the same origin event and the same orientation of axes as $O$) by a \tit{Lorentz transformation}:
-
 \begin{equation}\label{eq:8.3}
 \begin{aligned}
 t' &= \gamma (t - vx/c^2)\,,\\
@@ -47,13 +46,60 @@ y' &= y\,,\\
 z' &= z\,,
 \end{aligned}
 \end{equation}
-
 where   
 \begin{equation}\label{eq:8.4}
 \gamma \equiv \frac{1}{\sqrt{1 - v^2/c^2}}\,.
 \end{equation}
 
-It is easily checked that $I$ is invariant under Lorentz transformations. Furthermore, it can be shown that the most general transformation that preserves $I$ is a \tit{Poincaré transformation} (i.e., a composition of Lorentz transformations, rotations, and translations, as well as parity and time reversal transformations). Thus, Lorentz transformations naturally arise as (part of) the symmetry group of $I$.
+\newpage
+
+% BOX 1 **START** -- << Give Lorentz transformation in terms of parallel and normal components wrt the relative velocity >>
+\subsubsection*{BOX 8.1 -- Lorentz transformations in vector form}\label{box:8.1}
+\parindent=0pt  % Set the paragraph indentation to 0 (normal = 10pt) before the box 
+\parbox{\textwidth}{\begin{mdframed}[style=MyFrame] %Added "\parbox{\textwidth}{"
+%\lipsum[1]
+A Lorentz transformation does only change time and the component of the spatial position vector $\vb{r}$ in the direction of relative motion; it does not change any component of $\vb{r}$ perpendicular to that direction. With this in mind, split $\vb{r}$ as measured in a frame $F$, and $\vb{r}'$ as measured in $F'$, each into components perpendicular ($\perp$) and parallel ($\parallel$) to the direction of the relative velocity $\vb{v}$:
+\begin{equation*}
+\vb{r} = \vb{r}_\perp + \vb{r}_\parallel\,,\quad \vb{r'} = \vb{r'}_\perp + \vb{r'}_\parallel 
+\end{equation*}
+then the transformations are 
+\begin{align*}
+t' &= \gamma \left( t - \frac{\vb{r}_\parallel \cdot \vb{v}}{c^2} \right)\\
+\vb{r'}_\parallel &= \gamma (\vb{r}_\parallel - \vb{v}t)\\
+\vb{r'}_\perp &= \vb{r}_\perp
+\end{align*}
+%\lipsum[2]
+\end{mdframed}} %Added a closing "}" here
+\parindent=10pt % Set the paragraph indentation to normal (10pt) 
+% BOX 1 ** END ** -- << Give Lorentz transformation in terms of parallel and normal components wrt the relative velocity >>
+
+The interval $I$ (Eq. \ref{eq:8.2}) is invariant under Lorentz transformations. 
+
+% BOX 2 **START** -- << Check that I is invariant under Lorentz transformations >>
+\subsubsection*{BOX 8.2 -- Invariance of $I$}\label{box:8.2}
+\parindent=0pt  % Set the paragraph indentation to 0 (normal = 10pt) before the box 
+\parbox{\textwidth}{\begin{mdframed}[style=MyFrame] %Added "\parbox{\textwidth}{"
+%\lipsum[1]
+Making use of vector notations introduced in Box \ref{box:8.1} we have 
+\begin{align*}
+{I'}^2 &=  - \left(c \Delta t'\right)^2 + \abs{\Delta \vb{r}'}^2\\
+       &= -c^2 \gamma^2 \left(\Delta t - \Delta \vb{r}_\parallel \cdot \vb{v} /c^2 \right)^2
+          +    \gamma^2 \abs{\Delta \vb{r}_\parallel - \vb{v} \Delta t}^2 \quad + \abs{\Delta \vb{r}_\perp}^2\\
+       &=\;    -\gamma^2 \left( {(c \Delta t)}^2 + v^2/c^2 \abs{\Delta \vb{r}_\parallel}^2      -2 \Delta \vb{r}_\parallel \cdot \vb{v} \Delta t \right)\\
+       &+ \quad \gamma^2 \left( \abs{\Delta \vb{r}_\parallel}^2 + v^2 (\Delta t)^2 \quad\quad   -2 \Delta \vb{r}_\parallel \cdot \vb{v} \Delta t \right)\quad + \abs{\Delta \vb{r}_\perp}^2\\
+       &= - c^2 (\Delta t)^2  + \gamma^2 (1 - v^2/c^2) \abs{\Delta \vb{r}_\parallel}^2 + \abs{\Delta \vb{r}_\perp}^2\\
+       &= - c^2 (\Delta t)^2  + \abs{\Delta \vb{r}_\parallel}^2 + \abs{\Delta \vb{r}_\perp}^2\\
+       &= - c^2 (\Delta t)^2  + \abs{\Delta \vb{r}}^2\\ 
+       &= I^2\qed
+\end{align*}
+
+%\lipsum[2]
+\end{mdframed}} %Added a closing "}" here
+\parindent=10pt % Set the paragraph indentation to normal (10pt) 
+% BOX 2 ** END ** -- << Check that I is invariant under Lorentz transformations >>
+
+\newpage
+Furthermore, it can be shown that the most general transformation that preserves $I$ is a \tit{Poincaré transformation} (i.e., a composition of Lorentz transformations, rotations, and translations, as well as parity and time reversal transformations). Thus, Lorentz transformations naturally arise as (part of) the symmetry group of $I$.
 
 The spacetime interval $I$ has the same mathematical form as the squared distance in Euclidean geometry except for the minus sign in front of the contribution coming from $(\Delta t)^2$. To pursue this further, we switch notation from $(t, \vb{x})$ to $x^\mu$ with $\mu=0, 1, 2, 3\,,$ where 
 \begin{equation}\label{eq:8.5}
