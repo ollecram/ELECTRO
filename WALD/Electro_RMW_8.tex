@@ -301,7 +301,57 @@ We now turn to the implications of what we have said above for the laws of physi
 \footnote{An important example of such an operation is the trace 
 ${T^{\mu_1\ldots\mu_k}}_{\nu_1\ldots\nu_l} \rightarrow \sum_\alpha {T^{\mu_1\ldots\alpha\ldots\mu_k}}_{\nu_1\ldots\alpha\ldots\nu_l}$
 over one upper index and one lower index, which is a well-defined operation taking a tensor of type $(k,l)$ into a tensor of type $(k-1,l-1)$. The fact that this operation is independent of the choice of inertial coordinates can be seen from eq. (\ref{eq:8.31}).} 
-such as the notion of differentiation given by eq. (\ref{eq:8.32}). These criteria correspond to the more common statement that in special relativity, the laws of physics should be invariant under Lorentz transformations. Any relation equating two tensors will be well defined independently of any choice of inertial coordinates and thus automatically will remain valid under a change of inertial coordinates. We refer to a theory satisfying properties (i) and (ii) as being \tit{special relativistically covariant}.  
+such as the notion of differentiation given by eq. (\ref{eq:8.32}). These criteria correspond to the more common statement that in special relativity, the laws of physics should be invariant under Lorentz transformations. Any relation equating two tensors will be well defined independently of any choice of inertial coordinates and thus automatically will remain valid under a change of inertial coordinates. We refer to a theory satisfying properties (i) and (ii) as being \tit{special relativistically covariant}. 
+
+The implications of the previous paragraph are well illustrated by considering the nature of the laws of particle mechanics in special relativity. In pre-relativity physics, we define the momentum $\vb{p}$ of a particle by
+\begin{equation}\label{eq:8.33}
+\vb{p} = m \vb{v} = m \dv{\vb{x}}{t}\,,
+\end{equation}
+where $m$ denotes the mass of the particle, which is usually assumed to be constant. Newton's second law then takes the form
+\begin{equation}\label{eq:8.34}
+\dv{\vb{p}}{t} = \vb{f}\,,
+\end{equation}
+where the form of the force $\vb{f}$ depends on the particular situation considered. However, spatial vectors have no well-defined status in special relativity, nor does $t$, so eq. (\ref{eq:8.34}) as it stands is not an acceptable law of physics in special relativity. We have two possibilities for formulating an acceptable version of the laws of particle mechanics: 
+(a) It could be that eq. (\ref{eq:8.34}) is actually already special relativistically covariant, and all that needs to be done is to formulate/rewrite this equation in such a way that it involves only spacetime tensors. (b) Equation (\ref{eq:8.34}) does not correspond to to a special relativistically covariant equation, in which case it must be discarded and replaced by a new law that involves only spacetime tensors.
+
+The only reasonable candidate for a spacetime tensor that could represent the velocity of a particle is its 4-velocity, $u^\mu$. The only reasonable candidate for a spacetime tensor that could represent the momentum of the particle is 
+\begin{equation}\label{eq:8.35}
+p^\mu = m u^\mu\,.
+\end{equation}
+
+We refer to $p^\mu$ as the 4-momentum of the particle and, in special relativity, the parameter $m$ is usually referred to as the \quotes{rest mass} of the particle (to distinguish it from what some authors call the \quotes{relativistic mass,} $p^0/c = \gamma m$). The only reasonable candidate for a modified version of Newton's second law that involves only tensor quantities is 
+\begin{equation}\label{eq:8.36}
+\sum_\nu u^\nu \partial_\nu p^\mu = f^\mu \,.
+\end{equation}
+where the 4-force $f^\mu$ depends on the particular situation considered. Thus, the principles of the previous paragraph lead, in an essentially unique way, to the modification eq. (\ref{eq:8.36}) of Newton's second law that is special relativistically covariant.
+
+Note that $u^\mu \partial_\mu = \dv{}{\tau}$ (i.e., $u^\mu \partial_\mu$ is the derivative along the worldline of the particle using the proper time parametrization). Thus, we may rewrite eq. (\ref{eq:8.36}) in the form
+\begin{equation}\label{eq:8.37}
+\dv{}{\tau}\left( m \dv{x^\mu}{\tau}  \right) = f^\mu\;.
+\end{equation}
+
+It is also worth noting that if we assume that the 4-force $f^\mu$ is orthogonal to the 4-velocity $u^\mu$, then 
+\begin{equation}\label{eq:8.38}
+\begin{aligned}
+0 &= \sum_{\mu,\nu} \eta_{\mu \nu} u^\mu f^\nu\\
+  &= \sum_{\mu,\nu} \eta_{\mu \nu} u^\mu \dv{p^\nu}{\tau}\\
+  &= \frac{1}{2} m \dv{}{\tau} \left(\sum_{\mu, \nu} \eta_{\mu\nu} u^\mu u^\nu \right) + \dv{m}{\tau} \sum_{\mu, \nu} \eta_{\mu\nu} u^\mu u^\nu \\
+  &= -c^2 \dv{m}{\tau}\;.
+\end{aligned}
+\end{equation}
+
+Thus, if $\sum_{\mu,\nu} \eta_{\mu \nu} u^\mu f^\nu = 0$, then the rest mass of the particle does not change as the particle moves along its worldline.
+
+The example of special relativistic particle mechanics also provides a good illustration of the manner in which spacetime tensors combine together---into a single quantity---quantities that would have been viewed as entirely distinct in pre-relativity physics. (This occurs whether or not the dynamical laws themselves need to be modified to be manifestly special relativistically covariant.) In pre-relativity physics, the energy of a particle, $E = \frac{1}{2} m v^2$, is a scalar quantity, and one has the freedom to add an arbitrary constant to it. It is entirely distinct from the momentum of the particle, $\vb{p} = m \vb{v}$. However, in special relativity, these quantities are identified as the components of the 4-momentum $p^\mu$ of the particle:
+\begin{equation}\label{eq:8.39}
+(E/c, \vb{p}) = p^\mu = (m u^0, m \vb{u}) = (\gamma m c, \gamma m \vb{v})\,.
+\end{equation}
+
+This gives rise to new formulas for momentum and energy, namely,\\$\vb{p} = \gamma m \vb{v}$, and $E = \gamma m c^2$. 
+Most importantly, since $E$ is now the component of a spacetime vector rather than a scalar quantity, there is no longer any freedom to modify its definition by the addition of a constant, Thus a particle at rest must be assigned the energy $E = mc^2$.
+
+We conclude this section by stating two standard notational conventions that will be used throughout the rest of this book: (i) Up until this point, we have explicitly written the metric $\eta_{\mu\nu}$ whenever it has been used to convert vectors to dual vectors via the correspondence eq. (\ref{eq:8.18}). We will no longer continue to do so (e.g., having introduced the 4-velocity $u^\mu$ we will simply write $u_\mu$ for $\sum_\nu \eta_{\mu \nu} u^\nu$). Similarly, we will not write the inverse metric explicitly when converting a dual vector to a vector via eq. (\ref{eq:8.19}) (e.g., we will write $\partial_\mu f$ for $\sum_\nu \eta^{\mu\nu} \partial_\nu f$). (ii) We will omit the summation sign $\sum$ when summing over a repeated upper and lower index (e.g., we will simply write $u^\mu \partial_\mu f$ for $\sum_\mu u^\mu \partial_\mu f$). The omission of the summation sign in such sums was introduced by Einstein and is referred to as \tit{Einstein summation convention}. As a simple example of the notational conventions (i) and (ii) that will be used freely below, the first equality in (\ref{eq:8.38}) will now be written as $0 = u^\mu f_\mu$  (or, equivalently, as $0 = u_\mu f^\mu$). 
+
 
 
 
