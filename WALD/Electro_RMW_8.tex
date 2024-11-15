@@ -205,7 +205,104 @@ where $\eta^{\mu \nu}$ denotes the inverse spacetime metric, whose matrix of com
 Vectors and dual vectors are fundamentally very different objects. Nevertheless, when a metric is present, vectors and dual vectors can be identified via the correspondence eq. (\ref{eq:8.18}) or equivalently, eq. (\ref{eq:8.19}). When dealing with a vector $\vb{v}$ in ordinary Euclidean space, the components $(v^1, v^2, v^3)$ of the vector Cartesian coordinates are equal to the components $(v_1, v_2, v_3)$ of the corresponding dual vector on account of the trivial form, eq. (\ref{eq:8.9}), of the Euclidean metric. Thus, in this case, if one treats a vector as a 3-tuple of numbers, one can get away with not making a distinction between a vector and its corresponding dual vector.\footnote{In this regard, it should be noted that in the previous chapters of this book, we denoted the Cartesian components of vectors such as the electric field $\vb{E}$ as $E_i$ rather than $E^i$. This is not because we were working with the corresponding dual vector but instead because there was no need to make a distinction between vectors and dual vectors and, correspondingly, no need to adhere to the conventions on the index positions that we have just introduced. We wrote \quotes{$E_i$} simply because it was typographically more convenient to write $E_i$ rather than $E^i$. However, from this point forward in this book, we will strictly adhere to our conventions on index positions.} 
 This accounts for why many students of physics have never explicitly encountered the notion of a dual vector. However, in special relativity, in any inertial coordinates, the dual vector $W_\mu$ corresponding to $W^\mu$ has $W_0 = - W^0$, and we cannot get away with ignoring the distinction between vectors and dual vectors.  
 
-A prime example of a dual vector at $p$ is the spacetime gradient $\partial_\mu f = \pdv*{f}{x^\mu}$ of a function $f$ evaluated at $p$. This is seen to be a dual vector as follows. For any curve with tangent $T^\mu$ at $p$, the quantity $\sum_\mu T^\mu \partial_\mu f$ represents the derivative of $\pdv*{f}{\lambda}$ of $f$ along the curve and thus is well defined, independently of any choice of coordinates. Thus, $\partial_\mu f$ at $p$ naturally can be viewed as a linear map taking tangent vectors $T^\mu$ at $p$ into numbers (i.e., a dual vector). This is because the correspondence between vectors and dual vectors that is provided by the Euclidean metric is being used. Fundamentally, however, the gradient of $f$ is a dual vector.  
+A prime example of a dual vector at $p$ is the spacetime gradient $\partial_\mu f = \pdv*{f}{x^\mu}$ of a function $f$ evaluated at $p$. This is seen to be a dual vector as follows. For any curve with tangent $T^\mu$ at $p$, the quantity $\sum_\mu T^\mu \partial_\mu f$ represents the derivative of $\pdv*{f}{\lambda}$ of $f$ along the curve and thus is well defined, independently of any choice of coordinates. Thus, $\partial_\mu f$ at $p$ naturally can be viewed as a linear map taking tangent vectors $T^\mu$ at $p$ into numbers (i.e., a dual vector). 
+Note that in ordinary Euclidean space, the gradient of $f$ would normally be denoted by $\grad f$ in vecor calculus notation (i.e., it would be treated as a vector rather than a dual vector. This is because the correspondence between vectors and dual vectors that is provided by the Euclidean metric is being used. Fundamentally, however, the gradient of $f$ is a dual vector.  
+
+Another important example of a dual vector arises when we consider plane wave solutions or, more generally, solutions in the geometric optics approximation. Let $\psi$ be a plane wave solution to the scalar wave equation
+\begin{equation}\label{eq:8.20}
+\psi(t, \vb{x}) = C e^{-i \omega t + i \vb{k} \cdot \vb{x}}   
+\end{equation}
+The phase of $\psi$, 
+\begin{equation}\label{eq:8.21}
+\mathscr{S} \equiv = -\omega t + \vb{k} \cdot \vb{x}\,,
+\end{equation}
+may be viewed as a linear map taking spacetime displacement vectors $x^\mu = (ct, \vb{x})$ into numbers. Thus
+\begin{equation}\label{eq:8.22}
+k_\mu = (-\omega/c, k_1, k_2, k_3)
+\end{equation}
+defines a spacetime dual vector. More generally, for any $\psi$ of the spacetime geometric optics form (see problem 1 of chapter \ref{ch:7})
+\begin{equation}\label{eq:8.23}
+\psi(t, \vb{x}) = \mathscr{A}(t, \vb{x}) e^{i \mathscr{S}(t, \vb{x})}\,,
+\end{equation}
+the quantity 
+\begin{equation}\label{eq:8.24}
+k_\mu = \partial_\mu \mathscr{S}
+\end{equation}
+defines a dual vector field on spacetime. These results also apply to plane wave and geometric optics solutions to Maxwell's equations. It is important to note that, as shown in problem 1 of chapter \ref{ch:7}, the corresponding vector field 
+\begin{equation}\label{eq:8.25}
+k^\mu = \sum_\nu \eta^{\mu \nu} k_\nu
+\end{equation}
+is null, $\sum_{\mu,\nu} \eta_{\mu \nu} k^\mu k^\nu = 0$, and its tangent to straight lines (\quotes{light rays}) in spacetime. The upshot is that for plane waves---or, more generally, geometric optics solutions---the \tit{wave} 4-\tit{vector}
+\begin{equation}\label{eq:8.26}
+k^\mu = (\omega/c, \vb{k})
+\end{equation}
+plays a role for light rays that is very similar to the role played by the 4-velocity $u^\mu$ for particle motion. In particular, the change in frequency and direction of a light ray as seen by a moving observer follows from the fact that $k^\mu$ is a spacetime vector (see problem 4). 
+
+It should be noted that vectors and dual vectors transform differently under Lorentz transformations. Under the Lorents transformation eq. (\ref{eq:8.3}) with origin at $p$, a vector $W^\mu$ at $p$ transforms as 
+\begin{equation}\label{eq:8.27}
+W^\mu \rightarrow W'^\mu = \sum_\nu {\Lambda^\mu}_\nu W^\nu\,,
+\end{equation}
+where the matrix of components of the Lorentz transformation ${\Lambda^\mu}_\nu$ is given by\footnote{The \quotes{1 up} and \quotes{1 down} index positions in ${\Lambda^\mu}_\nu$ correspond to the fact that ${\Lambda^\mu}_\nu$ is a linear map on vectors and hence is a tensor of type (1, 1) (see the discussion later in this section).}
+\begin{equation}\label{eq:8.28}
+{\Lambda^\mu}_\nu = \mqty(\gamma &-\gamma v/c &0 &0\\
+                         -\gamma v/c &\gamma &0 &0\\
+                          0 &0 &1 &0\\
+                          0 &0 &0 &1) \,.
+\end{equation}
+ 
+In contrast, a dual vector $U_\mu$ transforms as\footnote{Note the index position of the summed index $\nu$ in eq. (\ref{eq:8.29}), which would correspond to taking the transpose of the matrix $\Lambda^{-1}$ in usual matrix multiplication rules. Note also that the Cartesian coordinate components of a rotation matrix ${R^\mu}_\nu$ in Euclidean geometry satisfy ${(R^{-1})^\nu}_\mu = {R^\mu}_\nu$, so the transformations eq. (\ref{eq:8.27}) and eq. (\ref{eq:8.29}) take the same form for rotations in Euclidean geometry, consistent with being able to treat vectors and dual vectors as \quotes{the same} in this case.}
+\begin{equation}\label{eq:8.29}
+U_\mu \rightarrow U'_\mu = \sum_\nu {(\Lambda^{-1})^\nu}_\mu U_\nu\;,
+\end{equation}
+where ${(\Lambda^{-1})^\mu}_\nu$  is the inverse of ${\Lambda^\mu}_{\nu}$. It is easily checked that 
+${(\Lambda^{-1})^\mu}_\nu$ is given by the same formula as eq. (\ref{eq:8.28}) with $v \rightarrow -v$. 
+The relations eq. (\ref{eq:8.18}) and eq. (\ref{eq:8.19}) are preserved under Lorentz transfprmations on account of the invariance of the metric under Lorentz transformations in the sense that (see problem 2)
+\begin{equation}\label{eq:8.30}
+\eta_{\alpha \beta} = \sum_{\mu,\nu}{(\Lambda^{-1})^\mu}_\alpha {(\Lambda^{-1})^\nu}_\beta \eta_{\mu \nu}  \,.
+\end{equation}
+  
+  The important thing about vectors and dual vectors is not the specific formulas describing how they transform under Lorentz transformations but rather that they represent geometrical quantities that are well defined, independently of any choice of inertial coordinates. The worldline of a particle in spacetime is a well-defined curve that has physical meaning independently of how the events in spacetime are labeled with inertial or other coordinates. The 4-velocity $u^\mu$ of the particle (i.e., the normalized tangent to its worldline)  similarly has a well-defined physical meaning. It is therefore reasonable that it could enter the physical laws of motion of the particle. The fact that $u^\mu$ transforms according to eq. (\ref{eq:8.27}) under a change of inertial coordinates merely reflects that it has well-defined geometrical meaning as a vector. Similarly, the gradient $\partial_\mu f$ of a function $f$ has well-defined meaning as a dual vector, and the fact that it transforms as eq. (\ref{eq:8.29}) is merely a reflection of this. If $f$ is a physical quantity, it is reasonable that $\partial_\mu f$ could enter laws of physics involving $f$.
+  
+  A tensor is a more general geometrical quantity than vectors and dual vectors that can be defined in a mathematically precise manner as follows: A \tit{tensor of type} $(k,l)$ at $p$ is a multilinear (i.e., linear in each variable separately) map taking $k$ dual vectors and $l$ vectors at $p$ into $\R$. Thus, a tensor of type (0,1) is a linear map from vectors into numbers, i.e., it is a dual vector. A tensor of type (1,0) is a linear map from dual vectors into numbers. This might sound like yet another new object, but it is not difficult to see that such a \quotes{double dual vector} can be naturally identified with an ordinary vector,
+\footnote{This can be seen as follows. The action of a dual vector $U_\mu$ on a vector $S^\mu$ is given by 
+$S^\mu \rightarrow \sum_\mu U_\mu S^\mu$. However, $\sum_\mu U_\mu S^\mu$ could equally be viewed as defining an action of $S^\mu$ on dual vectors given by $U_\mu \rightarrow \sum_\mu U_\mu S^\mu$. In this manner, we may view any vector $S^\mu$ as corresponding to a double dual vector.}
+so a tensor of type (1,0) is just a vector. A tensor of type (0,2) is a map that takes a pair of vectors into $\R$ and is linear in each variable. The spacetime metric $\eta_{\mu\nu}$ is an example of a tensor of type (0,2). A tensor of type (1,1) is a map that takes a dual vector and a vector into $\R$ and is linear in each variable. A tensor $T$ of type (1,1) can be naturally identified\footnote{To see this, note that for any $v \in V_p$, the quantity $T(\cdot, v)$ is a linear map from $V^*_p$ into $\R$ and thus is a double dual vector, which can be identified with a vector. Thus, $T$ can be uniquely associated with a linear map from $V_p$ to $V_p$.}
+with a linear map taking $V_p$ into $\V_p$ (and also can be identified with a linear map taking $V^*_p$ into $V^*_p$).
+  
+Following the index conventions given above for vectors and dual vectors, we shall denote a tensor $T$ of type $(k,l)$ with $k$ upper and $l$ lower Greek indices, that is as ${T^{\mu_1\ldots\mu_k}}_{\nu_1\ldots\nu_l}$ where all the indices range from 0 to 3. We can use $\eta^{\mu\nu}$ and $\eta_{\mu\nu}$ to raise and lower any of the indices in the manner given by eq. (\ref{eq:8.18}) and eq. (\ref{eq:8.19}) , thereby enabling us to convert a tensor of type 
+$(k,l)$ into a tensor of any other type with the same rank, where the rank $r$ of a tensor is defined by $r = k + l$. Note that a general tensor of rank $r$ on a 4-dimensional space has $4^r$ independent components.
+
+Under a Lorentz transformation, ${T^{\mu_1\ldots\mu_k}}_{\nu_1\ldots\nu_l}$ transforms as
+\begin{equation}\label{eq:8.31}
+\begin{aligned}
+&{T^{\mu_1\ldots\mu_k}}_{\nu_1\ldots\nu_l} \rightarrow {T'^{\mu_1\ldots\mu_k}}_{\nu_1\ldots\nu_l}\\
+\quad &= \sum_{\alpha_1\ldots\beta_l} 
+{\Lambda^{\mu_1}}_{\alpha_1} \cdots {\Lambda^{\mu_k}}_{\alpha_k}
+{(\Lambda^{-1})^{\beta_1}}_{\nu_1} \cdots {(\Lambda^{-1})^{\beta_l}}_{\nu_l}
+{T^{\alpha_1\ldots\alpha_k}}_{\beta_1\ldots\beta_l}\;.
+\end{aligned}
+\end{equation}
+
+In other words, if a tensor of type $(k,l)$ has components ${T^{\mu_1\ldots\mu_k}}_{\nu_1\ldots\nu_l}$ in some inertial 
+coordinates $x^\mu$, then the components of the tensor in the inertial coordinate system $x'^\mu = \sum_\nu {\Lambda^\mu}_\nu x^\nu$ are given by eq. (\ref{eq:8.31}).
+\footnote{Here we are taking a \quotes{passive view} of Lorentz transformations, wherein the tensor does not change, but its description in terms of coordinate components changes. Alternatively, we could take an \quotes{active view} of Lorentz transformations, wherein the inertial coordinate system is fixed but the Lorentz transformation is viewed as acting on the tensor, mapping the tensor $T$ at $x^\mu$ to a new tensor $T'$ at $x'^\mu$ via the formula (\ref{eq:8.31}). These views are equivalent (i.e. we obtain the same results by making an active transformation as we would by making an active transformation by the inverse of this Lorentz transformation).} 
+Again, the important thing about a tensor is not the explicit formula eq. (\ref{eq:8.31}) for how its components transform under a change of inertial cocordinates but the fact that it represents a well-defined object, independent of any choice of coordinates. 
+
+A \tit{tensor field} of type $(k,l)$ is the specification of tensor of type $(k,l)$ at $p$ for all $p$. It is convenient to define a tensor of type (0,0) to be a number, in which case, a function may be viewed as a tensor field of type (0,0). We define the derivative of a tensor field ${T^{\mu_1\ldots\mu_k}}_{\nu_1\ldots\nu_l}$ to be the tensor field $\partial_\alpha\,{T^{\mu_1\ldots\mu_k}}_{\nu_1\ldots\nu_l}$ of type $(k, l+1)$ given in any inertial coordinates by 
+\begin{equation}\label{eq:8.32}
+\partial_\alpha\,{T^{\mu_1\ldots\mu_k}}_{\nu_1\ldots\nu_l} = \pdv{{T^{\mu_1\ldots\mu_k}}_{\nu_1\ldots\nu_l}}{x^\alpha}\;.
+\end{equation}
+
+Although this formula may look obvious/trivial, this simple notion of differentiation of a tensor field relies heavily on the flatness of the geometry of spacetime.
+\footnote{The notion of the gradient function (i.e., the derivative of a tensor field of type (0,0)) does not require a flat geometry for the definition of eq. (\ref{eq:8.32}) to yield a dual vector, but a flat geometry is needed to use eq. (\ref{eq:8.32}) to define the derivative of a higher rank tensor in a coordinate invariant way.} 
+In a curved geometry, there is still a unique, well-defined notion of differentiation of tensor fields that is determined by the metric, but this notion (usually referred to as \quotes{covariant differentiation}) is not obtained by merely taking partial derivatives in a coordinate system. However, we are not concerned with curved geometries here, and the more general notion of differentiation in a curved geometry reduces to eq. (\ref{eq:8.32}) in inertial coordinates in a flat geometry. Thus, eq. (\ref{eq:8.32}) is entirely satisfactory for our purposes. 
+
+We now turn to the implications of what we have said above for the laws of physics in special relativity. We want the mathematical objects representing physical quantities to be well defined, using only the structure of spacetime in special relativity. Similarly, we want the equations satisfied by these objects to be well defined, using only the special relativistic structure of spacetime. This suggests the following two criteria for the formulation of the laws of physics in special relativity: (i) Physical quantities should be represented bt spacetime tensor/tensor fields. (ii) The equations satisfied by these tensors/tensor fields should involve only these tensor fields, the spacetime metric, and operations that map spacetime tensors into spacetime tensors,
+\footnote{An important example of such an operation is the trace 
+${T^{\mu_1\ldots\mu_k}}_{\nu_1\ldots\nu_l} \rightarrow \sum_\alpha {T^{\mu_1\ldots\alpha\ldots\mu_k}}_{\nu_1\ldots\alpha\ldots\nu_l}$
+over one upper index and one lower index, which is a well-defined operation taking a tensor of type $(k,l)$ into a tensor of type $(k-1,l-1)$. The fact that this operation is independent of the choice of inertial coordinates can be seen from eq. (\ref{eq:8.31}).} 
+such as the notion of differentiation given by eq. (\ref{eq:8.32}). These criteria correspond to the more common statement that in special relativity, the laws of physics should be invariant under Lorentz transformations. Any relation equating two tensors will be well defined independently of any choice of inertial coordinates and thus automatically will remain valid under a change of inertial coordinates. We refer to a theory satisfying properties (i) and (ii) as being \tit{special relativistically covariant}.  
+
 
 
  
