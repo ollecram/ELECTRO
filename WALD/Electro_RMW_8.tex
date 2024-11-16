@@ -415,13 +415,68 @@ It is then straightforward to check that the remaining Maxwell equations (\ref{e
 where we are using the notational conventions described at the end of section \ref{sec:8.1}.
 
 Our remaining task is to write the energy density, momentum density, and stresses of the electromagnetic field in a special relativistically covariant form. This can be done by defining the following tensor field of type (0,2):
-\begin{equation}\label{eq:8.49}
-T_{00}^{EM} = \frac{1}{\mu_0} \left[{F_\mu}^\alpha F_{\nu\alpha} - \frac{1}{4} \eta_{\mu\nu} F_{\alpha\beta} F^{\alpha\beta}        \right] \;,
+\begin{equation}\label{eq:8.50}
+T_{\mu\nu}^{EM} = \frac{1}{\mu_0} \left[{F_\mu}^\alpha F_{\nu\alpha} - \frac{1}{4} \eta_{\mu\nu} F_{\alpha\beta} F^{\alpha\beta}        \right] \;,
 \end{equation}
 which is called the \tit{stress-energy-momentum tensor} (or stress-energy tensor, for short) of the electromagnetic field. It is straightforward to check that
+\begin{equation}\label{eq:8.51}
+T_{0 0}^{EM} = \frac{1}{2 \mu_0} \sum_i \left(\frac{1}{c^2} E_i^2 + B_i^2 \right) = \frac{1}{2}  \left(\epsilon_0 \abs{\vb{E}}^2 + \frac{1}{\mu_0} \abs{\vb{B}}^2  \right)\,, 
+\end{equation}
+\begin{equation}\label{eq:8.52}
+T_{0 i}^{EM} = T_{i 0}^{EM} = \frac{1}{\mu_0} \sum_j F_{0 j} F_{i j} = - \frac{1}{\mu_0 c} {(\vb{E} \cross \vb{B})}_i
+\end{equation}
+\begin{equation}\label{eq:8.53}
+T_{i j}^{EM} = - \frac{1}{\mu_0} \left[\frac{1}{c^2} E_i E_j + B_i B_j -\frac{1}{2} \delta_{ij} \left(\frac{1}{c^2}  \abs{\vb{E}}^2 + \abs{\vb{B}}^2\right)\right]\,.
+\end{equation}
+
+Thus, $T_{0 0}^{EM}$ is the energy density of the electromagnetic field, eq. (\ref{eq:5.11}). 
+It can be seen that $- T_{0 i}^{EM}/c$ is just the momentum density, eq. (\ref{5.12}), orequivalently, 
+$-c T_{0 i}^{EM}$ is Poyinting flux, eq. (\ref{eq:5.14}). Finally,  $-T_{i j}^{EM}$ is just the stress tensor
+$\Theta_{ij}$ of the electromagnetic field, eq.(\ref{eq:5.13}). Thus, $T^{EM}_{\mu\nu}$ combines into a single spacetime tensor the stress, energy, and momentum properties of the electromagnetic field---quantities that would be viewed as distinct in pre-relativity physics. The energy and momentum conservation relations (\ref{eq:5.17}) and 
+(\ref{eq:5.20}) then can be rewritten as the single spacetime tensor equation:
+\begin{equation}\label{eq:8.54}
+\partial^\alpha T^{EM}_{\alpha \mu} = F_{\nu \mu} J^\nu\:.
+\end{equation}
+
+Note that $T^{EM}_{\mu\nu}$ has vanishing trace: $\eta^{\mu\nu}T^{EM}_{\mu\nu} = 0\,.$
+
+It is a fundamental requirement of general relativity that all other forms of matter also can be assigned a stress-energy-momentum tensor, $T^M_{\mu\nu}$, whose components have the same interpretation as given above for the electromagnetic stress-energy-momentum tensor. It also is a fundamental requirement of general relativity that the total stress-energy-momentum tensor $T^EM_{\mu\nu} + T^M_{\mu\nu}$ must satisfy an equation that expresses local conservation of energy and momentum. In the flat spacetime of special relativity, this conservation equation takes the form
+\begin{equation}\label{eq:8.55}
+\partial^\alpha \left[ T^{EM}_{\alpha \mu} + T^{M}_{\alpha \mu} \right] = 0\,,
+\end{equation}
+and thus 
+\begin{equation}\label{eq:8.56}
+\partial^\alpha T^{M}_{\alpha \mu} = - F_{\nu \mu} J^\nu\:.
+\end{equation}
+
+In any inertial coordinates, the time component of eq. (\ref{eq:8.56}) is equivalent to the formula (\ref{eq:5.19}) for the rate at which energy per unit volume is transferred from the electromagnetic field to matter. The space components of eq. (\ref{eq:8.56}) are equivalent to the formula (\ref{eq:5.21}) for the Lorentz force density.
+
+Finally, it is worth noting that---when expressed in terms of $S_\mu$ rather than $\phi$ and $\vb{A}$---the Lorenz gauge condition eq. (\ref{eq:5.24}) takes the simple form
+\begin{equation}\label{eq:8.57}
+\partial^\mu A_\mu = 0\,.
+\end{equation}
+
+Thus, the Lorenz gauge condition is a special relativistically covariant condition. Maxwell's equations in Lorenz gauge take the form
+\begin{equation}\label{eq:8.58}
+\Box A_\mu \equiv \partial^\alpha \partial_\alpha A_\mu = -\mu_0 J_\mu\,,
+\end{equation}
+which is manifestly special relativistically covariant. The retarded solution to eq. (\ref{eq:8.58}) is 
+\begin{equation}\label{eq:8.59}
+A_\mu = \frac{\mu_0}{4 \pi} \bigint \frac{{[J_\mu(t', \vb{x}')]}_{ret}}{\abs{\vb{x} - \vb{x}'}} \dd[3]{x'}\;, 
+\end{equation}
+which is equivalent to eqs. (\ref{eq:5.56}) and (\ref{eq:5.57}).
+
+Thus we have succeeded in writing all the equations and results of section \ref{sec:5.1} in special relativistically covariant form. What has been gained in doing this? After all, as we have seen, the equations of electrodynamics as reformulated above are identical to the equations of electrodynamics as given in section \ref{sec:5.1}. However, this fact alone is very significant, because it shows that---unlike Newton's second law of particle mechanics---the theory of electromagnetism does not have to be modified to be compatible with the spacetime structure of special relativity. Furthermore, as I shall now explain, the formulation of the theory of electromagnetism in special relativistically covariant form gives rise to a major change in viewpoint on electromagnetic phenomena. 
+
+From the prespective of pre-relativity physics, the equations of section 5.1 make sense only in a preferred rest frame, presumably provided by an \quotes{aether}. Electromagnetic waves would then naturally be thought of as propagating disturbances of the aether (much as sound waves are propagating disturbances of the air), and it would be natural to try to give a purely mechanical explanation of all electromagnetic phenomena---as Maxwell himself attempted to do. However, with the need for a preferred rest frame eliminated, the notion of an aether becomes entirely unnatural, and it becomes natural to view the electromagnetic field as a physical entity in its own right.
+
+In the pre-relativity viewpoint, it would not be any more useful to ask how an observer moving with respect to the aether would interpret electromagnetic phenomena than it would be to ask how an observer moving through air would interpret sound waves. A simple description would be available only in the rest frame of the medium, and it would be most sensible to do all calculations in this rest frame. If one wanted to give a description of electromagnetic phenomena from the viewpoint of an observer moving through the aether, it would not be obvious how to define the electric and magnetic fields \quotes{seen} by such a moving observer. Whatever definition of electric and magnetic fields that one gave, with the pre-relativity notions of spacetime structure, they could not satisfy an unmodified form of Maxwell's equations in the frame of the moving observer. 
+
+However,  
 
 
- 
+
+
 
 
 
