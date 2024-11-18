@@ -2,6 +2,14 @@
 
 \documentclass[english, 11pt]{book}
 
+% Some specific typographic conventions used in Griffiths I2QM   START 
+\usepackage{mathtools}			% equation tag with [..] instead of (..)
+\mathtoolsset{showonlyrefs}     % only tag equations which are \label'ed   <<<<<<  N E W  
+\newtagform{brackets}{[}{]}		% equation tag with [..] instead of (..)
+\usetagform{brackets}			% equation tag with [..] instead of (..)
+\mathtoolsset{showonlyrefs}
+% Some specific typographic conventions used in Griffiths I2QM   END 
+
 \usepackage{babel}
 % choose options for [] as required from the list
 % in the Reference Guide, Sect. 2.2
