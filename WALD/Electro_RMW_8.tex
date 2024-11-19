@@ -494,24 +494,231 @@ F_{\mu\nu} \rightarrow F'_{\mu\nu} = \sum_{\alpha,\beta} {(\Lambda^{-1})^\alpha}
 \end{equation}
 
 Thus, if observer $O$ sees fields $\vb{E}$ and $\vb{B}$ present at event $p$, we find from this equation that an observer $O'$ moving in the $x$-direction with velocity $v$ with respect to observer $O$ would determine that the fields at $p$ are
+\begin{align}
+E'_1 = E_1, &\:\: B'_1 = B_1\,,\label{eq:8.64}\\  
+E'_2 = \gamma (E_2 - v B_3), &\quad B'_2 = \gamma \left(B_2 + \frac{v}{c^2} E_3 \right)\,,\label{eq:8.65}\\
+E'_3 = \gamma (E_3 + v B_2), &\quad B'_3 = \gamma \left(B_3 - \frac{v}{c^2} E_2 \right)\,.\label{eq:8.66}
+\end{align}
 
+In other words, we have
 
-
-
-
-
-
-
-
-
-
-
+\begin{align}
+\vb{E}'_\parallel = \vb{E}_\parallel, &\quad \vb{B}'_\parallel = \vb{B}_\parallel\,,\label{eq:8.67}\\  
+\vb{E}'_\perp = \gamma (\vb{E}_\perp + \vb{v} \cross \vb{B}), &\quad 
+\vb{B}'_\perp = \gamma \left(\vb{B}_\perp - \frac{1}{c^2} \vb{v} \cross \vb{E}) \right)\,,\label{eq:8.68}
+\end{align}
+where \quotes{$\parallel$} and \quotes{$\perp$}respectively denote components parallel and perpendicular to $\vb{v}$. That $\vb{E}$ and $\vb{B}$ transform into each other under Lorentz transformations is a reflection of their being different components of a single spacetime tensor $F_{\mu\nu}$.
 
 \section{Charged Particle Motion and Radiation}\label{sec:8.3}
+Thus far this book, apart from our treatment of electrostatics, we have largely avoided discussing point charges. The main reason is that, as discussed in section \ref{sec:1.4}, at a fundamental level, charged matter must be seen as continuously distributed rather that point-like. nevertheless, as already stated in section \ref{sec:1.4}, the idealization of a point charge is very useful for considering (i) the motion of a small charged body whose self-fields can be neglected\footnote{FOOTNOTE 15} and (ii) the radiation emitted by a small charged body undergoing arbitrary motion. We have delayed discussing these topics until now, so that we can give a fully relativistic treatment of both charged particle motion and radiation from a charged particle.
 
 \subsection{Charged Particle Motion}\label{ssec:8.3.1}
+As discussed at the end of section \ref{sec:8.1}, Newton's second law in special relativity takes the form
+\begin{equation}\label{eq:8.69}
+u^\nu \partial_\nu p^\mu = \dv{p^\mu}{\tau} = f^\mu\,,
+\end{equation}
 
+where $p^\mu = m u^\mu$. The electromagnetic 4-force $f^\mu$ exerted on a particle of charge $q$ is obtained by taking the limit of eq. (\ref{eq:8.56}) as the matter and charge distribution shrinks down to a worldline. This is a highly nontrivial limit in that, if taken at fixed charge, the electromagnetic self-energy of the body would diverge. We will deal with the issue of how to properly take the point charge limit in chapter \ref{ch:10}. For now, we merely ignore the effects of the \quotes{self-field} of the charged body and replace $F_{\mu\nu}$ on the right side of 
+eq. (\ref{eq:8.56}) by the external field $f^{ext}_{\vu\mu}$ into which the body is placed. The integral of the left side of eq. (\ref{eq:8.56}) over space at time $t$ yields
+\begin{equation}\label{eq:8.70}
+\bigint \partial^\alpha T^M_{\alpha\mu} d^3 x = \bigint {\left[-\frac{1}{c} \pdv{T^M_{0\mu}}{t}  + \sum_{i=1}^3 \partial_i T^M_{i\mu}  \right]} d^3 x = -\frac{1}{c} 
+\dv{}{t} \bigint T^M_{0\mu} d^3 x = \dv{p_\mu}{t} \,,
+\end{equation}
+where $p^\mu$ is the total matter 4-momentum of the body,
+\footnote{We will see in chapter 10 that the electromagnetic self-energy of the body---which is being neglected here---will contribute to its rest mass and momentum.} 
+and we used Gauss's law and the boundedness of the matter distribution in the second equality to set the integral of the spatial divergence of the matter stress-energy tensor to zero. 
+
+To evaluate the spatial integral of the right side of eq. (\ref{eq:8.56}), we need an expression for the charge-current 4-vector $J^\mu$ of the body in the limit that it has shrunk down to a worldline. Since $J^\mu$ is a spacetime vector, it is clear that it must point along the direction of the 4-velocity $u^\mu$ of the worldline in this limit---there simply is no other candidate for the direction of $J^\mu$. Clearly, $J^\mu$ must be localized on the worldline of the particle. Thus if the particle motion is described in some inertial coordinate system as $\vb{x} = \vb{X}(t)$ (where $\vb{X}(t)$ is a vector function of $t$ with  $\abs{\dv*{\vb{X}}{t}} < c$), we must have   
+\begin{equation}\label{eq:8.71}
+J^\mu(t, \vb{x}) \propto \delta(\vb{x} - \vb{X}(t)) u^\mu\,.
+\end{equation}
+Since $J^0 = c \rho$ (see eq. (\ref{eq:8.47})), the constant of proportionality in eq. (\ref{eq:8.71}) can be fixed by requiring that the spatial integral of $J^0$ be equal to $cq$. Since $u^0 = c \gamma$, we thereby obtain
+
+\begin{equation}\label{eq:8.72}
+J^\mu(t, \vb{x}) = \frac{q}{\gamma} \delta(\vb{x} - \vb{X}(t)) u^\mu\,.                
+\end{equation}
+
+In terms of $\rho$ and $\vb{J}$, we obtain
+
+\begin{equation}\label{eq:8.73}
+\rho(t, \vb{x}) = q \delta(\vb{x} - \vb{X}(t))\,,\quad \vb{J}(t, \vb{x}) = q \dv{\vb{X}}{t} \delta(\vb{x} - \vb{X}(t)) u^\mu\,.                
+\end{equation}
+
+The spatial integral of the right side of eq. (\ref{eq:8.56}) with $F_{\nu\mu}$ replaced  by $F^{ext}_{\nu\mu}$ then yields
+
+\begin{equation}\label{eq:8.74}
+- \bigint F^{ext}_{\nu\mu} J^\nu \dd[3]{x} = -\frac{q}{\gamma} F^{ext}_{\nu\mu} u^\nu\;.
+\end{equation}
+
+Thus, equating the spatial integrals of the left and right sides of eq. (\ref{eq:8.56}) in the point charge limit, we obtain
+\begin{equation}\label{eq:8.75}
+\dv{p_\mu}{t} = - \frac{q}{\gamma} F^{ext}_{\nu\mu} u^\nu\;. 
+\end{equation}
+
+Using the fact that along the worldline of the particle, we have
+\begin{equation}\label{eq:8.76}
+\dv{t}{\tau} = \frac{1}{c} \dv{X^0}{\tau} = \frac{u^0}{c} = \gamma\;, 
+\end{equation}
+
+we see that eq. (\ref{eq:8.75}) can be put in the manifestly covariant form eq. (\ref{eq:8.69}) with 
+\begin{equation}\label{eq:8.77}
+f_\mu = -q F^{ext}_{\nu\mu} u^\nu  \;. 
+\end{equation}
+
+Note that $u^\mu f_\mu = -q F^{ext}_{\nu\mu} u^\mu u^\nu = 0$, since $F^{ext}_{\mu\nu} = - F^{ext}_{\nu\mu}$. Thus, by eq. (\ref{eq:8.38}), the rest mass $m$ of a point charge does not change when it moves under the influence of an external electromagnetic field.
+
+In any inertial coordinates, the components of $u^\mu$ are $(c \gamma, \gamma \vb{v})$, and the components of 
+$F^{ext}_{\mu\nu}$ are given by eq. (\ref{eq:8.45}). Thus, the spatial components of eq. (\ref{eq:8.69}) with $f^\mu$ given by eq. (\ref{eq:8.77}) take the form
+\begin{equation}\label{eq:8.78}
+m \dv{(\gamma \vb{v})}{\tau} = q \gamma (\vb{E} + \vb{v} \cross \vb{B}),
+\end{equation}
+where here and in the following, it is understood that $\vb{E}$ and $\vb{B}$ are the external fields. Using eq. (\ref{eq:8.76}), we see that eq. (\ref{eq:8.78}) is equivalent to 
+\begin{equation}\label{eq:8.79}
+m \dv{(\gamma \vb{v})}{t} = m \dv{(\gamma \vb{v})}{\tau} \dv{\tau}{t} = q (\vb{E} + \vb{v} \cross \vb{B})\:.
+\end{equation}
+This differes from the usual nonrelativistic equation of motion for a charged particle found in elementary texts only in that on the left hand side of this equation, $\vb{v}$ is replaced by $\gamma \vb{v}$. 
+
+We now consider two important, simple examples of charged particle motion. The first example is in a uniform electrif field $\vb{E}$, that is, in some inertial coordinates $(t, \vb{x})$, we have that $\vb{E}$ is independent of $(t, \vb{x})$ and $\vb{B} = 0$. Without loss of generality, we may assume that $\vb{E}$ points in the $x$-direction: $\vb{E} = E \vu{x}$. We may choose the origin of coordinates so that $\vb{X}(0) = 0$ (i.e., the particle is at $\vb{X} = 0$ at $t=0$). For simplicity, consider the case where the particle is initially at rest: $\dv*{\vb{X}}{t} = 0$ at $t=0$. It is clear from eq. (\ref{eq:8.79}) that we still have 
+$Y(t) = Z(t) = 0$ for all $t$, so we need only consider the $x$-motion. We have
+\begin{equation}\label{eq:8.80}
+\dv{(\gamma v)}{t} = \frac{q}{m} E\,,
+\end{equation}
+where $v = \dv*{X}{t}$. Integration of this equation using $v = 0$ at $t = 0$ yields
+\begin{equation}\label{eq:8.81}
+\gamma v = \frac{q}{m} E t\,,
+\end{equation}
+and hence, 
+\begin{equation}\label{eq:8.82}
+v = \dv{X}{t} = \frac{qEt/m}{\left[ 1 + (qEt/(mc))^2\right]^{1/2}}\;.
+\end{equation}
+
+Integration of this equation with the initial condition $X = 0$ at $t = 0$ yields the solution
+\begin{equation}\label{eq:8.83}
+X(t) = \frac{mc^2}{qE} \left\{ \left[   1 + (qEt/(mc))^2\right]^{1/2} -1 \right\} \;.
+\end{equation}
+
+For $t << mc/(qE)$, we have $v << c$, and the solution reduces to 
+\begin{equation}\label{eq:8.84}
+X(t) \approx = \frac{1}{2}\frac{qE}{m} t^2 \;.
+\end{equation}
+
+
+The second example is motion in a uniform magnetic field $\vb{B}$; that is, in some inertial coordinates $(t, \vb{x})$, we have that $\vb{B}$ is independent of $(t, \vb{x})$ and $\vb{E} = 0$. The equation of motion eq. (\ref{eq:8.79}) becomes
+\begin{equation}\label{eq:8.85}
+\dv{(\gamma \vb{v})}{t} = \frac{q}{m} \vb{v} \cross \vb{B}\;.
+\end{equation}
+
+Dotting this equation with $\vb{v}$, we find that $v = \abs{\vb{v}}$ is constant. Since $\gamma$ is constant, we may rewrite this equation as
+\begin{equation}\label{eq:8.86}
+\dv{\vb{v}}{t} = \frac{q}{\gamma m} \vb{v} \cross \vb{B}\;.
+\end{equation}
+
+The general solution to this equation is helical motion (i.e., linear motion parallel to $\vb{B}$ and circular motion perpendicular to $\vb{B}$). More explicitly, taking $\vb{B}$ to point along the $z$-axis so that $\vb{B} = B \vu{z}$, we find that the general solution to eq. (\ref{eq:8.86}) is 
+\begin{equation}\label{eq:8.87}
+\begin{aligned}
+X(t) &= X_0 + R_g \cos(\omega_g t + \phi_0 )\,,\\
+Y(t) &= Y_0 + R_g \sin(\omega_g t + \phi_0 )\,,\\
+Z(t) &= v_{z0} t + z_0\,.
+\end{aligned}
+\end{equation}
+
+Here $X_0$, $Y_0$, $Z_0$, $\phi_0$, $v_{z0}$ and $z_0$ are constants, and 
+\begin{equation}\label{eq:8.88}
+\omega_g \equiv \frac{qB}{\gamma m}\,,\quad\quad R_g \equiv \frac{v_\perp}{\abs{\omega_g}}\,,
+\end{equation}
+where $v_\perp$ is the (constant) magnitude of the velocity\footnote{We must, of course, have $v_{z0}^2 + v_\perp^2 < c^2$.} 
+in the $x$-$y$ plane. We refer to $\omega_g$ as the \tit{gyrofrequency}  (or \tit{cyclotron frequency}), and we refer to $R_g$ as the \tit{gyro-radius} (or \tit{Larmor radius}). For nonrelativistic motion, $\gamma \approx 1$, the gyrofrequency is approximately 
+\begin{equation}\label{eq:8.89}
+\omega_g \approx \frac{qB}{m}\,,
+\end{equation}
+which is independent of the velocity.
+  
 \subsection{Radiation from a Point Charge in Arbitrary Motion}\label{ssec:8.3.2}
+
+As discussed in section \ref{sec:8.1}, the worldline of a particle in special relativity must be a timelike curve, that is, a curve $\vb{x} = \vb{X}(t)$ with $\abs{\dv*{X}{t}} < c$. In principle, any timelike curve represents a possible particle motion. We wish to find the retarded solution for the electromagnetic field associated with a particle of chatge $q$ whose worldline is an arbitrary timelike curve.\footnote{As we saw in section \ref{sec:6.1}, Maxwell's equations in a medium are the same as Maxwell's equations in vacuum with $\epsilon_0 \rightarrow \epsilon$, $\mu_0 \rightarrow \mu$, and $c \rightarrow c/n$. If $n > 1$, it is possible to have a charged particle in the medium move with velocity $v > c/n$, so that effectively, the charge has a spacelike worldline. This gives rise to the phenomenon of Cherenkov radiation (see problem 10).}
+
+The retarded solution with a point charge source is obtained by plugging eq. (\ref{eq:8.72}) into 
+\begin{equation}\label{eq:8.90}
+A^\mu(t, \vb{x}) = \frac{\mu_0}{4\pi} \bigint  \frac{{[J^\mu(t', \vb{x}')]}_{ret}}{\abs{\vb{x} - \vb{x}'}} \dd[3]{x'}\,,
+\end{equation}
+or equivalently, by plugging eq. (\ref{eq:8.73}) into eqs. (\ref{eq:5.56}) and (\ref{eq:5.57}). We obtain
+\begin{equation}\label{eq:8.91}
+\phi(t, \vb{x}) = q \frac{\mu_0 c^2}{4\pi} \bigint  \frac{\delta(\vb{x}' - \vb{X}(t_{ret})}{\abs{\vb{x} - \vb{x}'}} \dd[3]{x'}\,,
+\end{equation}
+
+\begin{equation}\label{eq:8.92}
+\vb{A}(t, \vb{x}) = q \frac{\mu_0}{4\pi} \bigint {\dv{\vb{X}}{t}}(t_{ret}) \frac{\delta(\vb{x}' - \vb{X}(t_{ret})}{\abs{\vb{x} - \vb{x}'}} \dd[3]{x'}\,,
+\end{equation}
+
+where 
+\begin{equation}\label{eq:8.93}
+t_{ret} = t - \frac{1}{c} \abs{\vb{x} - \vb{x}'}\,,
+\end{equation}
+
+and we used $\epsilon_0 \mu_0 c^2 = 1$ to eliminate $\epsilon_0$ in favor of $\mu_0$ and $c$ in all expressione here and below. It is important to notice that the argument of the $\delta$-function in the above integrals has a nontrivial dependence on $\vb{x}'$ because of the dependence of $t_{ret}$ on $\vb{x}'$. Therefore, to evaluate the integrals in eqs. (\ref{eq:8.91}) and (\ref{eq:8.92}), we must use the fact that if $\vb{f}(\vb{x})$ is any vector function of $\vb{x}$ and   $g(\vb{x})$ is any function of $\vb{x}$, then\footnote{Equation (\ref{eq:8.94}) follows from the fact that we can change coordinates to $\vb{y} = \vb{f}(\vb{x})$. The volume element $\dd[3]{y}$ in the new coordinates is related to $\dd[3]{x}$ by $\dd[3]{y} = \mathscr{J} \dd[3]{x}$. The integral on the left side of eq. (\ref{eq:8.94}) thus becomes $\int g(\vb{y}) \delta(\vb{y})(1/\abs{\mathscr{J}})\dd[3]{y}\,.$  }
+\begin{equation}\label{eq:8.94}
+\bigint g(\vb{x}) \delta(\vb{f}(\vb{x})) \dd[3]x = \frac{g}{\abs{\mathscr{J}}}
+\end{equation}
+
+where $\mathscr{J}$ denotes the determinant of the Jacobian matrix:
+\begin{equation}\label{eq:8.95}
+{\mathscr{J}^i}_j = \pdv{f^i}{x^j}\,.
+\end{equation}
+
+The Jacobian matrix relevant to the evaluation of the integrals in eqs. (\ref{eq:8.91}) and (\ref{eq:8.92}) is 
+
+\begin{equation}\label{eq:8.96}
+{\mathscr{J}^i}_j = \pdv{[x'^i - X^i(t - \abs{\vb{x} - \vb{x}'}/c]}{x'^j} = \delta^i_j - \frac{x^j - x'^j}{c \abs{\vb{x} - \vb{x}'}} {\dv{X^i}{t}}(t_{ret})\,.
+\end{equation}
+ 
+The determinant of ${\mathscr{J}^i}_j$ is  
+\begin{equation}\label{eq:8.97}
+\mathscr{J} = 1 - \left( \frac{\vb{x} - \vb{x}'}{c \abs{\vb{x} - \vb{x}'}} \right) \cdot {\dv{\vb{X}}{t}}(t_{ret}) \;.
+\end{equation}
+
+We now may perform the integrals in eqs. (\ref{eq:8.91}) and (\ref{eq:8.92}) to obtain our final result for the potentials of the retarded solution for a point charge in arbitrary motion:
+\begin{equation}\label{eq:8.98}
+\phi(t, \vb{x}) = \frac{\mu_0 c^2}{4\pi} \frac{1}{\alpha} \frac{q}{\abs{\vb{x} - \vb{X}(t_{ret})}}\;,
+\end{equation}
+
+\begin{equation}\label{eq:8.99}
+\vb{A}(t, \vb{x}) = \frac{\mu_0}{4\pi} \frac{1}{\alpha} \frac{q}{\abs{\vb{x} - \vb{X}(t_{ret})}}\,{\dv{\vb{X}}{t}}(t_{ret})\,,
+\end{equation}
+where
+\begin{equation}\label{eq:8.100}
+\alpha = 1 - \frac{1}{c} \vu{n} \cdot {\dv{\vb{X}}{t}}(t_{ret})\,,
+\end{equation}
+with
+\begin{equation}\label{eq:8.101}
+\vu{n} = \frac{\vb{x} - \vb{X}(t_{ret})}{\abs{\vb{x} - \vb{X}(t_{ret})}}
+\end{equation}
+
+(i.e., $\vu{n}$ is the unit vector that points from the position of the particle at $t_{ret}$ to the observation point $\vb{x}$). Equations (\ref{eq:8.98}) and (\ref{eq:8.99}) are called the \tit{Lienard-Wiechert potentials}.
+
+The electric and magnetic fields can be computed from the Lienard-Wiechert potentials in the usual manner via 
+eqs. (\ref{eq:5.2}) and (\ref{eq:5.3}). However, when taking derivatives of $\phi$ and $\vb{A}$ with respect to $t$ and $\vb{x}$, it is important to recognize that in eqs. (\ref{eq:8.98}) and (\ref{eq:8.99}) , the quantity $t_{ret}$ denotes the time of intersection of the past light cone of $(t, \vb{x})$ with the worldline of the particle. Thus for the given particle worldline 
+$\vb{X}(t)$, $t_{ret}$ is the function of $(t, \vb{x})$ that is implicitly defined by 
+\begin{equation}\label{eq:8.102}
+t_{ret} = t - \frac{1}{c} \abs{\vb{x} - \vb{X}(t_{ret})}\;.
+\end{equation}
+
+Taking the partial derivative of this equation with respect to $t$, we obtain
+\begin{equation}\label{eq:8.103}
+\dv{t_{ret}}{t} = 1 + \frac{1}{c} \vu{n} \cdot {\dv{\vb{X}}{t}}(t_{ret}) \pdv{t_{ret}}{t}\,,
+\end{equation}
+
+and hence, 
+
+\begin{equation}\label{eq:8.104}
+\dv{t_{ret}}{t} = \frac{1}{1 - \frac{1}{c} \vu{n} \cdot {\dv{\vb{X}}{t}}(t_{ret})} = \frac{1}{a}\;.
+\end{equation}
+
+
+
+
+
+
+
 
 %===================================================================================
 
