@@ -713,10 +713,68 @@ and hence,
 \dv{t_{ret}}{t} = \frac{1}{1 - \frac{1}{c} \vu{n} \cdot {\dv{\vb{X}}{t}}(t_{ret})} = \frac{1}{a}\;.
 \end{equation}
 
+Similarly, we find
+\begin{equation}\label{eq:8.105}
+\dv{t_{ret}}{x^i} = - \frac{1}{c} \sum_j \vu{n}_j \left(\delta_{ij} - \dv{X^j}{t}  \pdv{t_{ret}}{x^i} \right)\,,   
+\end{equation}
 
+which yields
 
+\begin{equation}\label{eq:8.106}
+\grad t_{ret} = - \frac{1}{\alpha} \vu{n}\,.
+\end{equation}
 
+Using these relations, we can take derivatives of the potentials (\ref{eq:8.98}) and (\ref{eq:8.99}) with respect to $t$ and $\vb{x}$ to obtain the following formulas for the electric and magnetic fields:
 
+\begin{equation}\label{eq:8.107}
+\begin{aligned}
+\vb{E}(t, \vb{x}) &=  q \frac{\mu_0 c^2}{4 \pi} \frac{\left(\vu{n} - \frac{1}{c} \dv{\vb{X}}{t}\right) \left(1 - \frac{1}{c^2} \abs{\dv{\vb{X}}{t}}^2   \right) }{\alpha^3 \abs{\vb{x} - \vb{X}(t_{ret})}^2}    \\
+                  &+  q \frac{\mu_0}{4 \pi}     \frac{\vu{n} \cross \left[\left(\vu{n} - \frac{1}{c} \dv{\vb{X}}{t}  \right) \cross \dv[2]{\vb{X}}{t}\right] }{\alpha^3 \abs{\vb{x} - \vb{X}(t_{ret})}}\,,
+\end{aligned}
+\end{equation}
+
+\begin{equation}\label{eq:8.108}
+\vb{B}(t, \vb{x}) = \vu{n} \cross \vb{E}(t, \vb{x})\,,
+\end{equation}
+
+where it is understood that $\dv*{\vb{X}}{t}$ and $\dv*[2]{\vb{X}}{t}$ are evaluated at $t_{ret}$. It should be emphasized that eqs. (\ref{eq:8.107}) and (\ref{eq:8.108}) are exact solutions and hold at all distances from the worldline $\vb{X}(t)$ of the point charge.
+
+It is of interest to calculate the electromagnetic energy radiated to infinity, as given by the Poynting flux as 
+$\abs{\vb{x}} \rightarrow \infty$. The first term in eq. (\ref{eq:8.107}) falls off as $1/\abs{\vb{x}}^2$, so only the second term contributes to the energy flux at infinity. In addition, the difference between $\vu{n}$ and $\vu{x}$ can be neglected at this order, where $\vu{x}$ is the unit outward radial vector. We find that the radiated power unit per solid angle at a given retarded time $t_{ret}$ is given by  
+%$\mathcal{A}$ $\mathbfcal{A}$
+\begin{equation}\label{eq:8.109}
+\begin{aligned}
+\dv{P}{\Omega} &= \lim_{\abs{\vb{x}} \rightarrow \inf} \abs{\vb{x}}^2 \mathbfcal{S} \cdot \vu{x} = \frac{1}{\mu_0} \lim_{\abs{\vb{x}} \rightarrow \infty} \abs{\vb{x}}^2 (\vb{E} \cross \vb{B}) \cdot \vu{x}\\
+&= \frac{q^2 \mu_0}{16 \pi^2 c \alpha^6} \abs{\vu{x} \cross \left[\left(\vu{x} - \frac{1}{c} \dv{\vb{X}}{t} \right) \cross  \dv[2]{\vb{X}}{t}   \right]}^2\:,
+\end{aligned}
+\end{equation}
+
+where $\dv*{\vb{X}}{t}$ and $\dv*[2]{\vb{X}}{t}$  are evaluated at $t_{ret}$. Note that the limit $\abs{\vb{x}} \rightarrow \inf$ at fixed retarded time means that the limit is being taken on spheres of radius $\abs{\vb{x}}$ lying on the future light cone of the event on the worldline of the particle at $t = t_{ret}$. 
+
+Since the right side of eq. (\ref{eq:8.109}) is most naturally evaluated on spheres of constant retarded time at infinity it is natural to define the notion of energy flux per unit solid angle per unit \tit{retarded} time by 
+\begin{equation}\label{eq:8.110}
+\dv{P'}{\Omega} \equiv \dv{P}{\Omega} \dv{t}{t_{ret}} = \dv{P}{\Omega} \alpha = \frac{q^2 \mu_0}{16 \pi^2 c \alpha^5} \abs{\vu{x} \cross \left[\left(\vu{x} - \frac{1}{c} \dv{\vb{X}}{t} \right) \cross  \dv[2]{\vb{X}}{t}   \right]}^2\:.
+\end{equation}
+
+The total flux of energy between two retarded times would then be obtained by integrating the right side of eq. (\ref{eq:8.110}) over each sphere of constant retarded time and then integrating with respect to $t_{ret}$. As we shall see below, a simple formula can be obtained for the integral of $\dv*{P'}{\Omega}$ over a sphere of constant retarded time. 
+
+If the particle is at rest at some event on its worldline, then at the retarded time corresponding to that event, eq. (\ref{eq:8.109}) with $\dv*{\vb{X}}{t} = 0$ and $\alpha = 1$ reduces to  
+\begin{equation}\label{eq:8.111}
+\begin{aligned}
+\left( \dv{P}{\Omega} \right)_{\dv{\vb{X}}{t} = 0} &= \frac{q^2 \mu_0}{16 \pi^2 c} \abs{\vu{x} \cross \left[\vu{x} \cross  \dv[2]{\vb{X}}{t}   \right]}^2\\ 
+&=  \frac{q^2 \mu_0}{16 \pi^2 c} \left[\abs{\dv[2]{\vb{X}}{t}}^2 - \left( \vu{x} \cdot  \dv[2]{\vb{X}}{t}  \right)^2       \right] \:.
+\end{aligned}
+\end{equation}
+
+This agrees with eq. (\ref{eq:5.79}), since the dipole moment of the charged particle is $\vb{p} = q\vb{X}$. In particular,, the angular distribution of the energy flux has a purely dipole pattern (i.e., it varies with angle as $\sin^2 \theta$, where $\theta$ is the angle between $\dv[2]{\vb{X}}{t}$ and the observation point). The effects of nonzero velocity, $\dv{\vb{X}}{t} \neq 0$, on the nature of the angular distribution of the radiated power at the corresponding retarded time can be illustrated by considering the following two special cases. We orient our spatial axes so that $\dv*{\vb{X}}{t}$ at the given retarded time instantaneously points in the $z$-direction: $\dv*{\vb{X}}{t} = v \vu{z}$ Then we have
+\begin{equation}\label{eq:8.112}
+\alpha = 1 - \frac{v}{c} \cos \theta\,.
+\end{equation}
+
+First consider the case where $\dv*[2]{\vb{X}}{t}$ points in the same direction as $\dv*{\vb{X}}{t}$---as occurs for linear acceleration. Then eq. (\ref{eq:8.109}) becomes
+\begin{equation}\label{eq:8.113}
+\left( \dv{P}{\Omega} \right)_\parallel = \frac{q^2 \mu_0}{16 \pi^2 c} \frac{\sin^2 \theta}{\left(1 - \frac{v}{c} \cos \theta    \right)^6}  \abs{\dv[2]{\vb{X}}{t}}^2  \;,
+\end{equation}
 
 
 
