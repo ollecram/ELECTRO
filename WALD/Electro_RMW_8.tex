@@ -775,7 +775,64 @@ First consider the case where $\dv*[2]{\vb{X}}{t}$ points in the same direction 
 \begin{equation}\label{eq:8.113}
 \left( \dv{P}{\Omega} \right)_\parallel = \frac{q^2 \mu_0}{16 \pi^2 c} \frac{\sin^2 \theta}{\left(1 - \frac{v}{c} \cos \theta    \right)^6}  \abs{\dv[2]{\vb{X}}{t}}^2  \;,
 \end{equation}
+whereas ${(\dv*{P'}{\Omega})}_\parallel$ would be given by the same formula with one fewer power of 
+$(1 - v/c \cos \theta)$ in the denominator. As the second example, consider the case where, at a given retarded time, 
+$\dv[2]*{\vb{X}}{t}$ points orthogonally to $\dv*{\vb{X}}{t}$---as occurs for circular motion. For relativistic velocities, the radiation in this case is known as \tit{synchrotron radiation}. We further orient our axes so that $\dv[2]*{\vb{X}}{t}$ instantaneously points in the $x$-direction. Equation (\ref{eq:109}) then yields
+acceleration. Then eq. (\ref{eq:8.109}) becomes
+\begin{equation}\label{eq:8.114}
+\left( \dv{P}{\Omega} \right)_\perp = \frac{q^2 \mu_0}{16 \pi^2 c} \frac{1}{\left(1 - \frac{v}{c} \cos \theta    \right)^6}
+\left[ {(1 - \frac{v}{c} \cos \theta)}^2 - (1 - \frac{v^2}{c^2} ) \sin^2\theta \cos^2\phi\right]
+\abs{\dv[2]{\vb{X}}{t}}^2  \;,
+\end{equation}
+where $(\theta, \phi)$ are the spherical coordinates of the observation point, with the axes chosen as above.
+Again, ${(\dv*{P'}{\Omega})}_\perp$ would be given by the same formula with one fewer power of 
+$(1 - v/c \cos \theta)$ in the denominator. As eq. (\ref{eq:8.113}) and eq. (\ref{eq:8.114}) illustrate, if $v \rightarrow c$, the radiation becomes highly beamed in the forward direction. This beaming of the radiation as compared with that seen by an observer who is at rest relative to the particle can be understood as resulting from the combined effects of Lorentz boosting of the field strengths, eq. (\ref{eq:8.68}), and aberration (see problem 4). 
 
+The total power radiated at a fixed retarded time is obtained by integrating $\dv*{P}{\Omega}$ over angles:
+\begin{equation}\label{eq:8.115}
+P = \bigint \dv{P}{\Omega} \dd{\Omega} = \bigint \dv{P}{\Omega} \sin \theta \dd{\theta} \dd{\phi}\;.
+\end{equation}
+For the case of a particle instantaneously at rest at a given retarded time, the angular integration of eq. (\ref{eq:8.111}) was already carried out in eq. (\ref{eq:5.81}). We obtain Larmor's formula
+\begin{equation}\label{eq:8.116}
+P_0 = \frac{q^2 \mu_0}{6 \pi c} \abs{\dv[2]{\vb{X}}{t}}^2\;,
+\end{equation}
+
+where the subscript $0$ on $P$ indicates that this formula holds only when the particle is at rest at the given retarded time. For a particle at rest, we have
+\begin{equation}\label{eq:8.117}
+a^\mu \equiv \dv{u^\mu}{\tau} = (0, \dv[2]{\vb{X}}{t})\;.
+\end{equation}
+
+Therefore, we may rewrite this formula as 
+\begin{equation}\label{eq:8.118}
+P_0 = \frac{q^2 \mu_0}{6 \pi c} a^\mu a_\mu\;.
+\end{equation}
+
+If the particle is not at rest, the angular integrals needed to calculate the radiated power are quite complicated. However, the total power radiated per unit retarded time, 
+\begin{equation}\label{eq:8.119}
+P' = \bigint \dv{P'}{\Omega} \dd{\Omega}\,,
+\end{equation}
+can be obtained quite simply by the following argument. In the instantaneous rest frame of the particle, the energy radiated to infinity over an infinitesimally small retarded time interval $\Delta t_0$ as measured in the rest frame is given by
+\begin{equation}\label{eq:8.120}
+\Delta \mathscr{E}_0 = P_0 \Delta t_0\,.
+\end{equation}
+In the instantaneous rest frame of the particle, the electromagnetic field carries no net momentum to inficity during this infinitesimal time interval, as can be seen from the fact that the radiation flus eq. (\ref{eq:8.111}) is parity invariant. Now, by arguments similar to that of part (d) of problem 5, the 4-momentum radiated to infinity between the given retarded times transforms as a 4-vector under Lorentz boosts, Thus, in an arbitrary Lorentz frame, we have 
+\begin{equation}\label{eq:8.121}
+\Delta \mathscr{E} - \gamma \Delta \mathscr{E}_0 = \gamma P_0 \Delta t_0\,.
+\end{equation}
+with $\gamma = {(1 - v^2/c^2)}^{-1/2}$. By definition of $P'$, we have 
+\begin{equation}\label{eq:8.122}
+\Delta \mathscr{E} = P' \Delta t_{ret}\;.
+\end{equation}
+Finally, in the arbitrary Lorentz frame, we have $\Delta t_{ret} = \gamma \Delta t_0$, since the elapsed coordinate time along the worldline of the particle is time dilated relative to the rest frame. Putting all of this together, we see that in an arbitrary frame, we have 
+\begin{equation}\label{eq:8.123}
+P' = P_0 = \frac{q^2 \mu_0}{6 \pi c} a^\mu a_\mu\;.
+\end{equation}
+
+Thus, in any inertial frame, the total energy radiated to infinity in that frame between retarded times $t_1$ and $t_2$ is given by
+\begin{equation}\label{eq:8.124}
+\mathscr{E} = \frac{q^2 \mu_0}{6 \pi c} \bigint_{\!\!\!\!\!\!\!\!t_1}^{\!\!\!\!\!\!\!\!\!\!\!t_2} a^\mu(t_{ret})a_\mu(t_{ret}) \dd{t_{ret}} 
+\end{equation}
+where, in the integral, $t_{ret}$ is the retarded time coordinate in that inertial frame. 
 
 
 %===================================================================================
