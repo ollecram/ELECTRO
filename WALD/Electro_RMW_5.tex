@@ -4,7 +4,45 @@
 \setcounter{equation}{0}	        % To start with Equation 1
 \counterwithin{equation}{chapter}	% Equation numbering will be 2.1 2.2 2.3   ... 
 
+In this chapter, we consider the general case where $\phi$, $\vb{A}$ and $\rho$, $\vb{J}$ are time dependent. The equations of electrodynamics are discussed in section \ref{sec:5.1}, and the Lorenz gauge is introduced. We solve for the retarded Green's function in section \ref{sec:5.2}, from which the solution to Maxwell's equations for general $\rho$, $\vb{J}$ with no incoming radiation can be obtained. Multipole expansions of the electromagnetic field of the retarded solution are obtained in section \ref{sec:5.3}. The retarded Green's function is then used in section \ref{sec:5.4} to obtain the solution to Maxwell's equations with prescribed values of the electromagnetic field at an initial time. We discuss plane wave solutions in section \ref{sec:5.5}. The chapter concludes with a discussion of electrodynamics in conducting cavities and waveguides in section \ref{sec:5.6}.
+
 \section{The Equations of Electrodynamics}\label{sec:5.1}
+The equations of electrodynamics have been presented in chapter 1. As discussed in section \ref{sec:1.1}, the fundamental dynamical variables are the potentials $\phi$ and $\vb{A}$, which are considered to be equivalent if and only if they differ by a gauge transformation:
+\begin{equation}\label{eq:5.1}
+\phi \rightarrow \phi' = \phi - \dv{\chi}{t}, \quad \quad \vb{A} \rightarrow \vb{A'} = \vb{A} + \grad \chi\:.
+\end{equation}
+
+The equations of electrodynamics (i.e. Maxwell's equations) are
+\begin{align}
+\vb{E} &= - \grad \phi - \pdv{\vb{A}}{t}						\,,\label{eq:5.2}\\
+\vb{B} &= \curl{\vb{A}}                  						\,,\label{eq:5.3}\\
+\div{\vb{E}} &= \frac{\rho}{\epsilon_0} 						\,,\label{eq:5.4}\\
+\curl{\vb{B}} &= \frac{1}{c^2} \pdv{\vb{E}}{t} + \mu_0 \vb{J}	\,.\label{eq:5.5}
+\end{align}
+The first two of these equations define $\vb{E}$ and $\vb{B}$ in terms of $\phi$ and $\vb{A}$. They imply that 
+\begin{align}
+\div{\vb{B}} = 0                                                \,,\label{eq:5.6}\\
+\curl{\vb{E}} + \pdv{\vb{B}}{t}= 0                              \,,\label{eq:5.7}
+\end{align}
+
+% BOX 1 **START** -- << Maxwell equations in Gaussian units >>
+
+\parindent=0pt  % Set the paragraph indentation to 0 (normal = 10pt) before the box 
+\parbox{\textwidth}{\begin{mdframed}[style=MyFrame] %Added "\parbox{\textwidth}{"
+%\lipsum[1]
+\subsubsection*{BOX 5.1 -- Maxwell equations in Gaussian units}\label{box:8.1}
+\begin{align*}
+\vb{E} &= - \grad \phi - \frac{1}{c}\pdv{\vb{A}}{t}\,,\quad\quad\quad &[G.2]\\
+\vb{B} &= \curl{\vb{A}}\,,&[G.3]\\
+\div{\vb{E}} &= 4 \pi \rho\,,&[G.4]\\
+\curl{\vb{B}} &= \frac{1}{c} \pdv{\vb{E}}{t} + \frac{4\pi}{c} \vb{J}\,,&[G.5]\\
+\div{\vb{B}} &= 0\,,&[G.6]\\
+\curl{\vb{E}} + \frac{1}{c} \pdv{\vb{B}}{t }&= 0\,,&[G.7]\\
+\end{align*}
+\end{mdframed}} %Added a closing "}" here
+\parindent=10pt % Set the paragraph indentation to normal (10pt) 
+% BOX 1 ** END ** -- << Maxwell equations in Gaussian units >>
+
 
 \section{Retarded Green's Function}\label{sec:5.2}
 
