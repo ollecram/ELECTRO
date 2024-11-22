@@ -12,6 +12,21 @@ The equations of electrodynamics have been presented in chapter 1. As discussed 
 \phi \rightarrow \phi' = \phi - \dv{\chi}{t}, \quad \quad \vb{A} \rightarrow \vb{A'} = \vb{A} + \grad \chi\:.
 \end{equation}
 
+% BOX 1 **START** -- << Maxwell equations in Gaussian units >>
+
+\parindent=0pt  % Set the paragraph indentation to 0 (normal = 10pt) before the box 
+\parbox{\textwidth}{\begin{mdframed}[style=MyFrame] %Added "\parbox{\textwidth}{"
+%\lipsum[1]
+\subsubsection*{BOX 5.1 -- Gauge invariance in Gaussian units}\label{box:8.1}
+\begin{equation*}
+\phi \rightarrow \phi' = \phi - \frac{1}{c}\dv{\chi}{t}, \quad \quad 
+\vb{A} \rightarrow \vb{A'} = \vb{A} + \grad \chi\;.\quad \quad\quad \quad [G5.1]
+\end{equation*}
+\end{mdframed}} %Added a closing "}" here
+\parindent=10pt % Set the paragraph indentation to normal (10pt) 
+% BOX 1 ** END ** -- << Maxwell equations in Gaussian units >>
+
+
 The equations of electrodynamics (i.e. Maxwell's equations) are
 \begin{align}
 \vb{E} &= - \grad \phi - \pdv{\vb{A}}{t}						\,,\label{eq:5.2}\\
@@ -25,23 +40,41 @@ The first two of these equations define $\vb{E}$ and $\vb{B}$ in terms of $\phi$
 \curl{\vb{E}} + \pdv{\vb{B}}{t}= 0                              \,,\label{eq:5.7}
 \end{align}
 
-% BOX 1 **START** -- << Maxwell equations in Gaussian units >>
+% BOX 2 **START** -- << Maxwell equations in Gaussian units >>
 
 \parindent=0pt  % Set the paragraph indentation to 0 (normal = 10pt) before the box 
 \parbox{\textwidth}{\begin{mdframed}[style=MyFrame] %Added "\parbox{\textwidth}{"
 %\lipsum[1]
-\subsubsection*{BOX 5.1 -- Maxwell equations in Gaussian units}\label{box:8.1}
+\subsubsection*{BOX 5.2 -- Maxwell equations in Gaussian units}\label{box:8.2}
 \begin{align*}
-\vb{E} &= - \grad \phi - \frac{1}{c}\pdv{\vb{A}}{t}\,,\quad\quad\quad &[G.2]\\
-\vb{B} &= \curl{\vb{A}}\,,&[G.3]\\
-\div{\vb{E}} &= 4 \pi \rho\,,&[G.4]\\
-\curl{\vb{B}} &= \frac{1}{c} \pdv{\vb{E}}{t} + \frac{4\pi}{c} \vb{J}\,,&[G.5]\\
-\div{\vb{B}} &= 0\,,&[G.6]\\
-\curl{\vb{E}} + \frac{1}{c} \pdv{\vb{B}}{t }&= 0\,,&[G.7]\\
+\vb{E} &= - \grad \phi - \frac{1}{c}\pdv{\vb{A}}{t}\,,\quad\quad\quad &[G5.2]\\
+\vb{B} &= \curl{\vb{A}}\,,&[G5.3]\\
+\div{\vb{E}} &= 4 \pi \rho\,,&[G5.4]\\
+\curl{\vb{B}} &= \frac{1}{c} \pdv{\vb{E}}{t} + \frac{4\pi}{c} \vb{J}\,,&[G5.5]\\
+\div{\vb{B}} &= 0\,,&[G5.6]\\
+\curl{\vb{E}} + \frac{1}{c} \pdv{\vb{B}}{t }&= 0\,.&[G5.7]\\
 \end{align*}
 \end{mdframed}} %Added a closing "}" here
 \parindent=10pt % Set the paragraph indentation to normal (10pt) 
-% BOX 1 ** END ** -- << Maxwell equations in Gaussian units >>
+% BOX 2 ** END ** -- << Maxwell equations in Gaussian units >>
+
+Equations (\ref{eq:5.6}) and (\ref{eq:5.7}) are equivalent to eqs. (\ref{eq:5.2}) and (\ref{eq:5.3}) in a topologically trivial region\footnote{More precisely, by a \quotes{topologically trivial region} in the present context, I mean a region in which any closed 2-dimensional surface $S$ is the boundary od a 3-dimensional (compact) volume, and every closed loop $\mathscr{C}$ is the boundary of a 2-dimensional (compact) surface. The necessary and sufficient condition for the existence of a vector potential $\vb{A}$ such that $\vb{B} = \curl{\vb{A}}$ is that $\int_S \vb{B} \cdot \vu{n} = 0$ for any closed 2-dimensional surface $S$. The necessary and sufficient condition for the existence of a scalar potential $\phi$ satisfying eq. (\ref{eq:5.2}) is $\int_{\mathscr{C}} [\vb{E} + \pdv*{\vb{A}}{t}] \cdot \dd{\vb{l} = 0}$ for any closed loop $\mathscr{C}$. If eqs. (\ref{eq:5.6}) and (\ref{eq:5.7}) hold in a topologically trivial region, then the necessary and sufficient condition for the existence of $\vb{A}$ will automatically hold by Gauss's theorem, and the necessary and sufficient condition for the existence of $\phi$ will automatically hold by Stokes's theorem.} 
+(i.e., if eqs. (\ref{eq:5.6}) and (\ref{eq:5.7}) hold in a topologically trivial region, they imply the existence of potentials $\phi$ and $\vb{A}$ in that region and satisfying eqs. (\ref{eq:5.2}) and (\ref{eq:5.3})). 
+Taking the time derivative of eq. (\ref{eq:5.4}) and adding it to $c^2$ times the divergence of eq. (\ref{eq:5.4})---using the fact that $c^2 = \flatfrac{1}{\epsilon_0 \mu_0}$---we obtain the charge-current conservation law:
+\begin{equation}\label{eq:5.8}
+\pdv{\rho}{t} + \div{\vb{J}} = 0\,.
+\end{equation}
+It is worth noting that in the source-free case (i.e., when $\rho = \vb{J} = 0$), except for one sign difference and factors of $c$, eqs. (\ref{eq:5.6}) and (\ref{eq:5.7}) take the same form as eqs. (\ref{eq:5.4}) and (\ref{eq:5.5}) with $\vb{E}$ and $\vb{B}$ interchanged. It follows immediately that in any source-free, topologically trivial region, maxwell's equations are invariant under a \tit{duality transformation}:
+\begin{equation}\label{eq:5.9}
+\vb{E} \rightarrow c \vb{B}\,, \quad\quad c \vb{B} \rightarrow \vb{E}\,,
+\end{equation}
+that is, if $\vb{E}, \vb{B}$ solve eqs. (\ref{eq:5.4})-(\ref{eq:5.7}) with  $\rho = 0$, $\vb{J} = 0$, then so do 
+$\vb{E'}, \vb{B'}$ with  $\vb{E'},= c \vb{B}$, $\vb{B'} = - \flatfrac{\vb{E}}{c}$. More generally, for any real number $\alpha$, the source-free Maxwell equations (\ref{eq:5.4})-(\ref{eq:5.7}) are invariant under the \tit{duality rotation}:
+\begin{equation}\label{eq:5.9}
+\vb{E} \rightarrow \cos\alpha \vb{E} + \sin\alpha (c \vb{B})\,, \quad\quad \vb{B} \rightarrow \cos\alpha \vb{B} - \sin\alpha ( \vb{E}/c)\,.
+\end{equation}
+
+
 
 
 \section{Retarded Green's Function}\label{sec:5.2}
