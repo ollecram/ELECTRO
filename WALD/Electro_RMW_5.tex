@@ -151,7 +151,7 @@ where the identity eq. (\ref{eq:4.16}) was used to get eq. (\ref{eq:5.23}). A tr
 \frac{1}{c^2} \pdv{\phi'}{t} + \div{\vb{A}'} = 0\,.
 \end{equation}
 
-This condition is known as the \tit{Lorenz}\footnote{FOOTNOTE 2} \tit{gauge condition}. By eq. (\ref{eq:5.1}), such a gauge can be chosen if we can find a function $\chi$ that satisfies
+This condition is known as the \tit{Lorenz}\footnote{Note that there is no \quotes{t} in Lorenz. The gauge condition eq. (\ref{eq:5.24}) is named after Ludvig Lorenz, a nineteenth century Danish physicist/mathematician, not Hendrik Lorentz, the Dutch physicist after whom the Lorentz transformation is named.} \tit{gauge condition}. By eq. (\ref{eq:5.1}), such a gauge can be chosen if we can find a function $\chi$ that satisfies
 \begin{equation}\label{eq:5.25}
 \frac{1}{c^2} \pdv{\phi}{t} - \frac{1}{c^2} \pdv[2]{\chi}{t} + \div{\vb{A}} + \laplacian{\chi} = 0\,.
 \end{equation}
@@ -163,19 +163,87 @@ with $s= (1/c^2) \pdv{\phi}{t} + \div{\vb{A}}$, where
 \begin{equation}\label{eq:5.27}
 \Box \equiv -\frac{1}{c^2} \pdv[2]{}{t} + \laplacian\;.
 \end{equation}
+The operator $\Box$ is known as the d'\tit{Alembertian} or \tit{wave operator}, and equation (\ref{eq:5.26}) is known as the 
+\tit{wave equation with source} $s$. It is well known that this equation can be solved for any smooth $s$, and indeed, this will follow from results we obtain in section \ref{sec:5.4}. Thus, without loss of generality, we may always use the gauge freedom eq. (\ref{eq:5.1}) to put the potentials $\phi$ and $\vb{A}$ in the Lorenz gauge. It is important to note that the Lorenz gauge is \tit{not} unique. If $\chi$ satisfies 
+eq. (\ref{eq:5.25}), then so does $\chi + \psi$, where $\psi$ is any solution to the homogeneous wave equation $\Box \psi = 0$. As we shall see in section (\ref{sec:5.4}), there are many solutions to this equation.
 
+We now transform our potentials  $\phi$ and $\vb{A}$ to the Lorenz gauge potentials satisfying eq. (\ref{eq:5.24}). For notational simplicity, we drop the primes and denote the transformed potentials as  $\phi$ and $\vb{A}$ rather than  $\phi'$ and $\vb{A}'$. 
+Maxwell'sequations (\ref{eq:5.22}) and (\ref{eq:5.23}) then become simply
+  
+\begin{align}
+\Box \phi   &= - \frac{\rho}{\epsilon_0}\label{eq:5.28}\,,\\
+\Box \vb{A} &= - \mu_0 \vb{J}\,.\label{eq:5.29}
+\end{align}
 
-
-
-
-
-
-
- 
- 
-
+Thus the full content of Maxwell's equations is expressed by the wave equations (\ref{eq:5.28}) and (\ref{eq:5.29}) together with the Lorenz gauge condition 
+\begin{equation}\label{eq:5.30}
+\frac{1}{c^2} \pdv{\phi}{t} + \div{\vb{A}} = 0\;.
+\end{equation}
 
 \section{Retarded Green's Function}\label{sec:5.2}
+We see from eqs. (\ref{eq:5.28}) and (\ref{eq:5.29}) that the key to being able to solve Maxwell's equations is to be able to solve the wave equation with source
+\begin{equation}\label{eq:5.31}
+\Box \psi = -f\;.
+\end{equation}
+
+If we know how to obtain solutions $\psi$ to eq. (\ref{eq:5.31}) for a given $f$, then we can immediately solve eqs.  (\ref{eq:5.28}) and (\ref{eq:5.29}). Of course, we must still solve eq. (\ref{eq:5.30}) as well, but we will see that this equation is automatically satisfied for the retarded solution to eqs. (\ref{eq:5.28}) and (\ref{eq:5.29}) for sources with suitable fall-off.
+
+As in electrostatics, we will be able to obtain a solution to eq. (\ref{eq:5.31}) if we can find a Green's function, that is, a solution to
+\begin{equation}\label{eq:5.32}
+\Box_{(t, \vb{x})} G(t, \vb{x};t', \vb{x}') = -\delta(\vb{x} - \vb{x}')(t - t')\,,
+\end{equation}
+
+where the subscript $(t, \vb{x})$ on $\Box$ indicates that the derivatives appearing in the d'Alembertian operator $\Box$ are taken with respect to the unprimed variables, not the primed variables. Note that, in contrast to eq. (2.67), G depends on $t$ and $t'$ as well as $\vb{x}$ and $\vb{x}'$, and the right side of eq. (\ref{eq:5.32}) has a delta function in $t - t'$ as well as in $\vb{x} - \vb{x}'$. As in electrostatics, given $G$, a solution $\psi$  to eq. (\ref{eq:5.31}) can then be obtained via  
+\begin{equation}\label{eq:5.33}
+\psi(t, \vb{x}) = \bigint G(t, \vb{x};t', \vb{x}') f(t', \vb{x}') \dd[3]x' \dd{t'}\,,
+\end{equation}
+provided that this integral converges. Note that I have used the expression \quotes{a Green's function} and \quotes{a solution} because neither the Green's function (\ref{eq:5.32}) nor solutions to eq. (\ref{eq:5.31}) are unique. Indeed, we will explicitly encounter the nonuniqueness below when attempting to solve for $G$. However, we will see that there is a unique \quotes{retarded} Green's function, for which $G$ vanishes for $t < t'$. In section \ref{sec:5.4}, we use the retarded Green's function to characterize the general solution to eq. (\ref{eq:5.31}).
+
+We seek to solve eq.  (\ref{eq:5.32}) by using Fourier transforms. For an integrable function $F : \R \rightarrow \R$, we define its Fourier transform $\hat{F}$ by 
+\begin{equation}\label{eq:5.34}
+\hat{F}(k) = \frac{1}{\sqrt{2\pi}} \int_{- \infty}^{\infty} F(x) e^{-ikx}\dd{x}\,.
+\end{equation}
+
+The notion of a Fourier transform can be extended to distributions, in which case the Fourier transform yields a distribution. In particular, the Fourier transform of the delta function $\delta_{x_0} = \delta(x - x_0)$ is well defined by the function
+\begin{equation}\label{eq:5.35}
+\hat{\delta}_{x_0}(k) = \frac{1}{\sqrt{2\pi}} e^{-ik x_0}\;,
+\end{equation}
+as would be expected by formally replacing $F(x)$ by $\delta(x - x_0)$ in eq. (\ref{eq:5.34}). 
+
+For a smooth function $F$, with suitably fast fall-off at infinity, it can be shown that the inverse of the Fourier transform is given by
+\begin{equation}\label{eq:5.36}
+F(x) = \frac{1}{\sqrt{2\pi}} \int_{- \infty}^{\infty} \hat{F}(k) e^{-ikx} e^{+ikx_0}\dd{k}\,.
+\end{equation}
+
+that is, one can recover $F$ from its Fourier transform $\hat{F}$ by the same formula as eq. (\ref{eq:5.34}) except for the sign change in the exponential. Equation (\ref{eq:5.36}) also applies to distributions when suitably interpreted. In particular, the delta function is given by 
+\begin{equation}\label{eq:5.37}
+\delta_{x_0}(x) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} \hat{\delta}_{x_0}(k) e^{+ikx}\dd{k} =  
+\frac{1}{2\pi} \int_{-\infty}^{\infty} e^{-ikx_0} e^{+ikx} \dd{k}\,.
+\end{equation}
+
+This equation---which appears very commonly in physics texts---may not look very sensible, since the integral on the right side of eq. (\ref{eq:5.37}) clearly does not converge. However, what this equation is really supposed to mean is that for any smooth function $f$ with suitably fall-off at infinity, we have
+\begin{equation}\label{eq:5.38}
+\delta_{x_0}(f) = \frac{1}{2 \pi} \int_{-\infty}^{\infty} \dd{k} e^{-ikx_0} \int_{-\infty}^{\infty} \dd{x} e^{+ikx} f(x)\,.
+\end{equation}
+This statement is correct, because 
+\begin{equation}\label{eq:5.39}
+\frac{1}{2 \pi} \int_{-\infty}^{\infty} \dd{k} e^{-ikx_0} \int_{-\infty}^{\infty} \dd{x} e^{+ikx} f(x) = 
+\frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} \dd{k} e^{-ikx_0} \hat{f}(-k) = f(x_0)\,.
+\end{equation}
+
+A major reason Fourier transforms are so useful is that differentiation in physical space corresponds to multiplication by $ik$ in Fourier transform space. To see this, let $F$ be a smooth function that falls off sufficiently rapidly at infinity. Then the Fourier transform 
+of $\dv*{F}{x}$ is given by
+\begin{equation}\label{eq:5.40}
+\begin{aligned}
+\hat{\dv{F}{x}}(k) &= \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} \dv{F}{x}(x) e^{-ikx} \dd{x}\\
+                   &= \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} (ik) F(x) e^{-ikx} \dd{x}\\
+                   &= ik \hat{F}(k)\,,
+\end{aligned}
+\end{equation}
+where we integrated by parts in the second line, disregarding the boundary term at infinity because of the fall-off of $F$. 
+On account of eq. (\ref{eq:5.40}), any partial differential equation with constant coefficients can be converted to an algebraic equation in Fourier transform space.  
+ 
+We now attemp to solve for $G$, eq. (\ref{eq:5.32}), by means of Fourier transforms.
 
 \section{Multipole Expansion}\label{sec:5.3}
 
