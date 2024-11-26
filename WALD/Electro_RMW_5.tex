@@ -70,11 +70,109 @@ It is worth noting that in the source-free case (i.e., when $\rho = \vb{J} = 0$)
 \end{equation}
 that is, if $\vb{E}, \vb{B}$ solve eqs. (\ref{eq:5.4})-(\ref{eq:5.7}) with  $\rho = 0$, $\vb{J} = 0$, then so do 
 $\vb{E'}, \vb{B'}$ with  $\vb{E'},= c \vb{B}$, $\vb{B'} = - \flatfrac{\vb{E}}{c}$. More generally, for any real number $\alpha$, the source-free Maxwell equations (\ref{eq:5.4})-(\ref{eq:5.7}) are invariant under the \tit{duality rotation}:
-\begin{equation}\label{eq:5.9}
-\vb{E} \rightarrow \cos\alpha \vb{E} + \sin\alpha (c \vb{B})\,, \quad\quad \vb{B} \rightarrow \cos\alpha \vb{B} - \sin\alpha ( \vb{E}/c)\,.
+\begin{equation}\label{eq:5.10}
+\vb{E} \rightarrow \cos\alpha \vb{E} + \sin\alpha (c \vb{B})\,, \quad\quad \vb{B} \rightarrow \cos\alpha \vb{B} - \sin\alpha ( \vb{E}/c)\,,
+\end{equation}
+As already discussed in section (\ref{sec:1.2}), the energy density, momentum density, and stress tensor of the electromagnetic field are, respectively,
+\begin{equation}\label{eq:5.11}
+\mathscr{E} = \frac{1}{2} \left(\epsilon_0 \abs{\vb{E}}^2 + \frac{1}{\mu_0} \abs{\vb{B}}^2 \right)\,,  
+\end{equation}
+\begin{equation}\label{eq:5.12}
+\pmb{\mathscr{P}} = \epsilon_0 \vb{E} \cross \vb{B}\,,
+\end{equation}
+\begin{equation}\label{eq:5.13}
+\Theta_{ij} = \epsilon_{0} E_i E_j + \frac{1}{\mu_0} B_i B_j  -\frac{1}{2} \delta_{ij} \left(\epsilon_0 \abs{\vb{E}}^2 + \frac{1}{\mu_0} \abs{\vb{B}}^2 \right)   \,.
+\end{equation}
+
+The total energy and momentum of the electromagnetic field are obtained by integrating eq. (\ref{eq:5.11}) and q. (\ref{eq:5.12}) over all space.
+
+In special relativity, there is no distinction between a \quotes{flow of mass} (i.e., momentum) and a \quotes{flow of energy}---apart from a factor of $c^2$ needed to give these quantities conventional units. Thus, $c^2$ times the momentum density of the electromagnetic field gives the electromagnetic energy flux,  
+\begin{equation}\label{eq:5.14}
+\pmb{\mathscr{S}} = c^2 \pmb{\mathscr{P}} = c^2 \epsilon_0 \vb{E} \cross \vb{B} = \frac{1}{\mu_0} \vb{E} \cross \vb{B}\,,
+\end{equation}
+where, again, we use the fact that $c^2 = 1/(\epsilon_0 \mu_0)$. $\pmb{\mathscr{S}}$ is known as the \tit{Poynting vector}. For a surface $S$, the flux $\mathscr{F}$ of electromagnetic energy through $S$ (i.e., the electromagnetic energy that flows through $S$ per unit area per unit time) is given by 
+\begin{equation}\label{eq:5.15}
+\mathscr{F} =\pmb{\mathscr{S}} \cdot \vu{n}\,,
+\end{equation}
+
+where $\vu{n}$ is the unit normal to $S$.  The flow of electromagnetic energy out of a volume $\mathscr{V}$ bounded by surface $S$ is thus given by
+\begin{equation}\label{eq:5.16}
+\int_{S} \mathscr{F} \dd{S} = \int_{S} \pmb{\mathscr{S}} \cdot \vu{n}  \dd{S} = \int_{\mathscr{V}} \div{\pmb{\mathscr{S}}} \dd{V} \,.
+\end{equation}
+
+If electromagnetic energy were conserved by itself, we would have 
+$\dv*{}{t} \int_{\mathscr{V}} \mathscr{E} \dd{V} = \int_{\mathscr{V}} \pdv*{\mathscr{E}}{t} \dd{V} = - \int_{\mathscr{V}} \div{\pmb{\mathscr{S}}} \dd{V}$, and therefore (since $\mathscr{V}$ is arbitrary), $\pdv*{\mathscr{E}}{t} = - \div{\pmb{\mathscr{S}}}$. However, a direct computation yields
+\begin{equation}\label{eq:5.17}
+\begin{aligned}
+\pdv{\mathscr{E}}{t} &= 
+\epsilon_0 \vb{E} \cdot \pdv{\vb{E}}{t} + \frac{1}{\mu_0} \vb{B} \cdot \pdv{\vb{B}}{t} + \frac{1}{\mu_0} \div{(\vb{E} \cross \vb{B})} \\
+&= \epsilon_0 \vb{E} \cdot  ( c^2 \curl{\vb{B}} - c^2 \mu_0 \vb{J} ) + \frac{1}{\mu_0} \vb{B}  \cdot (- \curl{\vb{E}}) + \frac{1}{\mu_0} \div{(\vb{E} \cross \vb{B})} \\
+&= - \vb{E} \cdot \vb{J}  + \frac{1}{\mu_0} [\vb{E} \cdot (\curl{\vb{B}})  - \vb{B} \cdot (\curl{\vb{E}}) + \div{(\vb{E} \cross \vb{B})}]    \\
+&= - \vb{E} \cdot \vb{J}\,,
+\end{aligned}
+\end{equation}
+where eqs. (\ref{eq:5.6}) and (\ref{eq:5.7}) were used in the second line, the relation $c^2 \epsilon_0 \mu_0 = 1$ was used in the third line, and the identity 
+\begin{equation}\label{eq:5.18}
+\begin{aligned}
+\div{(\vb{E} \cross \vb{B})} &=  \sum_{i,j,k} \epsilon_{ijk}\partial_i (E_j B_k) = 
+\sum_{i,j,k} \epsilon_{ijk} \left[(\partial_i E_j) B_k + E_j (\partial_i B_k)) \right]\\ 
+                           &= \vb{B} \cdot (\curl{\vb{E}}) - \vb{E} \cdot (\curl{\vb{B}}) 
+\end{aligned}
+\end{equation}
+was used to get the last line. This means that if total energy (i.e., the energy of the electromagnetic field plus the energy of matter) is to be conserved, then the electromagnetic field must be adding energy density to the matter at the rate
+\begin{equation}\label{eq:5.19}
+\pdv{\mathscr{E_{matter}}}{t} =  \vb{J} \cdot \vb{E}\,.
+\end{equation}
+
+Thus $\vb{J} \cdot \vb{E}$ \tit{is the rate at which energy per unit volume is transferred from the electromagnetic field to matter.} 
+
+In a similar manner and by a similar calculation, the failure of momentum conservation to hold for the electromagnetic field momentum alone is given by
+\begin{equation}\label{eq:5.20}
+\pdv{\mathscr{P}_i}{t} - \sum_{j=1}^3 \partial_j \Theta_{ij} = - \left[ \rho E_i + (\vb{J} \cross \vb{B})_i   \right]\;.
+\end{equation}
+
+If total momentum is to be conserved, then the rate of change of the momentum density of matter must be given by minus the right side of eq. (\ref{eq:5.20}). In other words, the electromagnetic field must exert a force per unit volume, $\vb{f}$, on matter given by 
+\begin{equation}\label{eq:5.21}
+\vb{f} = \rho \vb{E} + \vb{J} \cross \vb{B}\;.
+\end{equation}
+which is referred to as the \tit{Lorentz force}.
+
+It should be emphasized that the entire content of electromagnetic theory is expressed by Maxwell's equations (\ref{eq:5.2})--(\ref{eq:5.5}); equations (\ref{eq:5.11})--(\ref{eq:5.13}) for energy density, momentum density, and stress of the electromagnetic field; and equations (\ref{eq:5.19}) and (\ref{eq:5.21}), which express that energy and momentum are conserved for the total system composed of electromagnetic field and matter.
+
+We now substitute eqs.  (\ref{eq:5.2}) and (\ref{eq:5.3}) into equations  (\ref{eq:5.4}) and (\ref{eq:5.5}) to write Maxwell's equation purely in terms of $\phi$ and $\vb{A}$:
+\begin{equation}\label{eq:5.22}
+- \laplacian \phi - \pdv{}{t} \div{\vb{A}} = \frac{\rho}{\epsilon_0}\,,
+\end{equation}
+\begin{equation}\label{eq:5.23}
+- \laplacian{\vb{A}} - \grad{ (\div{\vb{A}}) }+ \frac{1}{c^2} \pdv{}{t} \grad{\phi} + \frac{1}{c^2}\pdv[2]{\vb{A}}{t} = \mu_0 \vb{J}\,,
+\end{equation}
+where the identity eq. (\ref{eq:4.16}) was used to get eq. (\ref{eq:5.23}). A tremendous simplification of these equations can be made by transforming the potentials to a new gauge $(\phi', \vb{A}')$ such that
+\begin{equation}\label{eq:5.24}
+\frac{1}{c^2} \pdv{\phi'}{t} + \div{\vb{A}'} = 0\,.
+\end{equation}
+
+This condition is known as the \tit{Lorenz}\footnote{FOOTNOTE 2} \tit{gauge condition}. By eq. (\ref{eq:5.1}), such a gauge can be chosen if we can find a function $\chi$ that satisfies
+\begin{equation}\label{eq:5.25}
+\frac{1}{c^2} \pdv{\phi}{t} - \frac{1}{c^2} \pdv[2]{\chi}{t} + \div{\vb{A}} + \laplacian{\chi} = 0\,.
+\end{equation}
+that is, if we can solve the equation
+\begin{equation}\label{eq:5.26}
+\Box \chi = -s\,,
+\end{equation}
+with $s= (1/c^2) \pdv{\phi}{t} + \div{\vb{A}}$, where  
+\begin{equation}\label{eq:5.27}
+\Box \equiv -\frac{1}{c^2} \pdv[2]{}{t} + \laplacian\;.
 \end{equation}
 
 
+
+
+
+
+
+
+ 
+ 
 
 
 \section{Retarded Green's Function}\label{sec:5.2}
