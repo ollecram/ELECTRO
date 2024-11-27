@@ -64,7 +64,7 @@ Taking the time derivative of eq. (\ref{eq:5.4}) and adding it to $c^2$ times th
 \begin{equation}\label{eq:5.8}
 \pdv{\rho}{t} + \div{\vb{J}} = 0\,.
 \end{equation}
-It is worth noting that in the source-free case (i.e., when $\rho = \vb{J} = 0$), except for one sign difference and factors of $c$, eqs. (\ref{eq:5.6}) and (\ref{eq:5.7}) take the same form as eqs. (\ref{eq:5.4}) and (\ref{eq:5.5}) with $\vb{E}$ and $\vb{B}$ interchanged. It follows immediately that in any source-free, topologically trivial region, maxwell's equations are invariant under a \tit{duality transformation}:
+It is worth noting that in the source-free case (i.e., when $\rho = \vb{J} = 0$), except for one sign difference and factors of $c$, eqs. (\ref{eq:5.6}) and (\ref{eq:5.7}) take the same form as eqs. (\ref{eq:5.4}) and (\ref{eq:5.5}) with $\vb{E}$ and $\vb{B}$ interchanged. It follows immediately that in any source-free, topologically trivial region, Maxwell's equations are invariant under a \tit{duality transformation}:
 \begin{equation}\label{eq:5.9}
 \vb{E} \rightarrow c \vb{B}\,, \quad\quad c \vb{B} \rightarrow \vb{E}\,,
 \end{equation}
@@ -84,7 +84,30 @@ As already discussed in section (\ref{sec:1.2}), the energy density, momentum de
 \Theta_{ij} = \epsilon_{0} E_i E_j + \frac{1}{\mu_0} B_i B_j  -\frac{1}{2} \delta_{ij} \left(\epsilon_0 \abs{\vb{E}}^2 + \frac{1}{\mu_0} \abs{\vb{B}}^2 \right)   \,.
 \end{equation}
 
-The total energy and momentum of the electromagnetic field are obtained by integrating eq. (\ref{eq:5.11}) and q. (\ref{eq:5.12}) over all space.
+The total energy and momentum of the electromagnetic field are obtained by integrating eq. (\ref{eq:5.11}) and eq. (\ref{eq:5.12}) over all space.
+
+% BOX 3 **START** -- << Energy, Momentum and Stress Tensor in Gaussian units >>
+
+\parindent=0pt  % Set the paragraph indentation to 0 (normal = 10pt) before the box 
+\parbox{\textwidth}{\begin{mdframed}[style=MyFrame] %Added "\parbox{\textwidth}{"
+%\lipsum[1]
+\subsubsection*{BOX 5.3 -- Energy, Momentum and Stress in Gaussian units}\label{box:8.3}
+\begin{align*}
+\mathscr{E} &= \frac{1}{8 \pi} \left(\abs{\vb{E}}^2 + \abs{\vb{B}}^2 \right)\,,\quad\quad\quad &[G5.11]\\ 
+\pmb{\mathscr{P}} &= \frac{c}{4 \pi} \vb{E} \cross \vb{B}\,, &[G5.12]\\
+\Theta_{ij} &= \mqty( \mathscr{E} &\pmb{\mathscr{P}}_x/c &\pmb{\mathscr{P}}_y/c &\pmb{\mathscr{P}}_y/c\\ 
+                      \pmb{\mathscr{P}}_x/c &\sigma_{xx} &\sigma_{xy} &\sigma_{xz}\\
+                      \pmb{\mathscr{P}}_y/c &\sigma_{yx} &\sigma_{yy} &\sigma_{yz}\\
+                      \pmb{\mathscr{P}}_z/c &\sigma_{zx} &\sigma_{zy} &\sigma_{zz})\,, &[G5.13]
+\end{align*}
+where $\sigma_{\alpha \beta}\:\: (\alpha, \beta = x, y, z)$  is the flux of momentum \tit{component} 
+$\pmb{\mathscr{P}}_\alpha$ flowing in unit time across a surface element of unit area\\ perpendicular to the $\beta$  axis.
+\end{mdframed}} %Added a closing "}" here
+\parindent=10pt % Set the paragraph indentation to normal (10pt) 
+% BOX 2 ** END ** -- << Energy, Momentum and Stress Tensor in Gaussian units >>
+
+
+
 
 In special relativity, there is no distinction between a \quotes{flow of mass} (i.e., momentum) and a \quotes{flow of energy}---apart from a factor of $c^2$ needed to give these quantities conventional units. Thus, $c^2$ times the momentum density of the electromagnetic field gives the electromagnetic energy flux,  
 \begin{equation}\label{eq:5.14}
