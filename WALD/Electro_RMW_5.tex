@@ -243,7 +243,55 @@ of $\dv*{F}{x}$ is given by
 where we integrated by parts in the second line, disregarding the boundary term at infinity because of the fall-off of $F$. 
 On account of eq. (\ref{eq:5.40}), any partial differential equation with constant coefficients can be converted to an algebraic equation in Fourier transform space.  
  
-We now attemp to solve for $G$, eq. (\ref{eq:5.32}), by means of Fourier transforms.
+We now attemp to solve for $G$, eq. (\ref{eq:5.32}), by means of Fourier transforms. To simplify the notation we set $t' = \vb{x}' = 0$, and we also set $c = 1$. (We will restore  $t', \vb{x}', \text{ and } c$ at the end of the calculation.) Define the (4-dimensional) Fourier transform of $G$ by
+\begin{equation}\label{eq:5.41}
+\hat{G}(\omega, \vb{k}) = \frac{1}{(2 \pi)^2} \int_{-\infty}^{\infty} G(t, \vb{x}) e^{+i \omega t} e^{-i \vb{k}\cdot\vb{x}} \dd{t} \dd[3]x\,.
+\end{equation}
+Note that, by standard convention, the time Fourier transform is defined\footnote{This is done so that $(\omega/c, \vb{k})$ are the components of a 4-vector in special relativity (see chapter 8).} by integrating with $e^{+i \omega t}$  rather than $e^{-i \omega t}$. Taking the Fourier transform of eq. (\ref{eq:5.32}) with respect to $t$ and $\vb{x}$ and using eq. (\ref{eq:5.35}) (with $x_0 = 0$) and eq. (\ref{eq:5.40}), we obtain
+\begin{equation}\label{eq:5.42}
+(\omega^2 - k^2) \hat{G}(\omega, \vb{k}) = - {\left( \frac{1}{\sqrt{2 \pi}} \right)}^4 = - \frac{1}{4\pi^2}\,,
+\end{equation} 
+
+where we have written $k = \abs{\vb{k}}$. One may think that the solution to this equation is simply  
+\begin{equation}\label{eq:5.43}
+\hat{G}(\omega, \vb{k}) = - \frac{1}{4\pi^2} \frac{1}{(\omega^2 - k^2)} = - \frac{1}{4\pi^2} \, \frac{1}{(\omega - k)} \, \frac{1}{(\omega + k)}\,.
+\end{equation}
+However, dividing by $(\omega^2 - k^2)$ is actually an illegal step, because this quantity can be zero. The difficulty arising from this can be seen if we attempt to take the inverse Fourier transform of $\hat{G}$ with respect to $\omega$ (but not $\vb{k}$), so as to obtain the Fourier transform of $G$ with respect to space but not time, which we denote as $\tilde{G}$:
+\begin{equation}\label{eq:5.44}
+\tilde{G}(t, \vb{k}) \equiv \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} \hat{G}(\omega, \vb{k}) e^{-i \omega t} \dd\omega\,.
+\end{equation}
+
+Then, we have
+\begin{equation}\label{eq:5.45}
+\tilde{G}(t, \vb{k}) = - \frac{1}{4 \pi^2 \sqrt{2 \pi}} \int_{-\infty}^{\infty} \frac{e^{-i \omega t}}{(\omega - k) (\omega + k)} \dd\omega\,.
+\end{equation}
+
+
+However, there are logarithmic divergences in the integral on the right side of eq. (\ref{eq:5.45}) at 
+$\omega = \pm k$, so the right side is ill defined (even as a distribution). This reflects the fact that many Green's functions satisfy eq. (\ref{eq:5.32}), so we cannot be expected to be able to solve for $G$ without providing additional input as to which Green's function we seek. 
+
+This difficulty can be dealt with by suitably regularizing eq. (\ref{eq:5.45}) in such a way that the right side is well defined and eq. (\ref{eq:5.42}) continues to hold. A simple way of doing this is to infinitesimally displace the poles at $\omega = \pm k$ in eq. (\ref{eq:5.45}) into the complex $\omega$-plane. The case of most interest for us is to displace both poles infinitesimally into the lower half of the $\omega$-plane, thereby defining the \tit{retarded Green's function}
+\footnote{As noted below, displacement of both poles into the upper half of the $\omega$-plane yields the advanced Green's function. Displacement of the pole at $\omega = k$ into the lower half-plane and the pole at $\omega = -k$ into the upper half-plane yields the Feynman propagator.} 
+$\tilde{G}_{ret}$, given by
+\begin{equation}\label{eq:5.46}
+\tilde{G}(t, \vb{k}) = - \frac{1}{4 \pi^2 \sqrt{2 \pi}} \int_{-\infty}^{\infty} \frac{e^{-i \omega t}}{(\omega - k + i \epsilon) (\omega + k + i \epsilon)} \dd\omega\,,
+\end{equation}
+where $\epsilon > 0$ and the limit $\epsilon \rightarrow 0$ is to be taken after the integral is performed. We can view eq. (\ref{eq:5.46}) as a contour integral in the complex $\omega$-plane. For $t < 0$, the integral is exponentially damped in the upper half of the $\omega$-plane, and we may \quotes{close the contour} in that half-plane. The resulting closed contour encloses no singularities---since the poles have been pushed into the lower half-plane--so, by Cauchy's theorem, we obtain
+\begin{equation}\label{eq:5.47}
+\tilde{G}_{ret}(t, \vb{k}) = 0, \quad\quad\quad \text{for } t < 0\,.
+\end{equation}
+This condition uniquely characterizes the retarded Green's function. The fact that $\tilde{G}_{ret}$ vanishes prior to the \quotes{turn-on} of the delta function source at $t = 0$ can be interpreted as saying that it is providing the solution with \quotes{no incoming radiation.} This is the solution of physical relevancein problems where no radiation is present prior to the presence of the source.
+
+For $t > 0$, we can similarly close the contour in the lower half of the $\omega$-plane. However, the resulting closed contour now contains poles at $\omega = \pm k -i\epsilon$. By Cauchy's theorem, we obtain for $t > 0$
+\begin{equation}\label{eq:5.48}
+\begin{aligned}
+\tilde{G}(t, \vb{k}) &= + \frac{1}{4 \pi^2 \sqrt{2 \pi}} 2\pi i \left[ \frac{e^{-ikt}}{2k} - \frac{e^{+ikt}}{2k}  \right]\\
+                     &= \frac{1}{2 \pi \sqrt{2 \pi}} \frac{\sin kt}{k}\,,
+\end{aligned}
+\end{equation}
+where the sign change in the first line as compared with eq. (\ref{eq:5.46}) results from the contour running the \quotes{wrong way}.
+  
+We now take the inverse Fourier transform of eq. (\ref{eq:5.48}) with respect to $\vb{k}$ to obtain the retarded Green's function for $t > 0$ in position space:  
 
 \section{Multipole Expansion}\label{sec:5.3}
 
